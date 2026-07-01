@@ -63,13 +63,28 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 .dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
 
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
+@media(max-width:900px){.hamburger{display:block;}}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
 </style>
 <meta property="og:title" content="AI Legal Navigation · NSAG">
 <meta property="og:description" content="NSAG M2 — AI Legal Navigation. Algorithmic risk assessment tools now influence bail, sentencing, and parole for approximately two-thirds of the US popu...">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nsag-site.vercel.app/m2">
 </head>
-<body><nav>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav>
   <div class="ni">
     <a href="/" class="nb">NSAG</a>
     <div class="nl">
@@ -98,8 +113,22 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
       <a href="/#start" class="nc">Take an Assessment</a>
     </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
+  <a href="/about">About</a>
+  <a href="/#modules">Modules</a>
+  <a href="/framework">Framework</a>
+  <a href="/advisory">Advisory</a>
+  <a href="/ce">CE Programs</a>
+  <a href="/evidence">Resources</a>
+  <a href="/#start">Take an Assessment</a>
+</div>
+<script>
+function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
+</script>
 <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
   <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;">
     <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
@@ -112,7 +141,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
     <span style="color:var(--text);font-weight:600;">M2 · AI Legal Navigation</span>
   </div>
 </div>
-<section style="background:#1E3651;color:white;padding:4.5rem 0 3.5rem;">
+<section id="main-content" style="background:#1E3651;color:white;padding:4.5rem 0 3.5rem;">
   <div class="wrap">
     <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
       <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(255,255,255,0.2);color:white;padding:0.3rem 0.7rem;border-radius:3px;">M2</span>
@@ -252,8 +281,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
   <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
     <div>
       <div class="fb">NSAG</div>
-      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
       <h5>The Practice</h5>
@@ -265,7 +294,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="/experience">Your Experience</a>
     </div>
     <div class="fl" style="grid-column:span 2;">
-      <h5>Modules — All 13</h5>
+      <h5>Modules — All 15</h5>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
@@ -296,7 +325,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="/framework">Framework Foundation</a>
       <a href="/brief">NSAG Brief</a>
       <a href="/ce">Continuing Education</a>
-      <a href="/#start">All 13 Assessments →</a>
+      <a href="/#start">All 15 Assessments →</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
     </div>
   </div>

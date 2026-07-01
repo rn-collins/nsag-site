@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Framework Foundation · NSAG</title>
-<meta name="description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 13 governance modules.">
+<meta name="description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 15 governance modules.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -110,14 +110,29 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
 .dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
 
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
+@media(max-width:900px){.hamburger{display:block;}}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
 </style>
 <link rel="canonical" href="https://nsag-site.vercel.app/framework">
 <meta property="og:title" content="Framework Foundation · NSAG">
-<meta property="og:description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 13 governance modules.">
+<meta property="og:description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 15 governance modules.">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nsag-site.vercel.app/framework">
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
 
 <nav>
   <div class="ni">
@@ -147,8 +162,22 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
       <a href="/#start" class="nc">Take an Assessment</a>
     </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
+  <a href="/about">About</a>
+  <a href="/#modules">Modules</a>
+  <a href="/framework">Framework</a>
+  <a href="/advisory">Advisory</a>
+  <a href="/ce">CE Programs</a>
+  <a href="/evidence">Resources</a>
+  <a href="/#start">Take an Assessment</a>
+</div>
+<script>
+function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
+</script>
 <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
   <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
     <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
@@ -164,21 +193,21 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
   <div class="wrap">
     <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Framework Foundation · Version 1.0</div>
     <h1>The NSAG Framework:<br>What the tiers mean.</h1>
-    <p style="margin-top:1rem;">Every tier, every dimension, every module — operationalized with specific, observable, documentable governance criteria. This is the intellectual foundation of the 13 readiness assessment instruments and the content validity record for the framework.</p>
+    <p style="margin-top:1rem;">Every tier, every dimension, every module — operationalized with specific, observable, documentable governance criteria. This is the intellectual foundation of the 15 readiness assessment instruments and the content validity record for the framework.</p>
     <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
       <a href="#tiers" style="background:white;color:var(--nsag);padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">Tier Definitions</a>
-      <a href="#modules" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">All 13 Modules</a>
+      <a href="#modules" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">All 15 Modules</a>
       <a href="#relationships" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">Module Relationships</a>
     </div>
   </div>
 </div>
 
 <!-- PART I: GLOBAL TIER DEFINITIONS -->
-<section id="tiers">
+<section id="main-content" id="tiers">
   <div class="wrap">
     <div class="slabel">Part I</div>
     <h2>Global Tier Definitions</h2>
-    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Tiers apply uniformly across all 13 modules. An institution's tier reflects the state of its governance infrastructure — not its intentions, values, or aspirations.</p>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Tiers apply uniformly across all 15 modules. An institution's tier reflects the state of its governance infrastructure — not its intentions, values, or aspirations.</p>
     <div class="tiers">
       <span class="tier t-p">Pioneering</span>
       <span class="tier t-e">Emerging</span>
@@ -626,7 +655,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
   <div class="wrap">
     <div class="slabel">Part IV</div>
     <h2>Feedback Architecture</h2>
-    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">NSAG is a living framework. The 13 modules, six dimensions per module, and tier definitions in this document are Version 1.0. The feedback mechanism ensures the framework improves based on institutional deployment experience.</p>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">NSAG is a living framework. The 15 modules, six dimensions per module, and tier definitions in this document are Version 1.0. The feedback mechanism ensures the framework improves based on institutional deployment experience.</p>
     
     <h3 style="margin-bottom:1rem;font-size:1.1rem;">Trigger Conditions for Dimension Review</h3>
     <div class="feed-steps">
@@ -667,7 +696,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
 <section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
   <div class="wrap">
     <h2 style="color:white;margin-bottom:1rem;">Ready to assess your institution?</h2>
-    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Take any of the 13 free module assessments. Your tier report will name specific people in your institution who are affected by your current governance score — and give you one action to take this week.</p>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Take any of the 15 free module assessments. Your tier report will name specific people in your institution who are affected by your current governance score — and give you one action to take this week.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="/#start" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take a Free Assessment</a>
       <a href="/experience" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">See Your Experience →</a>
@@ -679,8 +708,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
   <div class="fi">
     <div>
       <div class="fb">NSAG</div>
-      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
       <h5>The Practice</h5>
@@ -698,7 +727,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0
       <a href="/m9">M9 Cannabis Healthcare Visibility</a>
       <a href="/m11">M11 Medical Technology</a>
       <a href="/m13">M13 Traditional &amp; CAM</a>
-      <a href="/#modules">All 13 Modules →</a>
+      <a href="/#modules">All 15 Modules →</a>
     </div>
     <div class="fl">
       <h5>Resources</h5>

@@ -8,6 +8,9 @@
 <link rel="canonical" href="https://nsag-site.vercel.app/ce/publichealth">
 <meta property="og:title" content="Public Health &middot; CHES &middot; NSAG">
 <meta property="og:description" content="NSAG Public Health CE Specialty Track. 1.0 CECH Category I. Population-level governance and health equity through built environment. On-demand. Pending SOPHE pre-approval.">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,9 +46,21 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
 @media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.fi{grid-template-columns:1fr;}}
-.dropdown{position:relative;display:inline-block;}.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}.dropdown:hover .dropdown-menu{display:block;}.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}.dropdown-menu a:last-child{border-bottom:none;}.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}</style>
+.dropdown{position:relative;display:inline-block;}.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}.dropdown:hover .dropdown-menu{display:block;}.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}.dropdown-menu a:last-child{border-bottom:none;}.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
+@media(max-width:900px){.hamburger{display:block;}}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
+</style>
 </head>
-<body><nav>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav>
   <div class="ni">
     <a href="/" class="nb">NSAG</a>
     <div class="nl">
@@ -73,8 +88,22 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
       <a href="/#start" class="nc">Take an Assessment</a>
     </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
+  <a href="/about">About</a>
+  <a href="/#modules">Modules</a>
+  <a href="/framework">Framework</a>
+  <a href="/advisory">Advisory</a>
+  <a href="/ce">CE Programs</a>
+  <a href="/evidence">Resources</a>
+  <a href="/#start">Take an Assessment</a>
+</div>
+<script>
+function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
+</script>
 <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
   <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;">
     <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
@@ -90,10 +119,10 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
 <div style="background:#FFF3CD;border-bottom:1px solid #F0C060;padding:0.875rem 0;">
   <div class="wrap" style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
     <span style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:#856404;background:rgba(133,100,4,0.1);padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;">ENROLLMENT NOT YET OPEN</span>
-    <span style="font-size:0.875rem;color:#856404;">Accreditation applications in process across all 7 CE types. <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" style="color:#856404;font-weight:600;text-decoration:underline;">Book a discovery call</a> to discuss institutional access or co-accreditation partnerships.</span>
+    <span style="font-size:0.875rem;color:#856404;">Accreditation applications in process across all 7 CE types. <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:#856404;font-weight:600;text-decoration:underline;">Book a discovery call</a> to discuss institutional access or co-accreditation partnerships.</span>
   </div>
 </div>
-<section style="background:#2E5A28;color:white;padding:4.5rem 0 3.5rem;">
+<section id="main-content" style="background:#2E5A28;color:white;padding:4.5rem 0 3.5rem;">
   <div class="wrap">
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;">
       <span style="background:rgba(255,255,255,0.15);color:white;font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:3px;">CE Specialty Track</span>
@@ -395,8 +424,8 @@ function handleDownload() {
   <div class="fi">
     <div>
       <div class="fb">NSAG</div>
-      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
       <h5>The Practice</h5>
@@ -414,19 +443,19 @@ function handleDownload() {
       <a href="/m9">M9 Cannabis Healthcare Visibility</a>
       <a href="/m11">M11 Medical Technology</a>
       <a href="/m13">M13 Traditional &amp; CAM</a>
-      <a href="/#modules">All 13 Modules →</a>
+      <a href="/#modules">All 15 Modules →</a>
     </div>
     <div class="fl">
       <h5>Resources</h5>
       <a href="/evidence">Evidence Library</a>
       <a href="/insights">Governance Insights</a>
-      <a href="https://nsag-m9.vercel.app" target="_blank">M9 Assessment</a>
-      <a href="https://nsag-m8.vercel.app" target="_blank">M8 Assessment</a>
-      <a href="https://nsag-m1.vercel.app" target="_blank">M1 Assessment</a>
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer">M9 Assessment</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer">M8 Assessment</a>
+      <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer">M1 Assessment</a>
       <a href="/#start">All Assessments →</a>
     </div>
   </div>
-  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank">Book a Discovery Call</a></div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
 </footer>
 
 </body>
