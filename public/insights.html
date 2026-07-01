@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance Insights · NSAG</title>
+<meta name="description" content="Thought leadership from NSAG. Governance problem spotlights, policy briefings, and module-specific governance intelligence.">
+<link rel="canonical" href="https://nsag-site.vercel.app/insights">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav,button{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+a:hover{color:var(--nsag-l);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}
+section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
+h3{font-size:1.25rem;margin-bottom:0.75rem;}
+p+p{margin-top:0.75rem;}
+.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
+.btn-p{background:var(--nsag);color:white!important;}
+.btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+</style>
+<meta property="og:title" content="Governance Insights · NSAG">
+<meta property="og:description" content="Thought leadership from NSAG. Governance problem spotlights, policy briefings, and module-specific governance intelligence.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/insights">
+</head>
+<body><nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">Insights</span>
+  </div>
+</div>
+<section style="background:var(--nsag);color:white;padding:4rem 0 3rem;">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Governance Insights</div>
+    <h1 style="font-size:clamp(2rem,4vw,3.5rem);color:white;max-width:700px;margin-bottom:1rem;">What institutions are getting wrong. What they could get right.</h1>
+    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;">Governance problem spotlights, policy briefings, and module-specific intelligence. Grounded in primary sources. No institution names. Written for practitioners who want to understand the governance landscape — not just score their institution.</p>
+  </div>
+</section>
+
+<article style="background:var(--white);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M11 · Medical Technology</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">Your hospital is using a risk-stratification algorithm that has never been independently assessed for your patient population.</h2>
+    <div style="background:rgba(77,69,168,0.06);border-left:3px solid var(--nsag);padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">71% of US hospitals use EHR-integrated predictive AI. Fewer than half evaluate all models for demographic bias. (Chang et al., 2025 — ASTP/ONC Data Brief No. 80)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;"><p style="margin-bottom:1rem;">In 2019, Obermeyer et al. published in Science what is now the definitive case study in clinical AI governance failure: a commercial algorithm used for approximately 200 million patients to identify high-risk candidates for care management was using healthcare cost as a proxy for health need. Because structural barriers reduce Black patients' healthcare spending relative to white patients with equivalent illness severity, the algorithm systematically underestimated Black patients' needs. The verbatim finding: remedying this disparity would increase the percentage of Black patients receiving additional help from 17.7% to 46.5%.</p><p style="margin-bottom:1rem;">The algorithm was not designed to discriminate. It was commercially deployed, widely used, and embedded in the EHR infrastructure of health systems across the country. Its bias was detectable — through demographic stratification of outcomes data — and was not detected because the governance infrastructure to detect it did not exist.</p><p style="margin-bottom:1rem;">Seven years later, the ONC's 2025 hospital AI governance survey found that 71% of hospitals now use EHR-integrated predictive AI, while fewer than half evaluate all models for demographic bias. The governance gap that allowed the Obermeyer algorithm to operate at scale is the governance gap that most US hospitals still have today.</p><p style="margin-bottom:1rem;">The governance question is not whether your AI tools have been FDA-cleared or commercially validated. It is whether your institution has established its own demographic impact assessment standard — specific to your patient population, applied before and after deployment — independent of what any vendor or regulator reports. Most have not.</p>    </div>
+    <div style="margin-top:2rem;background:rgba(77,69,168,0.05);border:1px solid rgba(77,69,168,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M11 governance requires: documented AI tool inventory, independent demographic impact assessment before adoption and annually post-adoption, human override protocols without coercive documentation burden, and defined disparity thresholds that trigger governance response.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Obermeyer et al. (2019) doi:10.1126/science.aax2342 · Chang et al. (2025) healthit.gov</div>
+      <a href="/m11" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:var(--nsag);">Go to M11 Module →</a>
+    </div>
+  </div>
+</article>
+<article style="background:var(--bg);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M9 · Cannabis Healthcare Visibility</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">There is a patient on warfarin in your clinical system whose cannabis use is undocumented. Their INR is drifting and no one knows why.</h2>
+    <div style="background:rgba(77,69,168,0.06);border-left:3px solid var(--nsag);padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">35.1% of primary care patients reported implicit medical cannabis use. EHR documented rate: 4.8%. (Lapham et al., 2022 — JAMA Network Open)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;"><p style="margin-bottom:1rem;">Lapham et al. (2022) published what is now the verified primary source for the cannabis documentation gap: in 1,688 primary care patients, 35.1% reported implicit medical cannabis use while only 4.8% had documentation in the electronic health record — from the same patient population, measured simultaneously. That is a 7:1 gap between what patients are doing pharmacologically and what their providers can see.</p><p style="margin-bottom:1rem;">Cannabis is metabolized through cytochrome P450 pathways (CYP3A4, CYP2C9, CYP2C19, CYP1A2) shared with warfarin, antiepileptic medications including clobazam and phenytoin, antidepressants, antifungals, and immunosuppressants (VanDolah, Bauer & Mauck, 2019). Cannabis can both induce and inhibit these pathways depending on dose, frequency, and route, producing clinically significant alterations in the effective concentration of co-administered medications.</p><p style="margin-bottom:1rem;">The governance failure is not that patients are not disclosing. Tavabi et al. (2023) found in 370,087 patients across 23 million clinical notes that documentation disparities track racial and socioeconomic lines independent of use prevalence — meaning the documentation gap is not evenly distributed. The populations with the greatest documentation barriers are the same populations already facing the greatest healthcare equity gaps.</p><p style="margin-bottom:1rem;">The institution's intake process, EHR architecture, and disclosure safety design are either mitigating or amplifying those barriers. Most are amplifying them by default — because cannabis documentation governance has not been designed, it has been avoided.</p>    </div>
+    <div style="margin-top:2rem;background:rgba(77,69,168,0.05);border:1px solid rgba(77,69,168,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M9 governance requires: validated cannabis screening instrument at every patient contact, EHR structured data fields with ≥85% completion target, written disclosure safety policy communicated at intake, provider training in CYP450 interactions, and cannabis documentation rate as a tracked QI metric.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Lapham et al. (2022) doi:10.1001/jamanetworkopen.2022.11677 · Tavabi et al. (2023) doi:10.1038/s41746-023-00885-w</div>
+      <a href="/m9" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:var(--nsag);">Go to M9 Module →</a>
+    </div>
+  </div>
+</article>
+<article style="background:var(--white);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M8 · Burnout Recovery Infrastructure</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">The wellness program you just implemented will not reduce burnout. The research has known this for twenty-five years.</h2>
+    <div style="background:rgba(77,69,168,0.06);border-left:3px solid var(--nsag);padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">Organizational interventions produce significantly greater and more durable burnout reductions than individual interventions. (Kiratipaisarl et al., 2024 — BMC Medical Education)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;"><p style="margin-bottom:1rem;">Maslach, Schaufeli, and Leiter established in the Annual Review of Psychology in 2001 what three subsequent decades of research have confirmed: burnout is fundamentally a mismatch between person and job across six organizational domains — workload, control, reward, community, fairness, and values. Individual-level interventions (resilience training, mindfulness apps, wellness programs) do not change the workload. They do not restore control. They do not improve community. They address the symptoms of a structural problem by optimizing the person's capacity to tolerate conditions that the evidence identifies as the root cause.</p><p style="margin-bottom:1rem;">Kiratipaisarl et al.'s 2024 systematic review and meta-analysis confirmed: organizational interventions produce significantly greater and more durable burnout reductions than individual interventions. Thomas Craig et al. (2021) found this specifically for EHR-related digital burden: organizational interventions targeting technology optimization, documentation reduction, and team-based workflow improved burnout in 68% of eligible studies.</p><p style="margin-bottom:1rem;">The governance failure is not that healthcare institutions lack compassion for their staff. It is that their governance response to documented burnout — wellness programs, mindfulness apps, Employee Assistance Programs — is a response the literature consistently shows does not produce durable results. The governance change that would actually work requires auditing the six person-job mismatch domains and redesigning the organizational conditions producing them. That requires workload governance standards. Documented autonomy scope. Formal fairness mechanisms. Values alignment assessment.</p><p style="margin-bottom:1rem;">These are institutional governance decisions, not wellness decisions. They require leadership accountability, documented policy, and a board-level governance commitment. Most institutions have not made that commitment. The wellness programs are a signal that burnout has been acknowledged. They are not a signal that burnout is being governed.</p>    </div>
+    <div style="margin-top:2rem;background:rgba(77,69,168,0.05);border:1px solid rgba(77,69,168,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M8 governance requires: documented workload standards by role with formal reporting and required administrative response, autonomy governance, fairness review of workload distribution, community support infrastructure, and values alignment assessment — not wellness programming.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Maslach et al. (2001) doi:10.1146/annurev.psych.52.1.397 · Kiratipaisarl et al. (2024) doi:10.1186/s12909-024-06195-3</div>
+      <a href="/m8" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:var(--nsag);">Go to M8 Module →</a>
+    </div>
+  </div>
+</article>
+<article style="background:var(--bg);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1E3651;padding:0.3rem 0.7rem;border-radius:3px;">M2 · AI Legal Navigation</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">The bail hearing algorithm in this jurisdiction performs no better than chance. And it is wrong twice as often for Black defendants.</h2>
+    <div style="background:rgba(77,69,168,0.06);border-left:3px solid var(--nsag);padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">COMPAS accuracy: 65.2% vs. untrained lay prediction: 67.0%. Black defendants incorrectly flagged as high-risk at approximately 2× the rate of white defendants. (Dressel & Farid, 2018 — Science Advances)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;"><p style="margin-bottom:1rem;">Dressel and Farid published in Science Advances in 2018 what remains the most consequential empirical finding in algorithmic legal governance: COMPAS, the risk assessment algorithm used in bail, sentencing, and parole decisions across numerous US jurisdictions, achieved a predictive accuracy of 65.2%. Amazon Mechanical Turk workers given a 168-word description of each defendant achieved 67.0%. A two-feature linear model matched COMPAS's 137-feature model in performance. The algorithm performed no better than chance while producing racial disparities in false-positive rates: Black defendants were incorrectly flagged as high-risk at approximately twice the rate of white defendants.</p><p style="margin-bottom:1rem;">Berk et al. (2024) identified why technical fairness corrections fail to resolve this: the bias originates in the training data, not the algorithm. Arrest records — the primary data source for recidivism prediction — encode decades of racially disparate policing practices. An algorithm trained on this data reproduces racial disparities not because it is designed to but because it is accurately modeling a biased input. This is the bias-in-bias-out problem: fixing the algorithm without fixing the data produces a more sophisticated version of the same disparity.</p><p style="margin-bottom:1rem;">Chouldechova (2017) proved formally that some fairness goals cannot simultaneously be achieved when base rates differ across groups. The governance response to this mathematical reality is transparency, human override authority, and community accountability — not better algorithms.</p><p style="margin-bottom:1rem;">The governance failure in most jurisdictions using algorithmic risk assessment is not the algorithm's accuracy or fairness. It is the absence of the governance infrastructure that makes the tool accountable: independent demographic impact assessment for the specific jurisdiction's population, human override protocols that do not coerce deference, plain-language notification to affected individuals, and community authority over adoption and discontinuation decisions.</p>    </div>
+    <div style="margin-top:2rem;background:rgba(77,69,168,0.05);border:1px solid rgba(77,69,168,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M2 governance requires: independent demographic impact assessment specific to the jurisdiction's population, human override protocols without coercive documentation burden, plain-language notification to affected parties, and community advisory authority over adoption and discontinuation.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Dressel & Farid (2018) doi:10.1126/sciadv.aao5580 · Berk et al. (2024) doi:10.1177/00491241231155883</div>
+      <a href="/m2" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:var(--nsag);">Go to M2 Module →</a>
+    </div>
+  </div>
+</article>
+<article style="background:var(--white);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2E5A28;padding:0.3rem 0.7rem;border-radius:3px;">M12 · Education Systems</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">The classroom design of one school explains more variation in learning outcomes than most curriculum interventions. And almost no one is governing it.</h2>
+    <div style="background:rgba(77,69,168,0.06);border-left:3px solid var(--nsag);padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">Seven built environment parameters explain 16% of the variation in pupils' academic progress. (Barrett et al., 2015 — Building and Environment, n=3,766 pupils, 153 classrooms)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;"><p style="margin-bottom:1rem;">Barrett, Davies, Zhang, and Barrett published the HEAD Project in Building and Environment in 2015: a holistic, multi-level analysis of 153 classrooms across 27 UK primary schools involving 3,766 pupils. The finding: seven built environment parameters — Light, Temperature, Air Quality, Ownership, Flexibility, Complexity, and Colour — together explained 16% of the variation in pupils' academic progress over one year, after controlling for teacher quality and other factors.</p><p style="margin-bottom:1rem;">Sixteen percent. That is approximately the same effect size as many curriculum interventions that receive far more governance attention and far more institutional investment. The difference is that curriculum decisions are made consciously, governed by standards, and measured against outcomes. Built environment decisions are made by facilities teams, governed by building codes and budgets, and rarely measured against learning outcomes at all.</p><p style="margin-bottom:1rem;">Immordino-Yang and Damasio (2007) provide the neural mechanism: students in physiological threat states — produced by unsafe social environments, unpredictable transitions, noise above comfortable thresholds, temperature extremes, or inadequate light — are neurologically unable to engage the prefrontal cortical systems that support working memory, executive function, and abstract reasoning. The built environment is not a backdrop to learning. It is a determinant of whether the neural infrastructure required for learning is activated or suppressed.</p><p style="margin-bottom:1rem;">Cantor et al. (2019) extend this to developmental stakes: brain development is experience-dependent, and educational environments during critical developmental periods literally shape the neural architecture of the students in them. The classroom design decisions made this year are having neurobiological consequences that will be measurable decades later. Most school governance frameworks have no mechanism for making those decisions accountable to those consequences.</p>    </div>
+    <div style="margin-top:2rem;background:rgba(77,69,168,0.05);border:1px solid rgba(77,69,168,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M12 governance requires: documented standards for lighting, acoustics, temperature, and air quality; psychological safety infrastructure with institutional accountability; transition and schedule governance; and annual quality assessment against evidence-based standards.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Barrett et al. (2015) doi:10.1016/j.buildenv.2015.02.013 · Immordino-Yang & Damasio (2007) doi:10.1111/j.1751-228X.2007.00004.x</div>
+      <a href="/m12" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:var(--nsag);">Go to M12 Module →</a>
+    </div>
+  </div>
+</article>
+
+<article style="background:var(--white);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1D2951;padding:0.3rem 0.7rem;border-radius:3px;">M14 &middot; Space Governance</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">The last major space governance treaty was written in 1967 for robotic probes. It does not address the rights of a crew member 300,000 miles from Earth.</h2>
+    <div style="background:rgba(29,41,81,0.06);border-left:3px solid #1D2951;padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">The Outer Space Treaty (1967) establishes that states bear international responsibility for space activities. It does not define crew rights, medical ethics authority, mission control governance, or institutional accountability for commercial operators. (Treaty on Principles Governing Activities in Outer Space, 610 U.N.T.S. 205)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;">
+      <p style="margin-bottom:1rem;">In 1967, the major space-faring nations signed the Outer Space Treaty &mdash; the foundational legal document governing human activity beyond Earth. It establishes that outer space is not subject to national appropriation, that states bear responsibility for their national activities in space whether governmental or commercial, and that astronauts are &ldquo;envoys of mankind.&rdquo; It does not define what rights those envoys hold while on a mission. It does not address who has final medical authority when a crew member requires treatment that mission control opposes. It does not address what governance obligations apply to a commercial operator whose crew is beyond Earth&rsquo;s communication range for 22 minutes each way.</p>
+      <p style="margin-bottom:1rem;">Kanas and Manzey (2008), in the most comprehensive review of space psychology and behavioral health in spaceflight, identified interpersonal conflict, communication difficulties with mission control, and inadequate autonomy as the most significant predictors of mission risk in long-duration spaceflight. All three are governance problems. None of the three is addressed by the Outer Space Treaty, the Artemis Accords, or any bilateral space agreement currently in force.</p>
+      <p style="margin-bottom:1rem;">The governance gap is not abstract. Stuster&rsquo;s four decades of analog environment research &mdash; Antarctic stations, submarines, polar expeditions &mdash; consistently found that governance structures preserving crew autonomy, providing independent accountability mechanisms, and establishing clear authority boundaries produce significantly better behavioral health outcomes. The evidence for what space governance should look like exists. The governance frameworks implementing it do not.</p>
+      <p style="margin-bottom:1rem;">The Artemis III crew was announced in June 2026. Their mission is scheduled for 2027. The governance infrastructure defining their individual rights in space, the scope of mission control authority over their medical decisions, and the accountability structure for their institutional employer in a commercial space context has not been built.</p>
+    </div>
+    <div style="margin-top:2rem;background:rgba(29,41,81,0.05);border:1px solid rgba(29,41,81,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#1D2951;margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M14 governance requires: documented legal framework addressing jurisdiction and applicable law for off-Earth operations; written crew autonomy protocol including the right to refuse mission directives on documented health grounds; clinical governance framework for autonomous healthcare decision-making beyond Earth-based consultation range; independent accountability mechanism external to the operational command structure.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Treaty on Principles Governing Activities in Outer Space (1967) 610 U.N.T.S. 205 &middot; Kanas &amp; Manzey (2008) doi:10.1007/978-1-4020-6770-9 &middot; Stuster (2010) NASA TM-2010-216130</div>
+      <a href="/m14" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:#1D2951;">Go to M14 Module &rarr;</a>
+    </div>
+  </div>
+</article>
+
+<article style="background:var(--bg);padding:3.5rem 0;border-bottom:1px solid var(--border);">
+  <div class="wrap" style="max-width:860px;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2B4066;padding:0.3rem 0.7rem;border-radius:3px;">M15 &middot; Isolation &amp; Confinement</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--muted);letter-spacing:0.05em;">Governance Problem Spotlight</span>
+    </div>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);color:var(--text);margin-bottom:1.25rem;line-height:1.3;">The three things that consistently degrade human beings in isolated confined environments are all institutional governance decisions. Institutions are still treating them as individual character problems.</h2>
+    <div style="background:rgba(43,64,102,0.06);border-left:3px solid #2B4066;padding:0.875rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.75rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:0.82rem;color:var(--text);line-height:1.6;">Interpersonal issues, monotony, and inadequate autonomy are the three most consistent predictors of adverse behavioral health outcomes across analog environments — Antarctic stations, submarines, polar expeditions, spaceflight. All three are institutional design variables. (Stuster, 2010 — NASA TM-2010-216130)</p>
+    </div>
+    <div style="font-size:0.97rem;color:var(--text);line-height:1.8;">
+      <p style="margin-bottom:1rem;">Stuster&rsquo;s analysis of four decades of isolated confined environment research &mdash; covering Antarctic winter-over stations, submarine missions, polar expeditions, and early space missions &mdash; found that the same three factors appear consistently as the primary predictors of adverse behavioral health outcomes: interpersonal conflict, monotony, and inadequate autonomy. The research base is not new. The governance response to it is largely nonexistent.</p>
+      <p style="margin-bottom:1rem;">Interpersonal conflict is a social cohesion governance problem. Institutions that place people in confined proximity without crew composition standards, conflict resolution protocols, or privacy governance frameworks produce interpersonal conflict reliably. Monotony is a temporal governance problem. Institutions that do not govern the structure of time &mdash; circadian rhythm protection, meaningful activity rotation, cognitive maintenance programming &mdash; produce monotony-related degradation reliably. Inadequate autonomy is an agency preservation problem. Institutions that do not preserve meaningful decision-making authority for individuals over their immediate personal environment produce learned helplessness reliably. These are design outcomes, not character outcomes.</p>
+      <p style="margin-bottom:1rem;">Kanas and Manzey (2008) added a fourth governance risk: the &ldquo;Earth-out&rdquo; phenomenon, in which crew members displace negative emotions away from mission control &mdash; where they cannot be expressed &mdash; and onto crewmates, who absorb the displaced hostility and produce escalating interpersonal conflict. This is a communication governance failure between the crew and the institutional command structure. It is predictable, documented, and unaddressed by most operational governance frameworks.</p>
+      <p style="margin-bottom:1rem;">In an environment people cannot leave, every stressor is a governance choice. The acoustic environment of the spacecraft. The lighting schedule. The private space allocation. The work-to-rest ratio. The channel through which a crew member raises a concern without triggering institutional penalty. These are not design preferences. They are governance variables with measurable consequences for the people who live inside them, with no ability to exit.</p>
+    </div>
+    <div style="margin-top:2rem;background:rgba(43,64,102,0.05);border:1px solid rgba(43,64,102,0.2);border-radius:6px;padding:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#2B4066;margin-bottom:0.5rem;">Governance Implication</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">M15 governance requires: documented environmental standards (acoustic &le;45 dBA, lighting, thermal, air quality) with continuous monitoring; psychological health monitoring that does not penalize help-seeking; crew composition standards with pre-deployment cohesion assessment; formal privacy and personal space protocols; documented circadian rhythm protections; written emergency response protocol with defined mission abort triggers.</p>
+    </div>
+    <div style="margin-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:0.78rem;color:var(--muted);">Stuster (2010) NASA TM-2010-216130 &middot; Kanas &amp; Manzey (2008) doi:10.1007/978-1-4020-6770-9 &middot; Maslach et al. (2001) doi:10.1146/annurev.psych.52.1.397</div>
+      <a href="/m15" style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;color:#2B4066;">Go to M15 Module &rarr;</a>
+    </div>
+  </div>
+</article>
+
+<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Apply these insights to your institution.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Each spotlight above corresponds to a free 8–12 minute readiness assessment. Take the assessment, see your tier, and leave with one action to take this week.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer" style="background:white;color:var(--nsag);padding:0.75rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">M9 Assessment</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">M8 Assessment</a>
+      <a href="https://nsag-m11.vercel.app" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">M11 Assessment</a>
+      <a href="/#start" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">All 15 Modules →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl" style="grid-column:span 2;">
+      <h5>Modules — All 13</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
+          <a href="/m1">M1 · Trauma-Informed Legal Space</a>
+          <a href="/m2">M2 · AI Legal Navigation</a>
+          <a href="/m6">M6 · Ethical Civic Sponsorship</a>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
+          <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
+          <a href="/m7">M7 · Conscious Cities</a>
+          <a href="/m12">M12 · Education Systems</a>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
+          <a href="/m3">M3 · Psychedelic Harm Reduction</a>
+          <a href="/m4">M4 · Cannabis Public Health</a>
+          <a href="/m8">M8 · Burnout Recovery</a>
+          <a href="/m9">M9 · Cannabis Healthcare Visibility</a>
+          <a href="/m10">M10 · Healthcare Built Environment</a>
+          <a href="/m11">M11 · Medical Technology</a>
+          <a href="/m13">M13 · Traditional &amp; CAM</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/#start">All 13 Assessments →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>

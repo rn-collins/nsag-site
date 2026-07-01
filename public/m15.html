@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M15: Isolation, Confinement, and Extreme Environment Governance &middot; NSAG</title>
+<meta name="description" content="NSAG M15: Human beings placed in isolation and confinement for extended periods exhibit predictable patterns of psychological and ">
+<link rel="canonical" href="https://nsag-site.vercel.app/m15">
+<meta property="og:title" content="M15: Isolation, Confinement, and Extreme Environment Governance &middot; NSAG">
+<meta property="og:description" content="Human beings placed in isolation and confinement for extended periods exhibit predictable patterns of psychological and physiological degradation. These patterns are preventable through institutional ">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}h4,nav{font-family:'Syne',sans-serif;}
+a{color:#2B4066;text-decoration:none;}a:hover{opacity:0.8;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:#2B4066;display:inline-block;background:rgba(0,0,0,0.06);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;flex-wrap:wrap;}
+.nl a{color:var(--muted);}.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}h3{font-size:1.2rem;margin-bottom:0.75rem;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1.5fr 1fr 2fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+.dropdown{position:relative;display:inline-block;}.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}.dropdown:hover .dropdown-trigger{color:var(--nsag);}.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}.dropdown:hover .dropdown-menu{display:block;}.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}.dropdown-menu a:last-child{border-bottom:none;}.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+@media(max-width:900px){.nl{display:none;}.grid-2{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+</style>
+</head>
+<body><nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <a href="/#modules" style="color:var(--muted);text-decoration:none;">Modules</a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">M15 · Isolation &amp; Confinement</span>
+  </div>
+</div>
+<section style="background:#2B4066;color:white;padding:4.5rem 0 3.5rem;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(255,255,255,0.2);color:white;padding:0.3rem 0.7rem;border-radius:3px;">M15</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75;">Space & Extreme Environments</span>
+    </div>
+    <h1 style="font-size:clamp(1.9rem,4vw,3rem);color:white;max-width:780px;margin-bottom:1.25rem;">Isolation, Confinement, and Extreme Environment Governance</h1>
+    <p style="max-width:680px;opacity:0.88;font-size:1.05rem;margin-bottom:2rem;">Human beings placed in isolation and confinement for extended periods exhibit predictable patterns of psychological and physiological degradation. These patterns are preventable through institutional design. The governance frameworks that prevent them &mdash; environmental stressor standards, psychological safety infrastructure, social cohesion protocols, autonomy preservation, temporal governance, and emergency escalation systems &mdash; are well documented in the analog environment literature. Most institutions that confine human beings &mdash; spacecraft, polar stations, submarines, long-term care facilities, correctional systems &mdash; do not have evidence-based governance frameworks for the conditions they create.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#assessment-tool" style="background:white;color:#2B4066;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take the Free Assessment &rarr;</a>
+      <a href="#evidence" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">See the Evidence</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">The Governance Problem</div>
+    <h2>Why This Module Exists</h2>
+    <p style="font-size:1rem;color:var(--text);line-height:1.8;">Human beings placed in isolation and confinement for extended periods exhibit predictable patterns of psychological and physiological degradation. These patterns are preventable through institutional design. The governance frameworks that prevent them &mdash; environmental stressor standards, psychological safety infrastructure, social cohesion protocols, autonomy preservation, temporal governance, and emergency escalation systems &mdash; are well documented in the analog environment literature. Most institutions that confine human beings &mdash; spacecraft, polar stations, submarines, long-term care facilities, correctional systems &mdash; do not have evidence-based governance frameworks for the conditions they create.</p>
+  </div>
+</section>
+
+<section class="alt" id="evidence">
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">Evidence Base</div>
+    <h2>The Research Foundation</h2>
+    <div style="display:grid;gap:1rem;margin-top:1.5rem;">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #2B4066;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Stuster, J. (1996/2010). Bold Endeavors: Lessons from Polar and Space Exploration. Naval Institute Press / NASA TM-2010-216130.</span>
+          <a href="https://humanresearchroadmap.nasa.gov/evidence/reports/Stuster.pdf" target="_blank" rel="noopener noreferrer" style="font-family:'Syne',sans-serif;font-size:0.72rem;color:#2B4066;white-space:nowrap;">DOI &rarr;</a>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Four decades of analog environment research — Antarctic stations, submarines, polar expeditions — distilled into governance principles</p>
+        <p style="font-size:0.9rem;color:var(--text);font-style:italic;">&ldquo;Interpersonal issues, monotony, and inadequate autonomy are the three most consistent predictors of adverse behavioral health outcomes across analog environments. All three are governable institutional design variables, not individual character failures.&rdquo;</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #2B4066;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Kanas, N., & Manzey, D. (2008). Space Psychology and Psychiatry (2nd ed.). Springer/Praxis.</span>
+          <a href="https://doi.org/10.1007/978-1-4020-6770-9" target="_blank" rel="noopener noreferrer" style="font-family:'Syne',sans-serif;font-size:0.72rem;color:#2B4066;white-space:nowrap;">DOI &rarr;</a>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Systematic review of psychological health in space environments</p>
+        <p style="font-size:0.9rem;color:var(--text);font-style:italic;">&ldquo;Displacement of negative emotions from mission control to crewmates ('Earth-out' phenomenon) is a documented governance risk in long-duration missions. Governance structures that reduce communication friction with external authorities and preserve crew autonomy significantly reduce this risk.&rdquo;</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #2B4066;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Maslach, C., Schaufeli, W.B., & Leiter, M.P. (2001). doi:10.1146/annurev.psych.52.1.397</span>
+          <a href="https://doi.org/10.1146/annurev.psych.52.1.397" target="_blank" rel="noopener noreferrer" style="font-family:'Syne',sans-serif;font-size:0.72rem;color:#2B4066;white-space:nowrap;">DOI &rarr;</a>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Job burnout — six person-job mismatch domains as organizational governance framework</p>
+        <p style="font-size:0.9rem;color:var(--text);font-style:italic;">&ldquo;The six mismatch domains (workload, control, reward, community, fairness, values) that produce burnout on Earth produce analogous degradation in isolated confined environments. The governance response is organizational design, not individual intervention.&rdquo;</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #2B4066;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Ulrich, R.S., et al. (2008). doi:10.1177/193758670800100306</span>
+          <a href="https://doi.org/10.1177/193758670800100306" target="_blank" rel="noopener noreferrer" style="font-family:'Syne',sans-serif;font-size:0.72rem;color:#2B4066;white-space:nowrap;">DOI &rarr;</a>
+        </div>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">A review of the research literature on evidence-based healthcare design</p>
+        <p style="font-size:0.9rem;color:var(--text);font-style:italic;">&ldquo;Acoustic environment above 45 dBA produces measurable physiological stress responses including cortisol elevation and sleep fragmentation. Natural light access reduces length of stay. These findings apply with increased consequence in isolated confined environments where there is no option to exit the stressor.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">Six Governance Dimensions</div>
+    <h2>What the Assessment Measures</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem;">Each readiness assessment scores your institution across these six governance dimensions on a five-point scale, producing a tier report (PIONEERING, EMERGING, DEVELOPING, or EARLY STAGE).</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</span>
+        <span style="font-size:0.9rem;color:var(--text);">Environmental Stressor Governance</span>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</span>
+        <span style="font-size:0.9rem;color:var(--text);">Psychological Safety Infrastructure</span>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</span>
+        <span style="font-size:0.9rem;color:var(--text);">Social Cohesion and Community Governance</span>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</span>
+        <span style="font-size:0.9rem;color:var(--text);">Autonomy and Agency Preservation</span>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</span>
+        <span style="font-size:0.9rem;color:var(--text);">Temporal Governance and Chronobiological Standards</span>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#2B4066;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</span>
+        <span style="font-size:0.9rem;color:var(--text);">Exit and Emergency Response Governance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">PIONEERING Governance</div>
+    <h2>What the Highest Tier Looks Like</h2>
+    <div style="background:rgba(0,0,0,0.04);border-left:4px solid #2B4066;padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#2B4066;margin-bottom:0.5rem;">PIONEERING &mdash; Fully Implemented Governance</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.7;">Documented environmental standards (acoustic &le;45 dBA, lighting, thermal, air quality) with continuous monitoring and escalation protocols; psychological health monitoring system with crisis escalation procedures that do not penalize help-seeking; crew composition standards with pre-deployment cohesion assessment; formal privacy and personal space protocols reviewed by all participants before deployment; documented work/rest scheduling with circadian rhythm protections; written emergency evacuation and mission abort protocol with defined triggers.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--muted);">The full tier operationalization &mdash; PIONEERING through EARLY STAGE &mdash; is available in the Framework Foundation.</p>
+  </div>
+</section>
+
+
+<section style="background:#E8EDF5;padding:3rem 0;">
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">The Governance Principle</div>
+    <h2>Every Environmental Stressor in an Extreme Environment Is a Governance Choice</h2>
+    <p style="font-size:1rem;line-height:1.8;margin-bottom:1rem;">On Earth, an institution that produces a harmful environment can be left. In an extreme environment &mdash; a spacecraft, a polar station, a submarine, a secure facility &mdash; there is no exit. The governance of that environment is not a quality of life question. It is a survival and human rights question.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;">M15 applies the nervous-system-aware governance framework to the environments where it is most consequential: the ones people cannot leave. The six dimensions in this module translate four decades of analog environment research into institutional governance standards that can be documented, measured, and improved.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="grid-2" style="gap:3rem;">
+      <div>
+        <div class="slabel">Who Should Prioritize This Module</div>
+        <h3>Built for These Institutions</h3>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;">Space agencies and commercial space operators &middot; Antarctic and polar research stations &middot; Submarine and naval vessel programs &middot; Long-term care and residential healthcare facilities &middot; Correctional and detention facility governance &middot; Intensive care and isolation unit design programs &middot; Wilderness and expedition program operators</p>
+      </div>
+      <div>
+        <div class="slabel">Related Modules</div>
+        <h3>What to Assess Next</h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="/m14" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1rem;text-decoration:none;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:#2B4066;background:#E8EDF5;padding:0.2rem 0.5rem;border-radius:3px;white-space:nowrap;">M14</span>
+            <span style="font-size:0.875rem;color:var(--text);">Space Governance and Interplanetary Jurisdiction</span>
+          </a>
+          <a href="/m8" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1rem;text-decoration:none;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:#2B4066;background:#E8EDF5;padding:0.2rem 0.5rem;border-radius:3px;white-space:nowrap;">M8</span>
+            <span style="font-size:0.875rem;color:var(--text);">Burnout Recovery Infrastructure</span>
+          </a>
+          <a href="/m10" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1rem;text-decoration:none;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:#2B4066;background:#E8EDF5;padding:0.2rem 0.5rem;border-radius:3px;white-space:nowrap;">M10</span>
+            <span style="font-size:0.875rem;color:var(--text);">Healthcare Built Environment</span>
+          </a>
+          <a href="/m7" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1rem;text-decoration:none;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:#2B4066;background:#E8EDF5;padding:0.2rem 0.5rem;border-radius:3px;white-space:nowrap;">M7</span>
+            <span style="font-size:0.875rem;color:var(--text);">Conscious Cities</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+<div id="assessment-tool" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;margin-top:1.5rem;">
+  <div class="slabel">M15 Readiness Assessment</div>
+  <h3>Take the Free Assessment</h3>
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;">12 questions across six governance dimensions. Your tier report immediately. No email required to start.</p>
+  <div id="aq-container"></div>
+  <div id="aq-email-gate" style="display:none;margin-top:1.5rem;">
+    <p style="font-size:0.9rem;margin-bottom:0.75rem;">Enter your email to receive your full dimension report:</p>
+    <input type="email" id="aq-email" aria-label="Your email address" placeholder="you@organization.com" style="width:100%;max-width:400px;padding:0.65rem 1rem;border:1px solid var(--border);border-radius:4px;font-family:'Manrope',sans-serif;margin-bottom:0.75rem;">
+    <button onclick="submitAssessment()" style="background:#2B4066;color:white;padding:0.65rem 1.5rem;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;cursor:pointer;display:block;">Get My Tier Report</button>
+  </div>
+  <div id="aq-result" style="display:none;margin-top:1.5rem;"></div>
+</div>
+<script>
+const AQS=[{q:"Does your organization have a documented environmental stressor governance policy or framework?",d:1},{q:"Is the environmental stressor governance framework reviewed and updated at least annually?",d:1},{q:"Does your organization have documented protocols for psychological safety infrastructure?",d:2},{q:"Are psychological safety infrastructure protocols accessible to all relevant personnel?",d:2},{q:"Does your organization have written standards for social cohesion and community governance?",d:3},{q:"Are social cohesion and community governance standards monitored and reported to leadership quarterly or more frequently?",d:3},{q:"Does your organization have a formal process for autonomy and agency preservation?",d:4},{q:"Is there an independent accountability mechanism for autonomy and agency preservation?",d:4},{q:"Does your organization have documented governance for temporal governance and chronobiological standards?",d:5},{q:"Are temporal governance and chronobiological standards outcomes tracked as quality improvement metrics?",d:5},{q:"Does your organization have a documented framework for exit and emergency response governance?",d:6},{q:"Is the exit and emergency response governance framework reviewed by affected stakeholders at least annually?",d:6}];
+let answers={};
+function renderQ(i){
+  if(i>=AQS.length){document.getElementById('aq-email-gate').style.display='block';return;}
+  const q=AQS[i];
+  const c=document.getElementById('aq-container');
+  c.innerHTML=`<div style="margin-bottom:1rem;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#2B4066;margin-bottom:0.35rem;">Question ${i+1} of ${AQS.length} &middot; Dimension ${q.d}</div><p style="font-size:0.9rem;font-weight:500;margin-bottom:1rem;">${q.q}</p><div style="display:flex;flex-direction:column;gap:0.5rem;">${[1,2,3,4,5].map(v=>`<label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.875rem;border:1px solid var(--border);border-radius:4px;cursor:pointer;"><input type="radio" name="aq${i}" value="${v}" onchange="answers[${i}]=${v};setTimeout(()=>renderQ(${i+1}),300)"> <span style="font-size:0.875rem;">${['Not at all','Minimally','Partially','Mostly','Fully'][[1,2,3,4,5].indexOf(v)]}</span></label>`).join('')}</div></div>`;
+}
+renderQ(0);
+function submitAssessment(){
+  const email=document.getElementById('aq-email').value.trim();
+  if(!email||!email.includes('@')){alert('Please enter a valid email.');return;}
+  let total=0,dims={};
+  Object.entries(answers).forEach(([i,v])=>{total+=v;const d=AQS[i].d;dims[d]=(dims[d]||0)+v;});
+  const avg=total/AQS.length;
+  const tier=avg>=4.5?'PIONEERING':avg>=3.5?'EMERGING':avg>=2.5?'DEVELOPING':'EARLY STAGE';
+  const colors={PIONEERING:'#1B7A68',EMERGING:'#2B4066',DEVELOPING:'#B8842A','EARLY STAGE':'#C24A2E'};
+  const tc=colors[tier];
+  document.getElementById('aq-email-gate').style.display='none';
+  const dimNames={1:"Dim 1",2:"Dim 2",3:"Dim 3",4:"Dim 4",5:"Dim 5",6:"Dim 6"};
+  let dimHTML=Object.entries(dims).map(([d,s])=>`<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;"><span>${dimNames[d]}</span><span style="font-weight:600;color:#2B4066">${(s/2).toFixed(1)}/5.0</span></div>`).join('');
+  document.getElementById('aq-result').style.display='block';
+  document.getElementById('aq-result').innerHTML=`<div style="background:${tc};color:white;border-radius:8px;padding:1.5rem;margin-bottom:1rem;text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:0.25rem;">Your M15 Governance Tier</div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;">${tier}</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Dimension Scores</div>${dimHTML}</div><button onclick="navigator.clipboard.writeText('My M15 governance tier: '+tier)" style="background:transparent;border:1px solid var(--border);padding:0.5rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.78rem;cursor:pointer;">Copy Results</button>`;
+  fetch('https://nsag-api.vercel.app/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,module:'M15',tier,avg:avg.toFixed(2),source:'module-assessment'})}).catch(()=>{});
+}
+</script>
+  </div>
+</section>
+
+
+<section style="background:#2B4066;color:white;padding:3rem 0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.75rem;">Download Module Overview</div>
+        <h2 style="color:white;margin-bottom:0.75rem;">Get the condensed M15 overview PDF</h2>
+        <p style="opacity:0.85;font-size:0.9rem;">Governance problem &middot; Full evidence base &middot; Six dimensions &middot; PIONEERING criteria &middot; Who should prioritize this module. Free. No enrollment required.</p>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem;">
+          <label for="dl-email-m15" style="display:block;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;margin-bottom:0.5rem;opacity:0.9;">Your email address</label>
+          <input type="email" id="dl-email-m15" aria-label="Your email address" placeholder="you@organization.com" style="width:100%;padding:0.75rem 1rem;border-radius:4px;border:none;font-family:'Manrope',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;">
+          <button onclick="handleDownload_M15" style="width:100%;background:white;color:#2B4066;padding:0.75rem 1rem;border-radius:4px;border:none;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;">Download PDF &darr;</button>
+          <div id="dl-msg-m15" style="margin-top:0.6rem;font-size:0.82rem;opacity:0;transition:opacity 0.3s;"></div>
+        </div>
+        <div style="margin-top:1.25rem;text-align:center;">
+          <span style="opacity:0.7;font-size:0.82rem;">or</span>
+          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:0.5rem;border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;text-align:center;">Book a Discovery Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function handleDownload_M15() {
+  var email = document.getElementById('dl-email-m15').value.trim();
+  var msg = document.getElementById('dl-msg-m15');
+  if (!email || !email.includes('@')) {
+    msg.style.color='rgba(255,200,100,1)'; msg.textContent='Please enter a valid email.'; msg.style.opacity='1'; return;
+  }
+  fetch('https://nsag-api.vercel.app/api/lead', {method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:email,source:'M15-overview-download',timestamp:new Date().toISOString()})}).catch(function(){});
+  msg.style.color='rgba(200,255,200,1)'; msg.textContent='Opening your download...'; msg.style.opacity='1';
+  setTimeout(function(){
+    var a=document.createElement('a'); a.href='/pdfs/NSAG_M15_Overview.pdf'; a.download='NSAG_M15_Overview.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }, 300);
+}
+</script>
+
+<section style="background:#2B4066;color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Take the free M15 assessment.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">8&ndash;12 minutes. Your tier report immediately. One action you can take this week. No email required to start.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#assessment-tool" style="background:white;color:#2B4066;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Start Free Assessment</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Book a Discovery Call</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl">
+      <h5>Modules</h5>
+      <a href="/m1">M1 Trauma-Informed Legal Space</a>
+      <a href="/m8">M8 Burnout Recovery</a>
+      <a href="/m9">M9 Cannabis Healthcare Visibility</a>
+      <a href="/m11">M11 Medical Technology</a>
+      <a href="/m13">M13 Traditional &amp; CAM</a>
+      <a href="/#modules">All 13 Modules →</a>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="https://nsag-m9.vercel.app" target="_blank">M9 Assessment</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank">M8 Assessment</a>
+      <a href="https://nsag-m1.vercel.app" target="_blank">M1 Assessment</a>
+      <a href="/#start">All Assessments →</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank">Book a Discovery Call</a></div>
+</footer>
+
+</body>
+</html>

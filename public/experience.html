@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Experience · NSAG</title>
+<meta name="description" content="What you get from NSAG: the moment of recognition, the post-assessment pipeline, and the one-action library for every module at every tier.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-light:#6B63C4;--nsag-pale:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 2rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;flex-wrap:wrap;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+.hero{background:var(--nsag);color:var(--white);padding:4rem 0 3rem;}
+.hero h1{font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem;}
+.hero p{max-width:700px;opacity:0.85;font-size:1.1rem;}
+section{padding:4rem 0;}
+section:nth-child(even){background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:var(--nsag);}
+h3{font-size:1.25rem;margin-bottom:0.75rem;}
+/* Timeline */
+.timeline{position:relative;padding-left:3rem;}
+.timeline::before{content:'';position:absolute;left:1rem;top:0;bottom:0;width:2px;background:var(--border);}
+.t-item{position:relative;margin-bottom:2.5rem;}
+.t-item::before{content:attr(data-step);position:absolute;left:-2.25rem;top:0.1rem;width:1.75rem;height:1.75rem;background:var(--nsag);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;}
+.t-label{font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;}
+.t-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.5rem;}
+.t-body{font-size:0.95rem;color:var(--muted);max-width:640px;}
+/* Comparison */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0;}
+.compare-col{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.compare-head{padding:1rem 1.5rem;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;}
+.compare-body{padding:1.5rem;}
+.compare-body p{font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.6;}
+/* Action cards */
+.action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:1.5rem;}
+.action-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.action-head{padding:0.75rem 1.25rem;display:flex;align-items:center;gap:0.75rem;}
+.action-mod{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:var(--nsag);padding:0.2rem 0.5rem;border-radius:3px;}
+.action-tier{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.action-body{padding:0.75rem 1.25rem 1.25rem;font-size:0.9rem;color:var(--text);line-height:1.6;border-top:1px solid var(--border);}
+/* Email mockup */
+.email-mock{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:640px;margin:1.5rem 0;}
+.email-head{background:var(--bg);padding:1rem 1.5rem;border-bottom:1px solid var(--border);}
+.email-from{font-family:'Syne',sans-serif;font-size:0.78rem;color:var(--muted);margin-bottom:0.25rem;}
+.email-subj{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--text);}
+.email-body{padding:1.5rem;font-size:0.9rem;color:var(--text);line-height:1.7;}
+.email-section{margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);}
+.email-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.email-label{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.4rem;}
+/* Pipe */
+.pipe{display:flex;gap:0;flex-wrap:wrap;margin-top:1.5rem;}
+.pipe-step{flex:1;min-width:150px;border:1px solid var(--border);border-right:none;padding:1.25rem;}
+.pipe-step:last-child{border-right:1px solid var(--border);}
+.pipe-step:first-child{border-radius:6px 0 0 6px;}
+.pipe-step:last-child{border-radius:0 6px 6px 0;}
+.pipe-when{font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.25rem;}
+.pipe-what{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.25rem;}
+.pipe-why{font-size:0.8rem;color:var(--muted);}
+/* Pull quote */
+.pullquote{border-left:4px solid var(--nsag);background:var(--nsag-pale);padding:1.5rem 1.5rem;border-radius:0 8px 8px 0;margin:2rem 0;}
+.pullquote p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--text);line-height:1.5;}
+/* Footer */
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0.85rem;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:start;gap:2rem;flex-wrap:wrap;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.4rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.78rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:768px){.nl{display:none;}.compare{grid-template-columns:1fr;}.pipe{flex-direction:column;}.pipe-step{border-right:1px solid var(--border);border-bottom:none;border-radius:0!important;}.pipe-step:first-child{border-radius:6px 6px 0 0!important;}.pipe-step:last-child{border-bottom:1px solid var(--border);border-radius:0 0 6px 6px!important;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+</style>
+<link rel="canonical" href="https://nsag-site.vercel.app/experience">
+<meta property="og:title" content="Your Experience · NSAG">
+<meta property="og:description" content="What you get from NSAG: the moment of recognition, the post-assessment pipeline, and the one-action library for every module at every tier.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/experience">
+</head>
+<body>
+
+<nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+            <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">Experience the Framework</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Your Experience · What You Get</div>
+    <h1>You will leave knowing<br>one thing you didn't know before.</h1>
+    <p style="margin-top:1rem;">Not a score. A recognition. What your institution is producing in the people inside it — right now, today — that you cannot currently see or govern. And one specific thing to do about it this week.</p>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#recognition" style="background:white;color:var(--nsag);padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">The Recognition Moment</a>
+      <a href="#pipeline" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">After the Assessment</a>
+      <a href="#actions" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">One-Action Library</a>
+    </div>
+  </div>
+</div>
+
+<!-- PART I: THE RECOGNITION MOMENT -->
+<section id="recognition">
+  <div class="wrap">
+    <div class="slabel">Part I</div>
+    <h2>The Moment of Recognition</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">The assessment is not a scoring tool. It is the vehicle for a specific experience: the moment when an institutional decision-maker realizes they have been producing a physiological effect on the people in their institution without knowing it.</p>
+    
+    <div class="pullquote">
+      <p>"I didn't know I was doing that to people."</p>
+    </div>
+    
+    <p style="color:var(--muted);max-width:700px;margin-bottom:2rem;">That moment is the entire product. Everything downstream — the advisory engagement, the CE, the Brief subscription, the follow-up — is support for someone who has already had that realization and wants to act on it. If the assessment creates that moment, NSAG has done its core work.</p>
+    
+    <h3 style="margin-bottom:1.5rem;">What creates the moment</h3>
+    <div class="compare">
+      <div class="compare-col">
+        <div class="compare-head" style="background:#5A5869;color:white;">What a scoring tool asks</div>
+        <div class="compare-body">
+          <p>"Does your institution have a standardized cannabis screening instrument in place?"</p>
+          <p style="font-size:0.85rem;font-style:italic;">You think about the institution. You answer yes or no. You receive a score. The score is abstract. You are not moved.</p>
+        </div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-head" style="background:var(--nsag);color:white;">What NSAG asks</div>
+        <div class="compare-body">
+          <p>"Think of a patient in your care right now who uses cannabis daily. Do you know about it? Almost certainly not. Here is what that costs their safety — and yours."</p>
+          <p style="font-size:0.85rem;font-style:italic;">You think about a specific person. You answer twelve questions. The score lands as confirmation of something you already recognized. You are moved.</p>
+        </div>
+      </div>
+    </div>
+    
+    <h3 style="margin:2.5rem 0 1rem;">Three things that produce the recognition</h3>
+    <div class="timeline">
+      <div class="t-item" data-step="1">
+        <div class="t-label">Before the questions</div>
+        <div class="t-title">The implication is named first</div>
+        <div class="t-body">The governance implication frames the assessment, not the other way around. A person who reads what is happening to people in their institution because of a governance gap — before answering any questions — experiences the score as evidence of something they already understood. That is the recognition sequence. Score-then-implication produces a verdict. Implication-then-score produces a recognition.</div>
+      </div>
+      <div class="t-item" data-step="2">
+        <div class="t-label">In the questions</div>
+        <div class="t-title">Each question teaches</div>
+        <div class="t-body">Every question carries implicit information. Answering "no" to "Does your institution have a proactive language identification protocol in place before client self-identification is required?" tells you something you did not know about what your intake design is asking of your clients. The act of answering should feel like learning, not testing.</div>
+      </div>
+      <div class="t-item" data-step="3">
+        <div class="t-label">In the results</div>
+        <div class="t-title">The tier report names people, not gaps</div>
+        <div class="t-body">The tier report opens with the specific people affected at this tier level — not the abstract governance category. "Your institution is EARLY STAGE in Disclosure Safety Infrastructure" is a verdict. "In your institution today, the design of your intake process is telling patients that it is not safe to disclose cannabis use. An unknown number of them are not telling you. You are managing their pharmacology without their full history." — that is a recognition.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART II: POST-ASSESSMENT PIPELINE -->
+<section id="pipeline" style="background:var(--white);">
+  <div class="wrap">
+    <div class="slabel">Part II</div>
+    <h2>After the Assessment</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:1rem;">Every person who completes an assessment receives three things: something they can do tomorrow, evidence that someone else did it and it worked, and a reason to come back.</p>
+    
+    <div class="pipe" style="margin-bottom:3rem;">
+      <div class="pipe-step">
+        <div class="pipe-when">Immediate</div>
+        <div class="pipe-what">Tier Email</div>
+        <div class="pipe-why">Recognition statement + one action for this week + what PIONEERING looks like + resources</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-when">Day 3</div>
+        <div class="pipe-what">Evidence Email</div>
+        <div class="pipe-why">A case narrative: what an institution that made this change did, how long it took, what they measured, what they found</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-when">Day 7</div>
+        <div class="pipe-what">Discovery Call</div>
+        <div class="pipe-why">One question to answer first. Then 20 minutes. No sales. Just: which dimension are you most motivated to address?</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-when">Day 30</div>
+        <div class="pipe-what">Check-In</div>
+        <div class="pipe-why">Has anything changed — not in governance, but in your understanding of the gap? A second-take assessment invitation.</div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-when">Day 90</div>
+        <div class="pipe-what">Cohort Invitation</div>
+        <div class="pipe-why">60 minutes with 4–6 institutions working on the same module. Peer exchange. What is working. What isn't. Facilitated by NSAG.</div>
+      </div>
+    </div>
+    
+    <h3 style="margin-bottom:1.25rem;">What the immediate tier email looks like</h3>
+    <div class="email-mock">
+      <div class="email-head">
+        <div class="email-from">From: NSAG · Neurocognitive Systems Advisory Group</div>
+        <div class="email-subj">Your M9 score — and what it means for one patient in your care today</div>
+      </div>
+      <div class="email-body">
+        <div class="email-section">
+          <div class="email-label">Right now in your institution</div>
+          <p>In your institution today, the design of your intake process is telling patients that it is not safe to disclose cannabis use. Lapham et al. (2022) found that 35.1% of primary care patients reported cannabis use on a confidential survey while only 4.8% had it documented in the EHR — from the same patient population, measured simultaneously. Your score puts you in that gap. An unknown number of your patients are managing their pharmacology without their provider having the full picture.</p>
+        </div>
+        <div class="email-section">
+          <div class="email-label">One action for this week</div>
+          <p>Add one question to your intake form today: <em>"Do you currently use cannabis, CBD, or hemp products?"</em> You do not need EHR integration, a committee, or a policy change to do this. You need a form edit and 48 hours. That one question is the beginning of closing the gap.</p>
+        </div>
+        <div class="email-section">
+          <div class="email-label">What PIONEERING looks like in M9</div>
+          <p>A PIONEERING institution has a validated cannabis screening instrument at every patient contact with ≥85% completion, all clinical providers trained in CYP450 interaction protocols, standardized EHR cannabis fields with ≥85% completion, a written disclosure safety policy communicated at every intake, documented legal guidance updated within 3 years, and cannabis documentation rate tracked as a quarterly QI metric.</p>
+        </div>
+        <div class="email-section">
+          <div class="email-label">Next</div>
+          <p>Read the M9 research synthesis in NSAG Brief Issue 1 · Book a discovery call · Take the M13 assessment (if you offer any traditional or complementary medicine services, this is where to go next)</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="pullquote" style="margin-top:2.5rem;">
+      <p>The metric for whether NSAG is working: do people forward the tier report to someone else?<br>That happens when the recognition is specific enough to be worth sharing, the action is concrete enough to be worth discussing, and the implication is significant enough to feel urgent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PART III: ONE-ACTION LIBRARY -->
+<section id="actions">
+  <div class="wrap">
+    <div class="slabel">Part III</div>
+    <h2>One-Action Library</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:0.5rem;">For every module at every tier: one specific, zero-budget, no-committee-required action that one person can take this week and see a visible result within 7 days.</p>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;font-size:0.9rem;">These are starting actions, not governance plans. They are designed to create the first observable change — the moment when abstract governance language becomes something a specific person experienced differently.</p>
+    
+    <div class="action-grid"><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M9</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Add one cannabis screening question to your intake form today. 'Do you currently use cannabis, CBD, or hemp products?' No EHR integration, no committee, no policy change required. Form edit + 48 hours.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M9</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">Email your EHR administrator today: what would it take to add a cannabis-specific structured field to the intake workflow? Get a timeline in writing.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M9</span>
+          <span class="action-tier" style="color:#4D45A8;font-weight:700;">Emerging</span>
+        </div>
+        <div class="action-body">Set a 30-day cannabis documentation rate goal. Pull your current documentation rate from your EHR. Write the number down. That is your baseline. Send it to one clinical leader.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M8</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Write down the answer to: how many patient contacts does each clinical staff member have per shift? If you don't know, that is the governance gap. The first action is learning the number.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M8</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">Schedule a 30-minute staff meeting in the next 2 weeks. Agenda: 'What is the one thing about your workload that leadership cannot currently see?' Listen. Do not problem-solve in the meeting. Document what you hear.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M1</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today, read one document in your client intake package at the reading level of your most vulnerable client. Count the syllables in the words. That is where you are in plain language governance.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M1</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">Identify the one client-facing document with the highest reading level. Send it to your communications team or a plain language reviewer today with a request for a revised version within 30 days.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M2</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today, ask: has any AI tool influencing decisions at this institution been independently assessed for demographic disparities in outcomes? If the answer is 'I don't know,' that is the answer. The first action is finding out.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M2</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">Request the technical documentation for the primary AI risk assessment tool in use. Specifically request: the validation cohort demographics, the false-positive rate by racial/ethnic group, and any known limitations for your specific population.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M11</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today, name every AI tool that influences a clinical decision at your institution. If you cannot name them all, that is the governance gap. The first action is making the complete list.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M11</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">For the primary clinical AI tool in use: pull 3 months of outcome data and ask your data team to stratify it by race and ethnicity. If they cannot do this today, that is also a governance finding.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M12</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Walk through one learning space this week. Measure ambient noise at three points using a free smartphone app. Note access to natural light. Write down what you find. That is your first built environment assessment.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M12</span>
+          <span class="action-tier" style="color:#B8842A;font-weight:700;">Developing</span>
+        </div>
+        <div class="action-body">Identify the one classroom or learning space in your institution most likely to activate threat responses in students who have experienced adverse childhood events. Name specifically what feature would activate them. That naming is the beginning of governance.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M13</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">If your institution offers any traditional or complementary medicine practice: does a written agreement exist with the community or practitioner specifying attribution, compensation, and scope of use? If not, identify who needs to be in the room to create one.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M5</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today, walk through your institution and note: (1) visible natural light sources, (2) visible plants or natural materials, (3) views of outdoor natural environments. Score each on a 1–5 scale. Send the three scores to one colleague. That is your biophilic audit.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M6</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today, answer: does your institution have a written policy specifying what corporate sponsorship it will not accept? If not, that is the governance gap. Name three categories that should be in an exclusion list and send them to your legal or governance team.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M10</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Use a free smartphone decibel meter app to measure noise in your busiest patient care area at the busiest time of day. Compare to the WHO hospital noise guideline of ≤40 dBA during the day. Write down the gap. That is your acoustic governance baseline.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M3</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">If your institution offers any psychedelic-assisted services: can you name, right now, what your adverse event response protocol is for a psychological crisis — not a medical emergency, a psychological crisis? If not, that protocol does not exist. The first action is writing it.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M7</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Identify one built environment decision made in the past 12 months by your planning department or governing body. Ask: was a mental health impact assessment conducted? If not, draft a one-paragraph proposal for what that assessment would have asked.</div>
+      </div><div class="action-card">
+        <div class="action-head" style="background:var(--bg);">
+          <span class="action-mod">M4</span>
+          <span class="action-tier" style="color:#5A5869;font-weight:700;">Early Stage</span>
+        </div>
+        <div class="action-body">Today: how many of your clinical providers have received training on cannabis-opioid interactions in the past 2 years? If you don't know, that is the answer. Email your medical education team today asking for the number.</div>
+      </div>    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU COMMIT TO -->
+<section style="background:var(--white);">
+  <div class="wrap">
+    <div class="slabel">The Contract</div>
+    <h2>What you go in knowing. What you leave with.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:1rem;color:var(--nsag);">Going in, you will know exactly what you will get.</h3>
+        <ul style="list-style:none;font-size:0.95rem;color:var(--muted);">
+          <li style="padding:0.5rem 0;border-bottom:1px solid var(--border);">A score across six governance dimensions — specific, not abstract</li>
+          <li style="padding:0.5rem 0;border-bottom:1px solid var(--border);">A recognition of what that score means for a specific person in your institution right now</li>
+          <li style="padding:0.5rem 0;border-bottom:1px solid var(--border);">One action you can take this week — zero budget, no committee required</li>
+          <li style="padding:0.5rem 0;border-bottom:1px solid var(--border);">A concrete picture of what PIONEERING looks like in your module</li>
+          <li style="padding:0.5rem 0;">A reason to come back in 30 days and measure what changed</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:1rem;color:var(--nsag);">Leaving, you will feel one thing you cannot unfeel.</h3>
+        <p style="font-size:0.95rem;color:var(--muted);margin-bottom:1rem;">The governance framework is the explanation for why the problem exists. The tier report is the evidence of where your institution is. But what moves people — what compels them to forward the report to a colleague, to call the discovery line, to bring NSAG to a board meeting — is something more specific.</p>
+        <p style="font-size:0.95rem;color:var(--muted);">It is the image of one person: a patient whose warfarin dose is subtly wrong because their cannabis use is undocumented. A defendant whose bail was set by an algorithm that has never been assessed for disparate impact in this jurisdiction. A student whose classroom noise level suppresses the prefrontal access required for the test they are about to take.</p>
+        <p style="font-size:0.95rem;color:var(--muted);margin-top:0.75rem;">That image is specific enough to share. The story of what changes when the institution governs that effect — that is what compels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Start with the module most relevant to your institution.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Free. Takes 8–12 minutes. Your tier report will be in your inbox immediately.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer" style="background:white;color:var(--nsag);padding:0.875rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;">M9 Cannabis Healthcare Visibility</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;">M8 Burnout Infrastructure</a>
+      <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;">M1 Trauma-Informed Legal Space</a>
+      <a href="/#start" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;">See All 13 Modules</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fi">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl">
+      <h5>Modules</h5>
+      <a href="/m1">M1 Trauma-Informed Legal Space</a>
+      <a href="/m8">M8 Burnout Recovery</a>
+      <a href="/m9">M9 Cannabis Healthcare Visibility</a>
+      <a href="/m11">M11 Medical Technology</a>
+      <a href="/m13">M13 Traditional &amp; CAM</a>
+      <a href="/#modules">All 13 Modules →</a>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer">M9 Assessment</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer">M8 Assessment</a>
+      <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer">M1 Assessment</a>
+      <a href="/#start">All Assessments →</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>

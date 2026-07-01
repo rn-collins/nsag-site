@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · NSAG</title>
+<meta name="description" content="The origin and intellectual foundation of the Neurocognitive Systems Advisory Group. Who built it, why, and what it means.">
+<link rel="canonical" href="https://nsag-site.vercel.app/about">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav,button{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+a:hover{color:var(--nsag-l);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}
+section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
+h3{font-size:1.25rem;margin-bottom:0.75rem;}
+p+p{margin-top:0.75rem;}
+.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
+.btn-p{background:var(--nsag);color:white!important;}
+.btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+</style>
+<meta property="og:title" content="About · NSAG">
+<meta property="og:description" content="The origin and intellectual foundation of the Neurocognitive Systems Advisory Group. Who built it, why, and what it means.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/about">
+</head>
+<body><nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about" class="act">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">About</span>
+  </div>
+</div>
+
+<section style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">About NSAG</div>
+    <h1 style="font-size:clamp(2.2rem,4vw,3.8rem);color:white;max-width:800px;margin-bottom:1.5rem;">The framework started<br>in a neuroscience lab.</h1>
+    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;">At the University of Pennsylvania's Brain Center, measuring cognitive function in a research lab, the question that would eventually become NSAG first appeared: if we can measure what the brain is doing, why can't we measure what institutions are doing to brains?</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-2" style="gap:4rem;align-items:start;">
+      <div>
+        <div class="slabel">The Origin Sequence</div>
+        <h2>A Framework That Started Freshman Year</h2>
+        <div style="position:relative;padding-left:2rem;margin-top:1.5rem;">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--border);"></div>
+          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Penn Brain Center</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Cognitive Neuroscience Laboratory</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Work-study, first semester at the University of Pennsylvania. Measuring cognitive function. Learning to treat the brain's activity as something observable, documentable, governable. The first encounter with the gap between what a system produces and what it can see it produces.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Penn Medicine Neuropsychiatry</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Internship with Ruben C. Gur, PhD and Raquel E. Gur, MD, PhD</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Clinical neuroscience research. Brain imaging. The physiological reality of how environment and experience shape neural function — not metaphorically, but measurably. The intersection of neuroscience and institutional context begins to take shape.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Penn Bioethics Center</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Ethics of clinical neuroscience</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The governance layer. What are institutions obligated to do once they know what the brain is doing? What governance frameworks should exist for knowledge about neural function? The gap between scientific evidence and institutional accountability becomes the central question.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">National Research Center for Women and Families</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">FDA Medical Device Safety Research</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Working with Diana Zuckerman. The gap between what a medical institution knows about the safety of its tools and what it governs. The governance gap is not theoretical — it has documented, measurable consequences for specific people.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Boston University School of Medicine</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">MS Anatomy & Neurobiology, Brain Plasticity & Neuroimaging Laboratory (PI: Karin Schon, PhD)</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The thesis work: racialized stress, allostatic load, and medial temporal lobe volumes in Black and Afro-Caribbean older adults. The physiological consequences of institutional environments on the brain — measured directly, in tissue. The science that became NSAG's foundational claim.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Northeastern University School of Law</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">JD Candidate 2029, NuLawLab Research Partner</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The governance framework needs the legal infrastructure. Law is how institutions are held accountable. NSAG's framework is not just a scientific claim — it is a governance standard with legal and policy implications.</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">Brown University · AISLE Project</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Advanced Legislative Scorer, Center for Technological Responsibility</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Scoring AI legislation across 30+ US jurisdictions. The policy layer. What does governance actually look like when it becomes law? How does the scientific evidence base translate into enforceable institutional standards?</p>
+          </div>          <div style="position:relative;padding-left:1.5rem;margin-bottom:2rem;">
+            <div style="position:absolute;left:-0.55rem;top:0.3rem;width:1.1rem;height:1.1rem;background:var(--nsag);border-radius:50%;border:2px solid var(--white);"></div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.2rem;">The New Health Institute</div>
+            <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Director of AI Strategy (beginning July 1, 2026)</div>
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The operational layer. Building AI governance tools for health institutions. The NSAG framework applied at the intersection of AI, health system design, and institutional accountability.</p>
+          </div>        </div>
+      </div>
+      <div>
+        <div class="slabel">Who This Is</div>
+        <h2>Rayvven-Nikkita Collins, M.S.</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Neuroscientist. Law student. Governance framework builder. The person behind NSAG has spent her career at the intersection of brain science, institutional design, and the question of what institutions are obligated to do once they know what they're producing in the people inside them.</p>
+        
+        <div style="background:var(--nsag-p);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;">
+          <h4 style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:1rem;">Peer-Reviewed Publications</h4>
+          <div style="font-size:0.85rem;color:var(--text);line-height:1.8;">
+            <div style="margin-bottom:0.5rem;">Academic Radiology · Diagnostic imaging and brain health</div>
+            <div style="margin-bottom:0.5rem;">MIT Science Policy Review · Psychedelic regulatory policy (doi:10.38105/spr.osqbpecncp)</div>
+            <div style="margin-bottom:0.5rem;">Policy Insights from the Behavioral and Brain Sciences</div>
+            <div>National Academies Press · Building Tomorrow's Biomedical Workforce</div>
+          </div>
+        </div>
+        
+        <div style="background:var(--nsag-p);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;">
+          <h4 style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:1rem;">Active Institutional Roles</h4>
+          <div style="font-size:0.85rem;color:var(--text);line-height:1.8;">
+            <div style="margin-bottom:0.5rem;">Advanced Legislative Scorer · Brown University Center for Technological Responsibility (AISLE Project)</div>
+            <div style="margin-bottom:0.5rem;">Director of AI Strategy · The New Health Institute (M1–M13 · M14/M15 in development)</div>
+            <div style="margin-bottom:0.5rem;">J.D. Candidate 2029 · Northeastern University School of Law</div>
+            <div>Law Clerk · Gordon Rees Scully Mansukhani LLP; Antithesis Law PC</div>
+          </div>
+        </div>
+
+        <div style="background:var(--nsag-p);border-radius:8px;padding:1.5rem;">
+          <h4 style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:1rem;">Contributing Writer</h4>
+          <div style="font-size:0.85rem;color:var(--text);line-height:1.8;">
+            <div style="margin-bottom:0.5rem;">Fat Nugs Magazine · Cannabis industry governance</div>
+            <div style="margin-bottom:0.5rem;">Cannabis Law Report · Legal and regulatory analysis</div>
+            <div>Journal of Biophilic Design · Built environment governance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="slabel">What NSAG Is</div>
+    <h2>The Neurocognitive Systems Advisory Group</h2>
+    <div class="grid-2" style="gap:3rem;">
+      <div>
+        <p>NSAG is an advisory practice built on a single claim: every institution is already shaping how people think, feel, and participate — physiologically, not metaphorically. Through physical environment, procedural language, digital tools, disclosure architecture, and organizational structure, institutions produce measurable effects on the nervous systems of the people inside them.</p>
+        <p>Most institutions are producing these effects without measuring them, without intending them, and without governance infrastructure designed to make them intentional. That gap — between what an institution is producing and what it can see and govern — is the governance gap NSAG exists to close.</p>
+        <p>The sequence that makes everything else possible: governance must come before systems design. An institution that redesigns before it governs is redesigning in the dark. Nervous-System-Aware Governance is the infrastructure that makes the sequence possible.</p>
+      </div>
+      <div>
+        <div style="border-left:4px solid var(--nsag);padding-left:1.5rem;margin-bottom:2rem;">
+          <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Neurocognitive Systems Advisory Group</div>
+          <p style="font-size:0.95rem;">The organization. The advisory practice. The 15 modules. The governance assessment tools. The institutional relationship that makes the governance work real.</p>
+        </div>
+        <div style="border-left:4px solid var(--nsag);padding-left:1.5rem;margin-bottom:2rem;">
+          <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Nervous-System-Aware Governance</div>
+          <p style="font-size:0.95rem;">The framework theory. The intellectual claim that institutions govern nervous systems whether or not they intend to — and that governance infrastructure can make those effects intentional.</p>
+        </div>
+        <div style="border-left:4px solid var(--nsag);padding-left:1.5rem;">
+          <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">Aligning System Design and Governance</div>
+          <p style="font-size:0.95rem;">What it means in practice. Not designing with good intentions. Designing from a governance framework that specifies what the institution must produce, how it will measure whether it is producing it, and what accountability exists when it does not.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Start with a free readiness assessment.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Thirteen modules. Each takes 8–12 minutes. Each gives your institution a scored picture of where it stands — and one action to take this week.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/#start" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take a Free Assessment</a>
+      <a href="/advisory" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Work With NSAG →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl" style="grid-column:span 2;">
+      <h5>Modules — All 15</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
+          <a href="/m1">M1 · Trauma-Informed Legal Space</a>
+          <a href="/m2">M2 · AI Legal Navigation</a>
+          <a href="/m6">M6 · Ethical Civic Sponsorship</a>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
+          <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
+          <a href="/m7">M7 · Conscious Cities</a>
+          <a href="/m12">M12 · Education Systems</a>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
+          <a href="/m3">M3 · Psychedelic Harm Reduction</a>
+          <a href="/m4">M4 · Cannabis Public Health</a>
+          <a href="/m8">M8 · Burnout Recovery</a>
+          <a href="/m9">M9 · Cannabis Healthcare Visibility</a>
+          <a href="/m10">M10 · Healthcare Built Environment</a>
+          <a href="/m11">M11 · Medical Technology</a>
+          <a href="/m13">M13 · Traditional &amp; CAM</a>
+          <a href="/m14">M14 · Space Governance</a>
+          <a href="/m15">M15 · Isolation &amp; Confinement</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/#start">All 15 Assessments →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>

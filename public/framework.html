@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Foundation · NSAG</title>
+<meta name="description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 13 governance modules.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-light:#6B63C4;--nsag-pale:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 2rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;flex-wrap:wrap;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+.hero{background:var(--nsag);color:var(--white);padding:4rem 0 3rem;}
+.hero h1{font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem;}
+.hero p{max-width:700px;opacity:0.85;font-size:1.1rem;}
+section{padding:4rem 0;}
+section:nth-child(even){background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:var(--nsag);}
+h3{font-size:1.3rem;margin-bottom:0.75rem;}
+/* Tier pills */
+.tiers{display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.5rem 0;}
+.tier{padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+.t-p{background:#1B7A68;color:white;}
+.t-e{background:#4D45A8;color:white;}
+.t-d{background:#B8842A;color:white;}
+.t-es{background:#5A5869;color:white;}
+/* Global tier table */
+.tier-table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.tier-table th{background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.75rem 1rem;text-align:left;}
+.tier-table td{padding:0.875rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;font-size:0.95rem;}
+.tier-table tr:nth-child(odd) td{background:var(--bg);}
+.tier-table tr:hover td{background:var(--nsag-pale);}
+/* Accordion */
+.mod-accordion{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem;}
+.mod-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:var(--white);cursor:pointer;user-select:none;gap:1rem;}
+.mod-header:hover{background:var(--nsag-pale);}
+.mod-meta{display:flex;align-items:center;gap:1rem;flex:1;}
+.mod-num{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);background:var(--nsag-pale);padding:0.2rem 0.6rem;border-radius:3px;white-space:nowrap;}
+.mod-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--text);}
+.mod-sector{font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+.mod-chevron{font-size:1.2rem;color:var(--nsag);transition:transform 0.2s;flex-shrink:0;}
+.mod-body{display:none;padding:1.5rem;border-top:1px solid var(--border);background:var(--bg);}
+.mod-body.open{display:block;}
+.mod-chevron.open{transform:rotate(180deg);}
+/* Dim table */
+.dim-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;}
+.dim-table th{font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 0.75rem;text-align:left;border-bottom:2px solid var(--nsag);}
+.dim-table td{padding:0.75rem;border-bottom:1px solid var(--border);font-size:0.9rem;vertical-align:top;}
+.dim-table tr:nth-child(odd) td{background:rgba(77,69,168,0.03);}
+/* Tier breakdown */
+.tier-breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
+.tier-card{border-radius:6px;overflow:hidden;}
+.tier-card-head{padding:0.6rem 1rem;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:white;}
+.tier-card-body{padding:1rem;font-size:0.85rem;line-height:1.6;background:white;border:1px solid var(--border);border-top:none;}
+.tier-card-body li{margin-left:1rem;margin-bottom:0.3rem;}
+/* Module relationship map */
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:1.5rem;}
+.rel-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+.rel-card h4{font-size:0.85rem;color:var(--nsag);margin-bottom:0.75rem;}
+.rel-card p{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+/* Feedback */
+.feed-steps{counter-reset:step;margin-top:1.5rem;}
+.feed-step{display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;}
+.feed-step-num{background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;min-width:2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.1rem;}
+.feed-step-content h4{font-size:0.9rem;margin-bottom:0.25rem;}
+.feed-step-content p{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+/* Priority seq */
+.seq{display:flex;gap:0;flex-wrap:wrap;margin-top:1.5rem;}
+.seq-step{flex:1;min-width:160px;padding:1.25rem;border:1px solid var(--border);border-right:none;background:var(--white);}
+.seq-step:last-child{border-right:1px solid var(--border);}
+.seq-step:first-child{border-radius:6px 0 0 6px;}
+.seq-step:last-child{border-radius:0 6px 6px 0;}
+.seq-num{font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--nsag);margin-bottom:0.25rem;letter-spacing:0.1em;text-transform:uppercase;}
+.seq-mod{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:0.25rem;}
+.seq-why{font-size:0.8rem;color:var(--muted);}
+/* Footer */
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3rem 0;font-size:0.85rem;margin-top:0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:start;gap:2rem;flex-wrap:wrap;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.4rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.78rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:768px){.nl{display:none;}.tier-breakdown{grid-template-columns:1fr;}.seq{flex-direction:column;}.seq-step{border-right:1px solid var(--border);border-bottom:none;border-radius:0!important;}.seq-step:first-child{border-radius:6px 6px 0 0!important;}.seq-step:last-child{border-bottom:1px solid var(--border);border-radius:0 0 6px 6px!important;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+</style>
+<link rel="canonical" href="https://nsag-site.vercel.app/framework">
+<meta property="og:title" content="Framework Foundation · NSAG">
+<meta property="og:description" content="The complete NSAG framework: tier definitions, dimension derivation, module relationships, and feedback architecture across all 13 governance modules.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/framework">
+</head>
+<body>
+
+<nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+            <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework" class="act">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">Framework Foundation</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Framework Foundation · Version 1.0</div>
+    <h1>The NSAG Framework:<br>What the tiers mean.</h1>
+    <p style="margin-top:1rem;">Every tier, every dimension, every module — operationalized with specific, observable, documentable governance criteria. This is the intellectual foundation of the 13 readiness assessment instruments and the content validity record for the framework.</p>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#tiers" style="background:white;color:var(--nsag);padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">Tier Definitions</a>
+      <a href="#modules" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">All 13 Modules</a>
+      <a href="#relationships" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">Module Relationships</a>
+    </div>
+  </div>
+</div>
+
+<!-- PART I: GLOBAL TIER DEFINITIONS -->
+<section id="tiers">
+  <div class="wrap">
+    <div class="slabel">Part I</div>
+    <h2>Global Tier Definitions</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Tiers apply uniformly across all 13 modules. An institution's tier reflects the state of its governance infrastructure — not its intentions, values, or aspirations.</p>
+    <div class="tiers">
+      <span class="tier t-p">Pioneering</span>
+      <span class="tier t-e">Emerging</span>
+      <span class="tier t-d">Developing</span>
+      <span class="tier t-es">Early Stage</span>
+    </div>
+    <table class="tier-table">
+      <thead><tr><th>Tier</th><th>What it means</th><th>The governance test</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:#1B7A68;">PIONEERING</strong></td>
+          <td>The institution has fully implemented documented governance standards for this module domain. Standards are written and formally adopted by institutional leadership; tracked through operational metrics reviewed at least quarterly; accountability is assigned to a named role; standards survive leadership transitions because they are embedded in policy, not held by individuals.</td>
+          <td>Can the institution produce written evidence of implementation, measurement, and leadership accountability — today, without advance notice?</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#4D45A8;">EMERGING</strong></td>
+          <td>The institution has assessed its governance gap, adopted formal standards for at least four of six dimensions, and is actively implementing the remaining two. At least one governance change has been documented and measured. Leadership has formally acknowledged the domain as a governance responsibility.</td>
+          <td>Has the institution documented at least one governance change in this domain and measured its effect?</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#B8842A;">DEVELOPING</strong></td>
+          <td>The institution has conducted some form of governance assessment in this domain and has begun drafting standards or making informal changes in at least two of six dimensions. Changes are in motion but are not yet formally adopted, tracked, or tied to accountability structures. Implementation depends on individual champions rather than institutional policy.</td>
+          <td>Would the governance change survive the departure of the person currently driving it?</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#5A5869;">EARLY STAGE</strong></td>
+          <td>The institution has no formal governance framework for this domain. Effects in this domain are produced by the institution without measurement, governance standards, or accountability. This is not a moral assessment — it is a structural description. Most institutions begin here in most domains.</td>
+          <td>Does the institution know what it is currently producing in this domain — in measurable, documentable terms?</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PART II: MODULE-BY-MODULE -->
+<section id="modules" style="background:var(--white);">
+  <div class="wrap">
+    <div class="slabel">Part II</div>
+    <h2>Module-by-Module Operationalization</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Each module below contains: (1) why the module exists with its primary evidence base, (2) the six dimensions and why each was selected, and (3) specific, observable governance criteria for each of the four tiers.</p>
+
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M1</span>
+          <div>
+            <div class="mod-title">Trauma-Informed Legal Space</div>
+            <div class="mod-sector" style="color:#1E3651;">Legal & Justice</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Up to 90% of justice-involved youth report exposure to at least one traumatic event (Dierkhising et al., 2013). Legal institutions are structurally activating — adversarial processes, authority with power over outcomes, public exposure — and most have no governance framework for the physiological effects they produce.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1E3651;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">1</td><td><strong>Physical Environment Design</strong></td><td style="color:var(--muted);">Physical space produces measurable physiological activation states (Ulrich, 1984; SAMHSA, 2014). Acoustic separation, lighting, and seating are modifiable governance levers.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">2</td><td><strong>Procedural Design & Plain Language</strong></td><td style="color:var(--muted);">Reading-level failures produce compounded threat activation. SAMHSA's principle of Trustworthiness and Transparency operationalizes as plain language.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">3</td><td><strong>Interpreter & Translation Access</strong></td><td style="color:var(--muted);">Requiring clients to self-identify language need places the burden on the person least able to advocate in a high-stakes moment.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">4</td><td><strong>Staff Training & Trauma-Informed Behavior</strong></td><td style="color:var(--muted);">McKenna & Holtfreter (2021) document that trained staff de-escalation reduces re-traumatization even before structural changes are in place.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">5</td><td><strong>Access & Accommodation Infrastructure</strong></td><td style="color:var(--muted);">Neurodivergence and physical accessibility failures produce compounded activation in populations already overrepresented in legal contexts.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">6</td><td><strong>Feedback & Accountability Mechanisms</strong></td><td style="color:var(--muted);">Without a mechanism structurally separate from the case relationship, the institution cannot identify re-traumatization patterns.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Physical environment assessed against trauma-informed standards; modifications documented; assessment updated every 2 years</li><li>All client-facing documents at or below 6th-grade reading level; reading level audit documented within past 3 years</li><li>Proactive language identification protocol: language need identified before client self-identification required; interpreter access documented within 24 hours</li><li>100% of client-facing staff trained in trauma-informed practice within past 2 years; training includes co-regulation, de-escalation, and dissociation recognition</li><li>Formal accommodation process does not require self-advocacy in adversarial context; neurodivergence accommodations documented as standard intake step</li><li>Client feedback mechanism structurally independent of case relationship; reviewed quarterly by leadership; documented responses to findings</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Physical environment assessment completed; at least 3 of 6 modifications implemented</li><li>Plain language audit completed; ≥75% of documents at or below 8th-grade reading level</li><li>Interpreter protocol in place for top 3 languages in service population</li><li>≥60% of client-facing staff trained within past 3 years</li><li>Accommodation process documented; not yet independent of case relationship</li><li>Feedback mechanism exists; review frequency not regular</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Assessment initiated; 1–2 modifications made informally</li><li>Plain language review underway; no formal target adopted</li><li>Interpreter access available but not proactively identified</li><li>Training completed by some staff; not systematically required</li><li>Accommodation process informal; staff-dependent</li><li>Feedback mechanism informal or absent</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No physical environment assessment</li><li>No plain language standard; documents written for legal professionals</li><li>Interpreter access reactive; client must request</li><li>No trauma-informed training requirement</li><li>No formal accommodation process</li><li>No independent client feedback mechanism</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M1 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M2</span>
+          <div>
+            <div class="mod-title">AI Legal Navigation</div>
+            <div class="mod-sector" style="color:#1E3651;">Legal & Justice</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Algorithmic risk assessment tools cover approximately two-thirds of the US population in pretrial and sentencing decisions (Berk et al., 2024). Dressel & Farid (2018) demonstrated that COMPAS performs at the level of untrained human prediction while producing racial disparities in false-positive rates.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1E3651;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">1</td><td><strong>AI Tool Transparency & Explainability</strong></td><td style="color:var(--muted);">Due process requires that individuals can understand and contest the basis of decisions affecting them. Algorithmic opacity violates this at scale.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">2</td><td><strong>Bias Audit & Demographic Impact</strong></td><td style="color:var(--muted);">Dressel & Farid (2018) and Chouldechova (2017) establish that racial disparities are structural, not incidental. Independent audit is required for the specific population served.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">3</td><td><strong>Human Oversight & Override Protocols</strong></td><td style="color:var(--muted);">An override protocol that requires extensive written justification effectively coerces deference to the algorithm. The governance value of an override depends on whether it can be exercised without penalty.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">4</td><td><strong>Plain-Language Communication to Affected Parties</strong></td><td style="color:var(--muted);">People subject to AI-influenced decisions have a due process right to know an algorithm influenced their case.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">5</td><td><strong>Accountability & Error Correction</strong></td><td style="color:var(--muted);">Without a remediation pathway, documented errors produce harm without institutional consequence.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">6</td><td><strong>Community Input & Governance Structures</strong></td><td style="color:var(--muted);">The populations most affected by algorithmic risk assessment must have formal participation in adoption and discontinuation decisions.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Plain-language documentation of every AI tool influencing legal decisions; publicly available; updated within 12 months of any algorithm change</li><li>Independent demographic impact assessment for each tool; specific to the jurisdiction's population; results reviewed by leadership; updated annually</li><li>Override protocol: no documentation burden beyond standard case documentation; no adverse consequences for overriding; override rate tracked and reviewed</li><li>Every individual notified in plain language when AI influenced a decision in their case; notification before decision takes effect</li><li>Error classification system; remediation includes review of prior affected cases; remediation timeline enforced</li><li>Formal community advisory body with authority to recommend discontinuation; composed of people directly affected by algorithmic risk assessment</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Documentation of major AI tools available; plain-language summary for ≥50% of tools</li><li>Demographic impact assessment for primary risk tool; reviewed by leadership at least once</li><li>Override protocol documented; burden reduction measures taken</li><li>Notification in place for primary risk assessment tool</li><li>Error classification system exists; remediation informal</li><li>Community input mechanism exists; formal authority not yet established</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Some internal documentation; not plain language; not public</li><li>Bias awareness acknowledged; no formal audit</li><li>Override technically possible; no formal protocol</li><li>Notification informal; staff-dependent</li><li>Error tracking informal; no remediation process</li><li>Community input informal; no structured mechanism</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No plain-language documentation</li><li>No bias audit; relying on vendor validation</li><li>Override possible in principle; no protocol; no tracking</li><li>No notification policy</li><li>No error classification or remediation</li><li>No community input</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m2.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M2 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M3</span>
+          <div>
+            <div class="mod-title">Psychedelic Harm Reduction Governance</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">FDA Breakthrough Therapy designation for psilocybin (2018, 2019), the NEJM psilocybin trial (Carhart-Harris et al., 2021), and the JAMA Psychiatry RCT (Davis et al., 2021) establish clinical legitimacy. Johnson, Richards & Griffiths (2008) establish that adverse events are primarily determined by governance factors — set, setting, supervision — not pharmacological properties.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Participant Screening Protocols</strong></td><td style="color:var(--muted);">Contraindication screening is the primary risk-reduction tool established by Johnson et al. (2008).</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Preparation & Informed Consent</strong></td><td style="color:var(--muted);">Informed consent for psychedelic sessions requires consent for specific phenomenological experiences the participant cannot anticipate from general descriptions.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>Physical & Interpersonal Setting Standards</strong></td><td style="color:var(--muted);">Johnson et al. (2008) identify session environment as a primary adverse-event determinant. Set and setting are not metaphors — they are safety standards.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Facilitator Training & Scope of Practice</strong></td><td style="color:var(--muted);">Facilitator conduct during a session is a primary safety lever. Scope of practice documentation protects both participant and institution.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Adverse Event Classification & Response</strong></td><td style="color:var(--muted);">Without classification, challenging experiences, psychological crises, and medical emergencies receive the same response — producing harm in each direction.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Integration Support</strong></td><td style="color:var(--muted);">The post-session integration period is when consolidation of therapeutic gains and working through difficult material occurs. Absence of integration support predicts negative post-session outcomes.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Written contraindication criteria covering psychotic-disorder history, cardiovascular conditions, and active SUD; reviewed annually by licensed clinician</li><li>Preparation protocol: minimum 2 sessions before psychedelic session; written informed consent specifying compound, dose range, phenomenological range, and right to discontinue</li><li>Physical session environment standards documented: minimum acoustic dampening, blackout capability, reclining furniture, safety equipment accessible within 30 seconds; inspected annually</li><li>Minimum facilitator training hours documented; credentials verified; scope of practice agreement signed; supervision structure in place</li><li>Three-tier adverse event classification: challenging experience, psychological crisis, medical emergency; response protocols for each; simulation-trained annually</li><li>Minimum 3 integration sessions within 30 days post-session; referral pathway to licensed therapist documented; integration completion tracked</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Contraindication criteria documented; not recently updated</li><li>Preparation protocol in place; consent covers major elements</li><li>Setting standards documented for primary session space</li><li>Training hours documented; supervision informal</li><li>Two-tier adverse event classification (support vs. emergency)</li><li>At least 1 integration session offered; referral pathway documented</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Contraindication criteria informal; not institutional policy</li><li>Preparation conversations occur; no structured protocol</li><li>Setting standards informal; facilitator-dependent</li><li>Training hours recorded; no scope of practice agreement</li><li>Adverse event response: 'call 911 if needed'; no classification</li><li>Integration encouraged; not structured or tracked</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No written contraindication criteria</li><li>No preparation protocol; consent is general medical consent</li><li>No documented setting standards</li><li>No training requirements or scope of practice documentation</li><li>No adverse event classification; no response protocol beyond emergency services</li><li>No integration requirement or support structure</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m3.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M3 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M4</span>
+          <div>
+            <div class="mod-title">Cannabis Public Health Infrastructure</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Boehnke, Litinas & Clauw (2016) documented a 64% decrease in opioid use among medical cannabis patients. VanDolah et al. (2019) document CYP450 drug interaction pathways. Sajdeya et al. (2021) identify six structural barriers to documentation that exist entirely within institutional design.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Cannabis Screening Standards</strong></td><td style="color:var(--muted);">Sajdeya et al. (2021) identify absence of standardized screening as the primary structural barrier; without a standard instrument, documentation is ad hoc.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Provider Training</strong></td><td style="color:var(--muted);">Clinician knowledge gaps are the second structural barrier. CYP450 interaction risk (VanDolah et al., 2019) requires pharmacological competence.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>EHR Documentation Architecture</strong></td><td style="color:var(--muted);">Beiler et al. (2024) demonstrate that documentation completeness is infrastructure-dependent: structured fields produce 93.6% completion vs. 30.8% without.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Disclosure Safety Infrastructure</strong></td><td style="color:var(--muted);">Patient fear of employment/insurance/punitive consequences is a structural barrier. Institutional design either mitigates or amplifies that fear.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Regulatory Compliance</strong></td><td style="color:var(--muted);">Federal Schedule I status creates genuine legal ambiguity; documented legal guidance protects both patient and institution.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Quality Improvement Metrics</strong></td><td style="color:var(--muted);">Without tracking documentation rates as a QI metric, there is no institutional visibility into the gap and no organizational pressure to close it.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Validated cannabis screening instrument (CUDIT-R or equivalent) at every patient contact; completion tracked; target ≥85%</li><li>All providers trained in cannabis pharmacology within 2 years; training includes CYP450 interaction protocol; CME credit offered</li><li>Cannabis-specific structured EHR data fields in intake and update workflows; completion rate tracked; target ≥85%</li><li>Written intake policy stating documentation cannot be shared adversarially; policy communicated in writing at intake</li><li>Documented legal guidance reviewed by counsel within past 2 years on documentation obligations and protections</li><li>Cannabis documentation rate tracked as a named QI metric; reviewed quarterly; improvement target set annually</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Cannabis screening question in intake; not validated instrument; tracked</li><li>Provider training available; completed by ≥60% of clinical staff</li><li>At least one cannabis-specific EHR field in intake workflow</li><li>Disclosure safety policy exists; not systematically communicated</li><li>Legal guidance obtained; not recently reviewed</li><li>Documentation rate tracked; not yet formal QI metric</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Cannabis question in some intake forms; not systematic</li><li>Provider training informal; available on request</li><li>EHR documentation in free-text only</li><li>Disclosure safety addressed informally by individual providers</li><li>Legal guidance not formally obtained</li><li>No documentation rate tracking</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No cannabis screening in standard intake</li><li>No provider training on cannabis pharmacology</li><li>No cannabis-specific EHR fields</li><li>No disclosure safety policy</li><li>No legal guidance on documentation</li><li>No QI tracking</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m4.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M4 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M5</span>
+          <div>
+            <div class="mod-title">Biophilic Civic Infrastructure</div>
+            <div class="mod-sector" style="color:#2E5A28;">Civic & Built Environment</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Ulrich (1984) established in a nine-year matched cohort that window view alone produced measurable differences in surgical recovery outcomes. Ulrich (1991) provided the psychophysiological mechanism (Stress Recovery Theory). Al Khatib et al. (2024) confirmed across a 2010–2023 systematic review that biophilic design reduces hospitalization time, mortality, pain, and staff stress.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#2E5A28;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">1</td><td><strong>Physical Environment Standards</strong></td><td style="color:var(--muted);">Ulrich (1984, 1991) and Al Khatib et al. (2024) establish that natural light, nature views, and biophilic elements produce measurable physiological and clinical outcomes.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">2</td><td><strong>Outdoor Access Infrastructure</strong></td><td style="color:var(--muted);">Razani et al. (2018) demonstrate in a randomized trial that structured nature access (park prescriptions) is a governable health intervention.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">3</td><td><strong>Built Environment Assessment</strong></td><td style="color:var(--muted);">Without a formal assessment, the institution cannot identify what it is currently producing or measure whether it has changed.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">4</td><td><strong>Community Green Space Standards</strong></td><td style="color:var(--muted);">Sarkar et al. (2018) establish that the equity burden of green space deprivation falls on lower-income populations; civic institutions have a governance obligation.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">5</td><td><strong>Nature-Based Programming</strong></td><td style="color:var(--muted);">Institutionalizing nature access through programming creates the park-prescription pipeline demonstrated in Razani et al. (2018).</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">6</td><td><strong>Equity Assessment</strong></td><td style="color:var(--muted);">Without an explicit equity assessment, biophilic improvements benefit primarily those with the most institutional access.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Documented minimum standards for natural light, nature views, and biophilic elements in all client-facing spaces; assessed annually</li><li>Formal outdoor access provision: scheduled outdoor breaks for staff; patient/client outdoor access built into protocols; documented in encounter records where clinically relevant</li><li>Evidence-based built environment assessment completed within 3 years; documented against published standards; findings reported to leadership</li><li>Documented institutional position on green space in surrounding community; institution participates in or supports local green space advocacy</li><li>At least one nature-based programming component formally offered; participation tracked</li><li>Equity assessment of biophilic infrastructure access completed; documented disparities addressed in improvement plan; affected communities named explicitly</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Natural light and nature view standards documented for primary spaces</li><li>Outdoor access available but not formally structured</li><li>Built environment assessment completed; not recently updated</li><li>Community green space position informal; some participation</li><li>Nature-based programming offered informally</li><li>Equity assessment begun; not yet completed</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Some biophilic elements present; no documented standards</li><li>Outdoor access available but not provided; staff-dependent</li><li>No formal assessment; informal awareness</li><li>No documented community green space position</li><li>No formal nature-based programming</li><li>No equity assessment</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No documented biophilic standards</li><li>No structured outdoor access</li><li>No built environment assessment</li><li>No community green space engagement</li><li>No nature-based programming</li><li>No equity assessment</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m5.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M5 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M6</span>
+          <div>
+            <div class="mod-title">Ethical Civic Sponsorship</div>
+            <div class="mod-sector" style="color:#1E3651;">Legal & Justice</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Fooks et al. (2013) documented how corporations use CSR frameworks to neutralize regulatory threats and build civic relationships. Fabbri et al. (2018) found in a systematic review of 36 articles that industry sponsorship consistently drives research agendas away from public-health-relevant questions. Lundh et al. (2017) confirmed in a Cochrane review that industry-sponsored studies are more likely to produce favorable outcomes and conclusions.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1E3651;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">1</td><td><strong>Sponsorship Ethics Policy</strong></td><td style="color:var(--muted);">Fooks et al. (2013) demonstrate that CSR relationships produce structural governance incentives regardless of individual intent; a written policy creates institutional resistance.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">2</td><td><strong>Mission Alignment Review</strong></td><td style="color:var(--muted);">Fabbri et al. (2018) demonstrate that research agendas shift under sponsorship; a formal review detects this before it occurs.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">3</td><td><strong>Exclusion Criteria</strong></td><td style="color:var(--muted);">Some industries' documented public health harms are so established that mission alignment review will routinely produce the same result; exclusion criteria make that result a governance standard.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">4</td><td><strong>Transparency Standards</strong></td><td style="color:var(--muted);">Public disclosure is the accountability mechanism that makes governance real; without it, there is no community check on sponsorship decisions.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">5</td><td><strong>Conflict of Interest Management</strong></td><td style="color:var(--muted);">Sponsorship creates financial relationships that distort programming, research, and advocacy without any individual acting in bad faith.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1E3651;">6</td><td><strong>Review & Accountability Mechanism</strong></td><td style="color:var(--muted);">Without an independent review body with authority to decline or terminate, policy exists without enforcement.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Written sponsorship ethics policy formally adopted by board; specifies acceptable and unacceptable categories; reviewed every 3 years</li><li>Formal mission alignment review for each prospective sponsor; includes review of regulatory history, public health impact, and community relationships; documented and signed</li><li>Explicit written exclusion criteria for industries with documented public health harms; publicly available</li><li>All sponsorship relationships publicly disclosed on institutional website within 30 days of agreement; disclosure includes amount, duration, and scope</li><li>Written conflict of interest policy; affected staff recuse from decisions where sponsor has an interest; recusals documented</li><li>Independent review body with documented authority to recommend against acceptance; at least one rejection or termination on record</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Written sponsorship ethics policy in place; not reviewed in past 3 years</li><li>Mission alignment review occurs; not formally documented</li><li>Exclusion criteria informal; case-by-case leadership judgment</li><li>Disclosure on website; not always timely or complete</li><li>Conflict of interest policy exists; recusal informal</li><li>Leadership review in place; no independent body</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Sponsorship decisions by leadership without formal policy</li><li>Mission alignment considered informally</li><li>Some exclusions applied; no written criteria</li><li>Disclosure informal; not systematic</li><li>Conflict of interest awareness; no formal management</li><li>No independent review</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No written sponsorship ethics policy</li><li>No mission alignment review</li><li>No exclusion criteria</li><li>No disclosure policy</li><li>No conflict of interest management</li><li>No independent review</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m6.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M6 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M7</span>
+          <div>
+            <div class="mod-title">Conscious Cities</div>
+            <div class="mod-sector" style="color:#2E5A28;">Civic & Built Environment</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Evans (2003) established built environment as a mental health determinant across residential density, housing quality, neighborhood disorder, and noise. Sarkar et al. (2018) demonstrated in 94,879 UK Biobank participants that residential greenness reduces MDD odds with the largest protective effects in lower-income populations. Münzel et al. (2014) documented the cardiovascular and neuroendocrine mechanism for noise-induced harm.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#2E5A28;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">1</td><td><strong>Mental Health Impact Assessment</strong></td><td style="color:var(--muted);">Evans (2003) establishes built environment as a mental health determinant; without a formal assessment requirement, planning decisions continue to be made without governing their primary human consequence.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">2</td><td><strong>Green Space Standards</strong></td><td style="color:var(--muted);">Sarkar et al. (2018) establish green space as a measurable MDD risk modifier; documented minimum standards make the equity obligation governable.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">3</td><td><strong>Noise & Environmental Stressor Management</strong></td><td style="color:var(--muted);">Münzel et al. (2014) establish noise as a physiological stressor with cardiovascular and neuroendocrine consequences; governance requires monitoring and standards.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">4</td><td><strong>Housing Quality Standards</strong></td><td style="color:var(--muted);">Evans (2003) establishes housing quality as a mental health determinant independent of socioeconomic factors.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">5</td><td><strong>Community Participation in Design</strong></td><td style="color:var(--muted);">The populations most affected by built environment decisions are least represented in the processes that make them.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">6</td><td><strong>Equity Impact Assessment</strong></td><td style="color:var(--muted);">Sarkar et al. (2018) establish that green space deprivation burdens lower-income populations disproportionately; without an explicit equity assessment, governance perpetuates the disparity.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Mental health impact assessment required for all built environment decisions above a defined threshold; methodology documented; findings reported to decision-making body before vote</li><li>Documented minimum green space access standard; compliance tracked; deficiencies documented and addressed in capital planning</li><li>Noise monitoring in primary service area; data reviewed quarterly; documented threshold requiring governance response; at least one governance response documented</li><li>Housing quality standards documented for population served; inspection data reviewed; partnership with housing authority for enforcement</li><li>Community participation mechanism in place; composition documented; historically underrepresented populations specifically included; documentation of how input influenced decisions</li><li>Equity impact assessment required for all major built environment decisions; specific populations named; findings incorporated into decision documentation</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Mental health impact considered in major decisions; not formally required</li><li>Green space standard for major developments; not citywide</li><li>Noise monitoring in primary areas; threshold and response informal</li><li>Housing quality engagement with housing authority; no formal standards</li><li>Community input mechanism exists; composition not specified</li><li>Equity assessment informal; not required</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Mental health awareness in planning; no formal assessment</li><li>Green space planning considered; no standard</li><li>Noise complaints tracked; no proactive monitoring</li><li>Housing quality addressed case-by-case</li><li>Community input through public comment only</li><li>Equity awareness; no formal assessment</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No mental health impact assessment</li><li>No green space standard</li><li>No noise monitoring or governance standard</li><li>No housing quality governance</li><li>No formal community participation mechanism</li><li>No equity impact assessment</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m7.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M7 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M8</span>
+          <div>
+            <div class="mod-title">Burnout Recovery Infrastructure</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Maslach, Schaufeli & Leiter (2001) established burnout as a mismatch across six organizational domains. Kiratipaisarl et al. (2024) confirmed in a 2024 meta-analysis that organizational interventions produce significantly greater and more durable burnout reductions than individual interventions. Thomas Craig et al. (2021) found in a systematic review that EHR-targeting organizational interventions improved burnout in 68% of eligible studies.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Workload Assessment & Governance</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify workload as the primary burnout determinant; without measurement and governance standards, workload increases occur without institutional visibility.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Autonomy & Control Standards</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify control as the second burnout determinant; organizational governance of decision-making latitude is the structural response.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>Reward & Recognition Infrastructure</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify reward as the third domain; reward governance is distinct from compensation — it includes recognition systems that are consistent, transparent, and not personality-dependent.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Community & Social Support Standards</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify community as the fourth domain; governance requires structural provision, not interpersonal expectation.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Fairness & Equity Standards</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify fairness as the fifth domain; perceived inequity in workload distribution and recognition is a direct burnout driver.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Values Alignment Assessment</strong></td><td style="color:var(--muted);">Maslach et al. (2001) identify values as the sixth domain; values misalignment — being required to act against professional or personal ethics — is a burnout driver no wellness program addresses.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Workload governance standard documented: maximum caseload/patient load/contact hours by role; workload reported through formal channel quarterly; reports reviewed by leadership; documented response required within 30 days</li><li>Autonomy governance: decision-making scope specified by role; autonomy reductions require formal documentation and review; staff survey on perceived control conducted annually</li><li>Recognition system: criteria transparent; not supervisor-dependent; peer recognition mechanism in place; recognition frequency tracked</li><li>Peer support program formally offered; structured (not just encouraged); utilization tracked; program reviewed annually</li><li>Fairness governance: workload distribution equity reviewed quarterly; grievance mechanism not requiring supervisor as first contact; grievance outcomes tracked</li><li>Values alignment assessment conducted annually: specific survey on values misalignment; results reviewed by leadership; documented response to specific conflicts raised</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Workload standard documented; not recently reviewed; formal reporting channel exists but infrequently used</li><li>Autonomy scope documented; not routinely reviewed</li><li>Recognition system in place; not systematic; supervisor-dependent</li><li>Peer support available; not formally structured</li><li>Workload equity reviewed annually; grievance mechanism exists</li><li>Values alignment discussed in annual review; not formally assessed</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Workload standards informal; staff report concerns informally</li><li>Autonomy expectations implicit; not documented</li><li>Recognition occurs; no standard or tracking</li><li>Peer support encouraged; no formal structure</li><li>Fairness concerns addressed case-by-case</li><li>Values alignment not formally addressed</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No workload governance standard</li><li>No autonomy governance</li><li>No formal recognition system</li><li>No peer support program</li><li>No formal fairness mechanism</li><li>No values alignment assessment</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M8 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M9</span>
+          <div>
+            <div class="mod-title">Cannabis Healthcare Visibility</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Lapham et al. (2022) found in JAMA Network Open that 35.1% of primary care patients reported implicit medical cannabis use while only 4.8% had EHR documentation — a verified 7:1 gap within the same patient population. Tavabi et al. (2023) found documentation rates below 2% across 370,087 patients with significant racial and socioeconomic disparities independent of use prevalence.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Cannabis Screening Standards</strong></td><td style="color:var(--muted);">Lapham et al. (2022) document the 7:1 documentation gap; without a standardized instrument, there is no systematic way to close it.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Provider Training Standards</strong></td><td style="color:var(--muted);">Sajdeya et al. (2021) identify clinician knowledge gaps as a primary structural barrier; VanDolah et al. (2019) document the CYP450 interaction risk requiring pharmacological competence.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>EHR Documentation Standards</strong></td><td style="color:var(--muted);">Beiler et al. (2024) demonstrate that documentation completeness is infrastructure-dependent: structured fields produce 93.6% completion vs. 30.8% without.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Disclosure Safety Infrastructure</strong></td><td style="color:var(--muted);">Patient fear of employment/insurance/punitive consequences produces the disclosure avoidance driving the gap; the institution's design either mitigates or amplifies that fear.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Regulatory Compliance & Legal Review</strong></td><td style="color:var(--muted);">Federal Schedule I status creates genuine legal ambiguity requiring documented legal guidance for both patient and institution.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Quality Improvement Integration</strong></td><td style="color:var(--muted);">Without tracking documentation rates as a QI metric, there is no institutional visibility into the gap and no organizational pressure to close it.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Validated cannabis use screening instrument at every patient contact; completion tracked; ≥85% target; instrument updated within 5 years</li><li>All clinical providers trained in cannabis pharmacology within 2 years; covers CYP450 interactions, contraindications, disclosure conversation standards; completion tracked by role</li><li>Standardized cannabis-specific structured EHR data fields in intake and update workflows; completion rate ≥85%; data reviewed quarterly for quality</li><li>Written intake policy: cannabis disclosure cannot be used adversarially; communicated verbally and in writing at intake; staff trained on communication; reviewed annually by counsel</li><li>Documented legal guidance from qualified counsel on documentation obligations and protections; updated within 3 years or upon any relevant legal change</li><li>Cannabis documentation rate tracked as named QI metric; reviewed quarterly by clinical leadership; annual improvement target set and reported</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Cannabis screening question in intake; not validated instrument; tracked; ≥60% completion</li><li>Provider training available and completed by majority of clinical staff; not universally required</li><li>At least one cannabis-specific EHR field in intake workflow</li><li>Disclosure safety policy documented; communicated inconsistently</li><li>Legal guidance obtained informally; not recently updated</li><li>Documentation rate tracked but not formal QI metric</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Cannabis question in some intake forms; not systematic across the institution</li><li>Provider training informally available; no completion tracking</li><li>EHR cannabis documentation in free-text only; no structured fields</li><li>Disclosure safety addressed informally by individual providers</li><li>Legal guidance not formally obtained</li><li>No documentation rate tracking</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No cannabis screening in standard intake</li><li>No provider training on cannabis pharmacology</li><li>No cannabis-specific EHR fields</li><li>No disclosure safety policy</li><li>No legal guidance on documentation</li><li>No QI tracking</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M9 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M10</span>
+          <div>
+            <div class="mod-title">Healthcare Built Environment</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Ulrich et al. (2008) synthesized approximately 600 empirical studies on healthcare built environment effects. Al Khatib et al. (2024) confirmed in a 2024 systematic review that biophilic design reduces hospitalization time, mortality, pain, and staff stress. Münzel et al. (2014) established the cardiovascular and neuroendocrine mechanism for noise-induced harm.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Evidence-Based Environmental Assessment</strong></td><td style="color:var(--muted);">Ulrich et al. (2008) demonstrate that built environment has documented clinical effects; without assessment against evidence-based standards, the institution cannot govern what it produces.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Acoustic Standards</strong></td><td style="color:var(--muted);">Ulrich et al. (2008) establish noise above 45 dBA as a documented patient and staff physiological stressor; Münzel et al. (2014) establish the cardiovascular and neuroendocrine mechanism.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>Lighting Standards</strong></td><td style="color:var(--muted);">Ulrich et al. (2008) document natural light effects on length of stay and staff sick days; lighting is a modifiable governance lever.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Single-Patient Room Standards</strong></td><td style="color:var(--muted);">Ulrich et al. (2008) document 10–50% infection rate reductions with single-patient rooms; this is the strongest governance lever in the evidence base.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Wayfinding & Spatial Orientation</strong></td><td style="color:var(--muted);">Spatial disorientation produces anxiety, missed appointments, and delayed care-seeking — measurable clinical outcomes of a governable design variable.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Biophilic Design Standards</strong></td><td style="color:var(--muted);">Al Khatib et al. (2024) confirm that biophilic design reduces hospitalization time, mortality, pain, and staff stress — clinical outcomes governable through design standards.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Full evidence-based environmental assessment completed within 3 years using a validated tool; findings reported to leadership; improvement plan documented</li><li>Continuous noise monitoring in all patient care areas; documented target ≤45 dBA in patient rooms during sleep hours; exceedance events tracked; governance response documented for persistent exceedance</li><li>Daylight analysis completed; minimum daylight access standard documented for patient care areas; compliance tracked</li><li>Single-patient room standard documented; protocol for shared-room situations; shared-room assignment rate tracked; reduction plan in place if rate exceeds target</li><li>Wayfinding assessment completed; patient-reported difficulty tracked; modification plan documented; improvement assessed post-modification</li><li>Minimum biophilic design standard documented for patient-facing environments; natural elements inventoried; compliance assessed annually</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Environmental assessment completed within 5 years; findings partially addressed</li><li>Noise monitoring in primary patient care areas; target documented; response informal</li><li>Daylight standard documented; not fully implemented</li><li>Single-patient room standard documented; protocol for shared rooms</li><li>Wayfinding assessment completed; modifications made</li><li>Biophilic elements present; no formal standard</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Environmental assessment informal; some awareness of evidence-based design</li><li>Noise complaints tracked; no proactive monitoring; no formal target</li><li>Lighting awareness; no standard</li><li>Single-patient rooms preferred; no governance standard</li><li>Wayfinding issues recognized; modifications informal</li><li>Biophilic elements present; plants in lobby; no standard</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No evidence-based environmental assessment</li><li>No noise monitoring or standard</li><li>No lighting standard</li><li>No single-patient room governance</li><li>No wayfinding assessment or standard</li><li>No biophilic design standard</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m10.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M10 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M11</span>
+          <div>
+            <div class="mod-title">Medical Technology & Evidence Standards</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Obermeyer et al. (2019) found in Science that an algorithm used for approximately 200 million patients produced systematic racial bias; remedying it would raise Black patients receiving extra help from 17.7% to 46.5%. The ASTP/ONC Data Brief No. 80 (Chang et al., 2025) documents that 71% of hospitals use EHR-integrated predictive AI while fewer than half evaluate all models for demographic bias.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>AI Tool Inventory & Transparency</strong></td><td style="color:var(--muted);">Chang et al. (2025) document that 71% of hospitals use EHR-integrated predictive AI; governance requires knowing what tools exist and what they do.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Independent Evidence Evaluation</strong></td><td style="color:var(--muted);">Obermeyer et al. (2019) demonstrate that vendor validation and FDA clearance did not detect systematic racial bias at scale; independent evaluation is required.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>Demographic Impact Assessment</strong></td><td style="color:var(--muted);">The bias in the Obermeyer et al. (2019) case was detectable through demographic stratification of outcomes data; this dimension governs that detection process.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Human Oversight & Override Protocols</strong></td><td style="color:var(--muted);">Chang et al. (2025) document that most hospitals lack clear AI accountability ownership; override protocols maintain human decision-making authority.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Patient Disclosure Standards</strong></td><td style="color:var(--muted);">Patients have a governance right to know when algorithms influence their care.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Post-Adoption Monitoring & Suspension Standards</strong></td><td style="color:var(--muted);">The Obermeyer et al. (2019) bias persisted at scale without detection; post-adoption monitoring with defined thresholds is the detection mechanism.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Complete inventory of all AI tools influencing clinical decisions; publicly available; updated within 12 months of any change; plain-language description of each tool's function</li><li>Internal evaluation standard documented, independent of vendor claims and regulatory clearance; conducted before adoption; includes methodology, evidence base, and population applicability review</li><li>Demographic impact assessment required before adoption and annually post-adoption; stratified by race, ethnicity, sex, age, and socioeconomic status for the specific patient population; results reviewed by leadership</li><li>Override protocol: no documentation burden beyond standard clinical documentation; no adverse consequences for overriding; override rate tracked and reviewed quarterly</li><li>All patients notified in plain language when an AI tool was used in their care; notification delivered before decision takes effect; right to request human-only review documented</li><li>Monitoring plan for each AI tool; outcome metrics stratified by demographic group; defined disparity threshold requiring governance response; suspension criteria documented; at least one tool reviewed annually for continued use</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>AI tool inventory maintained internally; not yet publicly available</li><li>Internal evaluation standard in development; applied to primary tools</li><li>Demographic impact assessment for primary clinical AI tools; results reviewed</li><li>Override protocol documented; burden reduction in progress</li><li>Patient notification for primary risk tools</li><li>Monitoring plan for primary tools; suspension criteria informal</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Major AI tools identified internally; no formal inventory</li><li>Vendor validation relied on primarily; some informal internal review</li><li>Demographic impact awareness; no formal assessment conducted</li><li>Override possible; no formal protocol</li><li>Notification informal; tool-dependent</li><li>Monitoring informal; outcome data not stratified</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No AI tool inventory</li><li>No internal evaluation standard; relying on vendor and regulatory clearance</li><li>No demographic impact assessment</li><li>No override protocol</li><li>No patient notification standard</li><li>No monitoring plan</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m11.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M11 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M12</span>
+          <div>
+            <div class="mod-title">Nervous-System-Aware Education Systems</div>
+            <div class="mod-sector" style="color:#2E5A28;">Civic & Built Environment</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Immordino-Yang & Damasio (2007) established that physiological threat states suppress prefrontal cortical access required for learning. Barrett et al. (2015) found in the HEAD Project (153 classrooms, 3,766 pupils) that seven built environment parameters explain 16% of the variation in pupils' academic progress. Cantor et al. (2019) established that educational environment decisions during critical developmental periods literally shape neural architecture.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#2E5A28;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">1</td><td><strong>Physical Environment Standards</strong></td><td style="color:var(--muted);">Barrett et al. (2015) establish that seven built environment parameters explain 16% of learning progress variation; without documented standards, this 16% is ungoverned.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">2</td><td><strong>Psychological Safety Infrastructure</strong></td><td style="color:var(--muted);">Immordino-Yang & Damasio (2007) establish that threat states suppress prefrontal access required for learning; psychological safety is a neurobiological prerequisite.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">3</td><td><strong>Individualization & Flexibility Standards</strong></td><td style="color:var(--muted);">Barrett et al. (2015) identify individualization as one of the seven learning-environment parameters; flexibility accommodates diverse nervous system profiles.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">4</td><td><strong>Transition & Schedule Governance</strong></td><td style="color:var(--muted);">Predictability reduces threat activation in individuals with trauma histories (Felitti et al., 1998); schedule governance is a trauma-informed educational infrastructure decision.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">5</td><td><strong>Trauma Awareness in Educational Design</strong></td><td style="color:var(--muted);">The ACE Study (Felitti et al., 1998) documents dose-response relationship between adverse childhood experiences and adult outcomes; institutional design either activates or buffers ACE sequelae.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#2E5A28;">6</td><td><strong>Quality Assessment</strong></td><td style="color:var(--muted);">Without systematic tracking of environment quality against evidence-based standards, improvements cannot be identified, sustained, or attributed.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Documented standards for lighting, acoustics, temperature, and air quality in all primary learning spaces; compliance assessed annually; standards aligned with Barrett et al. (2015) HEAD Project parameters</li><li>Formal psychological safety infrastructure: social environment standards documented; regular student psychological safety surveys with institutional response requirement; adult learning safety standards separate from student standards</li><li>Flexibility standards: ≥30% of primary learning spaces have flexible furniture; 100% have individualization provision (personal storage, display space, environmental adjustment capacity)</li><li>Transition governance: maximum class transitions per day documented; protocols standardized; schedule changes communicated ≥48 hours in advance except emergencies; predictability standard reviewed annually</li><li>Trauma awareness training for ≥80% of instructional and administrative staff within past 2 years; includes nervous system activation recognition and de-escalation; trauma-informed procedural modifications documented for testing, discipline, and attendance</li><li>Learning environment quality assessment completed annually against evidence-based standards; results reported to leadership and governing board; improvement plan documented</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Physical environment standards for lighting and acoustics; temperature and air quality informal</li><li>Psychological safety surveys conducted; institutional response inconsistent</li><li>Flexibility standards for some spaces; not systemwide</li><li>Transition protocols in place; schedule governance informal</li><li>Trauma awareness training completed by ≥60% of staff; modifications informal</li><li>Environment quality assessed annually; not against published standards</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Environmental awareness; no documented standards</li><li>Psychological safety valued; no formal infrastructure</li><li>Some flexible spaces; no standard</li><li>Schedule consistency valued; no formal governance</li><li>Trauma awareness training available; not required</li><li>Quality assessment informal; anecdotal</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No documented environmental standards</li><li>No psychological safety infrastructure beyond disciplinary policies</li><li>No flexibility or individualization standard</li><li>No transition or schedule governance</li><li>No trauma awareness requirement or training</li><li>No quality assessment</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m12.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M12 Assessment →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mod-accordion">
+      <div class="mod-header" onclick="toggleMod(this)">
+        <div class="mod-meta">
+          <span class="mod-num">M13</span>
+          <div>
+            <div class="mod-title">Traditional & Complementary Medicine Governance</div>
+            <div class="mod-sector" style="color:#1B7A68;">Healthcare & Clinical</div>
+          </div>
+        </div>
+        <span class="mod-chevron">▼</span>
+      </div>
+      <div class="mod-body">
+        <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Steel et al. (2025) in the WHO meeting report establish that the primary global barrier to TCIM integration is not absence of evidence but absence of governance infrastructure. Tabish (2008) documents that RCT frameworks cannot adequately evaluate individualized, relationship-based, meaning-embedded modalities. Kawakami et al. (2022) document lāʻau lapaʻau as a living practice among Native Hawaiian elders with specific governance implications for Hawaiian health systems.</p>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;color:#1B7A68;">Six Governance Dimensions</h4>
+        <table class="dim-table">
+          <thead><tr><th>#</th><th>Dimension</th><th>Why This Dimension</th></tr></thead>
+          <tbody><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">1</td><td><strong>Evidence Integration Framework</strong></td><td style="color:var(--muted);">Steel et al. (2025) and Tabish (2008) establish that RCT frameworks cannot adequately evaluate traditional medicine; without a multi-epistemic framework, adoption decisions are made without governance.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">2</td><td><strong>Cultural Sovereignty & IP Protections</strong></td><td style="color:var(--muted);">Indigenous healing practices belong to the communities that developed them; institutional incorporation without formal community agreement is cultural appropriation with governance implications.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">3</td><td><strong>Practitioner Credentialing Standards</strong></td><td style="color:var(--muted);">Unverified practitioner scope of practice creates patient safety and institutional liability exposure.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">4</td><td><strong>Patient Safety Infrastructure</strong></td><td style="color:var(--muted);">Herb-drug interactions, contraindications, and modality-specific risks require pre-treatment screening — the clinical safety governance layer.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">5</td><td><strong>Regulatory Compliance</strong></td><td style="color:var(--muted);">Licensure requirements for CAM practitioners vary by jurisdiction; documented legal review protects both practitioners and institution.</td></tr><tr><td style="font-family:'Syne',sans-serif;font-weight:700;color:#1B7A68;">6</td><td><strong>Integration with Conventional Care</strong></td><td style="color:var(--muted);">Without formal communication protocols between CAM and conventional care teams, integration is nominal and patient safety gaps persist.</td></tr></tbody></table>
+        
+        <h4 style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin:1.5rem 0 0.75rem;color:var(--nsag);">Tier Criteria</h4>
+        <div class="tier-breakdown"><div class="tier-card"><div class="tier-card-head" style="background:#1B7A68;">PIONEERING</div><div class="tier-card-body"><ul><li>Evidence integration framework documented: explicit criteria for evaluating CAM evidence engaging traditional use evidence, observational data, and experiential knowledge alongside biomedical evidence; reviewed annually by interdisciplinary body including TCIM practitioners and community representatives</li><li>Written community agreement for each Indigenous healing practice offered: covers attribution, compensation structure, scope of use, and right of community to withdraw consent; community partner named; agreement reviewed every 3 years</li><li>Credential verification documented for all CAM practitioners: licensure, scope of practice agreement signed, training verification, supervision structure; credentials reviewed annually</li><li>Pre-treatment safety screening documented for each modality: herb-drug interaction screening, contraindication assessment; updated within 3 years; documented by licensed clinician</li><li>Legal guidance from qualified counsel on licensure and liability for each CAM modality offered; updated within 3 years or upon regulatory change</li><li>Communication protocol between CAM practitioners and conventional care team: patient consent obtained for communication; treatment records shared within documented timeframe; contraindication concerns escalated through documented pathway</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#4D45A8;">EMERGING</div><div class="tier-card-body"><ul><li>Evidence integration framework drafted; not yet formally adopted; some criteria documented</li><li>Community agreement in place for primary Indigenous practice; not extended to all</li><li>Credential verification completed; scope of practice informal</li><li>Pre-treatment screening for primary modalities; not all covered</li><li>Legal guidance obtained; not recently updated</li><li>Communication protocol in place; not consistently followed</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#B8842A;">DEVELOPING</div><div class="tier-card-body"><ul><li>Evidence integration considered informally; no formal framework</li><li>Community relationships informal; no written agreement</li><li>Credentials reviewed informally; no formal verification process</li><li>Pre-treatment screening informal; practitioner-dependent</li><li>Legal guidance informal; relying on common practice</li><li>Communication informal; patient-dependent</li></ul></div></div><div class="tier-card"><div class="tier-card-head" style="background:#5A5869;">EARLY STAGE</div><div class="tier-card-body"><ul><li>No evidence integration framework</li><li>No community agreements for Indigenous healing practices offered</li><li>No formal credential verification</li><li>No pre-treatment safety screening protocol</li><li>No legal guidance on CAM modality governance</li><li>No formal communication protocol</li></ul></div></div></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <a href="https://nsag-m13.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--nsag);color:white;padding:0.6rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;">Take the M13 Assessment →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART III: MODULE RELATIONSHIPS -->
+<section id="relationships">
+  <div class="wrap">
+    <div class="slabel">Part III</div>
+    <h2>Module Relationships &amp; Dependency Map</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Not all modules are equal. Some are prerequisites. Some amplify others. Understanding the relationships shapes how institutions sequence governance work.</p>
+    
+    <div class="rel-grid">
+      <div class="rel-card" style="border-left:4px solid #1B7A68;">
+        <h4 style="color:#1B7A68;">M8 IS THE PREREQUISITE MODULE</h4>
+        <p>A burned-out staff cannot implement, sustain, or give institutional attention to governance changes in any other module. If burnout is severe, other module investments will stall. Assess M8 before any other module.</p>
+      </div>
+      <div class="rel-card" style="border-left:4px solid var(--nsag);">
+        <h4>M9 AND M4 ARE THE SAME DOMAIN AT DIFFERENT SCALES</h4>
+        <p>M4 is the public health infrastructure layer — population-level cannabis documentation governance. M9 is the clinical encounter layer. They share evidence bases and amplify each other. M4 governance creates the conditions in which M9 governance can be sustained.</p>
+      </div>
+      <div class="rel-card" style="border-left:4px solid var(--nsag);">
+        <h4>M2 AND M11 SHARE ALGORITHMIC ACCOUNTABILITY INFRASTRUCTURE</h4>
+        <p>Both require demographic impact assessment, human override protocols, and post-adoption monitoring. Institutions with M2 governance in place can adapt that infrastructure for M11 with less foundational work. Assess and address these together.</p>
+      </div>
+      <div class="rel-card" style="border-left:4px solid #2E5A28;">
+        <h4>M5, M7, AND M10 SHARE THE BUILT ENVIRONMENT EVIDENCE BASE</h4>
+        <p>M5 is biophilic infrastructure in civic settings. M7 is urban built environment governance. M10 is evidence-based healthcare design. All three apply Ulrich's foundational evidence in different institutional contexts. Treat them as a suite.</p>
+      </div>
+      <div class="rel-card" style="border-left:4px solid #1E3651;">
+        <h4>M1 AMPLIFIES M3</h4>
+        <p>Trauma-informed legal space creates the safety conditions in which harm reduction governance can function. Harm reduction services offered in legally activating environments are systematically undermined by the governance failure in M1.</p>
+      </div>
+      <div class="rel-card" style="border-left:4px solid #2E5A28;">
+        <h4>M12 IS FOUNDATIONAL FOR M1</h4>
+        <p>The nervous system states that educational institutions govern in learners are the states that legal institutions then receive. ACE-informed educational governance reduces the severity of the legal governance problem downstream.</p>
+      </div>
+    </div>
+    
+    <h3 style="margin-top:3rem;margin-bottom:1rem;">Priority Sequencing for Institutions New to NSAG</h3>
+    <div class="seq">
+      <div class="seq-step">
+        <div class="seq-num">Start</div>
+        <div class="seq-mod">M8 Burnout</div>
+        <div class="seq-why">Institutional readiness prerequisite — staff wellness is the precondition for implementing any other governance change</div>
+      </div>
+      <div class="seq-step">
+        <div class="seq-num">Then</div>
+        <div class="seq-mod">Highest safety-stakes module</div>
+        <div class="seq-why">M9 for healthcare · M2 for legal · M12 for educational — the module with the most immediate patient/client/learner safety implications</div>
+      </div>
+      <div class="seq-step">
+        <div class="seq-num">Then</div>
+        <div class="seq-mod">Emerging risk module</div>
+        <div class="seq-why">M11 for institutions adopting AI · M13 for institutions expanding CAM · M3 for institutions entering psychedelic therapy</div>
+      </div>
+      <div class="seq-step">
+        <div class="seq-num">Then</div>
+        <div class="seq-mod">Built environment modules</div>
+        <div class="seq-why">M5, M7, M10 — these require capital investment and longer implementation timelines; begin planning while relational and procedural governance is established</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART IV: FEEDBACK ARCHITECTURE -->
+<section style="background:var(--white);">
+  <div class="wrap">
+    <div class="slabel">Part IV</div>
+    <h2>Feedback Architecture</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">NSAG is a living framework. The 13 modules, six dimensions per module, and tier definitions in this document are Version 1.0. The feedback mechanism ensures the framework improves based on institutional deployment experience.</p>
+    
+    <h3 style="margin-bottom:1rem;font-size:1.1rem;">Trigger Conditions for Dimension Review</h3>
+    <div class="feed-steps">
+      <div class="feed-step">
+        <div class="feed-step-num">1</div>
+        <div class="feed-step-content">
+          <h4>New Primary Evidence</h4>
+          <p>A peer-reviewed primary source published after framework adoption that materially changes the evidence base for a dimension triggers formal review.</p>
+        </div>
+      </div>
+      <div class="feed-step">
+        <div class="feed-step-num">2</div>
+        <div class="feed-step-content">
+          <h4>Deployment Failure</h4>
+          <p>A documented institutional deployment in which a dimension fails to identify a governance gap that subsequently produces harm triggers formal review of that dimension.</p>
+        </div>
+      </div>
+      <div class="feed-step">
+        <div class="feed-step-num">3</div>
+        <div class="feed-step-content">
+          <h4>Content Validity Review</h4>
+          <p>A formal content validity review conducted every 3 years in which domain experts identify a dimension as miscalibrated triggers formal review.</p>
+        </div>
+      </div>
+    </div>
+    
+    <h3 style="margin:2rem 0 1rem;font-size:1.1rem;">Institutional Feedback Pathway</h3>
+    <div style="background:var(--nsag-pale);border-left:4px solid var(--nsag);padding:1.5rem;border-radius:0 6px 6px 0;margin-bottom:1.5rem;">
+      <p style="font-size:0.95rem;color:var(--text);">Institutions completing advisory engagements are invited to submit a 90-day governance report documenting what they changed and what changed as a result. Governance reports are reviewed by NSAG and incorporated into the framework update process. Anonymized findings are published annually in the NSAG Brief as the empirical record of institutional outcomes. This is the feedback loop that converts NSAG from a static framework into an evidence-generating practice.</p>
+    </div>
+    
+    <h3 style="margin:2rem 0 1rem;font-size:1.1rem;">Dimension Derivation Standard</h3>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:700px;">The six dimensions in each module were selected by applying five criteria: (1) evidence existence — the dimension has a documented evidence base linking it to measurable institutional outcomes; (2) governance addressability — the dimension reflects an institutional design choice that can be changed through governance action; (3) measurability — the dimension can be assessed through observable, documentable institutional characteristics; (4) independence — the dimension captures something meaningfully distinct from the other five; (5) actionability — when scored as EARLY STAGE, the dimension points toward a specific governance change rather than a general aspiration.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Ready to assess your institution?</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">Take any of the 13 free module assessments. Your tier report will name specific people in your institution who are affected by your current governance score — and give you one action to take this week.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/#start" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take a Free Assessment</a>
+      <a href="/experience" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">See Your Experience →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fi">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl">
+      <h5>Modules</h5>
+      <a href="/m1">M1 Trauma-Informed Legal Space</a>
+      <a href="/m8">M8 Burnout Recovery</a>
+      <a href="/m9">M9 Cannabis Healthcare Visibility</a>
+      <a href="/m11">M11 Medical Technology</a>
+      <a href="/m13">M13 Traditional &amp; CAM</a>
+      <a href="/#modules">All 13 Modules →</a>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer">M9 Assessment</a>
+      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer">M8 Assessment</a>
+      <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer">M1 Assessment</a>
+      <a href="/#start">All Assessments →</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>

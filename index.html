@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSAG — Nervous-System-Aware Governance | Institutional Design Advisory</title>
+<meta name="description" content="Your institution is already shaping how people think. The question is whether you're doing it intentionally. NSAG is the framework for making those effects measurable.">
+<link rel="canonical" href="https://nsag-site.vercel.app">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="NSAG — Nervous-System-Aware Governance">
+<meta property="og:description" content="Institutions regulate cognition, stress, behavior, and participation through their design — whether they intend to or not. NSAG is the framework for making those effects intentional.">
+<meta property="og:url" content="https://nsag-site.vercel.app">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%234D45A8'/><text x='90' y='125' font-family='serif' font-size='100' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NSAG — Nervous-System-Aware Governance">
+<meta name="twitter:description" content="Your institution is already shaping how people think. The question is whether you're doing it intentionally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nsag: #4D45A8;
+  --nsag-light: #6B63C4;
+  --nsag-pale: #EEF0FF;
+  --bg: #F6F3EC;
+  --text: #1C1B1F;
+  --text-muted: #5A5869;
+  --border: #D8D5CE;
+  --white: #FFFFFF;
+  --foundation: #4D45A8;
+  --mechanisms: #1B7A68;
+  --social: #C24A2E;
+  --imperative: #B8842A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+h4, h5, nav, .label { font-family: 'Syne', sans-serif; }
+a { color: var(--nsag); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.container--narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+
+/* NAV */
+nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 1rem 0; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.nav-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--nsag); letter-spacing: 0.08em; }
+.nav-links { display: flex; gap: 2rem; font-size: 0.875rem; font-weight: 500; }
+.nav-links a { color: var(--text-muted); }
+.nav-links a:hover { color: var(--nsag); text-decoration: none; }
+.nav-cta { background: var(--nsag); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; }
+.nav-cta:hover { background: var(--nsag-light); text-decoration:none; }
+.nav-cta-outline:hover { background: var(--nsag-pale) !important; color: var(--nsag) !important; }
+
+/* HERO */
+.hero { background: var(--nsag); color: var(--white); padding: 5rem 0 4rem; }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.hero-label { font-family: 'Syne', sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; margin-bottom: 1.5rem; max-width: 800px; }
+.hero-thesis { font-size: 1.15rem; max-width: 680px; opacity: 0.9; margin-bottom: 2rem; line-height: 1.8; }
+.hero-sub { font-size: 1rem; opacity: 0.75; max-width: 580px; margin-bottom: 3rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { background: var(--white); color: var(--nsag); padding: 0.875rem 2rem; border-radius: 4px; font-weight: 600; font-family: 'Syne', sans-serif; font-size: 0.9rem; }
+.btn-primary:hover { background: var(--nsag-pale); text-decoration: none; }
+.btn-outline { border: 1.5px solid rgba(255,255,255,0.5); color: var(--white); padding: 0.875rem 2rem; border-radius: 4px; font-weight: 600; font-family: 'Syne', sans-serif; font-size: 0.9rem; }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); text-decoration: none; }
+.hero-stats { display: flex; gap: 3rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.2); flex-wrap: wrap; }
+.hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; }
+.hero-stat-label { font-size: 0.8rem; opacity: 0.7; letter-spacing: 0.05em; }
+
+/* SECTION STANDARD */
+section { padding: 5rem 0; }
+section.alt { background: var(--white); }
+.section-label { font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--nsag); margin-bottom: 1rem; display: inline-block; background: rgba(77,69,168,0.08); padding: 0.2rem 0.6rem; border-radius: 3px; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+.section-intro { color: var(--text-muted); font-size: 1.05rem; max-width: 640px; line-height: 1.8; }
+
+/* PRINCIPLES */
+.principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+@media (max-width: 768px) { .principles-grid { grid-template-columns: 1fr; } }
+.principles-cat { border-radius: 8px; padding: 2rem; }
+.principles-cat.foundation { background: #F0F0FA; border-top: 3px solid var(--foundation); }
+.principles-cat.mechanisms { background: #F0F7F5; border-top: 3px solid var(--mechanisms); }
+.principles-cat.social { background: #FCF2F0; border-top: 3px solid var(--social); }
+.principles-cat.imperative { background: #FBF6EE; border-top: 3px solid var(--imperative); }
+.principles-cat h3 { font-family: 'Syne', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.principles-cat.foundation h3 { color: var(--foundation); }
+.principles-cat.mechanisms h3 { color: var(--mechanisms); }
+.principles-cat.social h3 { color: var(--social); }
+.principles-cat.imperative h3 { color: var(--imperative); }
+.cat-subtitle { font-style: italic; color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem; }
+.principle { display: flex; gap: 0.75rem; margin-bottom: 0.875rem; font-size: 0.9rem; line-height: 1.6; }
+.p-num { font-family: 'Syne', sans-serif; font-weight: 700; min-width: 1.5rem; font-size: 0.8rem; padding-top: 0.1rem; opacity: 0.5; }
+.principle strong { font-weight: 600; }
+
+/* MODULES */
+.modules-intro { margin-bottom: 3rem; }
+.module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 900px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .module-grid { grid-template-columns: 1fr; } }
+.module-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: box-shadow 0.2s; border-left-width: 3px; }
+.module-card[data-category="legal"] { border-left-color: #1E3651; }
+.module-card[data-category="healthcare"] { border-left-color: #1B7A68; }
+.module-card[data-category="civic"] { border-left-color: #2E5A28; }
+.module-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.module-num { font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--nsag); text-transform: uppercase; margin-bottom: 0.5rem; }
+.module-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; line-height: 1.3; }
+.module-problem { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; }
+.module-dims { margin-bottom: 1.25rem; }
+.module-dims-label { font-family: 'Syne', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.4rem; }
+.module-dims ul { list-style: none; padding: 0; }
+.module-dims li { font-size: 0.8rem; color: var(--text-muted); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+.module-dims li::before { content: '·'; position: absolute; left: 0; color: var(--nsag); }
+.module-audience { font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 0.75rem; line-height: 1.5; }
+.module-card.new { border-color: var(--nsag); border-width: 2px; }
+.module-new-badge { display: inline-block; background: var(--nsag); color: white; font-size: 0.65rem; font-family: 'Syne', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 3px; margin-bottom: 0.5rem; }
+
+/* PRODUCTS */
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+@media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+.product-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+.product-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--nsag); margin-bottom: 0.25rem; }
+.product-name { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; color: var(--text-muted); }
+.product-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+.product-includes { font-size: 0.8rem; color: var(--text-muted); }
+.product-includes li { padding: 0.2rem 0; }
+
+/* INTELLIGENCE PRODUCTS */
+.intel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem; }
+@media (max-width: 600px) { .intel-grid { grid-template-columns: 1fr; } }
+.intel-card { background: var(--nsag-pale); border: 1px solid #C8C5E8; border-radius: 8px; padding: 1.5rem; position: relative; }
+.intel-soon { position: absolute; top: 1rem; right: 1rem; background: var(--nsag); color: white; font-size: 0.65rem; font-family: 'Syne', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 3px; }
+.intel-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.intel-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ORIGIN */
+.origin-inner { display: block; max-width: 720px; }
+/* origin-inner is now single column */
+.origin-timeline { position: relative; padding-left: 2rem; }
+.origin-timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 1px; background: var(--border); }
+.origin-step { position: relative; margin-bottom: 1.5rem; }
+.origin-step::before { content: ''; position: absolute; left: -1.65rem; top: 0.4rem; width: 8px; height: 8px; border-radius: 50%; background: var(--nsag); }
+.origin-step-year { font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--nsag); margin-bottom: 0.25rem; }
+.origin-step p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+
+/* DISCUSSION PAPER TEASER */
+.paper-teaser { background: var(--nsag); color: white; border-radius: 12px; padding: 3rem; display: block; margin-top: 2rem; }
+@media (max-width: 600px) { .paper-teaser { grid-template-columns: 1fr; } }
+.paper-label { font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.75rem; }
+.paper-title { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.paper-desc { font-size: 0.9rem; opacity: 0.85; line-height: 1.7; }
+.paper-status { font-family: 'Syne', sans-serif; font-size: 0.75rem; opacity: 0.6; margin-top: 0.75rem; }
+
+/* CONTACT CTA */
+.cta-section { text-align: center; }
+.cta-section h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+.cta-section p { color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2rem; }
+
+/* FOOTER */
+footer { background: #1C1B1F; color: rgba(255,255,255,0.6); padding: 3rem 0; font-size: 0.85rem; }
+.footer-inner { display: flex; justify-content: space-between; align-items: start; gap: 2rem; flex-wrap: wrap; }
+.footer-brand { font-family: 'Syne', sans-serif; font-weight: 700; color: white; font-size: 1rem; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.footer-tagline { font-size: 0.8rem; max-width: 280px; line-height: 1.6; }
+.footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { color: rgba(255,255,255,0.6); }
+.footer-links a:hover { color: white; text-decoration: none; }
+.footer-bottom { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.78rem; }
+
+/* MODULE EVIDENCE */
+.module-evidence { background: rgba(77,69,168,0.04); border-left: 2px solid var(--nsag); padding: 0.875rem 1rem; margin: 0.75rem 0; border-radius: 0 4px 4px 0; }
+.module-evidence-label { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--nsag); margin-bottom: 0.4rem; }
+.module-evidence p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+
+/* WHO THIS IS FOR */
+.who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 2.5rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.who-card { padding: 2rem 1.75rem; border-right: 1px solid var(--border); }
+.who-card:last-child { border-right: none; }
+@media (max-width: 768px) { .who-grid { grid-template-columns: 1fr; } .who-card { border-right: none; border-bottom: 1px solid var(--border); } }
+.who-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.who-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.who-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1rem; }
+.who-modules { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.who-tag { font-family: 'Syne', sans-serif; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 3px; color: white; text-decoration: none; font-weight: 600; letter-spacing: 0.04em; }
+.who-tag:hover { opacity: 0.85; text-decoration: none; }
+
+/* PRINCIPLES PROGRESSIVE DISCLOSURE */
+.principles-expand-btn { display: block; margin: 1.5rem auto 0; background: none; border: 1px solid var(--border); color: var(--nsag); font-family: 'Syne', sans-serif; font-size: 0.8rem; letter-spacing: 0.08em; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+.principles-expand-btn:hover { background: var(--nsag-pale); border-color: var(--nsag); }
+
+/* MODULE FILTER TABS */
+.module-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.filter-btn { font-family: 'Syne', sans-serif; font-size: 0.78rem; letter-spacing: 0.06em; padding: 0.45rem 1.1rem; border-radius: 20px; border: 1.5px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+.filter-btn:hover { border-color: var(--nsag); color: var(--nsag); }
+.filter-btn.active { background: var(--nsag); border-color: var(--nsag); color: white; }
+.module-card[data-hidden="true"] { display: none; }
+
+/* MODULE CTA BUTTON */
+.module-cta-btn { display: block; margin-top: 1.25rem; background: var(--nsag); color: white !important; text-align: center; padding: 0.75rem 1rem; border-radius: 5px; font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; transition: background 0.15s; }
+.module-cta-btn:hover { background: var(--nsag-light); text-decoration: none; }
+
+/* CURRENT WORK STRIP */
+.work-strip { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 0.5rem; margin-top: 2rem; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.work-strip::-webkit-scrollbar { height: 4px; }
+.work-strip::-webkit-scrollbar-track { background: transparent; }
+.work-strip::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.work-item { flex: 0 0 260px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+.work-outlet { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 700; }
+.work-title { font-size: 0.875rem; font-weight: 600; line-height: 1.4; color: var(--text); margin-bottom: 0.4rem; }
+.work-date { font-size: 0.75rem; color: var(--text-muted); }
+
+/* INSTITUTIONAL AFFILIATIONS (replaces network) */
+.affiliations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+@media (max-width: 768px) { .affiliations-grid { grid-template-columns: 1fr 1fr; } }
+.affiliation-pill { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; }
+.affiliation-domain { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nsag); margin-bottom: 0.3rem; }
+.affiliation-name { font-size: 0.875rem; font-weight: 600; line-height: 1.4; }
+
+/* DISCUSSION PAPER GATE */
+.paper-gate { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem 2rem; margin-top: 2rem; }
+.paper-gate-form { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+.paper-gate-input { flex: 1; min-width: 220px; border: 1px solid var(--border); border-radius: 4px; padding: 0.65rem 1rem; font-family: 'Manrope', sans-serif; font-size: 0.9rem; background: var(--bg); }
+.paper-gate-input:focus { outline: 2px solid var(--nsag); border-color: var(--nsag); }
+.paper-gate-btn { background: var(--nsag); color: white; border: none; border-radius: 4px; padding: 0.65rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; letter-spacing: 0.04em; }
+.paper-gate-btn:hover { background: var(--nsag-light); }
+.paper-gate-success { display: none; color: #1B7A68; font-weight: 600; font-family: 'Syne', sans-serif; font-size: 0.9rem; margin-top: 0.75rem; }
+
+/* NEWSLETTER SIGNUP */
+.newsletter-box { background: rgba(77,69,168,0.06); border: 1px solid rgba(77,69,168,0.15); border-radius: 8px; padding: 1.5rem 2rem; margin-top: 2.5rem; }
+.newsletter-form { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; }
+.newsletter-input { flex: 1; min-width: 200px; border: 1px solid var(--border); border-radius: 4px; padding: 0.6rem 1rem; font-family: 'Manrope', sans-serif; font-size: 0.875rem; background: var(--white); }
+.newsletter-btn { background: var(--nsag); color: white; border: none; border-radius: 4px; padding: 0.6rem 1.25rem; font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
+
+/* PUBLICATION STRIP IN HERO */
+.hero-pub-strip { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.78rem; opacity: 0.7; letter-spacing: 0.02em; }
+.hero-pub-strip strong { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 0.35rem; }
+
+/* HAWAII LANDSCAPE (replaces individual names) */
+.hawaii-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 2rem; }
+@media (max-width: 768px) { .hawaii-grid { grid-template-columns: 1fr; } }
+.hawaii-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+.hawaii-card-label { font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nsag); margin-bottom: 0.75rem; }
+.hawaii-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+/* Research Grounding collapsed by default */
+.module-evidence { cursor: pointer; }
+.module-evidence .evidence-body { display: none; }
+.module-evidence.open .evidence-body { display: block; }
+.module-evidence-label::after { content: ' ↓'; font-size: 0.7em; opacity: 0.6; }
+.module-evidence.open .module-evidence-label::after { content: ' ↑'; }
+
+
+/* SKIP NAV */
+.skip-nav { position:absolute; top:-100%; left:50%; transform:translateX(-50%); background:var(--nsag); color:white; padding:0.5rem 1.25rem; border-radius:0 0 6px 6px; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:600; z-index:9999; text-decoration:none; }
+.skip-nav:focus { top:0; }
+
+/* MOBILE NAV */
+.hamburger { display:none; background:none; border:none; cursor:pointer; padding:0.25rem; }
+.hamburger span { display:block; width:22px; height:2px; background:var(--text); margin:4px 0; transition:all 0.25s; border-radius:1px; }
+.mobile-nav { display:none; position:fixed; inset:0; background:white; z-index:200; padding:6rem 2rem 2rem; flex-direction:column; gap:2rem; overflow-y:auto; }
+.mobile-nav.open { display:flex; }
+.mobile-nav a { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:600; color:var(--text); text-decoration:none; padding:0.5rem 0; border-bottom:1px solid var(--border); }
+.mobile-nav a:last-child { border-bottom:none; color:white; background:var(--nsag); padding:1rem 1.5rem; border-radius:6px; text-align:center; margin-top:1rem; }
+.mobile-nav-close { position:fixed; top:1.25rem; right:1.5rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:201; }
+@media (max-width: 768px) {
+  .nav-links { display:none; }
+  .hamburger { display:block; }
+}
+
+/* FOCUS STYLES */
+a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid var(--nsag); outline-offset:3px; }
+
+/* STICKY MODULE FILTERS */
+.module-filters-sticky { position:sticky; top:64px; background:var(--bg); z-index:50; padding:0.75rem 0; margin-bottom:1rem; }
+section.alt .module-filters-sticky { background:white; }
+
+/* SCROLL-SPY NAV ACTIVE STATE */
+.nav-links a.active { color:var(--nsag); font-weight:600; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "NSAG — Nervous-System-Aware Governance",
+      "alternateName": ["Neurocognitive Systems Advisory Group","Aloha AI Consulting"],
+      "url": "https://nsag-site.vercel.app",
+      "logo": "https://nsag-site.vercel.app/og-image.png",
+      "description": "Advisory framework and practice applying neuroscience evidence to institutional design across healthcare, legal, built environment, and civic institutions.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Honolulu", "addressRegion": "HI", "addressCountry": "US" },
+      "areaServed": "US",
+      "serviceType": ["Governance Advisory","AI Governance","Institutional Design","Continuing Education"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "NSAG Products & Services",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Free Readiness Assessment", "price": "0", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Individual Toolkit", "price": "500", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Advisory Engagement", "price": "8500", "priceCurrency": "USD" }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Rayven-Nikkita Collins",
+      "honorificSuffix": "M.S., J.D. Candidate",
+      "jobTitle": ["Director of AI Strategy","Founder, NSAG","Law Clerk"],
+      "url": "https://nsag-site.vercel.app",
+      "sameAs": ["https://www.linkedin.com/in/rn-collins/"],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Boston University School of Medicine" },
+        { "@type": "CollegeOrUniversity", "name": "Northeastern University School of Law" },
+        { "@type": "CollegeOrUniversity", "name": "University of Pennsylvania" }
+      ],
+      "worksFor": [
+        { "@type": "Organization", "name": "NSAG — Nervous-System-Aware Governance" },
+        { "@type": "Organization", "name": "The Neurological Health Institute" },
+        { "@type": "Organization", "name": "Gordon Rees Scully Mansukhani LLP" }
+      ],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Master of Science, Anatomy & Neurobiology", "recognizedBy": { "@type": "Organization", "name": "Boston University School of Medicine" } }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Nervous-System-Aware Governance?", "acceptedAnswer": { "@type": "Answer", "text": "Nervous-System-Aware Governance (NSAG) is an evidence-based governance framework that applies neuroscience research to institutional design. It holds that every institution — through its architecture, language, procedures, and digital systems — already regulates the nervous system states of the people within it, whether intentionally or not. NSAG provides the framework for making those effects measurable and intentional." } },
+        { "@type": "Question", "name": "Who does NSAG serve?", "acceptedAnswer": { "@type": "Answer", "text": "NSAG serves institutional leaders across healthcare, legal, civic, and built environment sectors — including hospital systems, legal aid organizations, municipalities, architecture firms, cannabis healthcare providers, and psychedelic therapy programs." } },
+        { "@type": "Question", "name": "How do I start with NSAG?", "acceptedAnswer": { "@type": "Answer", "text": "Start with a free readiness assessment — one is available for each of the 12 advisory modules. The assessment scores your organization across six dimensions and produces a tier report. No fee, no commitment. Advisory engagements begin at $8,500 for a 90-day engagement." } },
+        { "@type": "Question", "name": "What is the NSAG advisory engagement?", "acceptedAnswer": { "@type": "Answer", "text": "A 90-day engagement that includes a baseline assessment, gap analysis, six module-specific deliverables, a 90-day implementation roadmap, and outcome measurement. Engagements start at $8,500. Extended advisory at $18,000+." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#who" class="skip-nav">Skip to main content</a>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#framework" class="nav-brand" style="text-decoration:none">NSAG</a>
+    <div class="nav-links">
+      <a href="#who">Approach</a>
+      <a href="#modules">Modules</a>
+      <a href="#work">Research</a>
+      <a href="#products">Products</a>
+      <a href="#about">Origin</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="nav-cta nav-cta-outline" style="background:transparent;border:1.5px solid var(--nsag);color:var(--nsag);margin-right:0.5rem;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a><a href="#start" class="nav-cta">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="framework">
+  <div class="hero-inner">
+    <div class="hero-label">Neurocognitive Systems Advisory Group</div>
+    <div style="font-family:'Syne',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.55);margin-bottom:1rem;letter-spacing:0.03em;">The advisory practice for nervous-system-aware institutional design and governance</div>
+    <h1>Your institution is already<br>shaping how people think.</h1>
+    <p class="hero-thesis">The question is whether you're doing it intentionally. NSAG is the framework for making those effects measurable and intentional — across healthcare, legal institutions, the built environment, and civic life.</p>
+    <p class="hero-sub">To change how an institution functions, you first need a framework that makes its effects on people measurable. NSAG is that framework.</p>
+    <div class="hero-pub-strip"><strong>Peer-reviewed publications</strong>Academic Radiology &nbsp;·&nbsp; Policy Insights from the Behavioral and Brain Sciences &nbsp;·&nbsp; Building Tomorrow's Biomedical Workforce &nbsp;·&nbsp; Journal of Biophilic Design<br><strong style="margin-top:0.4rem;display:block;">Popular press &amp; industry media</strong>Fat Nugs Magazine &nbsp;·&nbsp; Cannabis Law Report &nbsp;·&nbsp; Karma Koala Psychedelics Edition</div>
+    <div class="hero-actions">
+      <a href="#modules" class="btn-primary">Explore the 12 Modules</a>
+      <a href="#principles" class="btn-outline">Read the Framework</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">12</div><div class="hero-stat-label">Advisory Modules</div></div>
+      <div><div class="hero-stat-num">16</div><div class="hero-stat-label">Core Principles</div></div>
+      <div><div class="hero-stat-num">7</div><div class="hero-stat-label">Publications</div></div>
+      <div><div class="hero-stat-num">4</div><div class="hero-stat-label">Intelligence Products</div></div>
+<div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · M4 · Student Member</div>
+        <div class="affiliation-name">Students for Sensible Drug Policy (SSDP)</div>
+      </div>
+
+<div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · Psychedelic Policy</div>
+        <div class="affiliation-name">Center for Psychedelic Policy — Sam Chapman</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  </div>
+</div>
+
+<!-- WHO THIS IS FOR -->
+<section id="who">
+  <div class="container">
+    <span class="section-label">Your Sector</span>
+    <h2 class="section-title">Who This Is For</h2>
+    <p class="section-intro">Twelve modules span three institutional domains. Identify your sector below — each links directly to its readiness assessment tools.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">⚖️</div>
+        <div class="who-title" style="color:#1E3651">Legal &amp; Justice</div>
+        <p class="who-desc">Legal aid organizations, public defenders, courthouse administrators, law schools, court innovation offices, and restorative justice programs. Three modules apply directly to legal environments.</p>
+        <div class="who-modules">
+          <a href="https://nsag-m1.vercel.app" class="who-tag" style="background:#1E3651">M1 Legal Space</a>
+          <a href="https://nsag-m2.vercel.app" class="who-tag" style="background:#1E3651">M2 AI Navigation</a>
+          <a href="https://nsag-m6.vercel.app" class="who-tag" style="background:#1E3651">M6 Civic Sponsorship</a>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏥</div>
+        <div class="who-title" style="color:#1B7A68">Healthcare &amp; Clinical</div>
+        <p class="who-desc">Hospitals, clinics, FQHCs, nursing and pharmacy programs, cannabis healthcare providers, and healthcare facility architects. Six modules address healthcare environments and systems.</p>
+        <div class="who-modules">
+          <a href="https://nsag-m3.vercel.app" class="who-tag" style="background:#1B7A68">M3 Psychedelics</a>
+          <a href="https://nsag-m4.vercel.app" class="who-tag" style="background:#1B7A68">M4 Cannabis</a>
+          <a href="https://nsag-m8.vercel.app" class="who-tag" style="background:#1B7A68">M8 Burnout</a>
+          <a href="https://nsag-m9.vercel.app" class="who-tag" style="background:#1B7A68">M9 Visibility</a>
+          <a href="https://nsag-m10.vercel.app" class="who-tag" style="background:#1B7A68">M10 Built Env.</a>
+          <a href="https://nsag-m11.vercel.app" class="who-tag" style="background:#1B7A68">M11 Med Tech</a>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🌿</div>
+        <div class="who-title" style="color:#2E5A28">Civic &amp; Built Environment</div>
+        <p class="who-desc">Municipalities, urban planners, architecture firms, parks departments, schools, universities, and nonprofit organizations. Three modules address civic and built environment governance.</p>
+        <div class="who-modules">
+          <a href="https://nsag-m5.vercel.app" class="who-tag" style="background:#2E5A28">M5 Biophilic</a>
+          <a href="https://nsag-m7.vercel.app" class="who-tag" style="background:#2E5A28">M7 Cities</a>
+          <a href="https://nsag-m12.vercel.app" class="who-tag" style="background:#2E5A28">M12 Education</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="container">
+    <span class="section-label">The Framework</span>
+    <h2 class="section-title">The 16 Core Principles</h2>
+    <p class="section-intro">Sixteen empirical claims about how institutions affect human nervous systems — organized into four categories. Not aspirational. These are the design requirements for every NSAG product, engagement, and intervention. All sixteen principles are shown below.</p>
+    <div class="principles-grid">
+      <div class="principles-cat foundation">
+        <h3>I — Foundation</h3>
+        <p class="cat-subtitle">What NSAG claims is true before any intervention.</p>
+        <div class="principle"><span class="p-num">1</span><div><strong>Institutions regulate nervous system states — always.</strong> Every institutional encounter produces a physiological response. This regulation is biological. It happens whether the institution intends it or not.</div></div>
+        <div class="principle"><span class="p-num">2</span><div><strong>The loop runs both directions.</strong> Institutions shape behavior. Behavior shapes outcomes. Outcomes reshape institutions. Intervention is possible at every point.</div></div>
+        <div class="principle"><span class="p-num">3</span><div><strong>Every institution is already governed — the question is by what.</strong> Default governance is governance by historical precedent, cognitive bias, and the interests of whoever built the original system.</div></div>
+      </div>
+      <div class="principles-cat mechanisms">
+        <h3>II — Mechanisms</h3>
+        <p class="cat-subtitle">How institutions produce their effects.</p>
+        <div class="principle"><span class="p-num">4</span><div><strong>Language is the first governance layer.</strong> Institutional language activates cognitive and physiological responses before any procedure, environment, or policy takes effect.</div></div>
+        <div class="principle"><span class="p-num">5</span><div><strong>The built environment is governance.</strong> Physical space, acoustics, lighting, and nature access determine what is cognitively and physiologically possible within an institution.</div></div>
+        <div class="principle"><span class="p-num">6</span><div><strong>Digital environments produce real nervous system effects.</strong> Cognitive load, trust erosion, decision fatigue, and attention fragmentation are design problems, not user problems.</div></div>
+        <div class="principle"><span class="p-num">7</span><div><strong>Threat and safety are institutional products.</strong> They are produced by design: language, environment, power structure, procedure, architecture.</div></div>
+        <div class="principle"><span class="p-num">8</span><div><strong>Cognitive load is a design variable, not a user deficiency.</strong> When people fail to navigate systems, the system has often created the conditions for that failure.</div></div>
+        <div class="principle"><span class="p-num">9</span><div><strong>Chronic stress produces institutional incapacity.</strong> Burnout, error, attrition, and ethical failure are institutional design outputs.</div></div>
+      </div>
+      <div class="principles-cat social">
+        <h3>III — The Social Layer</h3>
+        <p class="cat-subtitle">How humans navigate systems with each other.</p>
+        <div class="principle"><span class="p-num">10</span><div><strong>Relationships and social capital are physiological infrastructure.</strong> Belonging, trust, and human connection directly regulate nervous system states and determine who can access what within systems.</div></div>
+        <div class="principle"><span class="p-num">11</span><div><strong>Trust is the primary medium of institutional exchange.</strong> Before compliance, participation, learning, healing, or disclosure — there is trust.</div></div>
+        <div class="principle"><span class="p-num">12</span><div><strong>Identity formation is an institutional product.</strong> Institutions regulate who people become, not only what they do.</div></div>
+        <div class="principle"><span class="p-num">13</span><div><strong>Agency is a design variable.</strong> Institutions that reduce the agency of the people they serve impair the precise states required for the outcomes they claim to want.</div></div>
+      </div>
+      <div class="principles-cat imperative">
+        <h3>IV — The Governance Imperative</h3>
+        <p class="cat-subtitle">What follows from accepting the above.</p>
+        <div class="principle"><span class="p-num">14</span><div><strong>Governance precedes intentional design.</strong> Without a framework specifying what good design means, institutions default to efficiency and compliance.</div></div>
+        <div class="principle"><span class="p-num">15</span><div><strong>What institutions cannot see, they cannot govern.</strong> The disclosure gap, the measurement gap, the visibility gap — these are governance failures before they are individual failures.</div></div>
+        <div class="principle"><span class="p-num">16</span><div><strong>Evidence without governance is inert.</strong> Research accumulates. Governance is what connects evidence to decision-making and makes it a design requirement.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section id="modules" class="alt">
+  <div class="container">
+    <span class="section-label">The 12 Advisory Modules</span>
+    <h2 class="section-title">Where the Framework Applies</h2>
+    <p class="section-intro section-intro--modules">Each module is a domain where institutional design intersects with how people think, feel, process information, and participate. Each has a free readiness assessment, multiple product tiers from $500, and an $8,500 full advisory engagement.</p>
+    <div class="module-filters module-filters-sticky">
+      <button class="filter-btn active" onclick="filterModules('all', this)">All 12 Modules</button>
+      <button class="filter-btn" onclick="filterModules('legal', this)">Legal &amp; Justice</button>
+      <button class="filter-btn" onclick="filterModules('healthcare', this)">Healthcare &amp; Clinical</button>
+      <button class="filter-btn" onclick="filterModules('civic', this)">Civic &amp; Built Environment</button>
+    </div>
+    <div class="module-grid" style="margin-top:0">
+
+      <!-- M1 -->
+      <div class="module-card" data-category="legal">
+        <div class="module-num">M1</div>
+        <h3>Trauma-Informed Legal Space</h3>
+        <p class="module-problem">Legal spaces are among the most consistently activating environments in civic life. A legal space that activates the threat response is a legal space that compromises due process. Trauma-informed design is not a courtesy — it is a legal and ethical obligation for any institution claiming to deliver justice.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Physical environment design</li>
+            <li>Procedural design and plain language</li>
+            <li>Interpreter and translation access infrastructure</li>
+            <li>Staff training and trauma-informed behavior</li>
+            <li>Access and accommodation infrastructure</li>
+            <li>Feedback and accountability mechanisms</li>
+          </ul>
+        </div>
+        <div class="module-audience">Legal aid · Public defenders · Courthouse administrators · Law school clinics · Restorative justice programs</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Walker &amp; Flaherty (2024). &#8220;Cuing Safety in the Law School Classroom: Using a Polyvagal Theory Framework in Support of Trauma-Informed Teaching Practices.&#8221; <em>Journal of Law and Education</em>, 53(1). &nbsp;·&nbsp; Porges, S.W. &amp; Porges, S. (2023). <em>Our Polyvagal World: How Safety and Trauma Change Us.</em> W.W. Norton. &nbsp;·&nbsp; van Lith, M. et al. (2024). &#8220;A theoretical exploration of polyvagal theory in creative arts and psychomotor therapies for emotion regulation in stress and trauma.&#8221; <em>Frontiers in Psychology</em>, 15:1382007.</p>
+        </div>
+        <span class="module-cta-btn" role="button" style="background:#6B7280;cursor:not-allowed;opacity:0.75;display:block;" aria-disabled="true">Assessment Coming Soon</span>
+      </div>
+
+      <!-- M2 -->
+      <div class="module-card" data-category="legal">
+        <div class="module-num">M2</div>
+        <h3>AI Legal Navigation</h3>
+        <p class="module-problem">AI tools are now embedded in legal contexts that affect millions — risk assessment instruments in bail, benefits eligibility algorithms, predictive policing systems. Most of the people affected don't know these tools are used. Most organizations using them can't explain how they work.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>AI tool transparency and explainability</li>
+            <li>Bias audit and demographic impact assessment</li>
+            <li>Human oversight and override protocols</li>
+            <li>Plain-language communication to affected parties</li>
+            <li>Accountability and error correction mechanisms</li>
+            <li>Community input and governance structures</li>
+          </ul>
+        </div>
+        <div class="module-audience">Court innovation offices · Legal aid tech teams · Public defender AI tools · Access-to-justice organizations</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Conklin, M. &amp; Wu, J. (2022). &#8220;Justice by Algorithm: Are Artificial Intelligence Risk Assessment Tools Biased Against Minorities?&#8221; <em>South Journal of Policy Justice</em>, 16, 2&#8211;11. &nbsp;·&nbsp; de Araujo et al. (2023). &#8220;Algorithms in the court: does it matter which part of the judicial decision-making is automated?&#8221; <em>Artificial Intelligence and Law</em>, Springer. &nbsp;·&nbsp; American Bar Association (2024). <em>Year I Report: Impact of Artificial Intelligence on the Practice of Law.</em></p>
+        </div>
+        <span class="module-cta-btn" role="button" style="background:#6B7280;cursor:not-allowed;opacity:0.75;display:block;" aria-disabled="true">Assessment Coming Soon</span>
+      </div>
+
+      <!-- M3 -->
+      <div class="module-card" data-category="healthcare">
+        <div class="module-num">M3</div>
+        <h3>Psychedelic Harm Reduction Governance</h3>
+        <p class="module-problem">Psychedelic facilitation programs are operating without governance infrastructure adequate to the physiological, psychological, and legal risks they manage. The governance gap creates liability for organizations and harm for participants.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Screening and contraindication protocols</li>
+            <li>Set, setting, and session design standards</li>
+            <li>Integration support infrastructure</li>
+            <li>Adverse event documentation and response</li>
+            <li>Legal compliance and regulatory readiness</li>
+            <li>Practitioner training and credentialing standards</li>
+          </ul>
+        </div>
+        <div class="module-audience">Retreat centers · Harm reduction orgs · Psychedelic therapy programs · Festival medical teams · Indigenous ceremony facilitators</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Kim, S.Y., Collins, R. et al. (2023). &#8220;Unlocking the Potential of Psychedelics as Medicine: Past Obstacles and Future Outlooks.&#8221; <em>MIT Science Policy Review.</em> doi:10.38105/spr.osqbpecncp &nbsp;·&nbsp; Johnson, M.W. et al. (2018). &#8220;The abuse potential of medical psilocybin according to the 8 factors of the Controlled Substances Act.&#8221; <em>Neuropharmacology</em>, 142, 143&#8211;166. &nbsp;·&nbsp; Carhart-Harris, R. et al. (2021). &#8220;Trial of Psilocybin versus Escitalopram for Depression.&#8221; <em>New England Journal of Medicine</em>, 384, 1402&#8211;1411.</p>
+        </div>
+        <a href="https://nsag-m3.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M4 -->
+      <div class="module-card" data-category="healthcare">
+        <div class="module-num">M4</div>
+        <h3>Cannabis Public Health Infrastructure</h3>
+        <p class="module-problem">Cannabis organizations and public health departments are building programs on infrastructure designed before the evidence base existed — without disclosure protocols, clinical communication standards, or adverse event systems. This is producing measurable patient safety gaps.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Staff pharmacology training and competency</li>
+            <li>Patient/consumer disclosure infrastructure</li>
+            <li>Non-stigmatizing communication standards</li>
+            <li>Drug interaction and adverse event documentation</li>
+            <li>Regulatory compliance and labeling accuracy</li>
+            <li>Community education capacity</li>
+          </ul>
+        </div>
+        <div class="module-audience">Dispensaries · Cannabis brands · City public health depts · Healthcare organizations serving cannabis-using populations</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">National Academies of Sciences, Engineering, and Medicine (2017). <em>The Health Effects of Cannabis and Cannabinoids: The Current State of Evidence and Recommendations for Research.</em> National Academies Press. &nbsp;·&nbsp; NIH StatPearls (2024). &#8220;Cannabis Use Disorder: Pharmacology and Evidence.&#8221; NCBI Bookshelf. Updated 2024. &nbsp;·&nbsp; Frontiers in Pharmacology (2025). &#8220;Cannabinoids and the endocannabinoid system in the regulation of cytochrome P450 metabolic activity.&#8221; doi:10.3389/fphar.2025.1599012.</p>
+        </div>
+        <a href="https://nsag-m4.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M5 -->
+      <div class="module-card" data-category="civic">
+        <div class="module-num">M5</div>
+        <h3>Biophilic Civic Infrastructure</h3>
+        <p class="module-problem">Civic spaces — courthouses, government offices, libraries, transit stations — are among the most cognitively taxing environments in public life. The neuroscience is unambiguous: biophilic design in civic spaces is a governance investment, not an aesthetic one. It produces measurably better civic participation and institutional trust.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Natural light access and quality</li>
+            <li>Biophilic elements (plants, water, natural materials)</li>
+            <li>Indoor air quality monitoring</li>
+            <li>Acoustic environment management</li>
+            <li>Sensory variation and recovery spaces</li>
+            <li>Outdoor access and green space proximity</li>
+          </ul>
+        </div>
+        <div class="module-audience">Municipalities · City planning depts · Architecture firms · Libraries · Community centers · Public health facilities</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Gaekwad, J.S. et al. (2022). &#8220;A Meta-Analysis of Emotional Evidence for the Biophilia Hypothesis and Implications for Biophilic Design.&#8221; <em>Frontiers in Psychology</em>, 13:750245. doi:10.3389/fpsyg.2022.750245 &nbsp;·&nbsp; Al Khatib, I. et al. (2024). &#8220;A systematic review of the impact of therapeutical biophilic design on health and wellbeing of patients and care providers.&#8221; <em>Frontiers in Built Environment</em>, 10:1467692. doi:10.3389/fbuil.2024.1467692 &nbsp;·&nbsp; Emamjomeh, A. et al. (2025). &#8220;Biophilic interventions in real and virtual environments reduce stress during cognitively demanding tasks.&#8221; <em>Scientific Reports.</em></p>
+        </div>
+        <a href="https://nsag-m5.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M6 -->
+      <div class="module-card" data-category="legal">
+        <div class="module-num">M6</div>
+        <h3>Ethical Civic Sponsorship</h3>
+        <p class="module-problem">Corporate sponsorship has become a primary funding mechanism for civic institutions and public events — but most organizations accepting sponsorships have no formal governance for evaluating conflicts, disclosing relationships, or protecting institutional credibility. A sponsorship without a governance framework is a liability without a number attached to it.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Disclosure practices (amounts and terms)</li>
+            <li>Conflict of interest review policy</li>
+            <li>Community benefit requirements</li>
+            <li>Sponsor selection criteria (published)</li>
+            <li>Annual accountability review process</li>
+            <li>Staff and board independence from sponsors</li>
+          </ul>
+        </div>
+        <div class="module-audience">Municipalities · Festivals and public events · Civic organizations · Nonprofits with industry funding · Cannabis companies seeking civic presence</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Association of Art Museum Directors (2020). <em>AAMD Professional Standards on Deaccessioning.</em> &nbsp;·&nbsp; Eikenberry, A.M. (2019). &#8220;Philanthropy, Voluntary Association, and Governance Beyond the State.&#8221; <em>Voluntas: International Journal of Voluntary and Nonprofit Organizations.</em> &nbsp;·&nbsp; Sullivan, W.M. (2004). <em>Work and Integrity: The Crisis and Promise of Professionalism in America.</em> Jossey-Bass. [corporate-civic ethics framework]</p>
+        </div>
+        <a href="https://nsag-m6.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M7 -->
+      <div class="module-card" data-category="civic">
+        <div class="module-num">M7</div>
+        <h3>Conscious Cities</h3>
+        <p class="module-problem">Urban design is cognitive policy. Every planning decision — where to place a park, how to design a transit station, what zoning allows — is a decision about how residents will think, feel, and participate. Cities that do not account for cognitive science in their planning are making these decisions without the full evidence base about what those decisions actually produce.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Green space access (WHO 10-min standard)</li>
+            <li>Air and acoustic quality monitoring</li>
+            <li>Cognitive accessibility of civic spaces</li>
+            <li>Policy legibility and plain language</li>
+            <li>Community participation infrastructure</li>
+            <li>Trauma-informed planning practice</li>
+          </ul>
+        </div>
+        <div class="module-audience">City planning depts · Mayors' offices · Community development orgs · Urban designers · Transit authorities · Neighborhood associations</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Gaekwad, J.S. et al. (2022). &#8220;A Meta-Analysis of Emotional Evidence for the Biophilia Hypothesis.&#8221; <em>Frontiers in Psychology</em>, 13:750245. &nbsp;·&nbsp; Berto et al. (2026). &#8220;A review of biophilic architectural design strategies and their effects on human wellbeing in contemporary built environments.&#8221; <em>Discover Environment</em>, Springer Nature (203 peer-reviewed sources). &nbsp;·&nbsp; Sternberg, E.M. (2009). <em>Healing Spaces: The Science of Place and Well-Being.</em> Harvard University Press.</p>
+        </div>
+        <a href="https://nsag-m7.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M8 -->
+      <div class="module-card" data-category="healthcare">
+        <div class="module-num">M8</div>
+        <h3>Burnout Recovery Infrastructure</h3>
+        <p class="module-problem">An organization that treats burnout as an individual problem is choosing not to solve it. Burnout is classified by the WHO (ICD-11) as an occupational phenomenon resulting from chronic workplace stress that has not been successfully managed. The structural causes are organizational design choices. They can be changed.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Workload distribution and sustainability</li>
+            <li>Recovery time infrastructure (real, protected)</li>
+            <li>Psychological safety (actual, not stated)</li>
+            <li>Leadership support and modeling</li>
+            <li>Systemic change capacity</li>
+            <li>Secondary trauma support for trauma-adjacent work</li>
+          </ul>
+        </div>
+        <div class="module-audience">Legal aid · Social services · Healthcare orgs · Harm reduction · Retreat centers · Mission-driven orgs in high-stress fields</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Kreuzpointner, L. et al. (2022). &#8220;Higher allostatic load in work-related burnout: The Regensburg Burnout Project.&#8221; <em>Psychoneuroendocrinology</em>, 143:105853. doi:10.1016/j.psyneuen.2022.105853 &nbsp;·&nbsp; B&#228;rtl, C. et al. (2025). &#8220;Chronic stress in relation to clinical burnout: an integrative scoping review.&#8221; <em>Frontiers in Psychology.</em> &nbsp;·&nbsp; McEwen, B.S. &amp; Stellar, E. (1993). &#8220;Stress and the individual: mechanisms leading to disease.&#8221; <em>Archives of Internal Medicine</em>, 153(18), 2093&#8211;2101.</p>
+        </div>
+        <a href="https://nsag-m8.vercel.app" class="module-cta-btn">Take the Burnout Assessment →</a>
+      </div>
+
+      <!-- M9 -->
+      <div class="module-card" data-category="healthcare">
+        <div class="module-num">M9</div>
+        <h3>Cannabis Healthcare Visibility</h3>
+        <p class="module-problem">Healthcare organizations cannot manage patient safety risks they cannot measure — and the invisibility of cannabis in clinical systems is producing a systematic gap in medication safety, adverse event capture, and health equity tracking. The solution is not better intentions. It is infrastructure.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Patient disclosure infrastructure (structured, protected)</li>
+            <li>Provider training and competency</li>
+            <li>EHR documentation (non-pathologizing, searchable)</li>
+            <li>Behavioral risk intelligence and CDS alerts</li>
+            <li>Health equity integration and demographic tracking</li>
+            <li>Adverse event capture and quality improvement</li>
+          </ul>
+        </div>
+        <div class="module-audience">Hospital systems · FQHCs · Community health centers · Behavioral health orgs · Nursing and pharmacy schools</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">National Academies of Sciences, Engineering, and Medicine (2017). <em>The Health Effects of Cannabis and Cannabinoids.</em> National Academies Press. &nbsp;·&nbsp; Samarinas, M. et al. (2021). &#8220;Efficacy of Cannabidiol on Anxiety in Clinical Populations: A Systematic Review.&#8221; <em>Journal of Clinical Medicine.</em> &nbsp;·&nbsp; Centers for Disease Control and Prevention (2024). <em>Cannabis: Public Health Implications of Cannabis Use.</em> CDC.gov.</p>
+        </div>
+        <a href="https://nsag-m9.vercel.app" class="module-cta-btn">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M10 NEW -->
+      <div class="module-card new" data-category="healthcare">
+        <div class="module-new-badge">New</div>
+        <div class="module-num">M10</div>
+        <h3>Healthcare Built Environment</h3>
+        <p class="module-problem">Healthcare facilities are among the most cognitively and physiologically demanding environments humans inhabit — for patients and staff. Yet most hospitals and clinics are designed around operational efficiency and infection control, with little regard for how spatial design affects stress physiology, healing outcomes, provider cognition, and patient safety.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Sensory environment (lighting, acoustics, thermal, scent)</li>
+            <li>Spatial flow and wayfinding (cognitive load)</li>
+            <li>Nature access and biophilic integration</li>
+            <li>Staff environment and recovery spaces</li>
+            <li>Patient privacy and disclosure architecture</li>
+            <li>Trauma-informed environmental design</li>
+          </ul>
+        </div>
+        <div class="module-audience">Hospital systems · Behavioral health facilities · Healthcare architecture firms · FQHCs · Academic medical centers</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Al Khatib, I. et al. (2024). &#8220;A systematic review of the impact of therapeutical biophilic design on health and wellbeing of patients and care providers in healthcare services settings.&#8221; <em>Frontiers in Built Environment</em>, 10:1467692. &nbsp;·&nbsp; Ulrich, R.S. (1984). &#8220;View through a window may influence recovery from surgery.&#8221; <em>Science</em>, 224, 420&#8211;421. &nbsp;·&nbsp; Center for Health Design (2018). <em>The Business Case for Better Buildings: Evidence Supporting the Value of Evidence-Based Design.</em></p>
+        </div>
+        <a href="https://nsag-m10.vercel.app" class="module-cta-btn" target="_blank" rel="noopener noreferrer">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M11 NEW -->
+      <div class="module-card new" data-category="healthcare">
+        <div class="module-new-badge">New</div>
+        <div class="module-num">M11</div>
+        <h3>Medical Technology &amp; Evidence Standards Governance</h3>
+        <p class="module-problem">The governance of emerging health technologies — AI diagnostic tools, medical devices, digital therapeutics, neurotechnology — requires evidence standards that the current FDA regulatory framework was not designed to evaluate at scale. Organizations face a governance gap: tools move faster than evidence, evidence faster than regulation.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Evidence evaluation capacity (independent review)</li>
+            <li>Regulatory literacy (510(k), De Novo, SaMD, IND/NDA)</li>
+            <li>Adoption decision infrastructure (formal protocol)</li>
+            <li>Patient communication standards (AI disclosure)</li>
+            <li>Post-adoption monitoring and adverse event attribution</li>
+            <li>Institutional ethics integration (beyond compliance)</li>
+          </ul>
+        </div>
+        <div class="module-audience">Health systems evaluating AI tools · Health insurers · Digital health companies · IRBs · Academic medical centers</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Collins, R. et al. (2024). &#8220;Disability in Radiology.&#8221; <em>Academic Radiology</em>, 31(9), 3882&#8211;3884. doi:10.1016/j.acra.2023.10.025 &nbsp;·&nbsp; Torres, I.L., Collins, R. et al. (2023). &#8220;Policy Proposals to Promote Inclusion of Caregivers in the Research Funding System.&#8221; <em>Building Tomorrow&#8217;s Biomedical Workforce</em>, National Academies Press. &nbsp;·&nbsp; GRADE Working Group (2004). &#8220;Grading quality of evidence and strength of recommendations.&#8221; <em>BMJ</em>, 328:1490.</p>
+        </div>
+        <a href="https://nsag-m11.vercel.app" class="module-cta-btn" target="_blank" rel="noopener noreferrer">Take the Free Assessment →</a>
+      </div>
+
+      <!-- M12 NEW -->
+      <div class="module-card new" data-category="civic">
+        <div class="module-new-badge">New</div>
+        <div class="module-num">M12</div>
+        <h3>Nervous-System-Aware Education Systems</h3>
+        <p class="module-problem">Professional training programs in medicine, nursing, law, and pharmacy are designed around content coverage and accreditation compliance — not around the physiological and psychological conditions under which professionals actually form judgment. The chronic stress conditions endemic to these programs impair the precise cognitive outcomes they intend to produce.</p>
+        <div class="module-dims">
+          <div class="module-dims-label">6 Assessment Dimensions</div>
+          <ul>
+            <li>Curriculum stress architecture (pacing, evaluation design)</li>
+            <li>Psychological safety infrastructure</li>
+            <li>Trauma-informed pedagogy and faculty training</li>
+            <li>Sleep and physiological readiness design</li>
+            <li>Professional identity formation (explicit structure)</li>
+            <li>Technology integration standards (evidence-based AI)</li>
+          </ul>
+        </div>
+        <div class="module-audience">Medical schools · Nursing programs (BSN–DNP) · Law schools · Pharmacy programs · CME and CLE providers</div>
+        <div class="module-evidence">
+          <div class="module-evidence-label">Research Grounding <span style="font-size:0.65rem;opacity:0.6;font-weight:400">(tap to expand)</span></div>
+          <p class="evidence-body">Elisha, I.M. &amp; Collins, R. (2022). &#8220;Resilience: Within-Group Variations in the Impact of Racial Discrimination on Black Youth&#8217;s Mental Health.&#8221; <em>Policy Insights from the Behavioral and Brain Sciences</em>, 9(1). doi:10.1177/23727322221094626 &nbsp;·&nbsp; Perry, B.D. (2009). &#8220;Examining Child Maltreatment Through a Neurodevelopmental Lens: Clinical Applications of the Neurosequential Model of Therapeutics.&#8221; <em>Journal of Loss and Trauma</em>, 14(4). &nbsp;·&nbsp; Porges, S.W. &amp; Porges, S. (2023). <em>Our Polyvagal World.</em> W.W. Norton.</p>
+        </div>
+        <a href="https://nsag-m12.vercel.app" class="module-cta-btn" target="_blank" rel="noopener noreferrer">Take the Free Assessment →</a>
+      </div>
+
+    </div><!-- end module-grid -->
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<!-- CURRENT WORK -->
+<section id="work" class="alt">
+  <div class="container">
+    <span class="section-label">Recent Writing</span>
+    <h2 class="section-title">Current Work</h2>
+    <p class="section-intro">Recent articles, regulatory analyses, and science communication — published across <em>Fat Nugs Magazine</em>, <em>Cannabis Law Report</em>, <em>Journal of Biophilic Design</em>, and peer-reviewed journals. The framework in active use.</p>
+    <div style="position:relative;">
+<button onclick="document.querySelector('.work-strip').scrollBy({left:-280,behavior:'smooth'})" style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);z-index:10;background:white;border:1px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:none" id="ws-prev" aria-label="Scroll left">‹</button>
+<div class="work-strip" onscroll="document.getElementById('ws-prev').style.display=this.scrollLeft>20?'flex':'none'">
+      <div class="work-item">
+        <div class="work-outlet" style="color:#C24A2E">Fat Nugs Magazine · May 2026</div>
+        <div class="work-title"><a href="https://fatnugsmag.com" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;text-underline-offset:2px;">Cannabis, Sleep, and Hormones: The Neuroscience Healthcare Providers Need</a></div>
+        <div class="work-date">M9 · Cannabis Healthcare Visibility</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#1E3651">Cannabis Law Report · Apr 2026</div>
+        <div class="work-title"><a href="https://cannabislawreport.com" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;text-underline-offset:2px;">Federal Cannabis Rescheduling: Regulatory Analysis for Healthcare Practitioners</a></div>
+        <div class="work-date">M4 · Cannabis Public Health Infrastructure</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#2E5A28">Journal of Biophilic Design · Forthcoming 2026</div>
+        <div class="work-title">Neuroacoustics and Auditory Sanctuary: Designing for Brain Health Through Biophilic Soundscapes</div>
+        <div class="work-date">M5 · Biophilic Civic Infrastructure</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#4D45A8">Academic Radiology · 2024</div>
+        <div class="work-title"><a href="https://doi.org/10.1016/j.acra.2023.10.025" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;text-underline-offset:2px;">Disability in Radiology</a></div>
+        <div class="work-date">M10 · Healthcare Built Environment</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#4D45A8">Policy Insights from Behavioral &amp; Brain Sciences · 2022</div>
+        <div class="work-title"><a href="https://journals.sagepub.com/doi/10.1177/23727322221094626" target="_blank" rel="noopener noreferrer" style="color:var(--text);text-decoration:underline;text-underline-offset:2px;">Resilience: Within-Group Variations in the Impact of Racial Discrimination on Black Youth's Mental Health</a></div>
+        <div class="work-date">M12 · Education Systems · Principle 13</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#B8842A">Karma Koala Psychedelics Edition · May 2026</div>
+        <div class="work-title">Legal Architecture for Psychedelic Access: Governance Frameworks Beyond Prohibition</div>
+        <div class="work-date">M3 · Psychedelic Harm Reduction Governance</div>
+      </div>
+      <div class="work-item">
+        <div class="work-outlet" style="color:#1B7A68">Building Tomorrow's Biomedical Workforce · 2025</div>
+        <div class="work-title">Policy Proposals to Promote Inclusion of Caregivers in the Research Funding System</div>
+        <div class="work-date">M11 · Medical Technology &amp; Evidence Standards</div>
+      </div>
+    </div>
+<button onclick="document.querySelector('.work-strip').scrollBy({left:280,behavior:'smooth'})" style="position:absolute;right:-12px;top:50%;transform:translateY(-50%);z-index:10;background:white;border:1px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1)" aria-label="Scroll right">›</button>
+</div>
+  </div>
+</section>
+
+<!-- CREDIBILITY BRIDGE — who is behind this -->
+<section style="background:var(--nsag-pale);border-top:1px solid rgba(77,69,168,0.15);border-bottom:1px solid rgba(77,69,168,0.15);padding:2.5rem 0;">
+  <div class="container--narrow" style="text-align:center;">
+    <p style="font-family:'Manrope',sans-serif;font-size:0.95rem;color:var(--text);line-height:1.9;max-width:640px;margin:0 auto;">
+      NSAG was developed by <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener noreferrer" style="color:var(--nsag);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(77,69,168,0.3);">Rayven-Nikkita Collins, M.S., J.D. Candidate</a> — neuroscientist (Boston University School of Medicine), law clerk at Gordon Rees Scully Mansukhani LLP and Antithesis Law PC, and Advanced Legislative Scorer at Brown University&#8217;s Center for Technological Responsibility. Four peer-reviewed publications in <em>Academic Radiology</em>, the <em>MIT Science Policy Review</em>, <em>Policy Insights from the Behavioral and Brain Sciences</em>, and the <em>National Academies Press</em>.
+    </p>
+    <a href="#about" style="color:var(--nsag);font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.06em;display:inline-block;margin-top:1rem;text-decoration:none;">Read the framework origin story ↓</a>
+  </div>
+</section>
+
+
+<section id="products">
+  <div class="container">
+    <span class="section-label">Engagement Model</span>
+    <h2 class="section-title">How We Work Together</h2>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin:1.5rem 0 2rem;font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.08em;color:var(--text-muted);">
+      <span style="background:var(--nsag);color:white;padding:0.3rem 0.8rem;border-radius:3px;font-weight:600;">Free Assessment</span>
+      <span style="opacity:0.4;">→</span>
+      <span style="background:var(--nsag-pale);color:var(--nsag);padding:0.3rem 0.8rem;border-radius:3px;border:1px solid rgba(77,69,168,0.2);">Tier Report</span>
+      <span style="opacity:0.4;">→</span>
+      <span style="background:var(--nsag-pale);color:var(--nsag);padding:0.3rem 0.8rem;border-radius:3px;border:1px solid rgba(77,69,168,0.2);">Discovery Call</span>
+      <span style="opacity:0.4;">→</span>
+      <span style="background:var(--nsag-pale);color:var(--nsag);padding:0.3rem 0.8rem;border-radius:3px;border:1px solid rgba(77,69,168,0.2);">Engagement</span>
+    </div>
+    <p class="section-intro">Every module has a free readiness tool, a self-service toolkit, and a full advisory engagement. All products are available for all 12 modules. Most organizations start with the free assessment, receive their tier report, and book a discovery call from there.</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-price">Free</div>
+        <div class="product-name">Readiness Assessment</div>
+        <p class="product-desc">12 online readiness tools — one per module. Score your organization across six dimensions. Email gate unlocks the full report. Access each tool from the Modules section above — one for every domain, permanently free.</p>
+        <a href="#modules" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;background:var(--nsag);color:white;" target="_self" rel="">Start Your Assessment →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-price">$500</div>
+        <div class="product-name">Individual Toolkit</div>
+        <p class="product-desc">Self-scoring workbook, tier interpretation guide, 90-day action guide, annotated primary sources, advisory engagement description, and printable baseline scorecard.</p>
+        <ul class="product-includes">
+          <li>7 downloadable assets per module</li>
+          <li>Org license available at $5,000</li>
+        </ul>
+        <a href="https://gumroad.com/l/nsag-module-toolkit" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Get the Toolkit →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-price">$997</div>
+        <div class="product-name">Self-Paced Course</div>
+        <p class="product-desc">6-session course per module. Individual access. Evidence-grounded, practitioner-useful. Designed to meet CME and CLE credit requirements. Contact for institutional CE partnerships and credit eligibility in your jurisdiction.</p>
+        <a href="https://gumroad.com/l/nsag-module-course" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Enroll in Course →</a>      </div>
+      <div class="product-card">
+        <div class="product-price">$8,500</div>
+        <div class="product-name">Advisory Engagement</div>
+        <p class="product-desc">90-day engagement. Baseline assessment, gap analysis, six module-specific deliverables, 90-day implementation roadmap, and outcome measurement at 30/60/90 days. Extended advisory (policy co-development, CE program design, multi-module) at $18,000+.</p>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call →</a>      </div>
+      <div class="product-card">
+        <div class="product-price">$5,000</div>
+        <div class="product-name">Workshop (Half-Day)</div>
+        <p class="product-desc">Half-day workshop for leadership and staff teams. Module-specific facilitation. Full-day at $8,500. Multi-day and conference keynotes available.</p>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Book a Workshop →</a>
+
+      </div>
+      <div class="product-card" style="border-color:var(--nsag);border-width:2px;background:var(--nsag-pale);">
+        <div class="product-price" style="font-size:1.4rem;color:var(--nsag);">Start Here</div>
+        <div class="product-name">Discovery Call</div>
+        <p class="product-desc">Not sure which module fits? A 20-minute call covers your organization's primary domain, the most relevant assessment dimensions, and what a realistic engagement looks like. No fee. No obligation. Honest about fit.</p>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" class="module-cta-btn" style="margin-top:1rem;">Book a Discovery Call →</a>
+      </div>
+      <div class="product-card">
+        <div class="product-price">$3,500<span style="font-size:1rem;font-weight:400">/mo</span></div>
+        <div class="product-name">Monthly Retainer</div>
+        <p class="product-desc">Ongoing advisory access. Monthly regulatory intelligence brief, quarterly readiness reassessment, module-specific implementation support, and priority access to new products and research.</p>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Inquire About a Retainer →</a>      </div>
+    </div>
+  </div>
+
+    <!-- CE PARTNERSHIP NOTICE -->
+    <div style="margin-top:2.5rem;border:1px solid var(--border);border-left:4px solid var(--nsag);border-radius:8px;padding:1.5rem 2rem;background:var(--white);">
+      <div style="display:flex;align-items:start;gap:1.5rem;flex-wrap:wrap;">
+        <div style="flex:1;min-width:260px;">
+          <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.4rem;">Continuing Education</p>
+          <p style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">CME &nbsp;&middot;&nbsp; CLE &nbsp;&middot;&nbsp; AIA HSW &nbsp;&middot;&nbsp; AICP/CM &nbsp;&middot;&nbsp; SHRM &nbsp;&middot;&nbsp; NBCC</p>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Courses and workshops are designed to meet continuing medical education (CME), continuing legal education (CLE), and other professional CE requirements across healthcare, legal, architecture, planning, and human resources. Institutional CE partnerships are available. Contact to discuss credit eligibility for your jurisdiction and profession.</p>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;">Prefer a call? <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:var(--nsag);font-weight:600;">Book directly →</a></p>
+        </div>
+        <div style="flex:0 0 auto;padding-top:0.25rem;min-width:220px;">
+          <div id="ce-form-toggle">
+            <button onclick="document.getElementById('ce-form-toggle').style.display='none';document.getElementById('ce-form-open').style.display='block'" style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:0.65rem 1.5rem;border-radius:4px;letter-spacing:0.04em;border:none;cursor:pointer;width:100%;">Inquire About CE Credit &#8594;</button>
+          </div>
+          <div id="ce-form-open" style="display:none;">
+            <input id="ce-name" type="text" placeholder="Your name" style="width:100%;border:1px solid var(--border);border-radius:4px;padding:0.5rem 0.75rem;font-family:'Manrope',sans-serif;font-size:0.82rem;margin-bottom:0.5rem;background:var(--bg);" />
+            <input id="ce-email" type="email" placeholder="your@organization.org" style="width:100%;border:1px solid var(--border);border-radius:4px;padding:0.5rem 0.75rem;font-family:'Manrope',sans-serif;font-size:0.82rem;margin-bottom:0.5rem;background:var(--bg);" />
+            <input id="ce-org" type="text" placeholder="Organization" style="width:100%;border:1px solid var(--border);border-radius:4px;padding:0.5rem 0.75rem;font-family:'Manrope',sans-serif;font-size:0.82rem;margin-bottom:0.5rem;background:var(--bg);" />
+            <button onclick="submitCEInquiry()" style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:0.55rem 1.25rem;border-radius:4px;border:none;cursor:pointer;width:100%;">Send Inquiry &#8594;</button>
+            <p id="ce-success" style="display:none;font-size:0.8rem;color:#1B7A68;font-weight:600;margin-top:0.5rem;">&#10003; Inquiry received — expect a reply within 2 business days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL PROOF / RESEARCH GROUNDING -->
+<section style="padding:3rem 0;background:var(--nsag);">
+  <div class="container--narrow" style="text-align:center;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.75rem);font-weight:600;color:white;line-height:1.6;margin-bottom:1.5rem;">"Institutional chronic stress produces measurable structural changes in brain architecture. This is not a wellness problem. It is a design problem."</div>
+    <div style="font-family:'Syne',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Master's Thesis · Boston University School of Medicine</div>
+    <div style="font-family:'Syne',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">Racism, Allostatic Load, and Changes in Medial Temporal Lobe Volumes in Older Adults</div>
+  </div>
+</section>
+
+<!-- INTELLIGENCE PRODUCTS -->
+<section id="intelligence" class="alt">
+  <div class="container">
+    <span class="section-label">Intelligence Layer</span>
+    <h2 class="section-title">Advisory Practice &amp; Intelligence Products</h2>
+    <p class="section-intro">Organizational intelligence products and the advisory practice that deploys them. Two tools are active; two are in development. All four are available for immediate engagement.</p>
+    <div class="intel-grid">
+      <div class="intel-card">
+        <div class="intel-soon" style="background:var(--nsag);color:white;">Active</div>
+        <h3>IDR — Ingest · Digest · Regurgitate</h3>
+        <p>Organizational intelligence infrastructure. Captures what an organization knows — conversations, research, leads, regulatory changes, relationship data — structures it across domains, and surfaces the right information at the right decision point. So institutions stop losing knowledge between sessions, teams, and tools.</p>
+          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Schedule an IDR Consultation →</a>
+      </div>
+      <div class="intel-card">
+        <div class="intel-soon">In Development — 2027</div>
+        <h3>Opportunity Atlas</h3>
+        <p>A navigation system for professional opportunity. Maps the full landscape of what's available, surfaces timing dependencies and social capital pathways, and reduces the cognitive overload of knowing where to focus. For anyone navigating a career, a market, or an institutional ecosystem where the most valuable opportunities are not the most visible ones.</p>
+      </div>
+      <div class="intel-card" style="border-color:var(--nsag);border-width:2px;">
+        <div class="intel-soon" style="background:var(--nsag);color:white;">Active</div>
+        <h3>NSAG Advisory</h3>
+        <p>An AI-native research and advisory practice at the intersection of law, neuroscience, and governance design. Not a consulting firm. Not a law firm. A new kind of practice — one that builds the intelligence infrastructure institutions need before they know they need it. Research-led, evidence-grounded, and available now in fractional advisory and research partnership engagements.</p>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="module-cta-btn" style="display:block;text-align:center;margin-top:1rem;" target="_blank" rel="noopener noreferrer">Book an Advisory Call →</a>
+      </div>
+      <div class="intel-card">
+        <div class="intel-soon">In Development — Fall 2026</div>
+        <h3>Relationship Intelligence</h3>
+        <p>Relationship health for professionals. Tracks connection strength over time, surfaces when relationships are going cold before they go silent, and makes the invisible social capital of a network visible and actionable. For professionals who know relationships drive outcomes but don't have a system for managing them at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCUSSION PAPER -->
+<section id="publications">
+  <div class="container">
+    <span class="section-label">Research</span>
+    <h2 class="section-title">The Academic Foundation</h2>
+    <p class="section-intro">NSAG is grounded in primary research across stress physiology, trauma science, environmental psychology, evidence governance, and educational neuroscience. Four peer-reviewed publications anchor the framework — each directly sourced and DOI-linked below.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;">
+
+      <div style="background:var(--white);border:1px solid var(--border);border-left:4px solid #4D45A8;border-radius:8px;padding:1.5rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;color:#4D45A8;text-transform:uppercase;margin-bottom:0.5rem;">M12 · M8 · Principle 13</div>
+        <p style="font-size:0.95rem;font-weight:600;line-height:1.4;margin-bottom:0.5rem;">Resilience: Within-Group Variations in the Impact of Racial Discrimination on Black Youth&#8217;s Mental Health</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);">Elisha &amp; Collins (2022) · <em>Policy Insights from the Behavioral and Brain Sciences, 9</em>(1), 11&#8211;17 · <a href="https://doi.org/10.1177/23727322221094626" target="_blank" rel="noopener noreferrer" style="color:var(--nsag);font-weight:600;">doi:10.1177/23727322221094626</a></p>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.5rem;">Institutional racial discrimination operates through nervous system mechanisms producing measurable mental health outcomes in youth. Empirical anchor for Principle 13.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-left:4px solid #1B7A68;border-radius:8px;padding:1.5rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;color:#1B7A68;text-transform:uppercase;margin-bottom:0.5rem;">M11 · M8 · Principle 16</div>
+        <p style="font-size:0.95rem;font-weight:600;line-height:1.4;margin-bottom:0.5rem;">Policy Proposals to Promote Inclusion of Caregivers in the Research Funding System: A Call for Change</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);">Torres, Collins, Hertz &amp; Liukkonen (2025) · <em>Building Tomorrow&#8217;s Biomedical Workforce,</em> 90</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.5rem;">Who sets evidence standards determines whose data gets collected. Evidence governance structures are themselves governance interventions.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-left:4px solid #C24A2E;border-radius:8px;padding:1.5rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;color:#C24A2E;text-transform:uppercase;margin-bottom:0.5rem;">M10 · M11</div>
+        <p style="font-size:0.95rem;font-weight:600;line-height:1.4;margin-bottom:0.5rem;">Disability in Radiology</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);">Collins, Lo, Lee, Bedi &amp; Awan (2024) · <em>Academic Radiology, 31</em>(9), 3882&#8211;3884 · <a href="https://doi.org/10.1016/j.acra.2023.10.025" target="_blank" rel="noopener noreferrer" style="color:var(--nsag);font-weight:600;">doi:10.1016/j.acra.2023.10.025</a></p>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.5rem;">Diagnostic infrastructure determines who receives diagnosis. Healthcare built environment is a governance variable, not a neutral backdrop.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-left:4px solid #B8842A;border-radius:8px;padding:1.5rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;color:#B8842A;text-transform:uppercase;margin-bottom:0.5rem;">M3 · M11 · Principle 16</div>
+        <p style="font-size:0.95rem;font-weight:600;line-height:1.4;margin-bottom:0.5rem;">Unlocking the Potential of Psychedelics as Medicine: Past Obstacles and Future Outlooks</p>
+        <p style="font-size:0.82rem;color:var(--text-muted);">Kim, Collins, Teng &amp; Kalinowski (2023) · <em>MIT Science Policy Review</em> · <a href="https://doi.org/10.38105/spr.osqbpecncp" target="_blank" rel="noopener noreferrer" style="color:var(--nsag);font-weight:600;">doi:10.38105/spr.osqbpecncp</a></p>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.5rem;">The title encodes Principle 16: evidence without governance is inert. Past obstacles = evidence without frameworks. Future outlooks = governance as activation mechanism.</p>
+      </div>
+
+    </div>
+
+    <div style="background:#1C1B1F;color:white;border-radius:8px;padding:1.75rem 2rem;margin-top:1.25rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:0.5rem;">M8 · M12 · M11 · NSAG Thesis Anchor</div>
+      <p style="font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:0.5rem;">&#8220;You Have Two Strikes Against You&#8221;: Relationship Among Racism, Allostatic Load, and Changes in Medial Temporal Lobe Volumes in Older Adults</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);">Collins · Master&#8217;s Thesis, Boston University School of Medicine</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.65);margin-top:0.75rem;">The single most precise scientific statement of the NSAG thesis: institutional racism produces allostatic load, which produces measurable structural changes in the brain. Institutions change the brain. Governance that ignores this is not neutral &#8212; it is harmful by design.</p>
+    </div>
+
+    <div class="paper-teaser" style="margin-top:2rem;">
+      <div>
+        <div class="paper-label">Framework Paper &#8212; Preview Available</div>
+        <h3 class="paper-title">Toward Nervous-System-Aware Systems Design: Governance, Healthcare, Education, and the Built Environment</h3>
+        <p class="paper-desc">The framework&#8217;s intellectual foundation across four domains: governance, healthcare delivery, professional education, and the built environment. Three entry points: neuroacoustics and auditory sanctuary (cortisol regulation, sleep-wake balance, executive function); trauma-informed architecture (spatial memory, neuroplasticity, resilience in schools, hospitals, shelters); designing for cognitive clarity (CMS, ADA, and wellness certification as governance levers).</p>
+        
+      </div>
+    </div>
+    <div class="paper-gate">
+      <p style="font-size:0.9rem;font-weight:600;margin-bottom:0.25rem;">Get the two-page preview</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);">Enter your email to receive the executive summary. Full paper available to research collaborators and advisory partners.</p>
+      <div class="paper-gate-form">
+        <input type="email" class="paper-gate-input" id="paper-email" placeholder="your@organization.org" />
+        <button class="paper-gate-btn" onclick="submitPaperRequest()">Send Preview →</button>
+      </div>
+      <div class="paper-gate-success" id="paper-success">✓ Preview sent — check your inbox within 10 minutes.</div>
+    </div>
+      </div>
+</section>
+
+<!-- ABOUT / ORIGIN -->
+<section id="about" class="alt">
+  <div class="container">
+    <span class="section-label">About</span>
+    <h2 class="section-title" style="margin-bottom:2.5rem">A Framework That Started Freshman Year</h2>
+    <div class="origin-inner">
+      <div>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.5rem">NSAG did not begin as a framework. It began as a question that first appeared at the University of Pennsylvania — and kept reappearing in every domain that came after.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.5rem">The question: how do institutions evaluate evidence, protect people, and govern emerging technologies when public trust and commercial pressure are in tension?</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted)">NSAG is the attempt to operationalize that question into a governance framework with measurable outcomes.</p>
+      </div>
+      <div class="origin-timeline">
+        <div class="origin-step">
+          <div class="origin-step-year">University of Pennsylvania</div>
+          <p>Medical device safety and FDA recall research with the National Research Center for Women &amp; Families. First encounter with the evidence governance gap: why do institutions fail to act on evidence they already have?</p>
+        </div>
+        <div class="origin-step">
+          <div class="origin-step-year">Shanghai, China</div>
+          <p>Education consultant. Studies in developmental psychology applied to cross-cultural institutional communication. The question of how institutions shape the people they govern — through language, learning environment, and the assumptions built into their design.</p>
+        </div>
+        <div class="origin-step">
+          <div class="origin-step-year">Boston University School of Medicine</div>
+          <p>M.S. in Anatomy &amp; Neurobiology. Graduate anatomy instructor and prosector. Volunteered to spend July in the anatomy lab dissecting with only <em>Gray&#8217;s Anatomy</em> &#8212; the book, not the show &#8212; for backup. Thesis: racism, allostatic load, and medial temporal lobe volumes in older adults. What does the body actually require of institutional design?</p>
+        </div>
+        <div class="origin-step">
+          <div class="origin-step-year">Harvard Business School</div>
+          <p>Medical researcher. Organizational decision-making, institutional behavior, and implementation science. The gap between evidence and what institutions do with it — approached from the organizational side.</p>
+        </div>
+<div class="origin-step">
+          <div class="origin-step-year">Yale Program for Psychedelic Science</div>
+          <p>Regulatory and compliance: FDA, DEA, IRB. Comparative legal research on psychedelic-assisted therapy access across 30+ international jurisdictions (with Kathryn Tucker JD, end-of-life PAT). The governance gap for emerging therapeutics becomes visible at scale. What governance framework do institutions need to adopt evidence responsibly &#8212; before harm occurs, not after?</p>
+        </div>
+        <div class="origin-step">
+          <div class="origin-step-year">Northeastern University School of Law · NSAG Founded</div>
+          <p>JD Candidate, Northeastern University School of Law. Nine law clerk positions across psychedelics, cannabis, AI governance, biophilic design, and museum ethics. The question finally found its institutional form. NSAG is the framework.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INSTITUTIONAL AFFILIATIONS -->
+<section id="affiliations" style="border-top:2px solid var(--border);">
+  <div class="container">
+    <span class="section-label">Collaborators</span>
+    <h2 class="section-title">Institutional Affiliations</h2>
+    <p class="section-intro">Paid positions, commissioned writing engagements, and research collaborations — organized by relevant module.</p>
+    <div class="affiliations-grid">
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M2 · AI Governance · Paid Position</div>
+        <div class="affiliation-name">Brown University Center for Technological Responsibility — AISLE Project</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M5 · M7 · M10 · Commissioned Writing</div>
+        <div class="affiliation-name">Journal of Biophilic Design</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M1 · M12 · Research Partner</div>
+        <div class="affiliation-name">NuLawLab — Northeastern University School of Law</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · Psychedelic Governance</div>
+        <div class="affiliation-name">MAPS — Multidisciplinary Association for Psychedelic Studies</div>
+      </div>
+
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · End-of-Life Access</div>
+        <div class="affiliation-name">National Psychedelics Association</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M1–M12 · Director of AI Strategy · Paid Position</div>
+        <div class="affiliation-name">The Neurological Health Institute (TNHI)</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · DEA Scheduling · Active Engagement</div>
+        <div class="affiliation-name">Katogen</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · Cannabis &amp; Psychedelics Law</div>
+        <div class="affiliation-name">Psychedelic Bar Association</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · M8 · End-of-Life Care</div>
+        <div class="affiliation-name">End of Life Psychedelic Care (EOLPC)</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · Drug Policy Reform</div>
+        <div class="affiliation-name">Transform Drug Policy Foundation</div>
+      </div>
+
+<div class="affiliation-pill">
+        <div class="affiliation-domain">M4 · M9 · Publishing</div>
+        <div class="affiliation-name">Fat Nugs Magazine</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M4 · M9 · Publishing</div>
+        <div class="affiliation-name">Cannabis Law Report</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · M4 · Regulatory Research</div>
+        <div class="affiliation-name">Yale Program for Psychedelic Science</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M11 · M8 · Research</div>
+        <div class="affiliation-name">Harvard Business School</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M11 · M8 · Editorial</div>
+        <div class="affiliation-name">Neuroethics Magazine</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M6 · Museum Ethics · Active</div>
+        <div class="affiliation-name">Honolulu Museum of Art (HoMA)</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M1 · M4 · Litigation</div>
+        <div class="affiliation-name">Gordon Rees Scully Mansukhani LLP (GRSM)</div>
+      </div>
+
+      <div class="affiliation-pill">
+        <div class="affiliation-domain">M3 · Psychedelics Law · Active</div>
+        <div class="affiliation-name">Antithesis Law PC</div>
+      </div>
+
+<div class="affiliation-pill">
+        <div class="affiliation-domain">M4 · M9 · Cannabis Healthcare</div>
+        <div class="affiliation-name">MV Consulting</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HAWAII -->
+<section id="hawaii">
+  <div class="container">
+    <span class="section-label">Local Intelligence</span>
+    <h2 class="section-title">The Hawaiʻi Advantage</h2>
+    <p class="section-intro">Honolulu is a living laboratory for every NSAG module. Hawaiʻi's regulatory environment, indigenous practices, and demographic profile create deployment conditions unavailable elsewhere in the United States.</p>
+    <div style="background:var(--nsag);color:white;border-radius:12px;padding:2.5rem;margin-bottom:2rem;">
+    <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.75rem;">Indigenous Governance Case Study · M7 · Conscious Cities</div>
+    <p style="font-size:1.1rem;line-height:1.75;color:rgba(255,255,255,0.92);max-width:700px;">The Hawaiian practice of <em>talk story</em> — informal community conversation as civic participation — is a pre-existing nervous-system-aware governance mechanism. It governs through relationship, storytelling, and shared physical presence rather than procedural formality. Before NSAG named the framework, Hawaiʻi was already practicing it.</p>
+  </div>
+<div class="hawaii-grid">
+      <div class="hawaii-card">
+        <div class="hawaii-card-label">M1 · M2 · Legal Infrastructure</div>
+        <p>Hawaiʻi's state court system, Legal Aid Society, and University of Hawaiʻi William S. Richardson School of Law create a contained legal ecosystem for testing trauma-informed and AI-navigated legal design interventions at manageable scale.</p>
+      </div>
+      <div class="hawaii-card">
+        <div class="hawaii-card-label">M4 · M9 · Cannabis &amp; Healthcare</div>
+        <p>Hawaiʻi's medical cannabis program (operational since 2015), its federally qualified health centers serving Native Hawaiian and Pacific Islander populations, and active legislative development on psychedelics create an active policy laboratory for M4 and M9.</p>
+      </div>
+      <div class="hawaii-card">
+        <div class="hawaii-card-label">M5 · M7 · Biophilic &amp; Civic</div>
+        <p>Near-equatorial light, ocean views, and year-round indoor-outdoor conditions make Hawaiʻi among the world's most evidence-rich environments for biophilic design research. The climate's year-round indoor-outdoor access creates real-world testing conditions for every M5 assessment dimension that are unavailable in mainland climates.</p>
+      </div>
+      <div class="hawaii-card">
+        <div class="hawaii-card-label">M10 · M11 · Healthcare Architecture</div>
+        <p>Hawaiʻi's geographically isolated hospital system, its unique relationship between military healthcare (TRICARE at Tripler), and a concentrated urban healthcare corridor in Honolulu create accessible conditions for M10 healthcare built environment research.</p>
+      </div>
+      <div class="hawaii-card">
+        <div class="hawaii-card-label">M12 · Education Systems</div>
+        <p>Hawaiʻi's single statewide school district, its multilingual learner population, and Richardson School of Law's community-focused legal education mission create a replicable case environment for M12 education system research.</p>
+      </div>
+
+      <div class="hawaii-card" style="background:var(--nsag-pale);border-color:#C8C5E8;">
+        <div class="hawaii-card-label" style="color:var(--nsag)">M8 · Burnout Recovery Infrastructure</div>
+        <p>Hawaiʻi's nurse vacancy rate and physician shortage create acute burnout conditions across the healthcare system. Geographic isolation limits recovery pathways and amplifies institutional stress, making Honolulu a high-stakes deployment environment for M8 organizational design interventions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="start" class="cta-section">
+  <div class="container">
+    <h2>Start with a Free Assessment</h2>
+    <p>Twelve free readiness tools — one per module. Scored across six dimensions, each returns a tier report. You know where you stand before any conversation about fees.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+    <a href="#modules" class="btn-primary" style="background:var(--nsag);color:white;padding:1rem 2.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Start Your Free Assessment →</a>
+    <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="btn-primary" style="background:transparent;border:2px solid var(--nsag);color:var(--nsag);padding:1rem 2.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;" target="_blank" rel="noopener noreferrer">Book a Discovery Call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div style="margin-top:2rem;">
+        <div class="newsletter-box">
+          <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">NSAG Intelligence Brief</p>
+          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:0">Regulatory developments across all 12 modules. Monthly. Free.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" id="nl-email" placeholder="your@organization.org" />
+            <button class="newsletter-btn" onclick="submitNewsletter()">Subscribe →</button>
+          </div>
+          <p id="nl-success" style="display:none;font-size:0.82rem;color:#1B7A68;margin-top:0.5rem;font-weight:600;">✓ You're on the list.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-brand">NSAG</div>
+        <p class="footer-tagline">Nervous-System-Aware Governance. Honolulu, Hawaiʻi.</p>
+      </div>
+      <div class="footer-links">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Modules</strong>
+        <a href="https://nsag-m1.vercel.app">M1 · Trauma-Informed Legal Space</a>
+        <a href="https://nsag-m2.vercel.app">M2 · AI Legal Navigation</a>
+        <a href="https://nsag-m3.vercel.app">M3 · Psychedelic Harm Reduction</a>
+        <a href="https://nsag-m4.vercel.app">M4 · Cannabis Public Health</a>
+        <a href="https://nsag-m5.vercel.app">M5 · Biophilic Civic Infrastructure</a>
+        <a href="https://nsag-m6.vercel.app">M6 · Ethical Civic Sponsorship</a>
+        <a href="https://nsag-m7.vercel.app">M7 · Conscious Cities</a>
+        <a href="https://nsag-m8.vercel.app">M8 · Burnout Recovery</a>
+        <a href="https://nsag-m9.vercel.app">M9 · Cannabis Healthcare Visibility</a>
+        <a href="https://nsag-m10.vercel.app">M10 · Healthcare Built Environment</a>
+        <a href="https://nsag-m11.vercel.app">M11 · Medical Technology Governance</a>
+        <a href="https://nsag-m12.vercel.app">M12 · Education Systems</a>
+      </div>
+      <div class="footer-links">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Practice</strong>
+        <a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener noreferrer">Aloha AI Consulting</a>
+        <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener noreferrer">RN Collins Portfolio</a>
+      </div>
+      <div class="footer-links" id="contact">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Contact</strong>
+        <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;">Book a Discovery Call →</a>
+        <span style="font-size:0.78rem">RN Collins, M.S., J.D. Candidate</span>
+        <span style="font-size:0.78rem;color:rgba(255,255,255,0.45)">CME · CLE · AIA HSW · AICP · SHRM CE partnerships available</span>
+        <button onclick="contactArchitect()" style="background:none;border:none;color:rgba(255,255,255,0.6);font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.08em;cursor:pointer;padding:0;margin-top:0.5rem;text-decoration:underline;text-underline-offset:3px;">Contact the Architect</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 RN Collins LLC. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+
+// Research Grounding toggle
+document.querySelectorAll('.module-evidence').forEach(function(el) {
+  el.addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+});
+
+// Principles toggle
+
+function contactArchitect() {
+  var email = 'collins.ra@northeastern.edu';
+  window.location.href = 'mailto:' + email;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(email).catch(function(){});
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+}
+
+// Module filter
+function filterModules(category, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.module-card').forEach(card => {
+    if (category === 'all') {
+      card.removeAttribute('data-hidden');
+    } else {
+      card.setAttribute('data-hidden', card.dataset.category !== category);
+    }
+  });
+}
+
+// Paper gate
+function submitPaperRequest() {
+  var email = document.getElementById('paper-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('paper-email').focus();
+    return;
+  }
+  var btn = document.querySelector('.paper-gate-btn');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  fetch('https://nsag-api.vercel.app/api/lead', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email: email, source: 'discussion_paper_preview', module: 'framework'})
+  }).then(function() {
+    document.querySelector('.paper-gate-form').style.display = 'none';
+    document.getElementById('paper-success').style.display = 'block';
+  }).catch(function() {
+    document.querySelector('.paper-gate-form').style.display = 'none';
+    document.getElementById('paper-success').style.display = 'block';
+    document.getElementById('paper-success').innerHTML = '&#10003; Preview on its way — if it doesn\'t arrive within 10 minutes, email <a href="mailto:collins.ra@northeastern.edu" style="color:#1B7A68">collins.ra@northeastern.edu</a> directly.';
+  });
+}
+
+// Newsletter
+function submitNewsletter() {
+  var email = document.getElementById('nl-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('nl-email').focus();
+    return;
+  }
+  fetch('https://nsag-api.vercel.app/api/lead', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email: email, source: 'newsletter_footer', module: 'intelligence_brief'})
+  }).then(function() {
+    document.querySelector('.newsletter-form').style.display = 'none';
+    document.getElementById('nl-success').style.display = 'block';
+  }).catch(function() {
+    document.querySelector('.newsletter-form').style.display = 'none';
+    document.getElementById('nl-success').style.display = 'block';
+    document.getElementById('nl-success').textContent = '&#10003; You\'re on the list.';
+  });
+}
+</script>
+
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" 
+  style="position:fixed;bottom:2rem;right:2rem;background:var(--nsag);color:white;border:none;width:44px;height:44px;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 2px 12px rgba(77,69,168,0.3);z-index:99;display:none;" 
+  id="back-top" aria-label="Back to top">↑</button>
+
+<script>
+// Mobile nav
+function openMobileNav() {
+  document.getElementById('mobile-nav').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Scroll spy — works both up and down
+(function() {
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navLinks = document.querySelectorAll('.nav-links a');
+  function updateActive() {
+    const scrollY = window.scrollY + 120;
+    let current = sections[0]?.id || '';
+    sections.forEach(s => { if (s.offsetTop <= scrollY) current = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();
+
+// CE inquiry form
+function submitCEInquiry() {
+  var name = document.getElementById('ce-name').value.trim();
+  var email = document.getElementById('ce-email').value.trim();
+  var org = document.getElementById('ce-org').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('ce-email').focus(); return; }
+  fetch('https://nsag-api.vercel.app/api/lead', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email, source: 'ce_partnership_inquiry', module: 'ce', name, organization: org})
+  }).then(function() {
+    document.querySelectorAll('#ce-form-open input').forEach(i => i.disabled = true);
+    document.querySelector('#ce-form-open button').style.display = 'none';
+    document.getElementById('ce-success').style.display = 'block';
+  }).catch(function() {
+    document.querySelectorAll('#ce-form-open input').forEach(i => i.disabled = true);
+    document.querySelector('#ce-form-open button').style.display = 'none';
+    document.getElementById('ce-success').style.display = 'block';
+    document.getElementById('ce-success').innerHTML = '&#10003; Inquiry received — expect a reply within 2 business days. You can also reach us at <a href="mailto:collins.ra@northeastern.edu" style="color:#1B7A68">collins.ra@northeastern.edu</a>.';
+  });
+}
+</script>
+
+<script>
+window.addEventListener('scroll', function() {
+  document.getElementById('back-top').style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+</script>
+</body>
+</html>

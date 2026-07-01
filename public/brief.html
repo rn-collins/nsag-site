@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSAG Brief · NSAG</title>
+<meta name="description" content="NSAG Brief: monthly research evidence synthesis across all 13 governance modules, written for practitioners. Issue 1 available now.">
+<link rel="canonical" href="https://nsag-site.vercel.app/brief">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav,button{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+a:hover{color:var(--nsag-l);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}
+section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
+h3{font-size:1.25rem;margin-bottom:0.75rem;}
+p+p{margin-top:0.75rem;}
+.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
+.btn-p{background:var(--nsag);color:white!important;}
+.btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+</style>
+<meta property="og:title" content="NSAG Brief · NSAG">
+<meta property="og:description" content="NSAG Brief: monthly research evidence synthesis across all 13 governance modules, written for practitioners. Issue 1 available now.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/brief">
+</head>
+<body><nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+  </div>
+</nav>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">NSAG Brief</span>
+  </div>
+</div>
+<section style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">NSAG Brief</div>
+    <h1 style="font-size:clamp(2.2rem,4vw,3.5rem);color:white;max-width:700px;margin-bottom:1.5rem;">Research evidence synthesis for governance practitioners.</h1>
+    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;margin-bottom:2rem;">Monthly publication. Thirteen modules. One key peer-reviewed study per module per issue, individually cited in APA format with DOI hyperlinks. Issue 1 published June 2026. Written for institutional leaders, compliance officers, and governance practitioners — not academic audiences.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#issue1" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Read Issue 1 →</a>
+      <a href="#subscribe" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Subscribe</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <div class="slabel">What NSAG Brief Is</div>
+        <h2>Governance intelligence. Monthly.</h2>
+        <p>NSAG Brief synthesizes peer-reviewed research across all 13 modules of the Neurocognitive Systems Advisory Group framework. Each entry identifies the primary source for the module domain and, where applicable, an additional supporting source. Citations are in APA format with DOI hyperlinks.</p>
+        <p>Every claim is attributed to a primary peer-reviewed source unless otherwise noted. Secondary sources are labeled explicitly. The governance implication follows each summary: what this evidence means for how your institution is designed, and what governance failure looks like when this evidence is not applied.</p>
+        <p>This is not an academic publication. It is a practitioner resource. The goal is that the person reading a Brief entry on a Tuesday morning can bring it to a governance conversation on Wednesday and speak to the evidence without having read the original paper.</p>
+        
+        <div style="background:var(--nsag-p);border-radius:8px;padding:1.25rem;margin-top:1.5rem;">
+          <h4 style="font-size:0.82rem;color:var(--nsag);margin-bottom:0.75rem;">Each Issue Contains</h4>
+          <ul style="list-style:none;font-size:0.9rem;color:var(--text);">
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);">13 module entries — one per module domain</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);">Primary source citation with APA DOI hyperlink per module</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);">Supporting source where relevant</li>
+            <li style="padding:0.35rem 0;border-bottom:1px solid var(--border);">Practitioner summary: what the study found and why it matters</li>
+            <li style="padding:0.35rem 0;">Governance implication: what this means for your institutional design</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div>
+        <div id="subscribe" class="slabel">Subscription</div>
+        <h2>Subscribe to NSAG Brief</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Individual subscriptions and institutional access available. Cohort pricing for institutional partners and CE participants.</p>
+        <div class="card" style="margin-bottom:1rem;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">$100/mo</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Module Brief · Per module</div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Monthly Brief for a single module domain. Best for practitioners with a specific governance focus.</p>
+          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.6rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;">Inquire →</a>
+        </div>
+        <div class="card" style="margin-bottom:1rem;border-color:var(--nsag);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">$250/mo</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Full NSAG Brief · All 13 modules</div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Monthly Brief covering all 13 module domains. Full governance research intelligence for practitioners working across institutional sectors.</p>
+          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.6rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;">Inquire About Subscribing →</a>
+        </div>
+        <div class="card">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.25rem;">Institutional Access</div>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">For hospitals, law schools, public health departments, and organizations subscribing for multiple team members. Cohort pricing available.</p>
+          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="display:block;border:1.5px solid var(--nsag);color:var(--nsag);text-align:center;padding:0.6rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;">Inquire About Institutional Access</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="issue1">
+  <div class="wrap">
+    <div class="slabel">Archive</div>
+    <h2>Issue 1 — June 2026</h2>
+    <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">The inaugural issue. All 13 modules. Primary and supporting sources for each, verified against PubMed, publisher databases, and official government sources. All citations independently verified against PubMed and publisher databases. Key statistics confirmed verbatim from primary sources.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M1</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Trauma-Informed Legal Space</div>
+        <div style="font-size:0.78rem;color:var(--muted);">McKenna & Holtfreter (2021) · Dierkhising et al. (2013)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M2</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">AI Legal Navigation</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Dressel & Farid (2018) · Berk et al. (2024)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M3</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Psychedelic Harm Reduction</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Johnson, Richards & Griffiths (2008) · Davis et al. (2021)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M4</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Cannabis Public Health</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Sajdeya, Goodin & Tighe (2021) · Boehnke et al. (2016)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M5</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Biophilic Civic Infrastructure</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Ulrich (1984, 1991) · Al Khatib et al. (2024)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M6</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Ethical Civic Sponsorship</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Fooks et al. (2013) · Fabbri et al. (2018)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M7</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Conscious Cities</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Evans (2003) · Sarkar et al. (2018, n=94,879)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M8</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Burnout Recovery</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Kiratipaisarl et al. (2024) · Maslach et al. (2001)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M9</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Cannabis Healthcare Visibility</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Lapham et al. (2022) · Tavabi et al. (2023)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M10</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Healthcare Built Environment</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Ulrich et al. (2008) · Münzel et al. (2014)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M11</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Medical Technology</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Obermeyer et al. (2019) · Chang et al. (2025)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M12</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Education Systems</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Immordino-Yang & Damasio (2007) · Barrett et al. (2015)</div>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.25rem;">M13</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;">Traditional & CAM</div>
+        <div style="font-size:0.78rem;color:var(--muted);">Steel et al. (2025) · Kawakami et al. (2022)</div>
+      </div>    </div>
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="/evidence" style="display:inline-block;background:var(--nsag);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;">Read Full Evidence Library →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Thirteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl" style="grid-column:span 2;">
+      <h5>Modules — All 13</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
+          <a href="/m1">M1 · Trauma-Informed Legal Space</a>
+          <a href="/m2">M2 · AI Legal Navigation</a>
+          <a href="/m6">M6 · Ethical Civic Sponsorship</a>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
+          <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
+          <a href="/m7">M7 · Conscious Cities</a>
+          <a href="/m12">M12 · Education Systems</a>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
+          <a href="/m3">M3 · Psychedelic Harm Reduction</a>
+          <a href="/m4">M4 · Cannabis Public Health</a>
+          <a href="/m8">M8 · Burnout Recovery</a>
+          <a href="/m9">M9 · Cannabis Healthcare Visibility</a>
+          <a href="/m10">M10 · Healthcare Built Environment</a>
+          <a href="/m11">M11 · Medical Technology</a>
+          <a href="/m13">M13 · Traditional &amp; CAM</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/#start">All 13 Assessments →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>
