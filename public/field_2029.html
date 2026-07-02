@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Research 2029 · NSAG</title>
+<meta name="description" content="NSAG's 2029 field research calendar — 23 events across 10 countries. Bar exam, JD graduation, HLTH, Web Summit, IOC Year 3, and the NSAG 2030 launch.">
+<link rel="canonical" href="https://nsag-site.vercel.app/field_2029">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;--dark:#2E2A6B;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav,button{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+a:hover{color:var(--nsag-l);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}
+section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl a:hover{color:white;}
+.fbot{text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;border-top:1px solid rgba(255,255,255,0.1);}
+@media(max-width:900px){.nl{display:none;}.event-grid{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
+@media(max-width:900px){.hamburger{display:block;}}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}
+.skip-nav:focus{top:0;}
+.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+.event-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+.event-card:hover{border-color:var(--nsag-l);box-shadow:0 4px 16px rgba(77,69,168,0.08);}
+.event-card.milestone-card{border-left:4px solid var(--nsag);background:var(--nsag-p);}
+.event-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--border);line-height:1;margin-bottom:0.5rem;}
+.event-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text);font-weight:600;margin-bottom:0.25rem;line-height:1.3;}
+.event-meta{font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;margin-bottom:0.75rem;}
+.event-desc{font-size:0.875rem;color:var(--muted);line-height:1.6;}
+.tag{display:inline-block;font-family:'Syne',sans-serif;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.18rem 0.5rem;border-radius:3px;margin:0.15rem 0.1rem 0 0;background:var(--nsag-p);color:var(--nsag);}
+.tag.legal{background:rgba(30,54,81,0.08);color:var(--legal);}
+.tag.health{background:rgba(27,122,104,0.08);color:var(--health);}
+.tag.civic{background:rgba(46,90,40,0.08);color:var(--civic);}
+.tag.pending{background:rgba(255,165,0,0.1);color:#9A6700;}
+.tag.milestone{background:var(--nsag);color:white;}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <a href="/field" class="act">Field</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/evidence">Resources</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
+  <a href="/about">About</a>
+  <a href="/#modules">Modules</a>
+  <a href="/framework">Framework</a>
+  <a href="/advisory">Advisory</a>
+  <a href="/field">Field Research</a>
+  <a href="/ce">CE Programs</a>
+  <a href="/evidence">Resources</a>
+  <a href="/#start">Take an Assessment</a>
+</div>
+<script>function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}</script>
+
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+    <a href="/" style="color:var(--muted);text-decoration:none;">NSAG</a>
+    <span style="opacity:0.4;">/</span>
+    <a href="/field" style="color:var(--muted);text-decoration:none;">Field Research</a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">2029</span>
+  </div>
+</div>
+
+<section id="main-content" style="background:#2E2A6B;color:white;padding:5rem 0 4rem;">
+  <div class="wrap">
+    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Field Year · 23 Events</div>
+    <h1 style="font-size:clamp(2.5rem,5vw,5rem);color:white;margin-bottom:1rem;line-height:1;">2029</h1>
+    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;">The culminating year. NSAG becomes a law practice. The bar exam. JD graduation. And 23 field events that represent the final sprint to the 2030 launch — the year NSAG's dataset crosses 1,000 completed Governance Challenges and the advisory practice opens as a full retainer and publication engine.</p>
+    <div style="display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;">
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">23</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Events</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">10</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Countries</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">15</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">All Modules</div></div>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">3</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Personal Milestones</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="slabel">Full Event Calendar</div>
+    <h2>2029 Field Events</h2>
+    <div class="event-grid">
+
+      <div class="event-card">
+        <div class="event-num">01</div>
+        <div class="event-title">Hawaii Cannabis Expo 2029</div>
+        <div class="event-meta">February · Blaisdell Exhibition Hall, Honolulu, HI</div>
+        <div class="event-desc">Year 3 of NSAG's Hawaii Cannabis Expo field presence. By 2029, NSAG has a three-year longitudinal dataset on cannabis governance — one of the largest longitudinal governance assessments of the cannabis industry in existence. The 2029 presence includes presenting preliminary publication-track findings and recruiting for the 2030 dataset close-out.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M4 Cannabis</span><span class="tag health">M9 Alt. Medicine</span><span class="tag milestone">Year 3 · Publication Track</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">02</div>
+        <div class="event-title">ViVE 2029</div>
+        <div class="event-meta">March · Nashville, TN</div>
+        <div class="event-desc">Year 2 of NSAG's ViVE presence. The 2029 dataset on digital health governance (M11) includes longitudinal comparison with 2028 Governance Challenge participants. ViVE 2029 is a publication-support event — presenting M11 findings to the healthtech governance community and recruiting for the final pre-2030 wave of Governance Challenges.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag health">M11 Digital Health</span><span class="tag milestone">Year 2 · Longitudinal</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">03</div>
+        <div class="event-title">SXSW 2029</div>
+        <div class="event-meta">March · Austin, TX <span class="tag pending">Pending PanelPicker</span></div>
+        <div class="event-desc">Year 3 of NSAG's SXSW field presence. The 2029 panel is NSAG's most data-rich presentation to date — three years of Governance Challenge data across 8+ modules. If accepted, the talk presents the first cross-module comparative findings: which institutional types score highest on nervous-system-aware governance, and why.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M7 Neuroarch.</span><span class="tag milestone">Multi-Module Data</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">04</div>
+        <div class="event-title">Salone del Mobile / Milan Design Week 2029</div>
+        <div class="event-meta">April · Milan, Italy</div>
+        <div class="event-desc">Year 2 of NSAG's Milan Design Week presence. By 2029, NSAG's M5 and M7 European dataset is large enough to support analysis of governance differences between European and US institutional design contexts. The Milan presence supports publication of a comparative European-US neuroarchitecture governance analysis.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M5 Healthcare Design</span><span class="tag civic">M7 Neuroarch.</span><span class="tag milestone">Year 2 · EU-US Comparison</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">05</div>
+        <div class="event-title">Web Summit Vancouver 2029</div>
+        <div class="event-meta">May · Vancouver Convention Centre, BC, Canada</div>
+        <div class="event-desc">Year 3 of NSAG's Web Summit Vancouver presence. The 2029 presence is primarily a publication-support event — with at least one peer-reviewed M2 piece published, NSAG's Vancouver field work focuses on longitudinal follow-up with organizations that participated in 2027 and 2028 Governance Challenges.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M10 Digital Civic</span><span class="tag milestone">Year 3 · Publication</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">06</div>
+        <div class="event-title">MAPS Psychedelic Science Conference 2029</div>
+        <div class="event-meta">June · TBD</div>
+        <div class="event-desc">Year 2 of NSAG's MAPS presence. By 2029, M3 data from the 2028 MAPS conference and Amsterdam 2026 field research supports a longitudinal governance analysis of psychedelic clinical organizations. The 2029 MAPS conference is the primary target for M3 publication submission recruitment — connecting with the journals and editors in the psychedelic policy space.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M3 Psych. Policy</span><span class="tag health">M5 Healthcare Design</span><span class="tag milestone">Publication Target</span></div>
+      </div>
+
+      <div class="event-card milestone-card">
+        <div class="event-num" style="color:var(--nsag);">07</div>
+        <div class="event-title">Bar Exam — Hawaii</div>
+        <div class="event-meta">July 2029 · Hawaiʻi State Bar Examination</div>
+        <div class="event-desc">The bar exam is not a field event — it is the credential that makes NSAG's advisory practice a law practice. Passage of the Hawaii Bar Exam in July 2029 means that NSAG's governance advisory services in M1, M2, M3, and M4 can include the legal analysis and compliance infrastructure that transforms a governance advisory into a law-adjacent service. Everything in the 2026–2028 field program has been building toward this.</div>
+        <div style="margin-top:0.75rem;"><span class="tag milestone">Personal Milestone</span><span class="tag legal">M1–M4 Legal Upgrade</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">08</div>
+        <div class="event-title">Burning Man 2029</div>
+        <div class="event-meta">August 31–September 6 · Black Rock Desert, NV <span class="tag pending">Pending Honoraria</span></div>
+        <div class="event-desc">Year 3 of NSAG's Burning Man research presence. By 2029, if the art installation program has run for three years, NSAG has a complete longitudinal governance dataset from one of the most unusual institutional field sites in existence. M6 and M7 longitudinal data from Burning Man becomes its own publication-track contribution.</div>
+        <div style="margin-top:0.75rem;"><span class="tag civic">M6 Civic Spon.</span><span class="tag civic">M7 Neuroarch.</span><span class="tag milestone">Year 3 · Longitudinal</span></div>
+      </div>
+
+      <div class="event-card milestone-card">
+        <div class="event-num" style="color:var(--nsag);">09</div>
+        <div class="event-title">JD Graduation — Northeastern School of Law</div>
+        <div class="event-meta">August 2029 · Northeastern University, Boston, MA</div>
+        <div class="event-desc">Completion of the JD. Northeastern University School of Law, class of 2029. The credential that closes the full academic arc: Penn Brain Center (2015) → BU MS Neuroscience (2018) → Northeastern JD (2029). Fourteen years from the first neuroscience lab shift to a law degree. NSAG's advisory practice is now a law-adjacent governance firm.</div>
+        <div style="margin-top:0.75rem;"><span class="tag milestone">Personal Milestone</span><span class="tag milestone">JD · Class of 2029</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">10</div>
+        <div class="event-title">Edge City 2029</div>
+        <div class="event-meta">Fall 2029 · TBD</div>
+        <div class="event-desc">Year 3 of NSAG's Edge City presence. The 2029 Edge City event is where NSAG presents the M7 comparative data from three years of pop-up community governance research. The question driving the 2029 field presence: how do frontier community governance models compare on NSAG's nervous-system-aware governance dimensions relative to conventional institutional contexts?</div>
+        <div style="margin-top:0.75rem;"><span class="tag civic">M7 Neuroarch.</span><span class="tag legal">M2 AI Legal</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">11</div>
+        <div class="event-title">HLTH USA 2029</div>
+        <div class="event-meta">October · Las Vegas, NV</div>
+        <div class="event-desc">Year 2 of NSAG's HLTH USA presence. By 2029, NSAG has two years of HLTH data on health system governance — a longitudinal comparison of M4, M8, and M11 scores between 2028 and 2029. The 2029 HLTH USA appearance includes presenting these longitudinal findings to the health system leadership audience as a case for NSAG's advisory retainer model.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M4 Cannabis</span><span class="tag health">M8 Wellness Gov.</span><span class="tag health">M11 Digital Health</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">12</div>
+        <div class="event-title">Global Wellness Summit 2029</div>
+        <div class="event-meta">November · TBD · Year 4 Delegate</div>
+        <div class="event-desc">Year 4 of NSAG's GWS delegate presence — the final year before the 2030 launch. GWS 2029 is NSAG's highest-profile international recruitment event: with four years of wellness governance data, NSAG can present a cross-country comparative analysis and recruit the first wave of 2030 international retainer clients from the GWS leadership community.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M5 Healthcare Design</span><span class="tag health">M8 Wellness Gov.</span><span class="tag milestone">Retainer Recruitment</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">13</div>
+        <div class="event-title">TEDNext 2029</div>
+        <div class="event-meta">November · TBD <span class="tag pending">Pending Application</span></div>
+        <div class="event-desc">Year 3 TEDNext application — now supported by a JD, bar exam passage, three years of field data, and at least 2 peer-reviewed publications. The 2029 TEDNext application makes the case that NSAG's cross-domain governance framework — from neuroarchitecture to AI law to psychedelic policy to sport governance — is the defining framework for institutional accountability in the AI era.</div>
+        <div style="margin-top:0.75rem;"><span class="tag milestone">Pan-NSAG</span><span class="tag milestone">Year 3 Application</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">14</div>
+        <div class="event-title">Web Summit Lisbon 2029</div>
+        <div class="event-meta">November · Altice Arena, Lisbon, Portugal</div>
+        <div class="event-desc">Year 2 of NSAG's Web Summit Lisbon presence. With the EU AI Act implementation underway, 2029 is a critical year for the M2 European dataset. NSAG presents preliminary EU-US governance comparison findings and recruits European organizations for the 2030 advisory program's international client roster.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M10 Digital Civic</span><span class="tag milestone">EU-US Comparison</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">15</div>
+        <div class="event-title">IOC Advanced Research Grant — Year 3</div>
+        <div class="event-meta">Ongoing · Olympic Studies Centre, Lausanne, Switzerland</div>
+        <div class="event-desc">Year 3 IOC deliverables. By 2029, the IOC grant has produced a three-year longitudinal dataset on sport governance — the largest NSAG M13 dataset in existence. Year 3 deliverables include preparation of the primary peer-reviewed publication for submission to a sport governance journal, with data from 3 IOC-affiliated bodies over 3 years.</div>
+        <div style="margin-top:0.75rem;"><span class="tag civic">M13 Sport Gov.</span><span class="tag milestone">Grant Year 3</span><span class="tag milestone">Publication Prep</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">16</div>
+        <div class="event-title">Neurolaw Annual Symposium</div>
+        <div class="event-meta">Various · International</div>
+        <div class="event-desc">The MacArthur Foundation Research Network on Law and Neuroscience and affiliated neurolaw conferences. By 2029, NSAG's JD makes it possible to present not just as a neuroscientist but as an attorney — bringing M1 and M2 Governance Challenge data to the legal community with the professional credential that opens peer-reviewed legal journals.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M1 Trauma-Informed</span><span class="tag legal">M2 AI Legal</span><span class="tag milestone">Post-Bar Presence</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">17</div>
+        <div class="event-title">AI Ethics &amp; Society Conference</div>
+        <div class="event-meta">Various · International</div>
+        <div class="event-desc">The FAccT (ACM Conference on Fairness, Accountability, and Transparency) and related AI ethics conferences are critical M2 publication venues for NSAG. The 2029 presence submits M2 Governance Challenge findings — comparing how organizations subject to AI governance frameworks score on NSAG's dimensions vs. those operating without formal AI governance.</div>
+        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M10 Digital Civic</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">18</div>
+        <div class="event-title">GWI Initiative Chair — First Year</div>
+        <div class="event-meta">Ongoing · Global Wellness Institute · Various</div>
+        <div class="event-desc">If the GWI Initiative Chair election succeeds in 2028, 2029 marks the first full year in that role. The GWI Initiative Chair seat provides NSAG with an international wellness governance platform that directly supports M5 and M8 data collection — accessing the global wellness policy community through the GWI's existing institutional relationships.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M5 Healthcare Design</span><span class="tag health">M8 Wellness Gov.</span><span class="tag milestone">Leadership Role</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">19</div>
+        <div class="event-title">Psychedelic Science Conference 2029</div>
+        <div class="event-meta">Denver, CO</div>
+        <div class="event-desc">The primary North American psychedelic research conference. NSAG's 2029 presence is the publication-track debut for M3 — submitting a governance analysis of psychedelic therapeutic organizations to the Journal of Psychedelic Studies or equivalent. Field research at the conference administers the final wave of M3 Governance Challenges before the 2030 dataset close-out.</div>
+        <div style="margin-top:0.75rem;"><span class="tag health">M3 Psych. Policy</span><span class="tag milestone">M3 Publication Track</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">20</div>
+        <div class="event-title">IOC World Conference on Sport &amp; Health</div>
+        <div class="event-meta">Lausanne, Switzerland · Biennial</div>
+        <div class="event-desc">The IOC World Conference on Sport and Health is the highest-level international forum for sport governance policy. If the conference falls in 2029, NSAG presents M13 longitudinal findings from three years of IOC grant research — this is the highest-visibility platform for M13 data in existence and the primary submission venue for the first NSAG sport governance publication.</div>
+        <div style="margin-top:0.75rem;"><span class="tag civic">M13 Sport Gov.</span><span class="tag milestone">IOC Platform</span></div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-num">21</div>
+        <div class="event-title">Urban Design &amp; Conscious Cities Symposia</div>
+        <div class="event-meta">Various · International</div>
+        <div class="event-desc">The Conscious Cities initiative (founded in part by Itai Palti) and Urban Design Group convene annual events that are primary M7 field sites. By 2029, NSAG's M7 dataset spans Burning Man, Edge City, Milan Design Week, and neuroarchitecture symposia — the 2029 Conscious Cities event is the primary venue for presenting this cross-context M7 comparative analysis.</div>
+        <div style="margin-top:0.75rem;"><span class="tag civic">M7 Neuroarch.</span><span class="tag civic">M12 Biophilic Design</span></div>
+      </div>
+
+      <div class="event-card milestone-card">
+        <div class="event-num" style="color:var(--nsag);">22</div>
+        <div class="event-title">Hawaii Bar Admission Ceremony</div>
+        <div class="event-meta">Fall 2029 · Hawaii Supreme Court, Honolulu, HI</div>
+        <div class="event-desc">Bar admission is the formal credential that makes NSAG a law-adjacent advisory practice. The Hawaii Supreme Court admission ceremony marks the moment NSAG's governance advisory can include the full legal infrastructure of M1, M2, M3, and M4 — with an attorney-advisor who is also a neuroscientist and published researcher in governance frameworks.</div>
+        <div style="margin-top:0.75rem;"><span class="tag milestone">Personal Milestone</span><span class="tag legal">Attorney-Advisor Status</span></div>
+      </div>
+
+      <div class="event-card milestone-card">
+        <div class="event-num" style="color:var(--nsag);">23</div>
+        <div class="event-title">NSAG 2030 Launch Event</div>
+        <div class="event-meta">December 2029 · Honolulu, Hawaiʻi</div>
+        <div class="event-desc">The capstone of the 2027–2029 field program. NSAG's 2030 Launch Event in Honolulu marks the public opening of the full advisory practice — 15 modules, 25 retainer targets, 1,000 Governance Challenges completed, 10 publications submitted. The event invites the organizations that participated in field Governance Challenges throughout the program and introduces the 2030 NSAG advisory retainer model.</div>
+        <div style="margin-top:0.75rem;"><span class="tag milestone">Pan-NSAG Launch</span><span class="tag milestone">2030 Retainer Open</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="slabel">Year Navigation</div>
+    <h2>Field Research Calendar</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem;">
+      <a href="/field_2027" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:block;color:var(--text);">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Earlier</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.5rem;">2027</div>
+        <div style="font-size:0.85rem;color:var(--muted);">← 12 events · First field year</div>
+      </a>
+      <a href="/field_2028" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:block;color:var(--text);">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Previous</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.5rem;">2028</div>
+        <div style="font-size:0.85rem;color:var(--muted);">← 15 events · ViVE, HLTH, MAPS</div>
+      </a>
+      <div style="background:#2E2A6B;border-radius:8px;padding:1.5rem;color:white;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;">Current</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;margin-bottom:0.5rem;">2029</div>
+        <div style="font-size:0.85rem;opacity:0.85;">23 events · You are here</div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding:1.5rem;background:var(--nsag-p);border-radius:8px;border-left:4px solid var(--nsag);">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);margin-bottom:0.5rem;">What comes next</div>
+      <p style="font-size:0.9rem;color:var(--muted);">2030 marks the full launch of NSAG as a retainer advisory practice — 25 institutional clients, 10+ peer-reviewed publications, and 1,000 completed Governance Challenges. The 2027–2029 field program is the data infrastructure that makes all of it possible. <a href="/advisory">Learn about NSAG advisory engagements →</a></p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#2E2A6B;color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">The final sprint to 2030.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">If your organization wants to participate in NSAG's field research program before the 2030 advisory launch — when Governance Challenges shift from zero-cost partnerships to retainer engagements — 2029 is the last year to access the research partnership model.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener" style="background:white;color:#2E2A6B;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Schedule a Conversation</a>
+      <a href="/advisory" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Learn About NSAG Advisory →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/framework">Framework</a>
+      <a href="/field">Field Research</a>
+    </div>
+    <div class="fl" style="grid-column:span 2;">
+      <h5>Field Calendar</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
+        <div>
+          <a href="/field">Field Overview</a>
+          <a href="/field_2027">2027 · 12 Events</a>
+          <a href="/field_2028">2028 · 15 Events</a>
+          <a href="/field_2029">2029 · 23 Events</a>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Modules</div>
+          <a href="/m1">M1–M4 · Legal</a>
+          <a href="/m5">M5–M9 · Healthcare</a>
+          <a href="/m10">M10–M13 · Civic</a>
+          <a href="/m14">M14–M15 · Space</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">© 2026 Rayvven-Nikkita Collins LLC · All rights reserved · Honolulu, Hawaiʻi</div>
+</footer>
+</body>
+</html>
