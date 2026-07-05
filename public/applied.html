@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSAG Applied — The Framework in Sector-Specific Practice</title>
+<meta name="description" content="The 16 principles of Nervous-System-Aware Governance adapted to specific sectors, populations, and institutional contexts. Four applied brands deploy NSAG where the stakes are highest.">
+<link rel="canonical" href="https://nsag-site.vercel.app/applied">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="NSAG Applied — The Framework in Sector-Specific Practice">
+<meta property="og:description" content="Four applied brands deploy the NSAG framework where the stakes are highest.">
+<meta property="og:url" content="https://nsag-site.vercel.app/applied">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nsag: #4D45A8;
+  --nsag-light: #6B63C4;
+  --nsag-pale: #EEF0FF;
+  --bg: #F6F3EC;
+  --text: #1C1B1F;
+  --text-muted: #5A5869;
+  --border: #D8D5CE;
+  --white: #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+h4, h5, nav, .label { font-family: 'Syne', sans-serif; }
+a { color: var(--nsag); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+/* NAV */
+nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 1rem 0; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.nav-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--nsag); letter-spacing: 0.08em; }
+.nav-links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; font-weight: 500; }
+.nav-links a { color: var(--text-muted); }
+.nav-links a:hover { color: var(--nsag); text-decoration: none; }
+.nav-cta { background: var(--nsag); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.875rem; }
+.nav-cta:hover { background: var(--nsag-light); text-decoration: none; }
+.nav-cta-outline:hover { background: var(--nsag-pale) !important; color: var(--nsag) !important; }
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropdown-trigger { cursor: pointer; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  min-width: 260px;
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  z-index: 200;
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block;
+  padding: 0.4rem 1.25rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+.dropdown-menu a:hover { color: var(--nsag); background: var(--nsag-pale); text-decoration: none; }
+.dropdown-label {
+  display: block;
+  padding: 0.6rem 1.25rem 0.25rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+/* MOBILE NAV */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  z-index: 999;
+  flex-direction: column;
+  padding: 2rem 2rem 2rem;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: flex-end;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+/* HERO */
+.hero { background: var(--nsag); color: var(--white); padding: 5rem 0 4rem; }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.hero-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.5rem;
+}
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; margin-bottom: 1.5rem; max-width: 800px; }
+.hero-subtext { font-size: 1.1rem; max-width: 680px; opacity: 0.88; line-height: 1.8; }
+
+/* BRANDS SECTION */
+.brands-section { padding: 5rem 0; background: var(--bg); }
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.brand-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.brand-card-code {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.brand-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.brand-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+.brand-card-focus-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+.brand-card-focus ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.brand-card-focus ul li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+.brand-card-focus ul li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+.brand-card-cta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.brand-card-cta:hover { text-decoration: underline; }
+
+/* FOOTER */
+footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2rem; }
+.footer-inner { display: grid; grid-template-columns: 1.2fr 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.footer-tagline { font-size: 0.85rem; line-height: 1.6; }
+.footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { color: rgba(255,255,255,0.65); font-size: 0.82rem; text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+.footer-links span { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); text-align: center; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .brands-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero { padding: 3.5rem 0 3rem; }
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" style="text-decoration:none">NSAG</a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/field">Field Research</a>
+      <a href="/evidence">Resources</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="nav-cta-outline" style="background:transparent;border:1.5px solid var(--nsag);color:var(--nsag) !important;margin-right:0.5rem;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;text-decoration:none;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+      <a href="#start" class="nav-cta">Take an Assessment</a>
+    </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close navigation menu">&times;</button>
+  <a href="/about" onclick="closeMobileNav()">About</a>
+  <a href="/#modules" onclick="closeMobileNav()">Modules</a>
+  <a href="/framework" onclick="closeMobileNav()">Framework</a>
+  <a href="/advisory" onclick="closeMobileNav()">Advisory</a>
+  <a href="/ce" onclick="closeMobileNav()">CE Programs</a>
+  <a href="/field" onclick="closeMobileNav()">Field Research</a>
+  <a href="/evidence" onclick="closeMobileNav()">Resources</a>
+  <a href="#start" onclick="closeMobileNav()">Take an Assessment</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">NSAG APPLIED</div>
+    <h1>The Framework in Sector-Specific Practice</h1>
+    <p class="hero-subtext">The 16 principles of Nervous-System-Aware Governance adapt to specific sectors, populations, and institutional contexts. These four applied brands deploy the NSAG framework where the stakes are highest.</p>
+  </div>
+</section>
+
+<section class="brands-section">
+  <div class="container">
+    <div class="brands-grid">
+
+      <!-- SPORT -->
+      <div class="brand-card" style="border-top: 4px solid #1B6B4A;">
+        <div class="brand-card-code" style="color: #1B6B4A;">SPORT</div>
+        <h3>Nervous-System-Aware Performance &amp; Governance</h3>
+        <p class="brand-card-desc">The NSAG framework applied to athletic institutions — governing how environment, scheduling, recovery culture, and media exposure shape athlete nervous system states and performance.</p>
+        <div class="brand-card-focus">
+          <div class="brand-card-focus-label">Focus Areas</div>
+          <ul>
+            <li>Athlete environment governance</li>
+            <li>Recovery protocol assessment</li>
+            <li>Organizational culture audit</li>
+          </ul>
+        </div>
+        <a href="https://sport-nsag.vercel.app" class="brand-card-cta" style="color: #1B6B4A;" target="_blank" rel="noopener noreferrer">Visit SPORT &rarr;</a>
+      </div>
+
+      <!-- GAPI -->
+      <div class="brand-card" style="border-top: 4px solid #2D2A8A;">
+        <div class="brand-card-code" style="color: #2D2A8A;">GAPI &mdash; Governance-as-API</div>
+        <h3>AI Agent Governance Infrastructure</h3>
+        <p class="brand-card-desc">The first governance MCP server for AI agents — applying the NSAG 14-dimension framework to assess whether agentic systems behave in ways that are cognitively and ethically safe.</p>
+        <div class="brand-card-focus">
+          <div class="brand-card-focus-label">Focus Areas</div>
+          <ul>
+            <li>Agent Governance Certification</li>
+            <li>14-dimension assessment</li>
+            <li>Enterprise AI compliance</li>
+          </ul>
+        </div>
+        <a href="https://gapi-governance.vercel.app" class="brand-card-cta" style="color: #2D2A8A;" target="_blank" rel="noopener noreferrer">Visit GAPI &rarr;</a>
+      </div>
+
+      <!-- WNH -->
+      <div class="brand-card" style="border-top: 4px solid #5B7B5A;">
+        <div class="brand-card-code" style="color: #5B7B5A;">WNH &mdash; Women's Neuro-Health</div>
+        <h3>The Female Nervous System, Evidenced</h3>
+        <p class="brand-card-desc">Primary-source, sex-disaggregated research at the intersection of cannabis, psychedelics, and the female nervous system — for women and the clinicians who care for them.</p>
+        <div class="brand-card-focus">
+          <div class="brand-card-focus-label">Focus Areas</div>
+          <ul>
+            <li>Cannabis &amp; female neuroscience</li>
+            <li>Psychedelic-assisted therapy research</li>
+            <li>Clinician guidance series</li>
+          </ul>
+        </div>
+        <a href="https://wnh-guide.vercel.app" class="brand-card-cta" style="color: #5B7B5A;" target="_blank" rel="noopener noreferrer">Visit WNH &rarr;</a>
+      </div>
+
+      <!-- NARCH -->
+      <div class="brand-card" style="border-top: 4px solid #8B6914;">
+        <div class="brand-card-code" style="color: #8B6914;">NARCH &mdash; Neuroarchitecture Advisory</div>
+        <h3>Built Environments, Evidence-Based</h3>
+        <p class="brand-card-desc">Advisory practice for architecture firms, developers, and healthcare institutions designing built environments around how the human nervous system actually works.</p>
+        <div class="brand-card-focus">
+          <div class="brand-card-focus-label">Focus Areas</div>
+          <ul>
+            <li>Biophilic evidence audits</li>
+            <li>Healthcare facility design</li>
+            <li>Evidence brief production</li>
+          </ul>
+        </div>
+        <a href="https://narch-advisory.vercel.app" class="brand-card-cta" style="color: #8B6914;" target="_blank" rel="noopener noreferrer">Visit NARCH &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">NSAG</div>
+        <p class="footer-tagline">Nervous-System-Aware Governance. Honolulu, Hawaiʻi.</p>
+      </div>
+      <div class="footer-links">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Modules</strong>
+        <a href="https://nsag-m1.vercel.app">M1 · Trauma-Informed Legal Space</a>
+        <a href="https://nsag-m2.vercel.app">M2 · AI Legal Navigation</a>
+        <a href="https://nsag-m3.vercel.app">M3 · Psychedelic Harm Reduction</a>
+        <a href="https://nsag-m4.vercel.app">M4 · Cannabis Public Health</a>
+        <a href="https://nsag-m5.vercel.app">M5 · Biophilic Civic Infrastructure</a>
+        <a href="https://nsag-m6.vercel.app">M6 · Ethical Civic Sponsorship</a>
+        <a href="https://nsag-m7.vercel.app">M7 · Conscious Cities</a>
+        <a href="https://nsag-m8.vercel.app">M8 · Burnout Recovery</a>
+        <a href="https://nsag-m9.vercel.app">M9 · Cannabis Healthcare Visibility</a>
+        <a href="https://nsag-m10.vercel.app">M10 · Healthcare Built Environment</a>
+        <a href="https://nsag-m11.vercel.app">M11 · Medical Technology Governance</a>
+        <a href="https://nsag-m12.vercel.app">M12 · Education Systems</a>
+        <a href="https://nsag-m13.vercel.app">M13 · Traditional &amp; Complementary Medicine</a>
+        <a href="/m14">M14 · Space Governance &amp; Jurisdiction</a>
+        <a href="/m15">M15 · Isolation &amp; Confinement</a>
+      </div>
+      <div class="footer-links">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Applied</strong>
+        <a href="https://sport-nsag.vercel.app" target="_blank" rel="noopener noreferrer">SPORT · Athlete Nervous System</a>
+        <a href="https://gapi-governance.vercel.app" target="_blank" rel="noopener noreferrer">GAPI · Governance-as-API</a>
+        <a href="https://wnh-guide.vercel.app" target="_blank" rel="noopener noreferrer">WNH · Women's Neuro-Health</a>
+        <a href="https://narch-advisory.vercel.app" target="_blank" rel="noopener noreferrer">NARCH · Neuroarchitecture</a>
+      </div>
+      <div class="footer-links" id="contact">
+        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Contact</strong>
+        <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;">Book a Discovery Call →</a>
+        <span style="font-size:0.78rem">RN Collins, M.S., J.D. Candidate</span>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 RN Collins LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function openMobileNav() {
+  document.getElementById('mobile-nav').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('mobile-nav').addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMobileNav();
+});
+</script>
+</body>
+</html>
