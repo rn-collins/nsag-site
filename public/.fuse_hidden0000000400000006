@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cannabis Healthcare Visibility · NSAG</title>
+<meta name="description" content="NSAG M9 — Cannabis Healthcare Visibility. The documentation gap between cannabis use prevalence and EHR documentation is 7:1. It is not a patient behavior problem...">
+<link rel="canonical" href="https://nsag-site.vercel.app/m9">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
+h4,nav,button{font-family:'Syne',sans-serif;}
+a{color:var(--nsag);text-decoration:none;}
+a:hover{color:var(--nsag-l);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
+.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
+.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
+.nl a{color:var(--muted);}
+.nl a:hover,.nl a.act{color:var(--nsag);}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+section{padding:4rem 0;}
+section.alt{background:var(--white);}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
+h3{font-size:1.25rem;margin-bottom:0.75rem;}
+p+p{margin-top:0.75rem;}
+.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
+.btn-p{background:var(--nsag);color:white!important;}
+.btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
+.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
+.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
+.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl a:hover{color:white;}
+.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
+@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}}
+
+.dropdown{position:relative;display:inline-block;}
+.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
+.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
+.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
+  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.dropdown:hover .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
+  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
+.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
+
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
+@media(max-width:900px){.hamburger{display:block;}}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
+</style>
+<meta property="og:title" content="Cannabis Healthcare Visibility · NSAG">
+<meta property="og:description" content="NSAG M9 — Cannabis Healthcare Visibility. The documentation gap between cannabis use prevalence and EHR documentation is 7:1. It is not a patient behavior problem...">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nsag-site.vercel.app/m9">
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav>
+  <div class="ni">
+    <a href="/" class="nb">NSAG</a>
+    <div class="nl">
+      <a href="/about">About</a>
+      <a href="/#modules">Modules</a>
+      <a href="/framework">Framework</a>
+      <a href="/advisory">Advisory</a>
+      <div class="dropdown">
+        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-label">Core Program</span>
+          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
+          <span class="dropdown-label">Specialty Tracks</span>
+          <a href="/ce/law">Law &middot; CLE</a>
+          <a href="/ce/nursing">Nursing &middot; CNE</a>
+          <a href="/ce/medicine">Medicine &middot; CME</a>
+          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
+          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
+          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
+          <a href="/ce/publichealth">Public Health &middot; CHES</a>
+          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
+        </div>
+      </div>
+      <a href="/applied">Applied</a>
+      <a href="/field">Field Research</a>
+      <a href="/evidence">Resources</a>
+      
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
+      <a href="/#start" class="nc">Take an Assessment</a>
+    </div>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
+  <a href="/about">About</a>
+  <a href="/#modules">Modules</a>
+  <a href="/framework">Framework</a>
+  <a href="/advisory">Advisory</a>
+  <a href="/ce">CE Programs</a>
+  <a href="/applied">Applied</a>
+  <a href="/field">Field Research</a>
+  <a href="/evidence">Resources</a>
+  <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Book a Discovery Call</a>
+  <a href="/#start">Take an Assessment</a>
+</div>
+<script>
+function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
+</script>
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;">
+    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      NSAG
+    </a>
+    <span style="opacity:0.4;">/</span>
+    <a href="/#modules" style="color:var(--muted);text-decoration:none;">Modules</a>
+    <span style="opacity:0.4;">/</span>
+    <span style="color:var(--text);font-weight:600;">M9 · Cannabis Healthcare Visibility</span>
+  </div>
+</div>
+<section id="main-content" style="background:#1B7A68;color:white;padding:4.5rem 0 3.5rem;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+      <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(255,255,255,0.2);color:white;padding:0.3rem 0.7rem;border-radius:3px;">M9</span>
+      <span style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75;">Healthcare & Clinical</span>
+    </div>
+    <h1 style="font-size:clamp(2rem,4vw,3.5rem);color:white;max-width:800px;margin-bottom:1.25rem;">Cannabis Healthcare Visibility</h1>
+    <p style="max-width:700px;opacity:0.87;font-size:1.05rem;">The documentation gap between cannabis use prevalence and EHR documentation is 7:1. It is not a patient behavior problem. It is an institutional design problem — and it has specific, documentable patient safety consequences.</p>
+    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer" style="background:white;color:#1B7A68;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take the Free Assessment →</a>
+      <a href="#evidence" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.75rem 1.75rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">See the Evidence</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">The Governance Problem</div>
+    <h2>Why This Module Exists</h2>
+    <p style="font-size:1rem;color:var(--text);line-height:1.8;">Lapham et al. (2022) published the verified primary source for the documentation gap: 35.1% of primary care patients reported implicit medical cannabis use; EHR documented rate was 4.8% — from the same patient population, measured simultaneously. Tavabi et al. (2023) found the gap tracks racial and socioeconomic lines independent of use prevalence: the populations most burdened by the gap are already facing the greatest healthcare equity challenges. Beiler et al. (2024) confirmed that documentation completeness depends on whether structured EHR fields exist — not on patient willingness. The governance response targets institutional infrastructure, not patient behavior.</p>
+  </div>
+</section>
+
+<section class="alt" id="evidence">
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">Evidence Base</div>
+    <h2>The Research Foundation</h2>
+    <div style="display:grid;gap:1rem;margin-top:1.5rem;">      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #1B7A68;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Lapham et al. (2022)</span>
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-shrink:0;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);">JAMA Network Open</span>
+            <a href="https://doi.org/10.1001/jamanetworkopen.2022.11677" target="_blank" rel="noopener" style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:#1B7A68;">DOI →</a>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">35.1% vs. 4.8%. Verified 7:1 gap from the same patient population, measured simultaneously.</p>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #1B7A68;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Tavabi et al. (2023)</span>
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-shrink:0;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);">npj Digital Medicine</span>
+            <a href="https://doi.org/10.1038/s41746-023-00885-w" target="_blank" rel="noopener" style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:#1B7A68;">DOI →</a>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">370,087 patients. Documentation <2%. Racial and socioeconomic disparities independent of use prevalence.</p>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;border-left:4px solid #1B7A68;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">Beiler et al. (2024)</span>
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-shrink:0;">
+            <span style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);">JMIR Formative Research</span>
+            <a href="https://doi.org/10.2196/65957" target="_blank" rel="noopener" style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:#1B7A68;">DOI →</a>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Structured EHR fields produce 93.6% completion vs. 30.8% without. Documentation is infrastructure-dependent.</p>
+      </div>    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">Six Governance Dimensions</div>
+    <h2>What the Assessment Measures</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem;">Each readiness assessment scores your institution across these six governance dimensions on a five-point scale, producing a tier report (PIONEERING, EMERGING, DEVELOPING, or EARLY STAGE).</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</span>
+        <span style="font-size:0.9rem;color:var(--text);">Cannabis Screening Standards</span>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</span>
+        <span style="font-size:0.9rem;color:var(--text);">Provider Training Standards</span>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</span>
+        <span style="font-size:0.9rem;color:var(--text);">EHR Documentation Architecture</span>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</span>
+        <span style="font-size:0.9rem;color:var(--text);">Disclosure Safety Infrastructure</span>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</span>
+        <span style="font-size:0.9rem;color:var(--text);">Regulatory Compliance & Legal Review</span>
+      </div>      <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.875rem;">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:white;background:#1B7A68;min-width:1.75rem;height:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">6</span>
+        <span style="font-size:0.9rem;color:var(--text);">Quality Improvement Integration</span>
+      </div>    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap" style="max-width:860px;">
+    <div class="slabel">PIONEERING Governance</div>
+    <h2>What the Highest Tier Looks Like</h2>
+    <div style="background:rgba(27,122,104,0.08);border-left:4px solid #1B7A68;padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#1B7A68;margin-bottom:0.5rem;">PIONEERING — Fully Implemented Governance</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.7;">Validated cannabis screening at every patient contact (≥85% completion); all clinical providers trained in CYP450 interactions within 2 years; structured cannabis EHR fields (≥85% completion); written disclosure safety policy communicated in writing at intake; documented legal guidance updated within 3 years; cannabis documentation rate as quarterly QI metric.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--muted);">The full tier operationalization — PIONEERING through EARLY STAGE, with specific observable criteria for all six dimensions — is documented in the <a href="/framework#m9">Framework Foundation</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px;">
+    <div class="grid-2" style="gap:3rem;">
+      <div>
+        <div class="slabel">Who Should Prioritize This Module</div>
+        <h3>Built for These Institutions</h3>
+        <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;">Primary care practices · Hospitals and health systems · FQHCs · Community health organizations · Native Hawaiian and Pacific Islander health programs · Any institution where the service population includes cannabis users</p>
+      </div>
+      <div>
+        <div class="slabel">Related Modules</div>
+        <h3>What to Assess Next</h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">          <a href="/m4" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1.25rem;color:var(--text);">
+            <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:var(--nsag);padding:0.2rem 0.5rem;border-radius:3px;">M4</span>
+            <span style="font-size:0.875rem;">Cannabis Public Health Infrastructure</span>
+            <span style="margin-left:auto;color:var(--nsag);">→</span>
+          </a>          <a href="/m8" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1.25rem;color:var(--text);">
+            <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:var(--nsag);padding:0.2rem 0.5rem;border-radius:3px;">M8</span>
+            <span style="font-size:0.875rem;">Burnout Recovery Infrastructure</span>
+            <span style="margin-left:auto;color:var(--nsag);">→</span>
+          </a>          <a href="/m11" style="display:flex;align-items:center;gap:0.75rem;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.875rem 1.25rem;color:var(--text);">
+            <span style="font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:var(--nsag);padding:0.2rem 0.5rem;border-radius:3px;">M11</span>
+            <span style="font-size:0.875rem;">Medical Technology & Evidence Standards</span>
+            <span style="margin-left:auto;color:var(--nsag);">→</span>
+          </a>        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#1B7A68;color:white;padding:3rem 0;text-align:center;">
+  <div class="wrap">
+    <h2 style="color:white;margin-bottom:1rem;">Take the free M9 assessment.</h2>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">8–12 minutes. Your tier report immediately. One action you can take this week. No email required to start.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer" style="background:white;color:#1B7A68;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take the Assessment →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Book a Discovery Call</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
+    <div>
+      <div class="fb">NSAG</div>
+      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+    </div>
+    <div class="fl">
+      <h5>The Practice</h5>
+      <a href="/about">About NSAG</a>
+      <a href="/advisory">Advisory Engagements</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/experience">Your Experience</a>
+    </div>
+    <div class="fl" style="grid-column:span 2;">
+      <h5>Modules — All 15</h5>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
+          <a href="/m1">M1 · Trauma-Informed Legal Space</a>
+          <a href="/m2">M2 · AI Legal Navigation</a>
+          <a href="/m6">M6 · Ethical Civic Sponsorship</a>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
+          <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
+          <a href="/m7">M7 · Conscious Cities</a>
+          <a href="/m12">M12 · Education Systems</a>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
+          <a href="/m3">M3 · Psychedelic Harm Reduction</a>
+          <a href="/m4">M4 · Cannabis Public Health</a>
+          <a href="/m8">M8 · Burnout Recovery</a>
+          <a href="/m9">M9 · Cannabis Healthcare Visibility</a>
+          <a href="/m10">M10 · Healthcare Built Environment</a>
+          <a href="/m11">M11 · Medical Technology</a>
+          <a href="/m13">M13 · Traditional &amp; CAM</a>
+          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Space &amp; Extreme Environments</div>
+          <a href="/m14">M14 · Space Governance</a>
+          <a href="/m15">M15 · Isolation &amp; Confinement</a>
+        </div>
+      </div>
+    </div>
+    <div class="fl">
+      <h5>Resources</h5>
+      <a href="/evidence">Evidence Library</a>
+      <a href="/insights">Governance Insights</a>
+      <a href="/framework">Framework Foundation</a>
+      <a href="/brief">NSAG Brief</a>
+      <a href="/ce">Continuing Education</a>
+      <a href="/#start">All 15 Assessments →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+    </div>
+  </div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+</footer>
+</body>
+</html>

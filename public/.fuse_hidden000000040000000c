@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<title>NSAG in the Field &middot; 2028</title>
+<meta name="description" content="NSAG field research 2028: LA28 Olympics, Formula 1, SXSW, Edge City Austin, Art Basel, Web Summit, ViVE, HLTH USA, Salone del Mobile.">
+<style>
+:root{
+  --purple:#4D45A8;--gold:#B8842A;--cream:#F6F3EC;--ink:#1C1B1F;
+  --muted:#595667;--border:#E4E2DC;--white:#fff;
+  --pl:#F0EEF8;--sage:#4A7C59;--forest:#2C5F3A
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(246,243,236,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 64px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:var(--ink);text-decoration:none}
+.nav-brand span{color:var(--purple);font-style:italic}
+.nav-right{display:flex;gap:20px;align-items:center}
+.nav-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0}
+.nav-link:hover{color:var(--purple)}
+.nav-link.current{color:var(--purple)}
+.year-strip{background:var(--purple);padding:12px 64px;display:flex;gap:32px}
+.year-strip a{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none}
+.year-strip a.active{color:var(--gold)}
+.year-strip a:hover{color:#fff}
+.hero{padding:80px 64px 64px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(77,69,168,0.4),transparent 70%);pointer-events:none}
+.hero-eye{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative}
+.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.0;margin-bottom:20px;position:relative}
+.hero-h em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;position:relative}
+.page-section{padding:64px;border-bottom:1px solid var(--border)}
+.page-section.alt{background:var(--white)}
+.section-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.sub-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:32px;margin-bottom:16px}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.event-card{background:var(--cream);padding:28px 24px;position:relative}
+.event-card.highlight{background:var(--purple)}
+.event-card.active{background:var(--pl)}
+.event-meta{font-family:"Syne",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.event-card.highlight .event-meta{color:var(--gold)}
+.event-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:400;margin-bottom:6px}
+.event-card.highlight .event-name{color:#fff}
+.event-location{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.event-card.highlight .event-location{color:rgba(255,255,255,0.6)}
+.event-angle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.event-card.highlight .event-angle{color:rgba(255,255,255,0.75)}
+.event-dims{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--purple)}
+.event-card.highlight .event-dims{color:var(--gold)}
+.status-present{background:var(--gold);color:var(--ink)}
+.status-submitted{background:var(--purple);color:#fff}
+.status-research{background:var(--sage);color:#fff}
+.status-2027{background:rgba(77,69,168,0.1);color:var(--purple);border:1px solid rgba(77,69,168,0.2)}
+.status-2028{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-2029{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-advisory{background:rgba(184,132,42,0.15);color:var(--gold);border:1px solid rgba(184,132,42,0.3)}
+footer{background:var(--ink);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:#fff}
+.foot-brand span{color:var(--gold);font-style:italic}
+.foot-links{display:flex;gap:24px}
+.foot-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none}
+.foot-link:hover{color:var(--gold)}
+.foot-copy{font-family:"Syne",sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+@media(max-width:900px){
+  .site-nav,.year-strip,.page-section{padding-left:20px;padding-right:20px}
+  .events-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:32px 20px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<nav class="site-nav">
+  <a href="https://nsag-site.vercel.app" class="nav-brand">NSAG &middot; <span>In the Field</span></a>
+  <div class="nav-right">
+    <a href="https://nsag-site.vercel.app" class="nav-link">Home</a>
+    <a href="/field_2027" class="nav-link">2027</a><a href="/field_2028" class="nav-link current">2028</a><a href="/field_2029" class="nav-link">2029</a>
+    <a href="/field" class="nav-link">All Years</a>
+  </div>
+</nav><div class="year-strip"><a href="/field_2027">2027</a><a href="/field_2028" class="active">2028</a><a href="/field_2029">2029</a><a href="/field" style="margin-left:auto;opacity:0.5">All Years</a></div><section class="hero">
+  <div class="hero-eye">NSAG In The Field &middot; 2028</div>
+  <h1 class="hero-h">Where NSAG<br><em>is going.</em></h1>
+  <p class="hero-sub">The 2028 pipeline is being built now. LA28 Olympics. Four Formula 1 races. SXSW. Art Basel. Web Summit. The relationships and credentials that make these possible start in 2027.</p>
+</section>
+<section class="page-section">
+<div class="section-label">Technology &middot; AI &middot; Innovation</div>
+<div class="events-grid"><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; June &middot; 2028</div>
+      <h3 class="event-name">Web Summit Rio</h3>
+      <div class="event-location">Rio de Janeiro, Brazil</div>
+      <p class="event-angle">40,000+ tech participants in one of the world&rsquo;s most complex urban governance environments. Web Summit Rio pre-Cannes creates a Latin American governance research window — AI policy, platform governance, and community tech in a context that makes every assumption about &ldquo;normal&rdquo; governance legible.</p>
+      <div class="event-dims">Active: Agency &middot; Trust &middot; Economic Justice &middot; Attention</div>
+    </div><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">2028 Edition &middot; Week before SXSW</div>
+      <h3 class="event-name">Edge City Austin</h3>
+      <div class="event-location">Austin, Texas</div>
+      <p class="event-angle">Runs the week before SXSW. A smaller Edge City edition in Austin creates a back-to-back research opportunity: Edge City governance experiment one week, SXSW brand and AI governance conversation the next. Same city. Complementary populations.</p>
+      <div class="event-dims">Active: Belonging &middot; Agency &middot; Trust &middot; Repair</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; March &middot; 2028</div>
+      <h3 class="event-name">TED</h3>
+      <div class="event-location">San Diego, California &middot; Inaugural</div>
+      <p class="event-angle">First TED in San Diego — inaugural edition, heavy biotech and AI focus. TED&rsquo;s 2027 framing: &ldquo;technologists rewriting the rules of what it means to be human.&rdquo; NSAG&rsquo;s argument is that rewriting those rules without a governance framework is exactly the problem. Speaker applications by invitation — relationship-building target for 2028.</p>
+      <div class="event-dims">Active: Agency &middot; Attention &middot; Meaning &middot; Trust</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; May &middot; 2028</div>
+      <h3 class="event-name">Web Summit Vancouver</h3>
+      <div class="event-location">Vancouver, Canada</div>
+      <p class="event-angle">40,000+ attendees. Canada&rsquo;s progressive AI governance framework makes this the most receptive regulatory-adjacent audience in North America outside of a policy conference. Pre-Cannes arc positioning: Vancouver → Art Basel → Cannes Lions.</p>
+      <div class="event-dims">Active: Trust &middot; Agency &middot; Attention &middot; Economic Justice</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Specific festivals TBD &middot; 2028</div>
+      <h3 class="event-name">Music Festivals</h3>
+      <div class="event-location">Global &middot; Coachella · Glastonbury · Others</div>
+      <p class="event-angle">Music festivals are temporary intentional communities &mdash; like Burning Man, but commercial. The governance of sensory coherence, belonging, and repair in festival settings is a confirmed NSAG research area. <strong>Research Target status pending naming of specific festivals.</strong> Candidates: Coachella (Indio, CA &mdash; April), Glastonbury (Somerset, UK &mdash; June), Primavera Sound (Barcelona &mdash; June), Lightning in a Bottle (California &mdash; May), Bonnaroo (Tennessee &mdash; June). FNM editorial angle on all. Will crystallize into individual cards once specific festivals confirmed.</p>
+      <div class="event-dims">Active: Sensory Coherence &middot; Belonging &middot; Repair &middot; Attention &middot; Agency</div>
+    </div></div>
+</section><section class="page-section alt">
+<div class="section-label">Health &middot; Wellness</div>
+<div class="events-grid"><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; March &middot; 2028</div>
+      <h3 class="event-name">ViVE</h3>
+      <div class="event-location">Nashville, Tennessee</div>
+      <p class="event-angle">7,000+ digital health executives. CIOs, CTOs, CMIOs. NSAG&rsquo;s healthcare governance module (M6) maps directly onto the ViVE audience&rsquo;s operational reality. The governance question here: what are digital health platforms doing to the nervous systems of patients and clinicians?</p>
+      <div class="event-dims">Active: Agency &middot; Trust &middot; Cognitive Load &middot; Repair</div>
+    </div><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; October &middot; 2028</div>
+      <h3 class="event-name">HLTH USA</h3>
+      <div class="event-location">USA &middot; Venue TBD</div>
+      <p class="event-angle">10,000+ healthcare innovation leaders. NSAG&rsquo;s wellness governance argument — that the $6.8 trillion wellness economy has no standard for whether its products actually do what they claim — lands with maximum force in a room of healthcare executives who know how hard clinical validation is.</p>
+      <div class="event-dims">Active: Trust &middot; Agency &middot; Emotional Regulation &middot; Human Flourishing</div>
+    </div></div>
+</section><section class="page-section">
+<div class="section-label">Design &middot; Architecture</div>
+<div class="events-grid"><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; April &middot; 2028</div>
+      <h3 class="event-name">Salone del Mobile</h3>
+      <div class="event-location">Rho Fiera Milano, Italy</div>
+      <p class="event-angle">Rem Koolhaas/OMA curates Salone Contract — moving the exhibition from individual products to integrated systems. This is NSAG&rsquo;s language: the governance of designed environments as whole systems. The JBD press credential is the access route. The OMA/Koolhaas &ldquo;systems not products&rdquo; framing is the editorial angle.</p>
+      <div class="event-dims">Active: Sensory Coherence &middot; Cognitive Load &middot; Ecological Alignment &middot; Attention</div>
+    </div></div>
+</section><section class="page-section alt">
+<div class="section-label">Luxury &middot; Art</div>
+<div class="events-grid"><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; June &middot; 2028</div>
+      <h3 class="event-name">Art Basel Basel</h3>
+      <div class="event-location">Basel, Switzerland</div>
+      <p class="event-angle">The most commercially significant art event of the year. Art Basel governs attention, trust, and belonging across the luxury and cultural economy simultaneously. NSAG tracks governance at the intersection of aesthetic experience, market power, and cultural authority.</p>
+      <div class="event-dims">Active: Attention &middot; Trust &middot; Belonging &middot; Cultural Safety</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">Annual &middot; December &middot; 2028</div>
+      <h3 class="event-name">Art Basel Miami Beach</h3>
+      <div class="event-location">Miami Beach, Florida</div>
+      <p class="event-angle">Year-end luxury and culture convergence. The NSAG Cannes Report could be formally launched here — four months after Cannes, in a room of the same luxury brand and gallery audience. Art Basel Miami is the right venue for the post-Cannes data release.</p>
+      <div class="event-dims">Active: Trust &middot; Attention &middot; Belonging &middot; Economic Justice</div>
+    </div></div>
+</section><section class="page-section">
+<div class="section-label">Sport &middot; Motorsport</div>
+<div class="events-grid"><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">~May 2028 &middot; Race Weekend</div>
+      <h3 class="event-name">F1 Miami Grand Prix</h3>
+      <div class="event-location">Hard Rock Stadium &middot; Miami Gardens, Florida</div>
+      <p class="event-angle">The youngest race on the calendar and the most brand-concentrated in the US market. The Miami International Autodrome runs through the Hard Rock Stadium campus &mdash; a venue that already governs mass attention, belonging, and emotional regulation at NFL scale. F1 Miami&rsquo;s paddock hospitality is the Cannes Lions of American motorsport: the same luxury brands, the same CMOs, the same AI companies that are NSAG&rsquo;s Cannes founding partner targets activate here in May before arriving in Cannes in June. One research trip covers both audiences.</p>
+      <div class="event-dims">Active: Attention &middot; Trust &middot; Belonging &middot; Sensory Coherence &middot; Economic Justice</div>
+    </div><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">~June 2028 &middot; June 3&ndash;6, 2027 confirmed precedent</div>
+      <h3 class="event-name">F1 Monaco Grand Prix</h3>
+      <div class="event-location">Circuit de Monaco &middot; Monte Carlo &middot; 45 min from Cannes</div>
+      <p class="event-angle">The most governance-dense sporting event on earth. 100,000 spectators. The entire LVMH luxury brand ecosystem. The Formula 1 Louis Vuitton Grand Prix de Monaco &mdash; LVMH&rsquo;s naming rights partnership with the race makes it the clearest intersection of NSAG&rsquo;s brand governance research and its motorsport presence. Monaco&rsquo;s street circuit governs sensory experience at maximum intensity: cars at 290km/h through the Casino Square hairpin, hospitality terraces 12 meters above active racing. The audience is the Cannes Lions audience, three weeks earlier. Media credentials via JBD or FNM press system.</p>
+      <div class="event-dims">Active: Attention &middot; Sensory Coherence &middot; Trust &middot; Belonging &middot; Economic Justice</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">~September 2028 &middot; Night Race</div>
+      <h3 class="event-name">F1 Singapore Grand Prix</h3>
+      <div class="event-location">Marina Bay Street Circuit &middot; Singapore</div>
+      <p class="event-angle">The only night race on the F1 calendar. The Marina Bay Street Circuit runs through the financial district, past the Fullerton Hotel and the Padang civic ground &mdash; a governance experiment in sensory coherence that is explicitly designed by the Singapore government as a tourism and brand governance tool. Singapore Tourism Board co-organises the race as part of Singapore&rsquo;s deliberate strategy of governing its global brand identity through major events. NSAG&rsquo;s Asia-Pacific research arc (Singapore, Seoul, Tokyo, Shanghai) passes through this event. The governance of a night race &mdash; circadian disruption, artificial light, crowd governance at 3am &mdash; is a specific Chronobiology dimension activation.</p>
+      <div class="event-dims">Active: Sensory Coherence &middot; Chronobiology &middot; Attention &middot; Trust &middot; Belonging</div>
+    </div><div class="event-card active">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">~November 2028 &middot; Night Race</div>
+      <h3 class="event-name">F1 Las Vegas Grand Prix</h3>
+      <div class="event-location">Las Vegas Strip Circuit &middot; Las Vegas, Nevada</div>
+      <p class="event-angle">The most explicitly attention-engineered sporting event in America. Formula 1 races down the Las Vegas Strip &mdash; past the Bellagio, the Sphere, Caesar&rsquo;s Palace &mdash; at 350km/h at 1am. The entire Las Vegas governance apparatus (casinos, entertainment brands, hospitality conglomerates, the Sphere&rsquo;s sensory architecture) is simultaneously active. Las Vegas is the world&rsquo;s most legible study of what happens when attention governance, sensory coherence, chronobiology, and economic extraction operate at maximum intensity with no regulatory framework whatsoever. NSAG&rsquo;s research question here is the sharpest on the calendar: what does a city designed entirely around nervous system extraction do to the humans inside it &mdash; and what would governance look like?</p>
+      <div class="event-dims">Active: Attention &middot; Sensory Coherence &middot; Chronobiology &middot; Cognitive Load &middot; Economic Justice</div>
+    </div><div class="event-card">
+      <div class="status-2028">2028 Target</div>
+      <div class="event-meta">July 14&ndash;30, 2028 &middot; Paralympics Aug 15&ndash;27</div>
+      <h3 class="event-name">LA28 — Los Angeles Olympics</h3>
+      <div class="event-location">Los Angeles, California &middot; 5 hours from Honolulu</div>
+      <p class="event-angle">The largest Summer Games in history. 11,000+ athletes. 36 sports. 49 venues across Southern California. For NSAG, LA28 is the most concentrated governance experiment on earth: every dimension active simultaneously at maximum scale. The first Olympics with significant AI integration throughout broadcast, athlete performance, and security &mdash; making it the definitive case study for AI governance in public institutions. Geographically the most accessible major 2028 event from Honolulu. Tickets start at $28. Media credentials through the LA28 organizing committee are the research access route.</p>
+      <div class="event-dims">Full framework active &middot; AI governance &middot; Athlete welfare &middot; Economic justice &middot; Cultural safety</div>
+    </div></div>
+</section><footer>
+  <div class="foot-brand">NSAG &middot; <span>In the Field</span></div>
+  <div class="foot-links">
+    <a href="/field_2027" class="foot-link">2027</a>
+    <a href="/field_2028" class="foot-link">2028</a>
+    <a href="/field_2029" class="foot-link">2029</a>
+    <a href="/field" class="foot-link">All Years</a>
+    <a href="https://nsag-site.vercel.app" class="foot-link">NSAG Home</a>
+  </div>
+  <div class="foot-copy">&copy; 2026 Rayven-Nikkita Collins LLC &middot; Honolulu, HI</div>
+</footer></body></html>
