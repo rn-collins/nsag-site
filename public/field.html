@@ -2,368 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Research · NSAG</title>
-<meta name="description" content="NSAG's field research program — primary data collection at conferences, symposia, design weeks, and institutional sites across 2027–2029.">
-<link rel="canonical" href="https://nsag-site.vercel.app/field">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<title>NSAG in the Field · 2027–2029</title>
+<meta name="description" content="NSAG governance research at the world's most significant events — 2027 through 2029. Design, wellness, technology, fashion, and sport.">
 <style>
-:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
-h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
-h4,nav,button{font-family:'Syne',sans-serif;}
-a{color:var(--nsag);text-decoration:none;}
-a:hover{color:var(--nsag-l);}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
-.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
-nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
-.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
-.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
-.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
-.nl a{color:var(--muted);}
-.nl a:hover,.nl a.act{color:var(--nsag);}
-.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
-.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
-section{padding:4rem 0;}
-section.alt{background:var(--white);}
-h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
-h3{font-size:1.25rem;margin-bottom:0.75rem;}
-p+p{margin-top:0.75rem;}
-.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
-.btn-p{background:var(--nsag);color:white!important;}
-.btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
-footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
-.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
-.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
-.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
-.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
-.fl a:hover{color:white;}
-.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
-@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.fi{grid-template-columns:1fr;}}
-.dropdown{position:relative;display:inline-block;}
-.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
-.dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
-.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
-.dropdown:hover .dropdown-menu{display:block;}
-.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
-.dropdown-menu a:last-child{border-bottom:none;}
-.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
-.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
-.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
-.mobile-nav.open{display:flex;}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
-.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
-.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
-@media(max-width:900px){.hamburger{display:block;}}
-.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}
-.skip-nav:focus{top:0;}
-.year-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;}
-.year-card:hover{box-shadow:0 8px 32px rgba(77,69,168,0.12);transform:translateY(-2px);}
-.year-card-header{background:var(--nsag);padding:2rem 1.75rem 1.5rem;color:white;}
-.year-card-body{padding:1.75rem;}
-.stat-row{display:flex;gap:2rem;margin-top:1rem;}
-.stat{text-align:center;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--nsag);line-height:1;}
-.stat-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.25rem;}
-.tag{display:inline-block;font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:3px;margin:0.15rem;}
-</style>
-<meta property="og:title" content="Field Research · NSAG">
-<meta property="og:description" content="NSAG's field research program — primary data collection across conferences, symposia, and institutional sites 2027–2029.">
-<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://nsag-site.vercel.app/field">
-</head>
-<body>
-<a href="#main-content" class="skip-nav">Skip to main content</a>
+:root{
+  --purple:#4D45A8;--gold:#B8842A;--cream:#F6F3EC;--ink:#1C1B1F;
+  --muted:#595667;--border:#E4E2DC;--white:#fff;
+  --pl:#F0EEF8;--sage:#4A7C59;--forest:#2C5F3A
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(246,243,236,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 64px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:var(--ink);text-decoration:none}
+.nav-brand span{color:var(--purple);font-style:italic}
+.nav-right{display:flex;gap:20px;align-items:center}
+.nav-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0}
+.nav-link:hover{color:var(--purple)}
+.nav-link.current{color:var(--purple)}
+.year-strip{background:var(--purple);padding:12px 64px;display:flex;gap:32px}
+.year-strip a{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none}
+.year-strip a.active{color:var(--gold)}
+.year-strip a:hover{color:#fff}
+.hero{padding:80px 64px 64px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(77,69,168,0.4),transparent 70%);pointer-events:none}
+.hero-eye{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative}
+.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.0;margin-bottom:20px;position:relative}
+.hero-h em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;position:relative}
+.page-section{padding:64px;border-bottom:1px solid var(--border)}
+.page-section.alt{background:var(--white)}
+.section-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.sub-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:32px;margin-bottom:16px}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.event-card{background:var(--cream);padding:28px 24px;position:relative}
+.event-card.highlight{background:var(--purple)}
+.event-card.active{background:var(--pl)}
+.event-meta{font-family:"Syne",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.event-card.highlight .event-meta{color:var(--gold)}
+.event-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:400;margin-bottom:6px}
+.event-card.highlight .event-name{color:#fff}
+.event-location{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.event-card.highlight .event-location{color:rgba(255,255,255,0.6)}
+.event-angle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.event-card.highlight .event-angle{color:rgba(255,255,255,0.75)}
+.event-dims{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--purple)}
+.event-card.highlight .event-dims{color:var(--gold)}
+.status-present{background:var(--gold);color:var(--ink)}
+.status-submitted{background:var(--purple);color:#fff}
+.status-research{background:var(--sage);color:#fff}
+.status-2027{background:rgba(77,69,168,0.1);color:var(--purple);border:1px solid rgba(77,69,168,0.2)}
+.status-2028{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-2029{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-advisory{background:rgba(184,132,42,0.15);color:var(--gold);border:1px solid rgba(184,132,42,0.3)}
+footer{background:var(--ink);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:#fff}
+.foot-brand span{color:var(--gold);font-style:italic}
+.foot-links{display:flex;gap:24px}
+.foot-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none}
+.foot-link:hover{color:var(--gold)}
+.foot-copy{font-family:"Syne",sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+@media(max-width:900px){
+  .site-nav,.year-strip,.page-section{padding-left:20px;padding-right:20px}
+  .events-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:32px 20px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-<nav>
-  <div class="ni">
-    <a href="/" class="nb">NSAG</a>
-    <div class="nl">
-      <a href="/about">About</a>
-      <a href="/#modules">Modules</a>
-      <a href="/framework">Framework</a>
-      <a href="/advisory">Advisory</a>
-      <a href="/field" class="act">Field</a>
-      <div class="dropdown">
-        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
-        <div class="dropdown-menu">
-          <span class="dropdown-label">Core Program</span>
-          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
-          <span class="dropdown-label">Specialty Tracks</span>
-          <a href="/ce/law">Law &middot; CLE</a>
-          <a href="/ce/nursing">Nursing &middot; CNE</a>
-          <a href="/ce/medicine">Medicine &middot; CME</a>
-          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
-          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
-          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
-          <a href="/ce/publichealth">Public Health &middot; CHES</a>
-          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
-        </div>
-      </div>
-      <a href="/evidence">Resources</a>
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
-    </div>
-    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
+.year-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.year-card{background:var(--cream);padding:48px 40px;text-decoration:none;display:block}
+.year-card:hover{background:var(--pl)}
+.yc-year{font-family:"Syne",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.yc-h{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:300;line-height:1.1;margin-bottom:16px;color:var(--ink)}
+.yc-h em{font-style:italic;color:var(--purple)}
+.yc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.yc-count{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
+.legend{padding:40px 64px;background:var(--white)}
+.legend-title{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.legend-row{display:flex;flex-wrap:wrap;gap:12px}
+.pip{width:10px;height:10px;display:inline-block;vertical-align:middle;margin-right:6px}
+.legend-item{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink)}
+@media(max-width:900px){.year-cards{grid-template-columns:1fr}.legend{padding:32px 20px}}
+</style>
+</head><body>
+<nav class="site-nav">
+  <a href="https://nsag-site.vercel.app" class="nav-brand">NSAG &middot; <span>In the Field</span></a>
+  <div class="nav-right">
+    <a href="https://nsag-site.vercel.app" class="nav-link">Home</a>
+    <a href="/field_2027" class="nav-link">2027</a><a href="/field_2028" class="nav-link">2028</a><a href="/field_2029" class="nav-link">2029</a>
+    <a href="/field" class="nav-link">All Years</a>
   </div>
 </nav>
-
-<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
-  <a href="/about">About</a>
-  <a href="/#modules">Modules</a>
-  <a href="/framework">Framework</a>
-  <a href="/advisory">Advisory</a>
-  <a href="/field">Field Research</a>
-  <a href="/ce">CE Programs</a>
-  <a href="/evidence">Resources</a>
-  <a href="/#start">Take an Assessment</a>
+<section class="hero">
+  <div class="hero-eye">NSAG &middot; Field Research &middot; 2027&ndash;2029</div>
+  <h1 class="hero-h">Fifty events.<br>Three years.<br><em>One framework.</em></h1>
+  <p class="hero-sub">Every event NSAG is present at, proposing to, researching, or targeting &mdash; organized by year so you know exactly what is active now versus what is being built toward.</p>
+</section>
+<div class="year-cards">
+  <a href="/field_2027" class="year-card">
+    <div class="yc-year">Active &mdash; 2027</div>
+    <h2 class="yc-h">Where NSAG is<br><em>this year.</em></h2>
+    <p class="yc-desc">NSAG Present, proposals submitted, and active research sites. Edge Esmeralda. Burning Man. Cannes Lions. Venice Architecture Biennale. Global Wellness Summit. SXSW. Frieze London.</p>
+    <div class="yc-count">12 events</div>
+  </a>
+  <a href="/field_2028" class="year-card">
+    <div class="yc-year">Pipeline &mdash; 2028</div>
+    <h2 class="yc-h">Where NSAG<br><em>is going.</em></h2>
+    <p class="yc-desc">LA28 Olympics. Formula 1 at Monaco, Miami, Singapore, and Las Vegas. SXSW + Edge City Austin. Art Basel. Web Summit. ViVE. HLTH USA. Salone del Mobile.</p>
+    <div class="yc-count">15 events</div>
+  </a>
+  <a href="/field_2029" class="year-card">
+    <div class="yc-year">Vision &mdash; 2029</div>
+    <h2 class="yc-h">The full<br><em>ambition.</em></h2>
+    <p class="yc-desc">Fourteen fashion weeks across New York, London, Milan, Paris, Copenhagen, Seoul, Tokyo, Shanghai, Sydney, Lagos, S&atilde;o Paulo, Amsterdam, Helsinki, and Dubai. Nine professional sports advisory targets.</p>
+    <div class="yc-count">23 events</div>
+  </a>
 </div>
-<script>function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}</script>
-
-<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
-  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
-    <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      NSAG
-    </a>
-    <span style="opacity:0.4;">/</span>
-    <span style="color:var(--text);font-weight:600;">Field Research</span>
+<div class="legend">
+  <div class="legend-title">How to read the status badges</div>
+  <div class="legend-row">
+    <span class="legend-item"><span class="pip" style="background:var(--gold)"></span>NSAG Present &mdash; confirmed operational role</span>
+    <span class="legend-item"><span class="pip" style="background:var(--purple)"></span>Proposal Submitted &mdash; formal pitch in progress</span>
+    <span class="legend-item"><span class="pip" style="background:var(--sage)"></span>Research Target &mdash; NSAG deploys measurement tools here</span>
+    <span class="legend-item"><span class="pip" style="background:rgba(77,69,168,0.15);border:1px solid rgba(77,69,168,0.3)"></span>2027 / 2028 / 2029 Target &mdash; actively building toward</span>
+    <span class="legend-item"><span class="pip" style="background:rgba(184,132,42,0.15);border:1px solid rgba(184,132,42,0.3)"></span>Advisory Target &mdash; NSAG governance audit pipeline</span>
   </div>
 </div>
-
-<section id="main-content" style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
-  <div class="wrap">
-    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Primary Research · 2027–2029</div>
-    <h1 style="font-size:clamp(2.2rem,4vw,3.8rem);color:white;max-width:800px;margin-bottom:1.5rem;">NSAG in the World.</h1>
-    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;">NSAG's framework does not live only in research papers. It is tested in the rooms where institutional decisions are actually made — at conferences, design weeks, clinical symposia, and the field sites where governance meets lived experience. This is the program of field work underpinning the dataset NSAG is building toward 1,000 completed Governance Challenges by 2030.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="slabel">What Field Research Means Here</div>
-    <div class="grid-2" style="gap:4rem;align-items:start;margin-bottom:3rem;">
-      <div>
-        <h2>The Governance Challenge in context.</h2>
-        <p>Every field event on this calendar is an opportunity to deploy NSAG's Governance Challenge — the diagnostic instrument that produces a scored, documented picture of how an institution's physical, procedural, and digital environment is affecting the nervous systems of people inside it.</p>
-        <p>Field research is not attendance at conferences. It is administering governance assessments at institutional sites, conducting primary research interviews with the individuals building the organizations in each of NSAG's 15 module domains, and collecting the dataset rows that make peer-reviewed publication possible.</p>
-        <p>The target: 1,000 completed Governance Challenges across all 15 modules by December 2030. The data collected in field supports every other NSAG product — the advisories, the continuing education programs, and the published research.</p>
-      </div>
-      <div>
-        <div class="card" style="margin-bottom:1.5rem;">
-          <div class="slabel">How a field event works</div>
-          <div style="font-size:0.9rem;color:var(--muted);line-height:1.8;">
-            <div style="display:flex;gap:0.75rem;margin-bottom:0.75rem;align-items:flex-start;">
-              <div style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:3px;flex-shrink:0;margin-top:0.1rem;">01</div>
-              <div>Pre-event institutional outreach — identify 3–5 organizations attending that match NSAG module domains.</div>
-            </div>
-            <div style="display:flex;gap:0.75rem;margin-bottom:0.75rem;align-items:flex-start;">
-              <div style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:3px;flex-shrink:0;margin-top:0.1rem;">02</div>
-              <div>Administer Governance Challenge at the institutional site or via structured field interview during the event window.</div>
-            </div>
-            <div style="display:flex;gap:0.75rem;margin-bottom:0.75rem;align-items:flex-start;">
-              <div style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:3px;flex-shrink:0;margin-top:0.1rem;">03</div>
-              <div>Deliver Governance Brief (8–12 pages) + Dimension Memo to the participating institution within 30 days.</div>
-            </div>
-            <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-              <div style="background:var(--nsag);color:white;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:3px;flex-shrink:0;margin-top:0.1rem;">04</div>
-              <div>Dataset row added. Institution receives analysis. NSAG advances toward 1,000 completed Challenges.</div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="slabel">The data exchange</div>
-          <p style="font-size:0.9rem;color:var(--muted);">In 2026–2027, NSAG field partnerships are zero-cost to institutions. Organizations receive governance analysis and scored feedback. NSAG receives a completed Governance Challenge dataset row. No retainer, no contract — a research partnership.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="border-top:1px solid var(--border);padding-top:3rem;">
-      <div class="slabel">Field Calendar</div>
-      <h2>2027–2029</h2>
-      <div class="grid-3" style="margin-top:2rem;">
-
-        <!-- 2027 -->
-        <div class="year-card">
-          <div class="year-card-header">
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;">Field Year</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;margin-bottom:0.5rem;">2027</div>
-            <p style="font-size:0.85rem;opacity:0.85;line-height:1.5;">NSAG enters the field. The first year of primary research deployment — Hawaii, Austin, Vancouver, Tokyo, and beyond.</p>
-          </div>
-          <div class="year-card-body">
-            <div class="stat-row" style="margin-top:0;margin-bottom:1.5rem;">
-              <div class="stat">
-                <div class="stat-num">12</div>
-                <div class="stat-label">Events</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">7</div>
-                <div class="stat-label">Countries</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">9</div>
-                <div class="stat-label">Modules</div>
-              </div>
-            </div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Key Venues</div>
-            <div style="font-size:0.85rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Hawaii Cannabis Expo · SXSW · Web Summit Vancouver · Edge City Tokyo · GWS Phuket · TEDNext Atlanta</div>
-            <a href="/field_2027" style="display:block;text-align:center;background:var(--nsag);color:white;padding:0.75rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">View 2027 Field Plan →</a>
-          </div>
-        </div>
-
-        <!-- 2028 -->
-        <div class="year-card">
-          <div class="year-card-header" style="background:var(--nsag-l);">
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;">Field Year</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;margin-bottom:0.5rem;">2028</div>
-            <p style="font-size:0.85rem;opacity:0.85;line-height:1.5;">NSAG scales into health tech and civic governance. ViVE, HLTH, MAPS, and the IOC year two deliverables.</p>
-          </div>
-          <div class="year-card-body">
-            <div class="stat-row" style="margin-top:0;margin-bottom:1.5rem;">
-              <div class="stat">
-                <div class="stat-num">15</div>
-                <div class="stat-label">Events</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">8</div>
-                <div class="stat-label">Countries</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">13</div>
-                <div class="stat-label">Modules</div>
-              </div>
-            </div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Key Venues</div>
-            <div style="font-size:0.85rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">ViVE Nashville · SXSW · HLTH USA Las Vegas · Web Summit Lisbon · MAPS Conference · Salone del Mobile</div>
-            <a href="/field_2028" style="display:block;text-align:center;background:var(--nsag-l);color:white;padding:0.75rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">View 2028 Field Plan →</a>
-          </div>
-        </div>
-
-        <!-- 2029 -->
-        <div class="year-card">
-          <div class="year-card-header" style="background:#2E2A6B;">
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;">Field Year</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;margin-bottom:0.5rem;">2029</div>
-            <p style="font-size:0.85rem;opacity:0.85;line-height:1.5;">The year NSAG becomes a law practice. JD. Bar exam. 23 field events. The final sprint to 2030 launch.</p>
-          </div>
-          <div class="year-card-body">
-            <div class="stat-row" style="margin-top:0;margin-bottom:1.5rem;">
-              <div class="stat">
-                <div class="stat-num">23</div>
-                <div class="stat-label">Events</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">10</div>
-                <div class="stat-label">Countries</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">15</div>
-                <div class="stat-label">Modules</div>
-              </div>
-            </div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Key Events</div>
-            <div style="font-size:0.85rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;">Bar Exam · JD Graduation · HLTH USA · Web Summit · IOC Year 3 · NSAG 2030 Launch Event · Honolulu</div>
-            <a href="/field_2029" style="display:block;text-align:center;background:#2E2A6B;color:white;padding:0.75rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;">View 2029 Field Plan →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="slabel">The 2030 Target</div>
-    <div class="grid-2" style="gap:4rem;align-items:center;">
-      <div>
-        <h2>1,000 Governance Challenges. 25 retainers. 10 publications.</h2>
-        <p>By December 2030, NSAG's field research program will have produced a dataset large enough to support peer-reviewed publication across all 15 module domains — and an institutional client roster that demonstrates what it means for governance to come before systems design.</p>
-        <p>The field calendar below is the operational plan for getting there. Every event represents 3–5 Governance Challenge targets identified in advance, administered during the event window, and returned as Governance Briefs within 30 days of the event close.</p>
-      </div>
-      <div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-          <div class="card" style="text-align:center;padding:2rem 1rem;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--nsag);line-height:1;margin-bottom:0.5rem;">50</div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Field Events<br>2027–2029</div>
-          </div>
-          <div class="card" style="text-align:center;padding:2rem 1rem;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--nsag);line-height:1;margin-bottom:0.5rem;">15</div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Modules<br>Represented</div>
-          </div>
-          <div class="card" style="text-align:center;padding:2rem 1rem;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--nsag);line-height:1;margin-bottom:0.5rem;">1K</div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Governance<br>Challenges · 2030</div>
-          </div>
-          <div class="card" style="text-align:center;padding:2rem 1rem;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--nsag);line-height:1;margin-bottom:0.5rem;">10+</div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Peer-Reviewed<br>Publications</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
-  <div class="wrap">
-    <h2 style="color:white;margin-bottom:1rem;">Participate in a Governance Challenge.</h2>
-    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">NSAG's 2026–2027 field partnerships are zero-cost research collaborations. Your institution receives a scored Governance Brief and Dimension Memo. NSAG receives a dataset row. No contract required.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Schedule a Conversation</a>
-      <a href="/advisory" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Learn About NSAG Advisory →</a>
-    </div>
-  </div>
-</section>
-
 <footer>
-  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
-    <div>
-      <div class="fb">NSAG</div>
-      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
-    </div>
-    <div class="fl">
-      <h5>The Practice</h5>
-      <a href="/about">About NSAG</a>
-      <a href="/advisory">Advisory Engagements</a>
-      <a href="/ce">Continuing Education</a>
-      <a href="/brief">NSAG Brief</a>
-      <a href="/framework">Framework Foundation</a>
-      <a href="/field">Field Research</a>
-    </div>
-    <div class="fl" style="grid-column:span 2;">
-      <h5>Field Years</h5>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
-        <div>
-          <a href="/field">Field Research Overview</a>
-          <a href="/field_2027">2027 · 12 Events</a>
-          <a href="/field_2028">2028 · 15 Events</a>
-          <a href="/field_2029">2029 · 23 Events</a>
-        </div>
-        <div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Modules</div>
-          <a href="/m1">M1–M4 · Legal &amp; Justice</a>
-          <a href="/m5">M5–M9 · Healthcare</a>
-          <a href="/m10">M10–M13 · Civic &amp; Design</a>
-          <a href="/m14">M14–M15 · Space</a>
-        </div>
-      </div>
-    </div>
+  <div class="foot-brand">NSAG &middot; <span>In the Field</span></div>
+  <div class="foot-links">
+    <a href="/field_2027" class="foot-link">2027</a>
+    <a href="/field_2028" class="foot-link">2028</a>
+    <a href="/field_2029" class="foot-link">2029</a>
+    <a href="/field" class="foot-link">All Years</a>
+    <a href="https://nsag-site.vercel.app" class="foot-link">NSAG Home</a>
   </div>
-  <div class="fbot">© 2026 Rayvven-Nikkita Collins LLC · All rights reserved · Honolulu, Hawaiʻi</div>
-</footer>
-</body>
-</html>
+  <div class="foot-copy">&copy; 2026 Rayven-Nikkita Collins LLC &middot; Honolulu, HI</div>
+</footer></body></html>

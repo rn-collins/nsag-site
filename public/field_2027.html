@@ -2,326 +2,195 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Research 2027 · NSAG</title>
-<meta name="description" content="NSAG's 2027 field research calendar — 12 events across 7 countries. Hawaii, Austin, Vancouver, Tokyo, Phuket, and Atlanta.">
-<link rel="canonical" href="https://nsag-site.vercel.app/field_2027">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<title>NSAG in the Field &middot; 2027</title>
+<meta name="description" content="NSAG field research 2027: Edge Esmeralda, Burning Man, Cannes Lions, Venice Architecture Biennale, GWS, SXSW, Frieze London, Dutch Design Week, AI Amsterdam, TEDNext, Web Summit Lisbon.">
 <style>
-:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
-h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
-h4,nav,button{font-family:'Syne',sans-serif;}
-a{color:var(--nsag);text-decoration:none;}
-a:hover{color:var(--nsag-l);}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
-.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
-nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
-.ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
-.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
-.nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
-.nl a{color:var(--muted);}
-.nl a:hover,.nl a.act{color:var(--nsag);}
-.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
-.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
-section{padding:4rem 0;}
-section.alt{background:var(--white);}
-h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
-h3{font-size:1.25rem;margin-bottom:0.75rem;}
-p+p{margin-top:0.75rem;}
-.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
-footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;}
-.fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
-.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
-.ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
-.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
-.fl a:hover{color:white;}
-.fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
-@media(max-width:900px){.nl{display:none;}.grid-2,.grid-3,.event-grid{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.fi{grid-template-columns:1fr;}}
-.dropdown{position:relative;display:inline-block;}
-.dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
-.dropdown:hover .dropdown-trigger{color:var(--nsag);}
-.dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
-.dropdown:hover .dropdown-menu{display:block;}
-.dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
-.dropdown-menu a:last-child{border-bottom:none;}
-.dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
-.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
-.mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
-.mobile-nav.open{display:flex;}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
-.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
-.mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
-@media(max-width:900px){.hamburger{display:block;}}
-.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}
-.skip-nav:focus{top:0;}
-.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
-.event-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;position:relative;}
-.event-card:hover{border-color:var(--nsag-l);box-shadow:0 4px 16px rgba(77,69,168,0.08);}
-.event-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--border);line-height:1;margin-bottom:0.5rem;}
-.event-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text);font-weight:600;margin-bottom:0.25rem;line-height:1.3;}
-.event-meta{font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);letter-spacing:0.05em;margin-bottom:0.75rem;}
-.event-desc{font-size:0.875rem;color:var(--muted);line-height:1.6;}
-.tag{display:inline-block;font-family:'Syne',sans-serif;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;padding:0.18rem 0.5rem;border-radius:3px;margin:0.15rem 0.1rem 0 0;background:var(--nsag-p);color:var(--nsag);}
-.tag.legal{background:rgba(30,54,81,0.08);color:var(--legal);}
-.tag.health{background:rgba(27,122,104,0.08);color:var(--health);}
-.tag.civic{background:rgba(46,90,40,0.08);color:var(--civic);}
-.tag.pending{background:rgba(255,165,0,0.1);color:#9A6700;}
-.tag.milestone{background:#F3F0FF;color:#4D45A8;}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-</style>
-</head>
-<body>
-<a href="#main-content" class="skip-nav">Skip to main content</a>
-
-<nav>
-  <div class="ni">
-    <a href="/" class="nb">NSAG</a>
-    <div class="nl">
-      <a href="/about">About</a>
-      <a href="/#modules">Modules</a>
-      <a href="/framework">Framework</a>
-      <a href="/advisory">Advisory</a>
-      <a href="/field" class="act">Field</a>
-      <div class="dropdown">
-        <a href="/ce" class="dropdown-trigger">CE &#9660;</a>
-        <div class="dropdown-menu">
-          <span class="dropdown-label">Core Program</span>
-          <a href="/ce">Core Program &ndash; All 7 CE Types</a>
-          <span class="dropdown-label">Specialty Tracks</span>
-          <a href="/ce/law">Law &middot; CLE</a>
-          <a href="/ce/nursing">Nursing &middot; CNE</a>
-          <a href="/ce/medicine">Medicine &middot; CME</a>
-          <a href="/ce/pharmacy">Pharmacy &middot; CPE</a>
-          <a href="/ce/socialwork">Social Work &middot; SW-CE</a>
-          <a href="/ce/psychology">Psychology &middot; Psych-CE</a>
-          <a href="/ce/publichealth">Public Health &middot; CHES</a>
-          <a href="/ce/facilitator">Facilitators &middot; Professional Dev</a>
-        </div>
-      </div>
-      <a href="/evidence">Resources</a>
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
-    </div>
-    <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
+:root{
+  --purple:#4D45A8;--gold:#B8842A;--cream:#F6F3EC;--ink:#1C1B1F;
+  --muted:#595667;--border:#E4E2DC;--white:#fff;
+  --pl:#F0EEF8;--sage:#4A7C59;--forest:#2C5F3A
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(246,243,236,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 64px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:var(--ink);text-decoration:none}
+.nav-brand span{color:var(--purple);font-style:italic}
+.nav-right{display:flex;gap:20px;align-items:center}
+.nav-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0}
+.nav-link:hover{color:var(--purple)}
+.nav-link.current{color:var(--purple)}
+.year-strip{background:var(--purple);padding:12px 64px;display:flex;gap:32px}
+.year-strip a{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none}
+.year-strip a.active{color:var(--gold)}
+.year-strip a:hover{color:#fff}
+.hero{padding:80px 64px 64px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(77,69,168,0.4),transparent 70%);pointer-events:none}
+.hero-eye{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative}
+.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.0;margin-bottom:20px;position:relative}
+.hero-h em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;position:relative}
+.page-section{padding:64px;border-bottom:1px solid var(--border)}
+.page-section.alt{background:var(--white)}
+.section-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.sub-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:32px;margin-bottom:16px}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.event-card{background:var(--cream);padding:28px 24px;position:relative}
+.event-card.highlight{background:var(--purple)}
+.event-card.active{background:var(--pl)}
+.event-meta{font-family:"Syne",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.event-card.highlight .event-meta{color:var(--gold)}
+.event-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:400;margin-bottom:6px}
+.event-card.highlight .event-name{color:#fff}
+.event-location{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.event-card.highlight .event-location{color:rgba(255,255,255,0.6)}
+.event-angle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.event-card.highlight .event-angle{color:rgba(255,255,255,0.75)}
+.event-dims{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--purple)}
+.event-card.highlight .event-dims{color:var(--gold)}
+.status-present{background:var(--gold);color:var(--ink)}
+.status-submitted{background:var(--purple);color:#fff}
+.status-research{background:var(--sage);color:#fff}
+.status-2027{background:rgba(77,69,168,0.1);color:var(--purple);border:1px solid rgba(77,69,168,0.2)}
+.status-2028{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-2029{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.status-advisory{background:rgba(184,132,42,0.15);color:var(--gold);border:1px solid rgba(184,132,42,0.3)}
+footer{background:var(--ink);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:#fff}
+.foot-brand span{color:var(--gold);font-style:italic}
+.foot-links{display:flex;gap:24px}
+.foot-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none}
+.foot-link:hover{color:var(--gold)}
+.foot-copy{font-family:"Syne",sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+@media(max-width:900px){
+  .site-nav,.year-strip,.page-section{padding-left:20px;padding-right:20px}
+  .events-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:32px 20px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<nav class="site-nav">
+  <a href="https://nsag-site.vercel.app" class="nav-brand">NSAG &middot; <span>In the Field</span></a>
+  <div class="nav-right">
+    <a href="https://nsag-site.vercel.app" class="nav-link">Home</a>
+    <a href="/field_2027" class="nav-link current">2027</a><a href="/field_2028" class="nav-link">2028</a><a href="/field_2029" class="nav-link">2029</a>
+    <a href="/field" class="nav-link">All Years</a>
   </div>
-</nav>
-<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
-  <button class="mobile-nav-close" onclick="this.closest('.mobile-nav').classList.remove('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');" aria-label="Close navigation menu">&times;</button>
-  <a href="/about">About</a>
-  <a href="/#modules">Modules</a>
-  <a href="/framework">Framework</a>
-  <a href="/advisory">Advisory</a>
-  <a href="/field">Field Research</a>
-  <a href="/ce">CE Programs</a>
-  <a href="/evidence">Resources</a>
-  <a href="/#start">Take an Assessment</a>
-</div>
-<script>function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}</script>
-
-<div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
-  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
-    <a href="/" style="color:var(--muted);text-decoration:none;">NSAG</a>
-    <span style="opacity:0.4;">/</span>
-    <a href="/field" style="color:var(--muted);text-decoration:none;">Field Research</a>
-    <span style="opacity:0.4;">/</span>
-    <span style="color:var(--text);font-weight:600;">2027</span>
-  </div>
-</div>
-
-<section id="main-content" style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
-  <div class="wrap">
-    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Field Year · 12 Events</div>
-    <h1 style="font-size:clamp(2.5rem,5vw,5rem);color:white;margin-bottom:1rem;line-height:1;">2027</h1>
-    <p style="max-width:680px;opacity:0.85;font-size:1.05rem;">NSAG enters the field. The first full year of primary research deployment — spanning Hawaii, Texas, British Columbia, Japan, Thailand, and Georgia. Each event deploys Governance Challenges at 3–5 institutional targets in the NSAG module domain most represented at that venue.</p>
-    <div style="display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;">
-      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">12</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Events</div></div>
-      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">7</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Countries</div></div>
-      <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1;">9</div><div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:0.25rem;">Modules Active</div></div>
-    </div>
-  </div>
+</nav><div class="year-strip"><a href="/field_2027" class="active">2027</a><a href="/field_2028">2028</a><a href="/field_2029">2029</a><a href="/field" style="margin-left:auto;opacity:0.5">All Years</a></div><section class="hero">
+  <div class="hero-eye">NSAG In The Field &middot; 2027</div>
+  <h1 class="hero-h">Where NSAG is<br><em>this year.</em></h1>
+  <p class="hero-sub">Active research sites, proposals in progress, and events NSAG is moving toward in 2027. This is what is happening now &mdash; not what is being planned for later.</p>
 </section>
-
-<section>
-  <div class="wrap">
-    <div class="slabel">Full Event Calendar</div>
-    <h2>2027 Field Events</h2>
-    <div class="event-grid">
-
-      <div class="event-card">
-        <div class="event-num">01</div>
-        <div class="event-title">Hawaii Cannabis Expo</div>
-        <div class="event-meta">February 5–7 · Blaisdell Exhibition Hall, Honolulu, HI</div>
-        <div class="event-desc">Primary data collection site for M4 (Cannabis Governance) and M9 (Psychedelic & Alternative Medicine Governance). NSAG administers Governance Challenges with cannabis dispensary operators, policy advocates, and clinical researchers present at the expo. Target: 5 completed Challenges.</div>
-        <div style="margin-top:0.75rem;"><span class="tag legal">M4 Cannabis</span><span class="tag health">M9 Alt. Medicine</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">02</div>
-        <div class="event-title">SXSW 2027</div>
-        <div class="event-meta">March · Austin, TX <span class="tag pending">Pending PanelPicker</span></div>
-        <div class="event-desc">NSAG's proposed panel "The 47-Second Problem" addresses AI governance in legal and civic contexts. If accepted, the conference is a primary field site for M2 (AI Legal Navigation) and M7 (Neuroarchitecture & Conscious Cities) research. Target institutions: civic tech orgs, AI policy shops, legal aid organizations.</div>
-        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M7 Neuroarch.</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">03</div>
-        <div class="event-title">Web Summit Vancouver</div>
-        <div class="event-meta">May 25–28 · Vancouver Convention Centre, BC, Canada</div>
-        <div class="event-desc">NSAG's primary annual technology governance field site. Web Summit draws the AI and tech policy community globally. Field research focus: AI governance frameworks across jurisdictions, with specific attention to platforms and companies in M2's regulatory landscape. Target: 4 institutional Governance Challenges.</div>
-        <div style="margin-top:0.75rem;"><span class="tag legal">M2 AI Legal</span><span class="tag civic">M10 Digital Civic</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">04</div>
-        <div class="event-title">IOC Advanced Research Grant — Year 1</div>
-        <div class="event-meta">Ongoing · Olympic Studies Centre, Lausanne, Switzerland</div>
-        <div class="event-desc">Year 1 deliverables under the IOC Advanced Research Grant program. Field research at the Olympic Studies Centre addresses M13 (Sport Governance) — specifically how international sporting organizations govern the cognitive and physiological environments of athlete populations. Governance Challenges administered with 3 IOC-affiliated bodies.</div>
-        <div style="margin-top:0.75rem;"><span class="tag civic">M13 Sport Gov.</span><span class="tag milestone">Grant Year 1</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">05</div>
-        <div class="event-title">Burning Man 2027</div>
-        <div class="event-meta">August 31–September 6 · Black Rock Desert, NV <span class="tag pending">Pending Honoraria</span></div>
-        <div class="event-desc">Field research at Burning Man addresses M6 (Ethical Civic Sponsorship) and M7 (Neuroarchitecture). If NSAG is awarded an Honoraria grant for an art installation, the installation itself becomes a governance intervention — a designed environment with explicit NSAG measurement built in. Governance data collected from participants over 6 days.</div>
-        <div style="margin-top:0.75rem;"><span class="tag civic">M6 Civic Spon.</span><span class="tag civic">M7 Neuroarch.</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">06</div>
-        <div class="event-title">TEDxUHManoa</div>
-        <div class="event-meta">Fall 2027 · University of Hawaiʻi at Mānoa, Honolulu <span class="tag pending">Pending Application</span></div>
-        <div class="event-desc">TEDxUHManoa offers NSAG a cross-module platform — the talk would address the core NSAG claim (institutions govern nervous systems) and function as a primary recruitment mechanism for Governance Challenge participants across all 15 modules. Combined field and public communication event.</div>
-        <div style="margin-top:0.75rem;"><span class="tag milestone">Pan-NSAG</span><span class="tag milestone">Platform Talk</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">07</div>
-        <div class="event-title">TED Fellowship — Interview Round</div>
-        <div class="event-meta">October · TED HQ, New York, NY <span class="tag pending">If Advanced</span></div>
-        <div class="event-desc">If advanced to the TED Fellowship interview round, this constitutes a major field credentialing event — validating NSAG's cross-module research program at the highest level of public intellectual access. Preparation includes documented Governance Challenge data across at least 6 modules.</div>
-        <div style="margin-top:0.75rem;"><span class="tag milestone">Credentialing</span><span class="tag milestone">Pan-NSAG</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">08</div>
-        <div class="event-title">Edge City Tokyo</div>
-        <div class="event-meta">October 25–November 1 · Tokyo, Japan</div>
-        <div class="event-desc">Edge City is a pop-up community for builders, researchers, and founders exploring frontier governance models. Tokyo is a primary field site for M7 (Neuroarchitecture & Conscious Cities) and M2 (AI Legal Navigation) — specifically, how Japanese institutional environments govern cognitive experience and how AI governance frameworks operate in an Asian legal context.</div>
-        <div style="margin-top:0.75rem;"><span class="tag civic">M7 Neuroarch.</span><span class="tag legal">M2 AI Legal</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">09</div>
-        <div class="event-title">Global Wellness Summit 2027</div>
-        <div class="event-meta">November · Phuket, Thailand · Year 2 Delegate</div>
-        <div class="event-desc">Year 2 of NSAG's GWS delegate presence. The Global Wellness Summit draws the international wellness policy and institutional leadership community. Field research focus: M5 (Neuro-Informed Healthcare Design) and M8 (Trauma-Informed Wellness Governance). Target: 4 international institutional Governance Challenges from non-US health systems.</div>
-        <div style="margin-top:0.75rem;"><span class="tag health">M5 Healthcare Design</span><span class="tag health">M8 Wellness Gov.</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">10</div>
-        <div class="event-title">TEDNext Atlanta</div>
-        <div class="event-meta">November 17–19 · Atlanta, GA <span class="tag pending">Pending Application</span></div>
-        <div class="event-desc">TEDNext is TED's emerging-speaker development program. If accepted, NSAG's talk would reach TED's curator network directly. Field research component: connections with institutional leaders across M5, M7, M11, and M13 domains present at the conference. Governance Challenge recruitment at the event.</div>
-        <div style="margin-top:0.75rem;"><span class="tag milestone">Pan-NSAG</span><span class="tag milestone">Speaker Track</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">11</div>
-        <div class="event-title">Hawaii State Bar CLE Circuit</div>
-        <div class="event-meta">Year-Round · Various · Honolulu, HI</div>
-        <div class="event-desc">NSAG's JD candidacy at Northeastern provides ongoing access to the Hawaii State Bar CLE circuit as a student practitioner and research affiliate. Field research targets: law firms and legal aid organizations participating in CLE events — specifically those in M1 (Trauma-Informed Legal Space) and M2 (AI Legal Navigation) domains.</div>
-        <div style="margin-top:0.75rem;"><span class="tag legal">M1 Trauma-Informed</span><span class="tag legal">M2 AI Legal</span></div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-num">12</div>
-        <div class="event-title">NIDA Grant Site Visits</div>
-        <div class="event-meta">Ongoing · Various <span class="tag pending">If Funded</span></div>
-        <div class="event-desc">If NSAG's NIDA application is funded, Year 1 includes required site visits with partner institutions in the substance use and alternative medicine governance space. Field research at these sites addresses M3 (Psychedelic Policy) and M8 (Wellness Governance). Governance Challenges administered at each site visit institution.</div>
-        <div style="margin-top:0.75rem;"><span class="tag health">M3 Psych. Policy</span><span class="tag health">M8 Wellness Gov.</span></div>
-      </div>
-
-    </div>
+<section class="page-section">
+<div class="section-label">NSAG Present &middot; Confirmed Operational Role</div>
+<div class="events-grid"><div class="event-card highlight">
+      <div class="status-present">NSAG Present</div>
+      <div class="event-meta">February 5&ndash;7, 2027</div>
+      <h3 class="event-name">Hawaii Cannabis Expo</h3>
+      <div class="event-location">Blaisdell Exhibition Hall &middot; Honolulu, HI</div>
+      <p class="event-angle">NSAG&rsquo;s home market. The Hawaii Cannabis Expo is simultaneously a local industry event and a governance laboratory: emerging regulation, contested cultural claims, patient advocacy, and wellness positioning all operating without a coherent governance framework. NSAG holds a Partnerships &amp; Sponsorship Lead role.</p>
+      <div class="event-dims">Active: Agency &middot; Repair &middot; Cultural Safety &middot; Trust &middot; Belonging</div>
+    </div></div>
+</section><section class="page-section alt">
+<div class="section-label">Proposals Submitted &middot; Formal Pitches In Progress</div>
+<div class="events-grid"><div class="event-card highlight">
+      <div class="status-submitted">Proposal Submitted</div>
+      <div class="event-meta">June 21&ndash;25, 2027</div>
+      <h3 class="event-name">Cannes Lions</h3>
+      <div class="event-location">Cannes, France</div>
+      <p class="event-angle">The creative industry&rsquo;s annual convergence is the primary NSAG field site for brand trust governance, AI-era attention, and the measurement of what creative systems are doing to human nervous systems. NSAG enters Cannes 2027 as a founding partner research platform — the NSAG Attention &amp; Trust Index is co-authored here.</p>
+      <div class="event-dims">Active: Attention &middot; Trust &middot; Emotional Regulation &middot; Agency &middot; Meaning</div>
+    </div><div class="event-card highlight">
+      <div class="status-submitted">Proposal Submitted</div>
+      <div class="event-meta">November 2027 &middot; Location TBD</div>
+      <h3 class="event-name">Global Wellness Summit</h3>
+      <div class="event-location">Annual &middot; International</div>
+      <p class="event-angle">The Davos of the wellness industry. GWS&rsquo;s own 2026 research identified &ldquo;regulating the nervous system&rdquo; as the next frontier of human health. NSAG is proposing a research partnership: governance measurement data from Edge Esmeralda 2027 contributing a new Wellness Governance category to the Global Wellness Economy Monitor.</p>
+      <div class="event-dims">Active: Full framework &middot; Wellness sector specific</div>
+    </div></div>
+</section><section class="page-section">
+<div class="section-label">Research Sites &middot; NSAG Deploys Measurement Tools Here</div>
+<div class="events-grid"><div class="event-card" style="background:var(--forest)">
+      <div class="status-research">Research Target</div>
+      <div class="event-meta" style="color:rgba(255,255,255,0.5)">May&ndash;June 2027</div>
+      <h3 class="event-name" style="color:#fff">Edge Esmeralda</h3>
+      <div class="event-location" style="color:rgba(255,255,255,0.55)">Healdsburg, California</div>
+      <p class="event-angle" style="color:rgba(255,255,255,0.8)">NSAG&rsquo;s primary intentional community field research site. 500+ founders, scientists, and researchers. The full NSAG framework are simultaneously active. Long Journey Residency application submitted. The governance experiment here produces the core dataset for the NSAG Attention &amp; Trust Index.</p>
+      <div class="event-dims" style="color:rgba(255,255,255,0.5)">Full framework active simultaneously</div>
+    </div><div class="event-card">
+      <div class="status-research">Research Target</div>
+      <div class="event-meta">August 29 &ndash; September 6, 2027</div>
+      <h3 class="event-name">Burning Man</h3>
+      <div class="event-location">Black Rock City, Nevada</div>
+      <p class="event-angle">70,000 participants. A temporary city governed entirely by 10 explicit principles: radical inclusion, gifting, decommodification, radical self-reliance, radical self-expression, communal effort, civic responsibility, leave no trace, participation, immediacy. The most explicit governance experiment in public life. Art grant application window: October 2026.</p>
+      <div class="event-dims">Active: Agency &middot; Belonging &middot; Repair &middot; Ecological Alignment &middot; Economic Justice</div>
+    </div></div>
+</section><section class="page-section alt">
+<div class="section-label">2027 Targets &middot; Actively Building Toward</div>
+<div class="events-grid"><div class="event-card active">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">May 8 &ndash; November 21, 2027</div>
+      <h3 class="event-name">Venice Architecture Biennale</h3>
+      <div class="event-location">Venice, Italy</div>
+      <p class="event-angle">Theme: &ldquo;Do Architecture &mdash; For the Possibility of Coexistence.&rdquo; Curators Wang Shu and Lu Wenyu&rsquo;s premise &mdash; architecture as bodily, local, tactile &mdash; is NSAG&rsquo;s thesis in physical form. The Biennale is the single most aligned institutional framing NSAG has encountered. Collateral event proposal in development.</p>
+      <div class="event-dims">Active: Sensory Coherence &middot; Ecological Alignment &middot; Belonging &middot; Meaning</div>
+    </div><div class="event-card">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">~October 16&ndash;24, 2027</div>
+      <h3 class="event-name">Dutch Design Week</h3>
+      <div class="event-location">Eindhoven, Netherlands</div>
+      
+      <p class="event-angle">350,000 visitors. 2,500+ designers. DDW&rsquo;s five thematic missions &mdash; reduce, restore, rethink, reconnect, reinvent &mdash; map directly to NSAG governance dimensions. Already on the Amsterdam travel arc (October 2027). Participation application opens early 2027 &mdash; NSAG as an exhibitor or presenter.</p>
+      <div class="event-dims">Active: Ecological Alignment &middot; Sensory Coherence &middot; Belonging &middot; Human Flourishing</div>
+    </div><div class="event-card active">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">March 15&ndash;21, 2027 &middot; Submitting Now</div>
+      <h3 class="event-name">SXSW 2027</h3>
+      <div class="event-location">Austin, Texas</div>
+      <p class="event-angle">PanelPicker opened June 25, 2026 &mdash; submitting this week. Session title: &ldquo;The 47-Second Problem: Governing What AI Does to Human Attention.&rdquo; Brand &amp; Marketing track. SXSW is the largest conference accelerator for paid keynote careers and speaker bureau representation &mdash; UTA and others have signed speakers directly from SXSW sessions. Public voting opens August 2026. Selection by producers September&ndash;October 2026.</p>
+      <div class="event-dims">Active: Attention &middot; Trust &middot; Agency &middot; Cognitive Load</div>
+    </div><div class="event-card active">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">November 2027</div>
+      <h3 class="event-name">Web Summit Lisbon</h3>
+      <div class="event-location">Lisbon, Portugal</div>
+      <p class="event-angle">70,000+ attendees. The largest tech conference in the world by attendance. EU AI Act enforcement context makes the Brussels-adjacent regulatory argument land with urgency a US-based audience doesn&rsquo;t feel the same way. NSAG&rsquo;s regulatory tailwind argument is most powerful here.</p>
+      <div class="event-dims">Active: Agency &middot; Trust &middot; Attention &middot; Cognitive Load</div>
+    </div><div class="event-card active">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">November 17&ndash;19, 2027</div>
+      <h3 class="event-name">TEDNext</h3>
+      <div class="event-location">Atlanta, Georgia</div>
+      <p class="event-angle">Smaller, more personal than TED main. TEDNext asks bigger questions about life, work, and direction. NSAG&rsquo;s governance-of-self argument — attention quality, meaning, belonging — fits this audience better than the enterprise-facing pitch.</p>
+      <div class="event-dims">Active: Attention &middot; Meaning &middot; Belonging &middot; Human Flourishing</div>
+    </div><div class="event-card">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">October 2027</div>
+      <h3 class="event-name">AI &amp; Big Governance Conference</h3>
+      <div class="event-location">Amsterdam, Netherlands</div>
+      
+      <p class="event-angle">Already on the October 2027 travel arc alongside Dutch Design Week and Frieze London. The Amsterdam AI governance conversation is directly upstream of EU enforcement. NSAG&rsquo;s regulatory mandate argument lands with maximum force in this specific room.</p>
+      <div class="event-dims">Active: Agency &middot; Trust &middot; Economic Justice &middot; Cognitive Load</div>
+    </div><div class="event-card active">
+      <div class="status-2027">2027 Target</div>
+      <div class="event-meta">~October 13&ndash;17, 2027</div>
+      <h3 class="event-name">Frieze London + Frieze Masters</h3>
+      <div class="event-location">Regent&rsquo;s Park, London</div>
+      <p class="event-angle">85,000+ visitors. The art world&rsquo;s most commercially significant week — concurrent with Mayfair gallery week and major auction sales. Frieze governs trust, attention, and belonging across the luxury cultural economy. JBD, CLR, and FNM press credentials are potential access routes. On the October London → Amsterdam travel arc.</p>
+      <div class="event-dims">Active: Trust &middot; Attention &middot; Belonging &middot; Cultural Safety</div>
+    </div></div>
+</section><footer>
+  <div class="foot-brand">NSAG &middot; <span>In the Field</span></div>
+  <div class="foot-links">
+    <a href="/field_2027" class="foot-link">2027</a>
+    <a href="/field_2028" class="foot-link">2028</a>
+    <a href="/field_2029" class="foot-link">2029</a>
+    <a href="/field" class="foot-link">All Years</a>
+    <a href="https://nsag-site.vercel.app" class="foot-link">NSAG Home</a>
   </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="slabel">Year Navigation</div>
-    <h2>Field Research Calendar</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem;">
-      <div style="background:var(--nsag);border-radius:8px;padding:1.5rem;color:white;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;">Current</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;margin-bottom:0.5rem;">2027</div>
-        <div style="font-size:0.85rem;opacity:0.85;">12 events · You are here</div>
-      </div>
-      <a href="/field_2028" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:block;color:var(--text);">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Next</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.5rem;">2028</div>
-        <div style="font-size:0.85rem;color:var(--muted);">15 events · ViVE, HLTH, MAPS →</div>
-      </a>
-      <a href="/field_2029" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;display:block;color:var(--text);">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Final Year</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.5rem;">2029</div>
-        <div style="font-size:0.85rem;color:var(--muted);">23 events · Bar Exam · NSAG Launch →</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
-  <div class="wrap">
-    <h2 style="color:white;margin-bottom:1rem;">Participate in a 2027 Governance Challenge.</h2>
-    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">If your organization is attending any of these venues, NSAG can administer a Governance Challenge on-site. No cost. No contract. You receive a scored Governance Brief within 30 days.</p>
-    <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener" style="background:white;color:var(--nsag);padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Schedule a Pre-Event Conversation</a>
-  </div>
-</section>
-
-<footer>
-  <div class="fi" style="grid-template-columns:1.5fr 1fr 2fr 1fr;">
-    <div>
-      <div class="fb">NSAG</div>
-      <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayvven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
-    </div>
-    <div class="fl">
-      <h5>The Practice</h5>
-      <a href="/about">About NSAG</a>
-      <a href="/advisory">Advisory</a>
-      <a href="/ce">Continuing Education</a>
-      <a href="/framework">Framework</a>
-      <a href="/field">Field Research</a>
-    </div>
-    <div class="fl" style="grid-column:span 2;">
-      <h5>Field Calendar</h5>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
-        <div>
-          <a href="/field">Field Overview</a>
-          <a href="/field_2027">2027 · 12 Events</a>
-          <a href="/field_2028">2028 · 15 Events</a>
-          <a href="/field_2029">2029 · 23 Events</a>
-        </div>
-        <div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Modules</div>
-          <a href="/m1">M1–M4 · Legal</a>
-          <a href="/m5">M5–M9 · Healthcare</a>
-          <a href="/m10">M10–M13 · Civic</a>
-          <a href="/m14">M14–M15 · Space</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="fbot">© 2026 Rayvven-Nikkita Collins LLC · All rights reserved · Honolulu, Hawaiʻi</div>
-</footer>
-</body>
-</html>
+  <div class="foot-copy">&copy; 2026 Rayven-Nikkita Collins LLC &middot; Honolulu, HI</div>
+</footer></body></html>
