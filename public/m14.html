@@ -126,7 +126,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <h1 style="font-size:clamp(1.9rem,4vw,3rem);color:white;max-width:780px;margin-bottom:1.25rem;">Space Governance and Interplanetary Jurisdiction</h1>
     <p style="max-width:680px;opacity:0.88;font-size:1.05rem;margin-bottom:2rem;">Legal and ethical frameworks governing human activity in space were designed for robotic probes and brief orbital missions. Long-duration missions, commercial operations, and permanent off-Earth settlements require governance of human rights, medical ethics, crew autonomy, jurisdictional authority, and institutional accountability structures that the Outer Space Treaty (1967) and Artemis Accords (2020) do not address. Every institution planning or supporting human operations beyond Earth's atmosphere is governing in a legal vacuum — and that vacuum is a design choice.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="#assessment-tool" style="background:white;color:#1D2951;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Take the Free Assessment &rarr;</a>
+      <a href="/assessment-status" style="background:white;color:#1D2951;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Review Assessment Status &rarr;</a>
       <a href="#evidence" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">See the Evidence</a>
     </div>
   </div>
@@ -285,94 +285,31 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>
     
 <div id="assessment-tool" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;margin-top:1.5rem;">
-  <div class="slabel">M14 Readiness Assessment</div>
-  <h3>Take the Free Assessment</h3>
-  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;">12 questions across six governance dimensions. Prototype status and limitations are published before use. No email required to start.</p>
-  <div id="aq-container"></div>
-  <div id="aq-email-gate" style="display:none;margin-top:1.5rem;">
-    <p style="font-size:0.9rem;margin-bottom:0.75rem;">Enter your email to receive your full dimension report:</p>
-    <input type="email" id="aq-email" aria-label="Your email address" placeholder="you@organization.com" style="width:100%;max-width:400px;padding:0.65rem 1rem;border:1px solid var(--border);border-radius:4px;font-family:'Manrope',sans-serif;margin-bottom:0.75rem;">
-    <button onclick="submitAssessment()" style="background:#1D2951;color:white;padding:0.65rem 1.5rem;border:none;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;cursor:pointer;display:block;">Get My Tier Report</button>
-  </div>
-  <div id="aq-result" style="display:none;margin-top:1.5rem;"></div>
+  <div class="slabel">M14 prototype status</div>
+  <h3>Assessment collection is paused</h3>
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">The proposed questions and dimensions remain available for review, but this page does not collect answers, request an email, generate a tier, or send a report. An institutional assessment requires defined scope, representative participation, source review, and human analysis.</p>
+  <a href="/assessment-status" style="display:inline-block;background:#1D2951;color:white;padding:0.7rem 1.2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Review the M1–M15 operations matrix →</a>
 </div>
-<script>
-const AQS=[{q:"Does your organization have a documented legal framework and jurisdictional clarity policy or framework?",d:1},{q:"Is the legal framework and jurisdictional clarity framework reviewed and updated at least annually?",d:1},{q:"Does your organization have documented protocols for crew rights and autonomy governance?",d:2},{q:"Are crew rights and autonomy governance protocols accessible to all relevant personnel?",d:2},{q:"Does your organization have written standards for medical and clinical governance?",d:3},{q:"Are medical and clinical governance standards monitored and reported to leadership quarterly or more frequently?",d:3},{q:"Does your organization have a formal process for community and social governance?",d:4},{q:"Is there an independent accountability mechanism for community and social governance?",d:4},{q:"Does your organization have documented governance for commercial and institutional accountability?",d:5},{q:"Are commercial and institutional accountability outcomes tracked as quality improvement metrics?",d:5},{q:"Does your organization have a documented framework for post-mission reintegration governance?",d:6},{q:"Is the post-mission reintegration governance framework reviewed by affected stakeholders at least annually?",d:6}];
-let answers={};
-function renderQ(i){
-  if(i>=AQS.length){document.getElementById('aq-email-gate').style.display='block';return;}
-  const q=AQS[i];
-  const c=document.getElementById('aq-container');
-  c.innerHTML=`<div style="margin-bottom:1rem;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#1D2951;margin-bottom:0.35rem;">Question ${i+1} of ${AQS.length} &middot; Dimension ${q.d}</div><p style="font-size:0.9rem;font-weight:500;margin-bottom:1rem;">${q.q}</p><div style="display:flex;flex-direction:column;gap:0.5rem;">${[1,2,3,4,5].map(v=>`<label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.875rem;border:1px solid var(--border);border-radius:4px;cursor:pointer;"><input type="radio" name="aq${i}" value="${v}" onchange="answers[${i}]=${v};setTimeout(()=>renderQ(${i+1}),300)"> <span style="font-size:0.875rem;">${['Not at all','Minimally','Partially','Mostly','Fully'][[1,2,3,4,5].indexOf(v)]}</span></label>`).join('')}</div></div>`;
-}
-renderQ(0);
-function submitAssessment(){
-  const email=document.getElementById('aq-email').value.trim();
-  if(!email||!email.includes('@')){alert('Please enter a valid email.');return;}
-  let total=0,dims={};
-  Object.entries(answers).forEach(([i,v])=>{total+=v;const d=AQS[i].d;dims[d]=(dims[d]||0)+v;});
-  const avg=total/AQS.length;
-  const tier=avg>=4.5?'PIONEERING':avg>=3.5?'EMERGING':avg>=2.5?'DEVELOPING':'EARLY STAGE';
-  const colors={PIONEERING:'#1B7A68',EMERGING:'#1D2951',DEVELOPING:'#B8842A','EARLY STAGE':'#C24A2E'};
-  const tc=colors[tier];
-  document.getElementById('aq-email-gate').style.display='none';
-  const dimNames={1:"Legal Framework and Jurisdictional Clarity",2:"Crew Rights and Autonomy Governance",3:"Medical and Clinical Governance",4:"Community and Social Governance",5:"Commercial and Institutional Accountability",6:"Post-Mission Reintegration Governance"};
-  let dimHTML=Object.entries(dims).map(([d,s])=>`<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;"><span>${dimNames[d]}</span><span style="font-weight:600;color:#1D2951">${(s/2).toFixed(1)}/5.0</span></div>`).join('');
-  document.getElementById('aq-result').style.display='block';
-  document.getElementById('aq-result').innerHTML=`<div style="background:${tc};color:white;border-radius:8px;padding:1.5rem;margin-bottom:1rem;text-align:center;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:0.25rem;">Your M14 Governance Tier</div><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;">${tier}</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;"><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Dimension Scores</div>${dimHTML}</div><button onclick="navigator.clipboard.writeText('My M14 governance tier: '+tier)" style="background:transparent;border:1px solid var(--border);padding:0.5rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.78rem;cursor:pointer;">Copy Results</button>`;
-  fetch('https://nsag-api.vercel.app/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,module:'M14',tier,avg:avg.toFixed(2),source:'module-assessment'})}).catch(()=>{});
-}
-</script>
   </div>
 </section>
 
 
 <section style="background:#1D2951;color:white;padding:3rem 0;">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.75rem;">Download Module Overview</div>
-        <h2 style="color:white;margin-bottom:0.75rem;">Get the condensed M14 overview PDF</h2>
-        <p style="opacity:0.85;font-size:0.9rem;">Governance problem &middot; Full evidence base &middot; Six dimensions &middot; PIONEERING criteria &middot; Who should prioritize this module. Free. No enrollment required.</p>
-      </div>
-      <div>
-        <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem;">
-          <label for="dl-email-m14" style="display:block;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;margin-bottom:0.5rem;opacity:0.9;">Your email address</label>
-          <input type="email" id="dl-email-m14" aria-label="Your email address" placeholder="you@organization.com" style="width:100%;padding:0.75rem 1rem;border-radius:4px;border:none;font-family:'Manrope',sans-serif;font-size:0.9rem;margin-bottom:0.75rem;">
-          <button onclick="handleDownload_M14()" style="width:100%;background:white;color:#1D2951;padding:0.75rem 1rem;border-radius:4px;border:none;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;">Download PDF &darr;</button>
-          <div id="dl-msg-m14" style="margin-top:0.6rem;font-size:0.82rem;opacity:0;transition:opacity 0.3s;"></div>
-        </div>
-        <div style="margin-top:1.25rem;text-align:center;">
-          <span style="opacity:0.7;font-size:0.82rem;">or</span>
-          <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:0.5rem;border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;text-align:center;">Book a Discovery Call</a>
-        </div>
-      </div>
-    </div>
+  <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center;">
+    <div><div style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.75rem;">Module overview · direct download</div>
+    <h2 style="color:white;margin-bottom:0.75rem;">Read the condensed M14 overview</h2>
+    <p style="opacity:0.85;font-size:0.9rem;">Governance problem · evidence base · six proposed dimensions · implementation questions. No email, enrollment, tracking form, or automated follow-up.</p></div>
+    <div><a href="/pdfs/NSAG_M14_Overview.pdf" download style="display:block;background:white;color:#1D2951;padding:0.9rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:700;text-align:center;">Download PDF ↓</a>
+    <a href="/assessment-status" style="display:block;margin-top:0.75rem;border:1px solid rgba(255,255,255,.55);color:white;padding:0.75rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;text-align:center;">View operations status →</a></div>
   </div>
 </section>
-<script>
-function handleDownload_M14() {
-  var email = document.getElementById('dl-email-m14').value.trim();
-  var msg = document.getElementById('dl-msg-m14');
-  if (!email || !email.includes('@')) {
-    msg.style.color='rgba(255,200,100,1)'; msg.textContent='Please enter a valid email.'; msg.style.opacity='1'; return;
-  }
-  fetch('https://nsag-api.vercel.app/api/lead', {method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email:email,source:'M14-overview-download',timestamp:new Date().toISOString()})}).catch(function(){});
-  msg.style.color='rgba(200,255,200,1)'; msg.textContent='Opening your download...'; msg.style.opacity='1';
-  setTimeout(function(){
-    var a=document.createElement('a'); a.href='/pdfs/NSAG_M14_Overview.pdf'; a.download='NSAG_M14_Overview.pdf';
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  }, 300);
-}
-</script>
 
 <section style="background:#1D2951;color:white;padding:3rem 0;text-align:center;">
   <div class="wrap">
     <h2 style="color:white;margin-bottom:1rem;">Review the M14 assessment prototype.</h2>
-    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">8&ndash;12 minutes. Prototype status and limitations are published before use. One action you can take this week. No email required to start.</p>
+    <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">The assessment interaction is paused. Review the published scope, limitations, and human-supervised delivery boundary.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#assessment-tool" style="background:white;color:#1D2951;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Start Free Assessment</a>
+      <a href="/assessment-status" style="background:white;color:#1D2951;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Review Assessment Status</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="border:1.5px solid rgba(255,255,255,0.5);color:white;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;">Book a Discovery Call</a>
     </div>
   </div>
