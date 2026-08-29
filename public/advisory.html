@@ -14,7 +14,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
-h4,nav,button{font-family:'Syne',sans-serif;}
+h3,h4,nav,button{font-family:'Syne',sans-serif;}
 a{color:var(--nsag);text-decoration:none;}
 a:hover{color:var(--nsag-l);}
 .wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
@@ -42,7 +42,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 .fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
 .fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
 .ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl h2{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
 .fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
 .fl a:hover{color:white;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
@@ -81,6 +81,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nsag-site.vercel.app/advisory">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -113,7 +115,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="/evidence">Resources</a>
       
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
+      <a href="/#modules" class="nc">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
@@ -129,7 +131,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
   <a href="/field">Field Research</a>
   <a href="/evidence">Resources</a>
   <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Book a Discovery Call</a>
-  <a href="/#start">Take an Assessment</a>
+  <a href="/#modules">Browse the modules</a>
 </div>
 <script>
 function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
@@ -182,22 +184,22 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <h2>The Governance Audit Deliverable</h2>
     <p style="max-width:700px;color:var(--muted);margin-bottom:2rem;">Every engagement ends with a written governance audit. This is the document your institution can bring to leadership, share with a board, build a quality improvement plan from, or use as the basis for a funding application. It contains six sections.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Governance Profile</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Governance Profile</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Your institution's scored tier across each assessed module, with a dimension-by-dimension breakdown. This is what your institution is currently producing — in measurable, documentable terms.</p>
       </div>      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Evidence Base</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Evidence Base</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">For each governance gap identified, the primary peer-reviewed evidence establishing why it matters and what the institutional standard should be. Every claim is cited.</p>
       </div>      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Governance Gap Analysis</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Governance Gap Analysis</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The three to five highest-priority governance dimensions across your assessed modules, with specific documentation of what the gap looks like in your institutional context.</p>
       </div>      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Action Plan</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Action Plan</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">For each priority dimension: a specific governance change, the person accountable for implementing it, the measurable success metric, and the implementation timeline.</p>
       </div>      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Outcome Commitments</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Outcome Commitments</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">One metric per recommendation that would demonstrate improvement within 12 months — specific, observable, and appropriate to your institution's size and capacity.</p>
       </div>      <div class="card">
-        <h4 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Follow-Up</h4>
+        <h3 style="font-size:0.85rem;color:var(--nsag);margin-bottom:0.5rem;">Follow-Up</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">A 90-day check-in included in every engagement. NSAG reviews progress against the action plan, identifies implementation barriers, and adjusts recommendations where needed.</p>
       </div>    </div>
   </div>
@@ -212,7 +214,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
         <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Advisory Engagement</div>
         <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;">The core NSAG engagement. One to three modules. Full governance assessment. Written governance audit with action plan. NSAG Profile included (a board-ready governance brief combining your assessment results, regulatory context, and evidence base). 90-day follow-up.</p>
         <p style="font-size:0.8rem;color:var(--nsag);font-style:italic;margin-bottom:1.25rem;">Most organizations begin here.</p>
-        <a href="/#start" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;" >Start with a Free Assessment</a>
+        <a href="/#modules" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;" >Start with a Free Assessment</a>
       </div>      <div class="card" style="position:relative;overflow:hidden;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">from $5,000</div>
         <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Workshop</div>
@@ -242,23 +244,23 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <div class="slabel">Frequently Asked</div>
     <h2>Before You Book</h2>
     <div style="max-width:750px;">      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Do I need to take the free assessments first?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Do I need to take the free assessments first?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">No — but it helps. If you've taken one or more module assessments and know your tier, the discovery call goes faster. If you haven't, the call can serve as an intake conversation about which modules are most relevant to your institution.</p>
       </div>      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">How long does an advisory engagement take?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">How long does an advisory engagement take?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The core advisory engagement typically takes four to six weeks from scoping agreement to delivery of the governance audit. Extended advisory engagements with four or more modules take eight to twelve weeks. Workshops can be scheduled within three weeks of booking.</p>
       </div>      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Who should attend the discovery call?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Who should attend the discovery call?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The person with governance decision-making authority for the domain being assessed. This might be a Chief Medical Officer (M9, M11), a Legal Director (M1, M2), a Chief People Officer (M8), or a Facilities/Operations leader (M5, M10). The call is a conversation. Come with the governance question, and we will work toward the answer together.</p>
       </div>      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can NSAG work with our AI tools, EHR vendors, or built environment consultants?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can NSAG work with our AI tools, EHR vendors, or built environment consultants?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Yes. NSAG's governance audit is designed to work alongside your existing vendor and consultant relationships and inform them. The audit identifies what governance standards your institution needs to apply to those relationships — including AI demographic impact assessment requirements, built environment assessment standards, and evidence integration frameworks for CAM providers.</p>
       </div>      <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Is this only for healthcare?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Is this only for healthcare?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">No. Seven of the fifteen modules address healthcare environments. Three address legal and justice settings. Three address civic and built environments, including urban planning, schools, and public spaces. Two address space governance and extreme environments — M14 (Space Governance and Interplanetary Jurisdiction) and M15 (Isolation, Confinement, and Extreme Environment Governance) — applicable to space agencies, commercial space operators, aerospace medicine programs, polar research stations, and any institution governing environments from which exit is impossible or constrained. The framework applies wherever institutions make design decisions that affect the physiological experience of the people inside them.</p>
       </div>
       <div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-        <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can an individual work with NSAG?</h4>
+        <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can an individual work with NSAG?</h3>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Yes. The readiness assessments are free and self-serve for anyone. An institution that opens its doors to you takes on more than responsibility &mdash; it begins shaping your nervous system, whether it means to or not. If you are a patient, employee, student, or advocate rather than a decision-maker, start with the module closest to your situation: the tier report gives you the language and the evidence to name what is being done to you, and to ask for better.</p>
       </div>    </div>
   </div>
@@ -279,7 +281,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
-      <h5>The Practice</h5>
+      <h2>The Practice</h2>
       <a href="/about">About NSAG</a>
       <a href="/advisory">Advisory Engagements</a>
       <a href="/ce">Continuing Education</a>
@@ -288,7 +290,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <a href="/experience">Your Experience</a>
     </div>
     <div class="fl" style="grid-column:span 2;">
-      <h5>Modules — All 15</h5>
+      <h2>Modules — All 15</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
@@ -316,13 +318,13 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       </div>
     </div>
     <div class="fl">
-      <h5>Resources</h5>
+      <h2>Resources</h2>
       <a href="/evidence">Evidence Library</a>
       <a href="/insights">Governance Insights</a>
       <a href="/framework">Framework Foundation</a>
       <a href="/brief">NSAG Brief</a>
       <a href="/ce">Continuing Education</a>
-      <a href="/#start">All 15 Assessments →</a>
+      <a href="/#modules">All 15 module scopes →</a>
       <a href="/privacy">Privacy &amp; Data Use</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
     </div>

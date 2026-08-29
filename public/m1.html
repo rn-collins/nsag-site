@@ -42,7 +42,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 .fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
 .fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
 .ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl h2{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
 .fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
 .fl a:hover{color:white;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
@@ -81,6 +81,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nsag-site.vercel.app/m1">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -113,7 +115,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="/evidence">Resources</a>
 
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
+      <a href="/#modules" class="nc">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
@@ -129,7 +131,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
   <a href="/field">Field Research</a>
   <a href="/evidence">Resources</a>
   <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Book a Discovery Call</a>
-  <a href="/#start">Take an Assessment</a>
+  <a href="/#modules">Browse the modules</a>
 </div>
 <script>
 function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
@@ -196,7 +198,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
           <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);">SAMHSA (2014)</span>
           <div style="display:flex;gap:0.75rem;align-items:center;flex-shrink:0;">
             <span style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--muted);">Government Framework</span>
-            <a href="https://library.samhsa.gov/product/SMA14-4884" target="_blank" rel="noopener" style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:#1E3651;">Source →</a>
+            <span title="SAMHSA withdrew this publication from its online library; cite by publication number." style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:#1E3651;">HHS Pub. No. (SMA) 14-4884 · no live SAMHSA link</span>
           </div>
         </div>
         <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">The Four R's and six principles of trauma-informed practice. The governance standard for legal institutions.</p>
@@ -291,7 +293,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
-      <h5>The Practice</h5>
+      <h2>The Practice</h2>
       <a href="/about">About NSAG</a>
       <a href="/advisory">Advisory Engagements</a>
       <a href="/ce">Continuing Education</a>
@@ -300,7 +302,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <a href="/experience">Your Experience</a>
     </div>
     <div class="fl" style="grid-column:span 2;">
-      <h5>Modules — All 15</h5>
+      <h2>Modules — All 15</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
@@ -327,13 +329,13 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       </div>
     </div>
     <div class="fl">
-      <h5>Resources</h5>
+      <h2>Resources</h2>
       <a href="/evidence">Evidence Library</a>
       <a href="/insights">Governance Insights</a>
       <a href="/framework">Framework Foundation</a>
       <a href="/brief">NSAG Brief</a>
       <a href="/ce">Continuing Education</a>
-      <a href="/#start">All 15 Assessments →</a>
+      <a href="/#modules">All 15 module scopes →</a>
       <a href="/privacy">Privacy &amp; Data Use</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
     </div>

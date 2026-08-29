@@ -156,7 +156,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
   text-transform: uppercase;
   font-weight: 700;
 }
-.brand-card h3 {
+.brand-card h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 600;
@@ -226,6 +226,9 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
   .hero { padding: 3.5rem 0 3rem; }
 }
 </style>
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
 </head>
 <body>
 
@@ -257,7 +260,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <a href="/field">Field Research</a>
       <a href="/evidence">Resources</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="nav-cta-outline" style="background:transparent;border:1.5px solid var(--nsag);color:var(--nsag) !important;margin-right:0.5rem;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;text-decoration:none;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
-      <a href="/#start" class="nav-cta">Take an Assessment</a>
+      <a href="/#modules" class="nav-cta">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
@@ -275,7 +278,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
   <a href="/field" onclick="closeMobileNav()">Field Research</a>
   <a href="/evidence" onclick="closeMobileNav()">Resources</a>
   <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" onclick="closeMobileNav()" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
-  <a href="/#start" onclick="closeMobileNav()">Take an Assessment</a>
+  <a href="/#modules" onclick="closeMobileNav()">Browse the modules</a>
 </div>
 
 <section class="hero">
@@ -293,7 +296,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <!-- SPORT -->
       <div class="brand-card" style="border-top: 4px solid #1B6B4A;">
         <div class="brand-card-code" style="color: #1B6B4A;">SPORT</div>
-        <h3>Nervous-System-Aware Performance &amp; Governance</h3>
+        <h2>Nervous-System-Aware Performance &amp; Governance</h2>
         <p class="brand-card-desc">The NSAG framework applied to athletic institutions — governing how environment, scheduling, recovery culture, and media exposure shape athlete nervous system states and performance.</p>
         <div class="brand-card-focus">
           <div class="brand-card-focus-label">Focus Areas</div>
@@ -309,7 +312,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <!-- GAPI -->
       <div class="brand-card" style="border-top: 4px solid #2D2A8A;">
         <div class="brand-card-code" style="color: #2D2A8A;">GAPI &mdash; Governance-as-API</div>
-        <h3>AI Agent Governance Infrastructure</h3>
+        <h2>AI Agent Governance Infrastructure</h2>
         <p class="brand-card-desc">One of the first governance MCP servers for AI agents, applying the NSAG governance framework to assess whether agentic systems behave in ways that are cognitively and ethically safe.</p>
         <div class="brand-card-focus">
           <div class="brand-card-focus-label">Focus Areas</div>
@@ -325,7 +328,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <!-- WNH -->
       <div class="brand-card" style="border-top: 4px solid #5B7B5A;">
         <div class="brand-card-code" style="color: #5B7B5A;">WNH &mdash; Women's Neuro-Health</div>
-        <h3>The Female Nervous System, Evidenced</h3>
+        <h2>The Female Nervous System, Evidenced</h2>
         <p class="brand-card-desc">Primary-source, sex-disaggregated research at the intersection of cannabis, psychedelics, and the female nervous system — for women and the clinicians who care for them.</p>
         <div class="brand-card-focus">
           <div class="brand-card-focus-label">Focus Areas</div>
@@ -341,7 +344,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <!-- NARCH -->
       <div class="brand-card" style="border-top: 4px solid #8B6914;">
         <div class="brand-card-code" style="color: #8B6914;">NARCH &mdash; Neuroarchitecture Advisory</div>
-        <h3>Built Environments, Evidence-Based</h3>
+        <h2>Built Environments, Evidence-Based</h2>
         <p class="brand-card-desc">Advisory practice for architecture firms, developers, and healthcare institutions designing built environments around how the human nervous system actually works.</p>
         <div class="brand-card-focus">
           <div class="brand-card-focus-label">Focus Areas</div>
@@ -355,7 +358,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       </div>
       <div class="brand-card" style="border-top: 4px solid #C0392B;">
         <div class="brand-card-code" style="color: #C0392B;">KIDS &mdash; AI &amp; Your Child&rsquo;s Brain</div>
-        <h3>What AI Does to a Developing Brain</h3>
+        <h2>What AI Does to a Developing Brain</h2>
         <p class="brand-card-desc">A neuroscientist and mother of two explains, for parents and educators, what AI does to the developing brain. No doom, no hype &mdash; the neuroscience, with an age-by-age framework and a home-and-classroom protocol.</p>
         <div class="brand-card-focus">
           <div class="brand-card-focus-label">Focus Areas</div>
@@ -378,7 +381,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
     <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.88; line-height: 1.8;">Talk through which applied context fits your institution, or begin with an assessment of where your governance stands today.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background: transparent; border: 1.5px solid var(--white); color: var(--white); padding: 0.65rem 1.5rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Book a Discovery Call</a>
-      <a href="/#start" style="background: var(--white); color: var(--nsag); padding: 0.65rem 1.5rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Take an Assessment</a>
+      <a href="/#modules" style="background: var(--white); color: var(--nsag); padding: 0.65rem 1.5rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Browse the modules</a>
     </div>
   </div>
 </section>
@@ -392,19 +395,19 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       </div>
       <div class="footer-links">
         <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Modules</strong>
-        <a href="https://nsag-m1.vercel.app">M1 · Trauma-Informed Legal Space</a>
-        <a href="https://nsag-m2.vercel.app">M2 · AI Legal Navigation</a>
-        <a href="https://nsag-m3.vercel.app">M3 · Psychedelic Harm Reduction</a>
-        <a href="https://nsag-m4.vercel.app">M4 · Cannabis Public Health</a>
-        <a href="https://nsag-m5.vercel.app">M5 · Biophilic Civic Infrastructure</a>
-        <a href="https://nsag-m6.vercel.app">M6 · Ethical Civic Sponsorship</a>
-        <a href="https://nsag-m7.vercel.app">M7 · Conscious Cities</a>
-        <a href="https://nsag-m8.vercel.app">M8 · Burnout Recovery</a>
-        <a href="https://nsag-m9.vercel.app">M9 · Cannabis Healthcare Visibility</a>
-        <a href="https://nsag-m10.vercel.app">M10 · Healthcare Built Environment</a>
-        <a href="https://nsag-m11.vercel.app">M11 · Medical Technology Governance</a>
-        <a href="https://nsag-m12.vercel.app">M12 · Education Systems</a>
-        <a href="https://nsag-m13.vercel.app">M13 · Traditional &amp; Complementary Medicine</a>
+        <a href="/m1">M1 · Trauma-Informed Legal Space</a>
+        <a href="/m2">M2 · AI Legal Navigation</a>
+        <a href="/m3">M3 · Psychedelic Harm Reduction</a>
+        <a href="/m4">M4 · Cannabis Public Health</a>
+        <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
+        <a href="/m6">M6 · Ethical Civic Sponsorship</a>
+        <a href="/m7">M7 · Conscious Cities</a>
+        <a href="/m8">M8 · Burnout Recovery</a>
+        <a href="/m9">M9 · Cannabis Healthcare Visibility</a>
+        <a href="/m10">M10 · Healthcare Built Environment</a>
+        <a href="/m11">M11 · Medical Technology Governance</a>
+        <a href="/m12">M12 · Education Systems</a>
+        <a href="/m13">M13 · Traditional &amp; Complementary Medicine</a>
         <a href="/m14">M14 · Space Governance &amp; Jurisdiction</a>
         <a href="/m15">M15 · Isolation &amp; Confinement</a>
       </div>

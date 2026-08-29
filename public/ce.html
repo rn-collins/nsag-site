@@ -20,7 +20,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
-h4,nav,button{font-family:'Syne',sans-serif;}
+h3,h4,nav,button{font-family:'Syne',sans-serif;}
 a{color:var(--nsag);text-decoration:none;}a:hover{color:var(--nsag-l);}
 .wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
 .slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
@@ -41,7 +41,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
 .fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1.5fr 1fr 2fr 1fr;gap:2rem;}
 .fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
 .ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl h2{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
 .fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}.fl a:hover{color:white;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
 @media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
@@ -57,6 +57,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
 @media(max-width:900px){.hamburger{display:block;}}
 .skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
 </style>
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -88,7 +90,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
       <a href="/field">Field Research</a>
       <a href="/evidence">Resources</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
+      <a href="/#modules" class="nc">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
@@ -104,7 +106,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;}
   <a href="/field">Field Research</a>
   <a href="/evidence">Resources</a>
   <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
-  <a href="/#start">Take an Assessment</a>
+  <a href="/#modules">Browse the modules</a>
 </div>
 <script>
 function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
@@ -128,9 +130,9 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
 <section id="main-content" style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
   <div class="wrap">
     <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Continuing Education</div>
-    <h1 style="font-size:clamp(2rem,4vw,3.5rem);color:white;max-width:820px;margin-bottom:1.25rem;">Fifteen sessions. Fifteen governance modules. Seven CE types. One framework.</h1>
-    <p style="max-width:700px;opacity:0.87;font-size:1.05rem;margin-bottom:1rem;">Nervous-System-Aware Governance is the on-demand CE curriculum built for practitioners who need a governance framework for what their institutions are producing in the people inside them &mdash; and the credit hours to prove they&rsquo;ve studied it.</p>
-    <p style="max-width:700px;opacity:0.87;font-size:1rem;margin-bottom:2rem;">Healthcare professionals, attorneys, social workers, pharmacists, psychologists, and public health practitioners working from the same evidence base, earning credit in their own CE type. Complete the 15-session core curriculum. Choose your specialty track. Earn 15.0 to 17.0 CE credit hours &mdash; CME, CNE, CLE, CPE, SW-CE, Psych-CE, or CHES &mdash; depending on your profession and track.</p>
+    <h1 style="font-size:clamp(2rem,4vw,3.5rem);color:white;max-width:820px;margin-bottom:1.25rem;">Fifteen sessions. Thirteen governance modules. Seven CE types. One framework.</h1>
+    <p style="max-width:700px;opacity:0.87;font-size:1.05rem;margin-bottom:1rem;">Nervous-System-Aware Governance is the on-demand CE curriculum built for practitioners who need a governance framework for what their institutions are producing in the people inside them &mdash; and and, once accreditation is confirmed, the credit hours to record that they have studied it.</p>
+    <p style="max-width:700px;opacity:0.87;font-size:1rem;margin-bottom:2rem;">Healthcare professionals, attorneys, social workers, pharmacists, psychologists, and public health practitioners working from the same evidence base, each intended to earn credit in their own CE type once accreditation is confirmed. Complete the 15-session core curriculum. Choose your specialty track. On accreditation the curriculum is designed to carry 15.0 to 17.0 CE credit hours &mdash; CME, CNE, CLE, CPE, SW-CE, Psych-CE, or CHES &mdash; depending on your profession and track. Accreditation applications are still in process, so no credit can be awarded yet.</p>
     <div style="display:flex;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem;">
       <div style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;">15</div><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;">Sessions</div></div>
       <div style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;">15</div><div style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;">Governance Modules</div></div>
@@ -146,7 +148,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
 <section class="alt">
   <div class="wrap">
     <div class="slabel">How It Works</div>
-    <h2>Complete Core &rarr; Choose Track &rarr; Earn Certificate</h2>
+    <h2>Complete Core &rarr; Choose Track &rarr; Certificate on accreditation</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:2rem 0;"><div style="border:1px solid var(--border);border-right:none;border-radius:6px 0 0 6px;padding:1.5rem;background:var(--white);">
         <div style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;">Step 1</div>
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Complete the Core Program</div>
@@ -158,7 +160,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Complete Your Track Sessions</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">Pre-test, 60-minute recorded session, post-test (minimum 80%), practice application exercise. Certificate issued on completion of each session.</p></div><div style="border:1px solid var(--border);border-radius:0 6px 6px 0;padding:1.5rem;background:var(--white);">
         <div style="font-family:'Syne',sans-serif;font-size:0.68rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;">Step 4</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Receive Your CE Certificate</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Receive Your CE Certificate (once accredited)</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">One certificate per session stating credit hours, CE type, and date. Total: 15.0 core credit hours, or 16.0&ndash;17.0 with a specialty track.</p></div></div></div></section>
 <section id="curriculum">
   <div class="wrap">
@@ -610,22 +612,22 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
   <div class="wrap" style="max-width:860px;">
     <div class="slabel">Frequently Asked</div>
     <h2>Before You Enroll</h2><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can I take a specialty track without completing the Core CE Program?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can I take a specialty track without completing the Core CE Program?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">No. The Core CE Program is a hard prerequisite for all specialty tracks. Specialty tracks build directly on the governance vocabulary, tier framework, and module-specific content introduced in the core curriculum.</p>
     </div><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">How is CE credit verified once accreditation is confirmed?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">How is CE credit verified once accreditation is confirmed?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">Each session generates a certificate of completion upon successful post-test completion (minimum 80%). Once accreditation is confirmed with each body, certificates will include the required accreditation number. Practitioners who complete sessions prior to accreditation confirmation will receive updated certificates — they will not need to retake sessions.</p>
     </div><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Does my state bar accept on-demand self-study CLE?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Does my state bar accept on-demand self-study CLE?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">Most states accept self-study for some portion of required hours, but caps and rules vary by jurisdiction. Hawaii allows up to 15 of 30 required hours as self-study. Attorneys should verify their jurisdiction's self-study cap and credit category rules before relying on this program for their reporting period requirements.</p>
     </div><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">When will enrollment open?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">When will enrollment open?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">Enrollment is not yet open. The platform is being selected and accreditation applications are in process. For institutions interested in cohort enrollment or co-accreditation partnerships, book a discovery call.</p>
     </div><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can my organization license this for staff or students?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">Can my organization license this for staff or students?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">Yes. Institutional access is available at $5,000 (1–50 employees), $10,000 (51–200), and $15,000 (201+). Institutional licensing includes cohort enrollment, facilitator support, and options to integrate with existing CE tracking systems. Book a discovery call.</p>
     </div><div style="margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
-      <h4 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">What happens to my certificates when accreditation is confirmed?</h4>
+      <h3 style="font-size:0.95rem;color:var(--text);margin-bottom:0.5rem;">What happens to my certificates when accreditation is confirmed?</h3>
       <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;">Sessions completed prior to accreditation confirmation will receive updated certificates with the accreditation number once approval is granted. You will not need to retake sessions.</p>
     </div></div></section>
 <section style="background:var(--nsag);color:white;padding:3rem 0;text-align:center;">
@@ -645,7 +647,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi · <a href="/privacy" style="color:inherit;text-decoration:underline;">Privacy &amp; Data Use</a></div>
     </div>
     <div class="fl">
-      <h5>The Practice</h5>
+      <h2>The Practice</h2>
       <a href="/about">About NSAG</a>
       <a href="/advisory">Advisory Engagements</a>
       <a href="/ce">Continuing Education</a>
@@ -654,7 +656,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <a href="/experience">Your Experience</a>
     </div>
     <div class="fl">
-      <h5>Modules</h5>
+      <h2>Modules</h2>
       <a href="/m1">M1 Trauma-Informed Legal Space</a>
       <a href="/m8">M8 Burnout Recovery</a>
       <a href="/m9">M9 Cannabis Healthcare Visibility</a>
@@ -663,13 +665,13 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <a href="/#modules">All 15 Modules →</a>
     </div>
     <div class="fl">
-      <h5>Resources</h5>
+      <h2>Resources</h2>
       <a href="/evidence">Evidence Library</a>
       <a href="/insights">Governance Insights</a>
-      <a href="https://nsag-m9.vercel.app" target="_blank" rel="noopener noreferrer">M9 Assessment</a>
-      <a href="https://nsag-m8.vercel.app" target="_blank" rel="noopener noreferrer">M8 Assessment</a>
-      <a href="https://nsag-m1.vercel.app" target="_blank" rel="noopener noreferrer">M1 Assessment</a>
-      <a href="/#start">All Assessments →</a>
+      <a href="/m9">M9 module scope</a>
+      <a href="/m8">M8 module scope</a>
+      <a href="/m1">M1 module scope</a>
+      <a href="/#modules">All Assessments →</a>
     </div>
   </div>
   <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>

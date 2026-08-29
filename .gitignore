@@ -8,3 +8,7 @@ node_modules/
 dist/
 .next/
 out/
+
+# FUSE artefacts — deleted-but-open files. These were tracked AND served,
+# publishing stale copies of pages long after they were corrected.
+.fuse_hidden*

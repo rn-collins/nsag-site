@@ -42,7 +42,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 .fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
 .fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
 .ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h5{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+.fl h2{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
 .fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
 .fl a:hover{color:white;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
@@ -81,6 +81,8 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nsag-site.vercel.app/evidence">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -113,7 +115,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
       <a href="/evidence" class="act">Resources</a>
 
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="no" target="_blank" rel="noopener">Book a Discovery Call</a>
-      <a href="/#start" class="nc">Take an Assessment</a>
+      <a href="/#modules" class="nc">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburger-btn"><span></span><span></span><span></span></button>
   </div>
@@ -129,7 +131,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
   <a href="/field">Field Research</a>
   <a href="/evidence">Resources</a>
   <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Book a Discovery Call</a>
-  <a href="/#start">Take an Assessment</a>
+  <a href="/#modules">Browse the modules</a>
 </div>
 <script>
 function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
@@ -163,7 +165,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="legal" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1E3651;padding:0.3rem 0.7rem;border-radius:3px;">M1</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m1" style="color:var(--text);">Trauma-Informed Legal Space</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m1" style="color:var(--text);">Trauma-Informed Legal Space</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1E3651;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -189,7 +191,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
         </div>        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1E3651;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
             <span style="font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:#1E3651;background:rgba(0,0,0,0.04);padding:0.15rem 0.5rem;border-radius:3px;white-space:nowrap;">Government Report</span>
-            <a href="https://library.samhsa.gov/product/samhsas-concept-trauma-and-guidance-trauma-informed-approach/sma14-4884" target="_blank" rel="noopener" style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--nsag);white-space:nowrap;">Source →</a>
+            <span title="SAMHSA withdrew this publication from its online library; cite by publication number." style="font-family:'Syne',sans-serif;font-size:0.72rem;color:var(--nsag);white-space:nowrap;">HHS Pub. No. (SMA) 14-4884</span>
           </div>
           <p style="font-size:0.85rem;color:var(--text);margin-bottom:0.4rem;line-height:1.5;">Substance Abuse and Mental Health Services Administration. (2014). <i>SAMHSA's Concept of Trauma and Guidance for a Trauma-Informed Approach</i> (HHS Publication No. SMA 14-4884). SAMHSA.</p>
           <p style="font-size:0.82rem;color:var(--muted);line-height:1.5;font-style:italic;">The Four R's (Realize, Recognize, Respond, Resist re-traumatization) and six key principles of trauma-informed practice. Foundational framework document.</p>
@@ -197,7 +199,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="legal" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1E3651;padding:0.3rem 0.7rem;border-radius:3px;">M2</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m2" style="color:var(--text);">AI Legal Navigation</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m2" style="color:var(--text);">AI Legal Navigation</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1E3651;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -231,7 +233,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M3</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m3" style="color:var(--text);">Psychedelic Harm Reduction Governance</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m3" style="color:var(--text);">Psychedelic Harm Reduction Governance</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -258,7 +260,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M4</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m4" style="color:var(--text);">Cannabis Public Health Infrastructure</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m4" style="color:var(--text);">Cannabis Public Health Infrastructure</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -285,7 +287,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="civic" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2E5A28;padding:0.3rem 0.7rem;border-radius:3px;">M5</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m5" style="color:var(--text);">Biophilic Civic Infrastructure</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m5" style="color:var(--text);">Biophilic Civic Infrastructure</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #2E5A28;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -319,7 +321,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="legal" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1E3651;padding:0.3rem 0.7rem;border-radius:3px;">M6</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m6" style="color:var(--text);">Ethical Civic Sponsorship</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m6" style="color:var(--text);">Ethical Civic Sponsorship</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1E3651;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -346,7 +348,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="civic" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2E5A28;padding:0.3rem 0.7rem;border-radius:3px;">M7</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m7" style="color:var(--text);">Conscious Cities</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m7" style="color:var(--text);">Conscious Cities</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #2E5A28;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -373,7 +375,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M8</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m8" style="color:var(--text);">Burnout Recovery Infrastructure</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m8" style="color:var(--text);">Burnout Recovery Infrastructure</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -400,7 +402,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M9</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m9" style="color:var(--text);">Cannabis Healthcare Visibility</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m9" style="color:var(--text);">Cannabis Healthcare Visibility</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -434,7 +436,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M10</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m10" style="color:var(--text);">Healthcare Built Environment</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m10" style="color:var(--text);">Healthcare Built Environment</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -461,7 +463,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M11</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m11" style="color:var(--text);">Medical Technology & Evidence Standards</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m11" style="color:var(--text);">Medical Technology & Evidence Standards</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -495,7 +497,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="civic" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2E5A28;padding:0.3rem 0.7rem;border-radius:3px;">M12</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m12" style="color:var(--text);">Nervous-System-Aware Education Systems</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m12" style="color:var(--text);">Nervous-System-Aware Education Systems</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #2E5A28;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -529,7 +531,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     </div>    <div class="ev-section" data-sector="healthcare" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1B7A68;padding:0.3rem 0.7rem;border-radius:3px;">M13</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m13" style="color:var(--text);">Traditional & CAM Governance</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m13" style="color:var(--text);">Traditional & CAM Governance</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">        <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1B7A68;">
           <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:0.4rem;">
@@ -563,7 +565,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <div class="ev-section" data-sector="space" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#1D2951;padding:0.3rem 0.7rem;border-radius:3px;">M14</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m14" style="color:var(--text);">Space Governance and Interplanetary Jurisdiction</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m14" style="color:var(--text);">Space Governance and Interplanetary Jurisdiction</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">
         <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #1D2951;">
@@ -605,7 +607,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <div class="ev-section" data-sector="space" style="margin-bottom:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
         <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:white;background:#2B4066;padding:0.3rem 0.7rem;border-radius:3px;">M15</span>
-        <h3 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m15" style="color:var(--text);">Isolation, Confinement, and Extreme Environment Governance</a></h3>
+        <h2 style="font-size:1.1rem;color:var(--text);margin:0;"><a href="/m15" style="color:var(--text);">Isolation, Confinement, and Extreme Environment Governance</a></h2>
       </div>
       <div style="display:grid;gap:0.75rem;">
         <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;border-left:3px solid #2B4066;">
@@ -674,7 +676,7 @@ function filterEvidence(sector, btn) {
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
-      <h5>The Practice</h5>
+      <h2>The Practice</h2>
       <a href="/about">About NSAG</a>
       <a href="/advisory">Advisory Engagements</a>
       <a href="/ce">Continuing Education</a>
@@ -683,7 +685,7 @@ function filterEvidence(sector, btn) {
       <a href="/experience">Your Experience</a>
     </div>
     <div class="fl" style="grid-column:span 2;">
-      <h5>Modules — All 15</h5>
+      <h2>Modules — All 15</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
@@ -711,13 +713,13 @@ function filterEvidence(sector, btn) {
       </div>
     </div>
     <div class="fl">
-      <h5>Resources</h5>
+      <h2>Resources</h2>
       <a href="/evidence">Evidence Library</a>
       <a href="/insights">Governance Insights</a>
       <a href="/framework">Framework Foundation</a>
       <a href="/brief">NSAG Brief</a>
       <a href="/ce">Continuing Education</a>
-      <a href="/#start">All 15 Assessments →</a>
+      <a href="/#modules">All 15 module scopes →</a>
       <a href="/privacy">Privacy &amp; Data Use</a>
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
     </div>
