@@ -1,0 +1,138 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   NSAG — the parent layer.
+
+   The fifteen module pages share one face on purpose: Cormorant Garamond,
+   Syne and Manrope are the family look of the set. The hub is not a sixteenth
+   member of that set, so it does not wear it. The hub is the standing record
+   of the body the modules point back to — a charter, a register and a
+   schedule — and it is set as printed institutional matter: EB Garamond for
+   the record voice, Figtree for the working voice, stone board instead of the
+   estate's cream, hairline rules instead of rounded cards, and designators
+   (M01 … M15) held in tabular figures so they read as catalogue keys.
+
+   This file loads after each page's own styles and carries only form: type
+   scale, rule weight, radius and layout. Every accessibility affordance in
+   the pages beneath it — skip links, :focus-visible rings, forced-colors,
+   reduced motion, print rules, .sr-only — is left intact and reinforced here.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --hub-ink:#14161A;
+  --hub-paper:#E9EAE4;
+  --hub-panel:#FAFAF8;
+  --hub-rule:#C6C8C1;
+  --hub-rule-firm:#9EA29A;
+  --hub-accent:#2E2A63;
+  --serif:'EB Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --key:600 .72rem/1 var(--sans);
+}
+
+/* ── the record voice ─────────────────────────────────────────────────────── */
+body{font-family:var(--sans);font-size:16px;line-height:1.62;background:var(--hub-paper);color:var(--hub-ink)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:0}
+
+/* A masthead, not a headline. The homepage was running a 6.8rem display line
+   over a three-stop gradient; an institution's first page is a letterhead. */
+h1{font-size:clamp(2.05rem,4.4vw,3.25rem);line-height:1.1;max-width:22ch;letter-spacing:.002em}
+.hero h1,.phead h1{margin:.5rem 0 .9rem}
+h2{line-height:1.16}
+.section h2,.hero h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:.002em}
+.lede,.lead,.intro{font-family:var(--serif);font-size:clamp(1.08rem,1.5vw,1.24rem);line-height:1.5;max-width:62ch}
+
+/* Eyebrows become register labels: tracked, tabular, ruled — not pill badges. */
+.eyebrow,.slabel{font:var(--key);text-transform:uppercase;letter-spacing:.15em;
+  font-variant-numeric:tabular-nums;background:none;border:0;border-left:2px solid currentColor;
+  border-radius:0;padding:.1rem 0 .1rem .55rem;margin-bottom:.9rem;display:inline-block}
+
+/* ── the masthead rule ────────────────────────────────────────────────────── */
+.hero,header.hero{background:var(--hub-ink);color:#F3F3F0;padding:clamp(3.2rem,7vw,5.2rem) 0 clamp(2.4rem,5vw,3.6rem);
+  border-bottom:3px solid var(--hub-accent)}
+.hero .eyebrow{color:#C9C7DE}
+.hero .lede,.hero .lead{color:#E4E3E9}
+.hero .status{border:0;border-top:1px solid #4A4C55;background:none;border-radius:0;padding:1.1rem 0 0;margin-top:2rem}
+.phead{padding:clamp(2.6rem,6vw,4.4rem) 0 clamp(1.6rem,3vw,2.4rem);border-bottom:2px solid var(--hub-ink)}
+
+/* ── flat institutional furniture ─────────────────────────────────────────── */
+nav{background:var(--hub-panel);border-bottom:1px solid var(--hub-rule-firm)}
+.nav,.ni,.nav__in{min-height:60px}
+.brand,.nb,.nav__brand{font-family:var(--sans);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.95rem}
+.links a,.nl a,.nav__links a{font-family:var(--sans);font-weight:500;letter-spacing:.01em}
+
+.btn,.btn-p,.btn-o,.nc,.no{border-radius:0;font-family:var(--sans);font-weight:600;letter-spacing:.02em}
+.btn{border:1px solid transparent}
+.btn.secondary,.btn--ghost,.btn-o,.no{border-width:1px}
+
+/* Cards were the estate default. A standing body keeps a ruled register. */
+.card{background:none;border:0;border-top:1px solid var(--hub-rule);border-radius:0;
+  padding:1.05rem 0 1.2rem;box-shadow:none}
+.grid{gap:0 2.4rem;border-top:2px solid var(--hub-ink);margin-top:1.6rem}
+.card h3{font-family:var(--serif);font-size:1.3rem;line-height:1.2;margin:.55rem 0 .45rem}
+.card p{font-size:.92rem}
+.card>a:last-child{font-family:var(--sans);font-weight:600;font-size:.86rem}
+
+/* M01 … M15 — the designators are the point of a register, so they are set as
+   keys: tabular figures, tracked, ruled off from the sector they belong to. */
+.module-top{font:var(--key);letter-spacing:.16em;text-transform:uppercase;
+  font-variant-numeric:tabular-nums;padding-bottom:.35rem;border-bottom:1px solid var(--hub-rule);
+  align-items:baseline}
+.module-top span{font-weight:800}
+.module-top small{font-weight:500;letter-spacing:.09em}
+
+.tablewrap{border:0;border-top:2px solid var(--hub-ink);border-bottom:1px solid var(--hub-rule);
+  border-radius:0;background:none}
+table{font-family:var(--sans);font-variant-numeric:tabular-nums}
+th{font-family:var(--sans);font-weight:700;letter-spacing:.11em;border-bottom:1px solid var(--hub-rule-firm)}
+td{border-bottom:1px solid var(--hub-rule)}
+
+.note,.live,.boundary-light,.next{border-radius:0;border-left-width:3px}
+.steps>li::before{border-radius:0;font-family:var(--sans);font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.srcnote{border-left-width:2px;font-family:var(--sans)}
+
+/* ── footer: the imprint ──────────────────────────────────────────────────── */
+footer{background:var(--hub-ink);border-top:3px solid var(--hub-accent)}
+footer,footer p,footer .ft,footer .fbot,footer div{color:#D6D8DA}
+footer a{color:#FFFFFF}
+.fl h2,.fl h3{font-family:var(--sans);color:#B9BDC1}
+.fb,.fbot{font-family:var(--sans)}
+
+/* ── affordances kept, and made explicit at this layer ────────────────────── */
+:focus-visible{outline:3px solid var(--hub-accent);outline-offset:3px}
+.hero :focus-visible,footer :focus-visible{outline-color:#FFFFFF}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media(forced-colors:active){
+  .card,.grid,.tablewrap,.module-top{border-color:CanvasText}
+  .eyebrow,.slabel{border-left-color:CanvasText}
+  .btn{border:1px solid ButtonText}
+}
+@media print{
+  body{background:#fff;color:#000}
+  nav,.actions,.skip,.skip-nav,.hamburger,.mobile-nav{display:none!important}
+  .hero,header.hero,footer{background:#fff;color:#000;border-color:#000}
+  .hero .lede,.hero .lead,.hero .eyebrow,footer,footer a,footer p{color:#000}
+  .card{break-inside:avoid}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
+}
+
+/* ── the field schedule (field.html, field_2027–2029) ─────────────────────────
+   These pages set one gold and used it on stone, on ink and on indigo. Gold
+   deep enough to read on stone is unreadable on ink, so the schedule now
+   carries two: the deep gold stays on light stock, and a raised gold takes the
+   dark panels. Measured, not eyeballed. */
+.hero-eye,.hero-h em,.foot-brand span{color:#E3C179}
+.event-card.highlight .event-meta,
+.event-card.highlight .event-dims{color:#E3C179}
+.event-card.highlight .event-location{color:#DCDAE7}
+.event-card.highlight .status-2027,
+.event-card.highlight .status-2028,
+.event-card.highlight .status-2029,
+.event-card.highlight .status-advisory{color:#E7E6EF;border-color:#8B88AB;background:rgba(255,255,255,.08)}
+.status-present{background:#5E4310;color:#FFFFFF}
+.status-research{background:#2F5A3D;color:#FFFFFF}
+.event-card,.event-card.highlight,.event-card.active,.yc-card{border-radius:0}
+.section-label,.hero-eye,.yc-year,.event-meta,.event-location,.event-dims,
+.foot-link,.foot-copy,.status-present,.status-submitted,.status-research,
+.status-2027,.status-2028,.status-2029,.status-advisory{font-variant-numeric:tabular-nums}
+.year-strip a.active{color:#E3C179}

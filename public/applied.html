@@ -13,25 +13,25 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
 :root {
-  --nsag: #4D45A8;
-  --nsag-light: #6B63C4;
-  --nsag-pale: #EEF0FF;
-  --bg: #F6F3EC;
-  --text: #1C1B1F;
-  --text-muted: #5A5869;
+  --nsag: #2E2A63;
+  --nsag-light: #3F3A83;
+  --nsag-pale: #E2E3EE;
+  --bg: #E9EAE4;
+  --text: #14161A;
+  --text-muted: #474C52;
   --border: #D8D5CE;
   --white: #FFFFFF;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
-h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
-h4, h5, nav, .label { font-family: 'Syne', sans-serif; }
+body { font-family: 'Figtree', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+h1, h2, h3 { font-family: 'EB Garamond', serif; line-height: 1.2; }
+h4, h5, nav, .label { font-family: 'Figtree', sans-serif; }
 a { color: var(--nsag); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
@@ -39,11 +39,11 @@ a:hover { text-decoration: underline; }
 /* NAV */
 nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 1rem 0; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-.nav-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--nsag); letter-spacing: 0.08em; }
+.nav-brand { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--nsag); letter-spacing: 0.08em; }
 .nav-links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.875rem; font-weight: 500; }
 .nav-links a { color: var(--text-muted); }
 .nav-links a:hover { color: var(--nsag); text-decoration: none; }
-.nav-cta { background: var(--nsag); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.875rem; }
+.nav-cta { background: var(--nsag); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius:0; font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.875rem; }
 .nav-cta:hover { background: var(--nsag-light); text-decoration: none; }
 .nav-cta-outline:hover { background: var(--nsag-pale) !important; color: var(--nsag) !important; }
 
@@ -57,7 +57,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
   left: 0;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius:0;
   min-width: 260px;
   padding: 0.75rem 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -74,7 +74,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 .dropdown-label {
   display: block;
   padding: 0.6rem 1.25rem 0.25rem;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -84,7 +84,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 
 /* HAMBURGER */
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius:0; }
 
 /* MOBILE NAV */
 .mobile-nav {
@@ -100,7 +100,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
@@ -122,11 +122,11 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 .hero { background: var(--nsag); color: var(--white); padding: 5rem 0 4rem; }
 .hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 .hero-label {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 1.5rem;
 }
 .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; margin-bottom: 1.5rem; max-width: 800px; }
@@ -143,21 +143,21 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 .brand-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius:0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 .brand-card-code {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
 }
 .brand-card h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'EB Garamond', serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25;
@@ -168,7 +168,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
   line-height: 1.75;
 }
 .brand-card-focus-label {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -196,7 +196,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 .brand-card-cta {
   margin-top: auto;
   padding-top: 0.5rem;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -204,15 +204,15 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); position
 .brand-card-cta:hover { text-decoration: underline; }
 
 /* FOOTER */
-footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2rem; }
+footer { background: #14161A; color: rgba(255,255,255,0.8); padding: 4rem 0 2rem; }
 .footer-inner { display: grid; grid-template-columns: 1.2fr 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.footer-brand { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
 .footer-tagline { font-size: 0.85rem; line-height: 1.6; }
 .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
-.footer-links a { color: rgba(255,255,255,0.65); font-size: 0.82rem; text-decoration: none; }
+.footer-links a { color: rgba(255,255,255,0.8); font-size: 0.82rem; text-decoration: none; }
 .footer-links a:hover { color: var(--white); }
-.footer-links span { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); text-align: center; }
+.footer-links span { font-size: 0.78rem; color: rgba(255,255,255,0.8); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.8); text-align: center; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -230,7 +230,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:image" content="https://nsag-site.vercel.app/og-image.png">
 <noscript><style>@media(max-width:900px){.ni{flex-wrap:wrap}.nl{display:flex!important;flex-wrap:wrap;gap:.5rem 1.1rem;width:100%;padding-top:.6rem}.hamburger{display:none!important}}</style></noscript>
-</head>
+<link rel="stylesheet" href="/nsag-hub.css"></head>
 <body>
 
 <nav aria-label="Main navigation">
@@ -260,7 +260,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
       <a href="/applied">Applied</a>
       <a href="/field">Field Research</a>
       <a href="/evidence">Resources</a>
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="nav-cta-outline" style="background:transparent;border:1.5px solid var(--nsag);color:var(--nsag) !important;margin-right:0.5rem;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;text-decoration:none;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="nav-cta-outline" style="background:transparent;border:1.5px solid var(--nsag);color:var(--nsag) !important;margin-right:0.5rem;padding:0.5rem 1.25rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:0.875rem;text-decoration:none;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
       <a href="/#modules" class="nav-cta">Browse the modules</a>
     </div>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open navigation menu">
@@ -295,8 +295,8 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
     <div class="brands-grid">
 
       <!-- SPORT -->
-      <div class="brand-card" style="border-top: 4px solid #1B6B4A;">
-        <div class="brand-card-code" style="color: #1B6B4A;">SPORT</div>
+      <div class="brand-card" style="border-top: 4px solid #125143;">
+        <div class="brand-card-code" style="color: #125143;">SPORT</div>
         <h2>Nervous-System-Aware Performance &amp; Governance</h2>
         <p class="brand-card-desc">The NSAG framework applied to athletic institutions — governing how environment, scheduling, recovery culture, and media exposure shape athlete nervous system states and performance.</p>
         <div class="brand-card-focus">
@@ -307,12 +307,12 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
             <li>Organizational culture audit</li>
           </ul>
         </div>
-        <a href="https://sport-nsag.vercel.app" class="brand-card-cta" style="color: #1B6B4A;" target="_blank" rel="noopener noreferrer">Visit SPORT &rarr;</a>
+        <a href="https://sport-nsag.vercel.app" class="brand-card-cta" style="color: #125143;" target="_blank" rel="noopener noreferrer">Visit SPORT &rarr;</a>
       </div>
 
       <!-- GAPI -->
-      <div class="brand-card" style="border-top: 4px solid #2D2A8A;">
-        <div class="brand-card-code" style="color: #2D2A8A;">GAPI &mdash; Governance-as-API</div>
+      <div class="brand-card" style="border-top: 4px solid #2E2A63;">
+        <div class="brand-card-code" style="color: #2E2A63;">GAPI &mdash; Governance-as-API</div>
         <h2>AI Agent Governance Infrastructure</h2>
         <p class="brand-card-desc">One of the first governance MCP servers for AI agents, applying the NSAG governance framework to assess whether agentic systems behave in ways that are cognitively and ethically safe.</p>
         <div class="brand-card-focus">
@@ -323,12 +323,12 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
             <li>Enterprise AI compliance</li>
           </ul>
         </div>
-        <a href="https://gapi-governance.vercel.app" class="brand-card-cta" style="color: #2D2A8A;" target="_blank" rel="noopener noreferrer">Visit GAPI &rarr;</a>
+        <a href="https://gapi-governance.vercel.app" class="brand-card-cta" style="color: #2E2A63;" target="_blank" rel="noopener noreferrer">Visit GAPI &rarr;</a>
       </div>
 
       <!-- WNH -->
-      <div class="brand-card" style="border-top: 4px solid #5B7B5A;">
-        <div class="brand-card-code" style="color: #5B7B5A;">WNH &mdash; Women's Neuro-Health</div>
+      <div class="brand-card" style="border-top: 4px solid #3C5A3B;">
+        <div class="brand-card-code" style="color: #3C5A3B;">WNH &mdash; Women's Neuro-Health</div>
         <h2>The Female Nervous System, Evidenced</h2>
         <p class="brand-card-desc">Primary-source, sex-disaggregated research at the intersection of cannabis, psychedelics, and the female nervous system — for women and the clinicians who care for them.</p>
         <div class="brand-card-focus">
@@ -339,12 +339,12 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
             <li>Clinician guidance series</li>
           </ul>
         </div>
-        <a href="https://wnh-guide.vercel.app" class="brand-card-cta" style="color: #5B7B5A;" target="_blank" rel="noopener noreferrer">Visit WNH &rarr;</a>
+        <a href="https://wnh-guide.vercel.app" class="brand-card-cta" style="color: #3C5A3B;" target="_blank" rel="noopener noreferrer">Visit WNH &rarr;</a>
       </div>
 
       <!-- NARCH -->
-      <div class="brand-card" style="border-top: 4px solid #8B6914;">
-        <div class="brand-card-code" style="color: #8B6914;">NARCH &mdash; Neuroarchitecture Advisory</div>
+      <div class="brand-card" style="border-top: 4px solid #6B4A10;">
+        <div class="brand-card-code" style="color: #6B4A10;">NARCH &mdash; Neuroarchitecture Advisory</div>
         <h2>Built Environments, Evidence-Based</h2>
         <p class="brand-card-desc">Advisory practice for architecture firms, developers, and healthcare institutions designing built environments around how the human nervous system actually works.</p>
         <div class="brand-card-focus">
@@ -355,10 +355,10 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
             <li>Evidence brief production</li>
           </ul>
         </div>
-        <a href="https://narch-advisory.vercel.app" class="brand-card-cta" style="color: #8B6914;" target="_blank" rel="noopener noreferrer">Visit NARCH &rarr;</a>
+        <a href="https://narch-advisory.vercel.app" class="brand-card-cta" style="color: #6B4A10;" target="_blank" rel="noopener noreferrer">Visit NARCH &rarr;</a>
       </div>
-      <div class="brand-card" style="border-top: 4px solid #C0392B;">
-        <div class="brand-card-code" style="color: #C0392B;">KIDS &mdash; AI &amp; Your Child&rsquo;s Brain</div>
+      <div class="brand-card" style="border-top: 4px solid #93261A;">
+        <div class="brand-card-code" style="color: #93261A;">KIDS &mdash; AI &amp; Your Child&rsquo;s Brain</div>
         <h2>What AI Does to a Developing Brain</h2>
         <p class="brand-card-desc">A neuroscientist and mother of two explains, for parents and educators, what AI does to the developing brain. No doom, no hype &mdash; the neuroscience, with an age-by-age framework and a home-and-classroom protocol.</p>
         <div class="brand-card-focus">
@@ -369,7 +369,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
             <li>Home &amp; classroom protocol</li>
           </ul>
         </div>
-        <a href="https://kids-developing-brains.vercel.app" class="brand-card-cta" style="color: #C0392B;" target="_blank" rel="noopener noreferrer">Visit KIDS &rarr;</a>
+        <a href="https://kids-developing-brains.vercel.app" class="brand-card-cta" style="color: #93261A;" target="_blank" rel="noopener noreferrer">Visit KIDS &rarr;</a>
       </div>
 
     </div>
@@ -381,8 +381,8 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
     <h2 style="color: var(--white); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; margin-bottom: 1rem;">Start where the stakes are highest</h2>
     <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.88; line-height: 1.8;">Talk through which applied context fits your institution, or begin with an assessment of where your governance stands today.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background: transparent; border: 1.5px solid var(--white); color: var(--white); padding: 0.65rem 1.5rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Book a Discovery Call</a>
-      <a href="/#modules" style="background: var(--white); color: var(--nsag); padding: 0.65rem 1.5rem; border-radius: 4px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Browse the modules</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background: transparent; border: 1.5px solid var(--white); color: var(--white); padding: 0.65rem 1.5rem; border-radius:0; font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Book a Discovery Call</a>
+      <a href="/#modules" style="background: var(--white); color: var(--nsag); padding: 0.65rem 1.5rem; border-radius:0; font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Browse the modules</a>
     </div>
   </div>
 </section>
@@ -395,7 +395,7 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
         <p class="footer-tagline">Nervous-System-Aware Governance. Honolulu, Hawaiʻi.</p>
       </div>
       <div class="footer-links">
-        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Modules</strong>
+        <strong style="color:white;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Modules</strong>
         <a href="/m1">M1 · Trauma-Informed Legal Space</a>
         <a href="/m2">M2 · AI Legal Navigation</a>
         <a href="/m3">M3 · Psychedelic Harm Reduction</a>
@@ -413,16 +413,16 @@ footer { background: #1C1B1F; color: rgba(255,255,255,0.65); padding: 4rem 0 2re
         <a href="/m15">M15 · Isolation &amp; Confinement</a>
       </div>
       <div class="footer-links">
-        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Applied</strong>
+        <strong style="color:white;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Applied</strong>
         <a href="https://sport-nsag.vercel.app" target="_blank" rel="noopener noreferrer">SPORT · Athlete Nervous System</a>
         <a href="https://gapi-governance.vercel.app" target="_blank" rel="noopener noreferrer">GAPI · Governance-as-API</a>
         <a href="https://wnh-guide.vercel.app" target="_blank" rel="noopener noreferrer">WNH · Women's Neuro-Health</a>
         <a href="https://narch-advisory.vercel.app" target="_blank" rel="noopener noreferrer">NARCH · Neuroarchitecture</a>
       </div>
       <div class="footer-links" id="contact">
-        <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Contact</strong>
+        <strong style="color:white;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Contact</strong>
         <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a>
-        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;">Book a Discovery Call →</a>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.78rem;font-weight:600;">Book a Discovery Call →</a>
         <span style="font-size:0.78rem">RN Collins, M.S., J.D. Candidate</span>
       </div>
     </div>

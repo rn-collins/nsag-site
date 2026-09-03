@@ -7,43 +7,43 @@
 <meta name="description" content="Work with NSAG. Advisory engagements, governance audits, workshops, and retainer relationships for institutions ready to govern their effects on people.">
 <link rel="canonical" href="https://nsag-site.vercel.app/advisory">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234D45A8'/><text x='16' y='23' font-family='serif' font-size='20' font-weight='600' fill='white' text-anchor='middle'>N</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-:root{--nsag:#4D45A8;--nsag-l:#6B63C4;--nsag-p:#EEF0FF;--bg:#F6F3EC;--text:#1C1B1F;--muted:#5A5869;--border:#DDD8D0;--white:#fff;--legal:#1E3651;--health:#1B7A68;--civic:#2E5A28;}
+:root{--nsag:#2E2A63;--nsag-l:#3F3A83;--nsag-p:#E2E3EE;--bg:#E9EAE4;--text:#14161A;--muted:#474C52;--border:#C6C8C1;--white:#fff;--legal:#1B3049;--health:#125143;--civic:#274D22;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
-h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.25;}
-h3,h4,nav,button{font-family:'Syne',sans-serif;}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+h1,h2,h3{font-family:'EB Garamond',Georgia,'Times New Roman',serif;line-height:1.25;}
+h3,h4,nav,button{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;}
 a{color:var(--nsag);text-decoration:none;}
 a:hover{color:var(--nsag-l);}
 .wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
-.slabel{font-family:'Syne',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:1rem;}
+.slabel{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--nsag);display:inline-block;background:rgba(77,69,168,0.08);padding:0.2rem 0.6rem;border-radius:0;margin-bottom:1rem;}
 nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:1rem 0;}
 .ni{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem;gap:1rem;}
-.nb{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
+.nb{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nsag);letter-spacing:0.08em;}
 .nl{display:flex;gap:1.5rem;font-size:0.875rem;font-weight:500;align-items:center;}
 .nl a{color:var(--muted);}
 .nl a:hover,.nl a.act{color:var(--nsag);}
-.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
-.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;}
+.nc{background:var(--nsag);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:0.875rem;}
+.no{background:transparent;border:1.5px solid var(--nsag);color:var(--nsag)!important;padding:0.5rem 1.25rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:0.875rem;}
 section{padding:4rem 0;}
 section.alt{background:var(--white);}
 h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;}
 h3{font-size:1.25rem;margin-bottom:0.75rem;}
 p+p{margin-top:0.75rem;}
-.btn{display:inline-block;padding:0.875rem 2rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.9rem;}
+.btn{display:inline-block;padding:0.875rem 2rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:0.9rem;}
 .btn-p{background:var(--nsag);color:white!important;}
 .btn-o{border:1.5px solid var(--nsag);color:var(--nsag)!important;}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
-footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:0;padding:1.5rem;}
+footer{background:#14161A;color:rgba(255,255,255,0.8);padding:3.5rem 0;font-size:0.85rem;margin-top:0;}
 .fi{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;}
-.fb{font-family:'Syne',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
+.fb{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:0.08em;margin-bottom:0.5rem;}
 .ft{font-size:0.78rem;max-width:260px;line-height:1.6;margin-bottom:1rem;}
-.fl h2{font-family:'Syne',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
-.fl a{color:rgba(255,255,255,0.6);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
+.fl h2{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:0.75rem;}
+.fl a{color:rgba(255,255,255,0.8);display:block;margin-bottom:0.35rem;font-size:0.82rem;}
 .fl a:hover{color:white;}
 .fbot{border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem;padding-top:1.5rem;text-align:center;font-size:0.75rem;max-width:1100px;margin:2rem auto 0;padding:1.5rem 2rem 0;}
 @media(max-width:900px){.nl{display:none;}.grid-2,.grid-3{grid-template-columns:1fr;}.fi{grid-template-columns:1fr 1fr;}}
@@ -53,26 +53,26 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 .dropdown-trigger{color:var(--muted);font-size:0.875rem;font-weight:500;cursor:pointer;}
 .dropdown:hover .dropdown-trigger,.dropdown-trigger:hover{color:var(--nsag);}
 .dropdown-menu{display:none;position:absolute;top:110%;left:0;background:var(--white);
-  border:1px solid var(--border);border-radius:6px;padding:0.4rem 0;min-width:240px;
+  border:1px solid var(--border);border-radius:0;padding:0.4rem 0;min-width:240px;
   z-index:300;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
 .dropdown:hover .dropdown-menu{display:block;}
 .dropdown-menu a{display:block;padding:0.45rem 1rem;color:var(--muted);font-size:0.8rem;
-  font-family:'Syne',sans-serif;border-bottom:1px solid var(--border);}
+  font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;border-bottom:1px solid var(--border);}
 .dropdown-menu a:last-child{border-bottom:none;}
 .dropdown-menu a:hover{color:var(--nsag);background:var(--nsag-p);}
-.dropdown-label{font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
+.dropdown-label{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.65rem;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--nsag);padding:0.5rem 1rem 0.2rem;display:block;}
 
 
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:1px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:0;}
 .mobile-nav{display:none;position:fixed;inset:0;background:white;z-index:200;padding:6rem 2rem 2rem;flex-direction:column;gap:1.5rem;overflow-y:auto;}
 .mobile-nav.open{display:flex;}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
-.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:6px;text-align:center;margin-top:0.5rem;}
+.mobile-nav a{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.mobile-nav a:last-child{border-bottom:none;color:white;background:var(--nsag);padding:1rem 1.5rem;border-radius:0;text-align:center;margin-top:0.5rem;}
 .mobile-nav-close{position:fixed;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text);z-index:201;}
 @media(max-width:900px){.hamburger{display:block;}}
-.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0 0 6px 6px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--nsag);color:white;padding:0.5rem 1.25rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.85rem;font-weight:600;z-index:9999;text-decoration:none;}.skip-nav:focus{top:0;}
 </style>
 <meta property="og:title" content="Advisory · NSAG">
 <meta property="og:description" content="Work with NSAG. Advisory engagements, governance audits, workshops, and retainer relationships for institutions ready to govern their effects on people.">
@@ -84,7 +84,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <noscript><style>@media(max-width:900px){.ni{flex-wrap:wrap}.nl{display:flex!important;flex-wrap:wrap;gap:.5rem 1.1rem;width:100%;padding-top:.6rem}.hamburger{display:none!important}}</style></noscript>
-</head>
+<link rel="stylesheet" href="/nsag-hub.css"></head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 <nav>
@@ -138,7 +138,7 @@ footer{background:#1C1B1F;color:rgba(255,255,255,0.6);padding:3.5rem 0;font-size
 function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('hamburger-btn').setAttribute('aria-expanded','true');}
 </script>
 <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.5rem 0;">
-  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Syne',sans-serif;font-size:0.75rem;color:var(--muted);">
+  <div class="wrap" style="display:flex;align-items:center;gap:0.4rem;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.75rem;color:var(--muted);">
     <a href="/" style="color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><path d="M7.5 9L4.5 6L7.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       NSAG
@@ -149,7 +149,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
 </div>
 <section id="main-content" style="background:var(--nsag);color:white;padding:5rem 0 4rem;">
   <div class="wrap">
-    <div class="slabel" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Advisory Engagements</div>
+    <div class="slabel" style="color:#EEEEF4;">Advisory Engagements</div>
     <h1 style="font-size:clamp(2.2rem,4vw,3.8rem);color:white;max-width:800px;margin-bottom:1.5rem;">What does an institution<br>actually receive?</h1>
     <p style="max-width:700px;opacity:0.85;font-size:1.05rem;">An advisory engagement with NSAG produces one thing: a governance audit your institution can act on. It is a documented, evidence-based picture of what your institution is currently producing, and a specific, implementable governance action plan for closing the gap.</p>
   </div>
@@ -159,21 +159,21 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
   <div class="wrap">
     <div class="slabel">The Process</div>
     <h2>From Discovery to Governance Audit</h2>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:2rem 0;">      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);border-radius:6px 0 0 6px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 1</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Discovery Call</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:2rem 0;">      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);border-radius:0;">
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 1</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Discovery Call</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">20 minutes. No sales. One question: which module is most urgent for your institution? The call identifies the governance gap where change would matter most and whether an advisory engagement is the right response.</p>
       </div>      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 2</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Scoping</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 2</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Scoping</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">A written scope of work that specifies: which modules, which dimensions, what deliverables, what timeline, and what the engagement will and will not include. Signed before work begins.</p>
       </div>      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 3</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Governance Assessment</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 3</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Governance Assessment</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">NSAG conducts a structured governance assessment across the scoped modules. Includes assessment instrument review, documentation analysis, and institutional context research. Typical timeline: four to six weeks.</p>
-      </div>      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);border-right:1px solid var(--border);border-radius:0 6px 6px 0;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 4</div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Governance Audit Deliverable</div>
+      </div>      <div style="border:1px solid var(--border);border-right:none;padding:1.5rem;background:var(--white);border-right:1px solid var(--border);border-radius:0;">
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.7rem;color:var(--nsag);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Step 4</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Governance Audit Deliverable</div>
         <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">A written governance audit report with: your institution's scored tier across each assessed module, the specific governance gaps identified, an evidence-based action plan for each gap, and one metric per recommendation for measuring improvement within 12 months.</p>
       </div>    </div>
   </div>
@@ -211,31 +211,31 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <div class="slabel">Engagement Options</div>
     <h2>Choose Your Engagement</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem;">      <div class="card" style="position:relative;overflow:hidden;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">$8,500</div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Advisory Engagement</div>
+        <div style="font-family:'EB Garamond',Georgia,'Times New Roman',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">$8,500</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Advisory Engagement</div>
         <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;">The core NSAG engagement. One to three modules. Full governance assessment. Written governance audit with action plan. NSAG Profile included (a board-ready governance brief combining the human-conducted review, regulatory context, and evidence base). 90-day follow-up. The self-serve module assessments are retired, so the governance review is conducted with you rather than generated from a submitted questionnaire.</p>
         <p style="font-size:0.8rem;color:var(--nsag);font-style:italic;margin-bottom:1.25rem;">Most organizations begin here.</p>
-        <a href="/#modules" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;" >Read the module scopes</a>
+        <a href="/#modules" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.8rem;font-weight:600;" >Read the module scopes</a>
       </div>      <div class="card" style="position:relative;overflow:hidden;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">from $5,000</div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Workshop</div>
+        <div style="font-family:'EB Garamond',Georgia,'Times New Roman',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">from $5,000</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Workshop</div>
         <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;">Half-day ($5,000) or full-day ($10,000) session. Module assessments taken in advance. Workshop covers governance findings, action planning, and institutional next steps. Best for leadership teams and governance committees.</p>
         <p style="font-size:0.8rem;color:var(--nsag);font-style:italic;margin-bottom:1.25rem;">Ideal for kicking off a governance initiative.</p>
-        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.8rem;font-weight:600;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
       </div>      <div class="card" style="position:relative;overflow:hidden;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">from $15,000</div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Extended Advisory</div>
+        <div style="font-family:'EB Garamond',Georgia,'Times New Roman',serif;font-size:2rem;font-weight:600;color:var(--nsag);margin-bottom:0.25rem;">from $15,000</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;color:var(--muted);">Extended Advisory</div>
         <p style="font-size:0.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;">Multi-module governance assessment across an institution. Four to all fifteen modules. Extended timeline (eight to twelve weeks). Comprehensive governance audit across all assessed domains. For institutions ready to build a full governance infrastructure.</p>
         <p style="font-size:0.8rem;color:var(--nsag);font-style:italic;margin-bottom:1.25rem;">For institutions ready for the full picture.</p>
-        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:4px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+        <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="display:block;background:var(--nsag);color:white;text-align:center;padding:0.7rem 1rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.8rem;font-weight:600;" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
       </div>    </div>
     
-    <div style="margin-top:2rem;background:var(--nsag-p);border-radius:8px;padding:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div style="margin-top:2rem;background:var(--nsag-p);border-radius:0;padding:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
       <div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Monthly Retainer</div>
+        <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Monthly Retainer</div>
         <p style="font-size:0.85rem;color:var(--muted);">$3,500/month · Ongoing governance advisory. Module monitoring, quarterly governance reviews, unlimited written Q&A, and access to all intelligence products. For institutions that want NSAG as an ongoing governance partner.</p>
       </div>
-      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background:var(--nsag);color:white;padding:0.75rem 1.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;white-space:nowrap;">Inquire →</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background:var(--nsag);color:white;padding:0.75rem 1.5rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:0.85rem;white-space:nowrap;">Inquire →</a>
     </div>
   </div>
 </section>
@@ -271,7 +271,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
   <div class="wrap">
     <h2 style="color:white;margin-bottom:1rem;">Start with 20 minutes.</h2>
     <p style="opacity:0.85;max-width:600px;margin:0 auto 2rem;">A discovery call is free. No sales pitch. One question about your institution, one module, and one governance gap. That's the entire agenda. Book directly below.</p>
-    <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background:white;color:var(--nsag);padding:0.875rem 2.5rem;border-radius:4px;font-family:'Syne',sans-serif;font-weight:600;font-size:1rem;">Book a Discovery Call</a>
+    <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="background:white;color:var(--nsag);padding:0.875rem 2.5rem;border-radius:0;font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:1rem;">Book a Discovery Call</a>
   </div>
 </section>
 <footer>
@@ -279,7 +279,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
     <div>
       <div class="fb">NSAG</div>
       <div class="ft">The advisory practice for nervous-system-aware institutional design and governance. Fifteen modules. Evidence-based. Built to make institutional effects on people measurable and intentional.</div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.8);">© 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawaiʻi</div>
     </div>
     <div class="fl">
       <h2>The Practice</h2>
@@ -294,17 +294,17 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <h2>Modules — All 15</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;">
         <div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
+          <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0.5rem 0 0.25rem;">Legal &amp; Justice</div>
           <a href="/m1">M1 · Trauma-Informed Legal Space</a>
           <a href="/m2">M2 · AI Legal Navigation</a>
           <a href="/m6">M6 · Ethical Civic Sponsorship</a>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
+          <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0.75rem 0 0.25rem;">Civic &amp; Built Environment</div>
           <a href="/m5">M5 · Biophilic Civic Infrastructure</a>
           <a href="/m7">M7 · Conscious Cities</a>
           <a href="/m12">M12 · Education Systems</a>
         </div>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
+          <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0.5rem 0 0.25rem;">Healthcare &amp; Clinical</div>
           <a href="/m3">M3 · Psychedelic Harm Reduction</a>
           <a href="/m4">M4 · Cannabis Public Health</a>
           <a href="/m8">M8 · Burnout Recovery</a>
@@ -312,7 +312,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
           <a href="/m10">M10 · Healthcare Built Environment</a>
           <a href="/m11">M11 · Medical Technology</a>
           <a href="/m13">M13 · Traditional &amp; CAM</a>
-          <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0.75rem 0 0.25rem;">Space &amp; Extreme Environments</div>
+          <div style="font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.8);margin:0.75rem 0 0.25rem;">Space &amp; Extreme Environments</div>
           <a href="/m14">M14 · Space Governance</a>
           <a href="/m15">M15 · Isolation &amp; Confinement</a>
         </div>
@@ -330,7 +330,7 @@ function openMobileNav(){document.getElementById('mobile-nav').classList.add('op
       <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
     </div>
   </div>
-  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.6);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
+  <div class="fbot">collins.ra@northeastern.edu · nsag-site.vercel.app · <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" style="color:rgba(255,255,255,0.8);" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a></div>
 </footer>
 <script>try{fetch('https://nsag-api.vercel.app/api/pageview',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname}),keepalive:true})}catch(e){}</script>
 </body>
