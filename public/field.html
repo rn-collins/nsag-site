@@ -16,41 +16,41 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
 .site-nav{position:sticky;top:0;z-index:100;background:rgba(246,243,236,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 64px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:var(--ink);text-decoration:none}
+.nav-brand{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;font-size:18px;font-weight:300;color:var(--ink);text-decoration:none}
 .nav-brand span{color:var(--purple);font-style:italic}
 .nav-right{display:flex;gap:20px;align-items:center}
-.nav-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0}
+.nav-link{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0}
 .nav-link:hover{color:var(--purple)}
 .nav-link.current{color:var(--purple)}
 .year-strip{background:var(--purple);padding:12px 64px;display:flex;gap:32px}
-.year-strip a{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none}
+.year-strip a{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none}
 .year-strip a.active{color:var(--gold)}
 .year-strip a:hover{color:#fff}
 .hero{padding:80px 64px 64px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(77,69,168,0.4),transparent 70%);pointer-events:none}
-.hero-eye{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative}
-.hero-h{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.0;margin-bottom:20px;position:relative}
+.hero-eye{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative}
+.hero-h{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.0;margin-bottom:20px;position:relative}
 .hero-h em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:16px;color:rgba(255,255,255,0.8);max-width:620px;line-height:1.8;position:relative}
 .page-section{padding:64px;border-bottom:1px solid var(--border)}
 .page-section.alt{background:var(--white)}
-.section-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.sub-label{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:32px;margin-bottom:16px}
+.section-label{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.sub-label{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:32px;margin-bottom:16px}
 .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .event-card{background:var(--cream);padding:28px 24px;position:relative}
 .event-card.highlight{background:var(--purple)}
 .event-card.active{background:var(--pl)}
-.event-meta{font-family:"Syne",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.event-meta{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .event-card.highlight .event-meta{color:var(--gold)}
-.event-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:400;margin-bottom:6px}
+.event-name{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;font-size:22px;font-weight:400;margin-bottom:6px}
 .event-card.highlight .event-name{color:#fff}
-.event-location{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.event-location{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .event-card.highlight .event-location{color:rgba(255,255,255,0.8)}
 .event-angle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
 .event-card.highlight .event-angle{color:rgba(255,255,255,0.8)}
-.event-dims{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--purple)}
+.event-dims{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--purple)}
 .event-card.highlight .event-dims{color:var(--gold)}
 .status-present{background:var(--gold);color:var(--ink)}
 .status-submitted{background:var(--purple);color:#fff}
@@ -60,12 +60,12 @@ body{font-family:"Manrope",sans-serif;background:var(--cream);color:var(--ink);l
 .status-2029{background:transparent;color:var(--muted);border:1px solid var(--border)}
 .status-advisory{background:rgba(184,132,42,0.15);color:var(--gold);border:1px solid rgba(184,132,42,0.3)}
 footer{background:var(--ink);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.foot-brand{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:300;color:#fff}
+.foot-brand{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;font-size:18px;font-weight:300;color:#fff}
 .foot-brand span{color:var(--gold);font-style:italic}
 .foot-links{display:flex;gap:24px}
-.foot-link{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none}
+.foot-link{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none}
 .foot-link:hover{color:var(--gold)}
-.foot-copy{font-family:"Syne",sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+.foot-copy{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.8)}
 @media(max-width:900px){
   .site-nav,.year-strip,.page-section{padding-left:20px;padding-right:20px}
   .events-grid{grid-template-columns:1fr}
@@ -76,16 +76,16 @@ footer{background:var(--ink);padding:40px 64px;display:flex;justify-content:spac
 .year-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .year-card{background:var(--cream);padding:48px 40px;text-decoration:none;display:block}
 .year-card:hover{background:var(--pl)}
-.yc-year{font-family:"Syne",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.yc-h{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:300;line-height:1.1;margin-bottom:16px;color:var(--ink)}
+.yc-year{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.yc-h{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;font-size:36px;font-weight:300;line-height:1.1;margin-bottom:16px;color:var(--ink)}
 .yc-h em{font-style:italic;color:var(--purple)}
 .yc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
-.yc-count{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
+.yc-count{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
 .legend{padding:40px 64px;background:var(--white)}
-.legend-title{font-family:"Syne",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.legend-title{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
 .legend-row{display:flex;flex-wrap:wrap;gap:12px}
 .pip{width:10px;height:10px;display:inline-block;vertical-align:middle;margin-right:6px}
-.legend-item{font-family:"Syne",sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink)}
+.legend-item{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink)}
 @media(max-width:900px){.year-cards{grid-template-columns:1fr}.legend{padding:32px 20px}}
 </style>
 

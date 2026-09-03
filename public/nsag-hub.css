@@ -23,7 +23,7 @@
   --hub-rule:#C6C8C1;
   --hub-rule-firm:#9EA29A;
   --hub-accent:#2E2A63;
-  --serif:'EB Garamond',Georgia,'Times New Roman',serif;
+  --serif:'EB Garamond',ui-serif,'Iowan Old Style',serif;
   --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
   --key:600 .72rem/1 var(--sans);
 }
@@ -46,12 +46,17 @@ h2{line-height:1.16}
   border-radius:0;padding:.1rem 0 .1rem .55rem;margin-bottom:.9rem;display:inline-block}
 
 /* ── the masthead rule ────────────────────────────────────────────────────── */
-.hero,header.hero{background:var(--hub-ink);color:#F3F3F0;padding:clamp(3.2rem,7vw,5.2rem) 0 clamp(2.4rem,5vw,3.6rem);
+/* padding-block only: the field pages carry their own horizontal padding and
+   have no .wrap inside the masthead, so a padding shorthand here would pull
+   their content flush to the viewport edge */
+.hero,header.hero{background:var(--hub-ink);color:#F3F3F0;
+  padding-top:clamp(3rem,6vw,4.6rem);padding-bottom:clamp(2.2rem,4vw,3.2rem);
   border-bottom:3px solid var(--hub-accent)}
 .hero .eyebrow{color:#C9C7DE}
 .hero .lede,.hero .lead{color:#E4E3E9}
 .hero .status{border:0;border-top:1px solid #4A4C55;background:none;border-radius:0;padding:1.1rem 0 0;margin-top:2rem}
-.phead{padding:clamp(2.6rem,6vw,4.4rem) 0 clamp(1.6rem,3vw,2.4rem);border-bottom:2px solid var(--hub-ink)}
+.phead{padding-top:clamp(2.4rem,5vw,3.9rem);padding-bottom:clamp(1.5rem,3vw,2.2rem);
+  border-bottom:2px solid var(--hub-ink)}
 
 /* ── flat institutional furniture ─────────────────────────────────────────── */
 nav{background:var(--hub-panel);border-bottom:1px solid var(--hub-rule-firm)}

@@ -28,7 +28,7 @@ html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);
   line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3{font-family:'EB Garamond',Georgia,'Times New Roman',serif;line-height:1.2;font-weight:600}
+h1,h2,h3{font-family:'EB Garamond',ui-serif,'Iowan Old Style',serif;line-height:1.2;font-weight:600}
 a{color:var(--nsag);text-decoration:underline;text-underline-offset:3px}
 a:hover{color:#221E4C}
 :focus-visible{outline:3px solid var(--nsag);outline-offset:3px;border-radius:0}
