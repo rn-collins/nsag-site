@@ -1306,7 +1306,7 @@ section.alt .module-filters-sticky { background:white; }
       </div>
       <div class="footer-links" id="contact">
         <strong style="color:white;font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase">Contact</strong>
-        <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a>
+        <a href="https://ownership-platform.vercel.app/contact">Connect with RN</a>
         <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;">Book a Discovery Call →</a>
         <span style="font-size:0.78rem">RN Collins, M.S., J.D. Candidate</span>
         <span style="font-size:0.78rem;color:rgba(255,255,255,0.45)">CME · CLE · AIA HSW · AICP · SHRM CE partnerships available</span>
@@ -1331,17 +1331,7 @@ document.querySelectorAll('.module-evidence').forEach(function(el) {
 // Principles toggle
 
 function contactArchitect() {
-  var email = 'collins.ra@northeastern.edu';
-  window.location.href = 'mailto:' + email;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(email).catch(function(){});
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch(e) {}
-    document.body.removeChild(ta);
-  }
+  window.open('https://ownership-platform.vercel.app/contact', '_blank', 'noopener');
 }
 
 // Module filter
@@ -1376,7 +1366,7 @@ function submitPaperRequest() {
   }).catch(function() {
     document.querySelector('.paper-gate-form').style.display = 'none';
     document.getElementById('paper-success').style.display = 'block';
-    document.getElementById('paper-success').innerHTML = '&#10003; Preview on its way — if it doesn\'t arrive within 10 minutes, email <a href="mailto:collins.ra@northeastern.edu" style="color:#1B7A68">collins.ra@northeastern.edu</a> directly.';
+    document.getElementById('paper-success').innerHTML = '&#10003; Preview on its way — if it doesn\'t arrive within 10 minutes, reach RN through <a href="https://ownership-platform.vercel.app/contact" style="color:#1B7A68">the Connect page</a> directly.';
   });
 }
 
@@ -1449,7 +1439,7 @@ function submitCEInquiry() {
     document.querySelectorAll('#ce-form-open input').forEach(i => i.disabled = true);
     document.querySelector('#ce-form-open button').style.display = 'none';
     document.getElementById('ce-success').style.display = 'block';
-    document.getElementById('ce-success').innerHTML = '&#10003; Inquiry received — expect a reply within 2 business days. You can also reach us at <a href="mailto:collins.ra@northeastern.edu" style="color:#1B7A68">collins.ra@northeastern.edu</a>.';
+    document.getElementById('ce-success').innerHTML = '&#10003; Inquiry received — expect a reply within 2 business days. You can also reach us at <a href="https://ownership-platform.vercel.app/contact" style="color:#1B7A68">Connect with RN</a>.';
   });
 }
 </script>
